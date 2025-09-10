@@ -521,6 +521,24 @@
 	for(var/i = 1 to storage_slots)
 		new /obj/item/ammo_magazine/smg/fp9000(src)
 
+/obj/item/storage/pouch/magazine/large/p90/fill_preset_inventory()
+	for(var/i = 1 to storage_slots)
+		new /obj/item/ammo_magazine/smg/p90(src)
+
+/obj/item/storage/pouch/magazine/large/p90/mixed/fill_preset_inventory()
+	new /obj/item/ammo_magazine/smg/p90(src)
+	new /obj/item/ammo_magazine/smg/p90(src)
+	new /obj/item/ammo_magazine/smg/p90/ap(src)
+	new /obj/item/ammo_magazine/smg/p90/ap(src)
+
+/obj/item/storage/pouch/magazine/large/p90/ap/fill_preset_inventory()
+	for(var/i = 1 to storage_slots)
+		new /obj/item/ammo_magazine/smg/p90/ap(src)
+
+/obj/item/storage/pouch/magazine/large/p90/heap/fill_preset_inventory()
+	for(var/i = 1 to storage_slots)
+		new /obj/item/ammo_magazine/smg/p90/heap(src)
+
 /obj/item/storage/pouch/magazine/large/pmc_lmg/fill_preset_inventory()
 	for(var/i = 1 to storage_slots)
 		new /obj/item/ammo_magazine/rifle/lmg(src)

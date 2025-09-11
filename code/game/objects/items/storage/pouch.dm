@@ -563,6 +563,12 @@
 	for(var/i = 1 to storage_slots)
 		new /obj/item/ammo_magazine/rifle/m16/ap(src)
 
+/obj/item/storage/pouch/magazine/large/m16/mixed/fill_preset_inventory()
+		new /obj/item/ammo_magazine/rifle/m16/ext(src)
+		new /obj/item/ammo_magazine/rifle/m16/ext(src)
+		new /obj/item/ammo_magazine/rifle/m16/ap(src)
+		new /obj/item/ammo_magazine/rifle/m16/ap(src)
+
 /obj/item/storage/pouch/magazine/large/rifle_heap/fill_preset_inventory()
 	for(var/i = 1 to storage_slots)
 		new /obj/item/ammo_magazine/rifle/heap(src)
@@ -678,6 +684,14 @@
 /obj/item/storage/pouch/explosive/emp/fill_preset_inventory()
 	for(var/i = 1 to storage_slots)
 		new /obj/item/explosive/grenade/empgrenade(src)
+
+/obj/item/storage/pouch/explosive/mixed/fill_preset_inventory()
+		new /obj/item/explosive/grenade/high_explosive/m15(src)
+		new /obj/item/explosive/grenade/high_explosive/m15(src)
+		new /obj/item/explosive/grenade/high_explosive/m15(src)
+		new /obj/item/explosive/mine(src)
+		new /obj/item/explosive/mine(src)
+		new /obj/item/explosive/mine(src)
 
 /obj/item/storage/pouch/medical
 	name = "medical pouch"
@@ -1310,6 +1324,13 @@
 	new /obj/item/stack/sandbags_empty(src, 50)
 	new /obj/item/stack/concertina_wire(src, 50)
 	new /obj/item/stack/fragwire(src, 25)
+
+/obj/item/storage/pouch/construction/clown/fill_preset_inventory()
+	new /obj/item/stack/sheet/metal(src, 50)
+	new /obj/item/stack/sheet/metal(src, 50)
+	new /obj/item/stack/sheet/metal(src, 50)
+	new /obj/item/stack/sheet/metal(src, 50)
+	new /obj/item/stack/sheet/metal(src, 50)
 
 /obj/item/storage/pouch/construction/full_barbed_wire/fill_preset_inventory()
 	new /obj/item/stack/sheet/plasteel(src, 50)

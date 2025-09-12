@@ -343,10 +343,28 @@
 	id = DROPSHIP_LZ1
 	auto_open = TRUE
 
+/obj/docking_port/stationary/marine_dropship/lz1/south
+	dir = SOUTH
+
+/obj/docking_port/stationary/marine_dropship/lz1/west
+	dir = WEST
+
+/obj/docking_port/stationary/marine_dropship/lz1/east
+	dir = EAST
+
 /obj/docking_port/stationary/marine_dropship/lz2
 	name = "LZ2 Landing Zone"
 	id = DROPSHIP_LZ2
 	auto_open = TRUE
+
+/obj/docking_port/stationary/marine_dropship/lz2/south
+	dir = SOUTH
+
+/obj/docking_port/stationary/marine_dropship/lz2/west
+	dir = WEST
+
+/obj/docking_port/stationary/marine_dropship/lz2/east
+	dir = EAST
 
 /obj/docking_port/stationary/marine_dropship/almayer_hangar_1
 	name = "Almayer Hangar bay 1"
@@ -366,11 +384,29 @@
 	auto_open = TRUE
 	roundstart_template = /datum/map_template/shuttle/attu
 
+/obj/docking_port/stationary/marine_dropship/bg_hangar_1/south
+	dir = SOUTH
+
+/obj/docking_port/stationary/marine_dropship/bg_hangar_1/west
+	dir = WEST
+
+/obj/docking_port/stationary/marine_dropship/bg_hangar_1/east
+	dir = EAST
+
 /obj/docking_port/stationary/marine_dropship/bg_hangar_2
 	name = "Black Gold Hangar bay 2"
 	id = BLACKGOLD_DROPSHIP_LZ2
 	auto_open = TRUE
 	roundstart_template = /datum/map_template/shuttle/saigon
+
+/obj/docking_port/stationary/marine_dropship/bg_hangar_2/south
+	dir = SOUTH
+
+/obj/docking_port/stationary/marine_dropship/bg_hangar_2/west
+	dir = WEST
+
+/obj/docking_port/stationary/marine_dropship/bg_hangar_2/east
+	dir = EAST
 
 /obj/docking_port/stationary/marine_dropship/upp_hangar_1
 	name = "UPP Hangar bay 1"

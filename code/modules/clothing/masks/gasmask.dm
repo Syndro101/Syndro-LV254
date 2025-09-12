@@ -236,3 +236,11 @@
 	item_state = "s-ninja_mask"
 	siemens_coefficient = 0.2
 	vision_impair = VISION_IMPAIR_NONE
+
+/obj/item/clothing/mask/gas/scavin_joe
+	name = "crude mask"
+	desc = "A close-fitting mask that was fashioned by bored scavengers to decorate their working joe."
+	icon_state = "scavin_joe"
+	item_state = "scavin_joe"
+	siemens_coefficient = 0.2
+	vision_impair = VISION_IMPAIR_NONE

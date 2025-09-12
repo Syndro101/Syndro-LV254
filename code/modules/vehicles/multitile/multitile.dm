@@ -66,11 +66,17 @@
 	//whether vehicle has flatbed storage
 	var/flatbed = FALSE
 
-	var/allowed_type = list(/obj/structure)
+	//delete for later
+	var/allowed_type = /obj/structure
 	var/max_stored = 0
 	var/initial_stored = 0
-	var/fill_type = /obj/structure/pallet
 
+	// List of all cargo in the vehicle flatbed
+	var/list/cargo = list()
+	//List of all cargo types you can load in the vehicle
+	var/list/cargo_allowed = list(/obj/structure/pallet, /obj/structure/closet)
+	//Max amount of cargo items
+	var/max_stored_cargo = 0
 
 	// The amount of skill required to drive the vehicle
 	var/required_skill = SKILL_VEHICLE_SMALL
@@ -195,15 +201,10 @@
 	light_pixel_x = -bound_x
 	light_pixel_y = -bound_y
 
-	if(!allowed_type)
+	if(!cargo_allowed)
 		icon_state = "cargo_0"
 		return
 
-	if(initial_stored)
-		var/i = 0
-		while(i < initial_stored)
-			contents += new fill_type(src)
-			i++
 	healthcheck()
 	update_icon()
 
@@ -273,7 +274,7 @@
 		overlays += J
 
 	if(flatbed)
-		var/cargo_overlay = "cargo_[contents.len]"
+		var/cargo_overlay = "cargo_[cargo.len]"
 		overlays += image(icon, cargo_overlay)
 
 //Normal examine() but tells the player what is installed and if it's broken

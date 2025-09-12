@@ -43,3 +43,5 @@
 
 /// VAI-L, Team Leader
 #define PAY_SHORT_VAI_L "VAI-L"
+
+#define PAY_SHORT_STLK "S.T.A.L.K.E.R."

@@ -17,6 +17,7 @@
 	passengers_slots = 3
 	xenos_slots = 2
 	flatbed = TRUE
+	max_stored_cargo = 1
 
 	interior_map = /datum/map_template/interior/truck
 	entrances = list(

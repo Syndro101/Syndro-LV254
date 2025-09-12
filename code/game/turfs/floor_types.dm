@@ -4815,3 +4815,126 @@
 
 /turf/open/gm/grass/grass2/pred
 	icon_state = "grass2"
+
+/turf/open/floor/almayer/floor_banner_alpha
+	icon_state ="alpha_floor_banner"
+	dir = NORTH
+
+/turf/open/floor/almayer/floor_banner_alpha/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/floor_banner_alpha/east
+	dir = EAST
+
+/turf/open/floor/almayer/floor_banner_alpha/west
+	dir = WEST
+
+/turf/open/floor/almayer/floor_banner_bravo
+	icon_state ="bravo_floor_banner"
+	dir = NORTH
+
+/turf/open/floor/almayer/floor_banner_bravo/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/floor_banner_bravo/east
+	dir = EAST
+
+/turf/open/floor/almayer/floor_banner_bravo/west
+	dir = WEST
+
+/turf/open/floor/almayer/floor_banner_charlie
+	icon_state ="charlie_floor_banner"
+	dir = NORTH
+
+/turf/open/floor/almayer/floor_banner_charlie/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/floor_banner_charlie/east
+	dir = EAST
+
+/turf/open/floor/almayer/floor_banner_charlie/west
+	dir = WEST
+
+/turf/open/floor/almayer/floor_banner_delta
+	icon_state ="delta_floor_banner"
+	dir = NORTH
+
+/turf/open/floor/almayer/floor_banner_delta/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/floor_banner_delta/east
+	dir = EAST
+
+/turf/open/floor/almayer/floor_banner_delta/west
+	dir = WEST
+
+/turf/open/floor/almayer/squad_arrow_alpha
+	icon_state ="alpha_arrow"
+	dir = NORTH
+
+/turf/open/floor/almayer/squad_arrow_alpha/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/squad_arrow_alpha/east
+	dir = EAST
+
+/turf/open/floor/almayer/squad_arrow_alpha/west
+	dir = WEST
+
+/turf/open/floor/almayer/squad_arrow_bravo
+	icon_state ="bravo_arrow"
+	dir = SOUTH
+
+/turf/open/floor/almayer/squad_arrow_bravo/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/squad_arrow_bravo/east
+	dir = EAST
+
+/turf/open/floor/almayer/squad_arrow_bravo/west
+	dir = WEST
+
+/turf/open/floor/almayer/squad_arrow_charlie
+	icon_state ="charlie_arrow"
+	dir = NORTH
+
+/turf/open/floor/almayer/squad_arrow_charlie/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/squad_arrow_charlie/east
+	dir = EAST
+
+/turf/open/floor/almayer/squad_arrow_charlie/west
+	dir = WEST
+
+/turf/open/floor/almayer/squad_arrow_delta
+	icon_state ="delta_arrow"
+	dir = NORTH
+
+/turf/open/floor/almayer/squad_arrow_delta/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/squad_arrow_delta/east
+	dir = EAST
+
+/turf/open/floor/almayer/squad_arrow_delta/west
+	dir = WEST
+
+/turf/open/floor/almayer/arena/north
+	dir = NORTH
+
+/turf/open/floor/almayer/arena
+	icon_state = "arena_smooth"
+	dir = SOUTH
+
+/turf/open/floor/almayer/arena/east
+	dir = EAST
+
+/turf/open/floor/almayer/arena/west
+	dir = WEST
+
+/turf/open/floor/almayer/arena/tile_smooth
+	icon_state = "silver_smooth"
+
+/turf/open/floor/almayer/arena/tilefull_smooth
+	icon_state = "silverfull_smooth"

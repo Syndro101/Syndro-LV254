@@ -4,6 +4,7 @@
 
 	layer = ABOVE_XENO_LAYER
 	vehicle_flags = VEHICLE_CLASS_WEAK
+	flatbed = TRUE
 
 	icon = 'icons/obj/vehicles/civtruck.dmi'
 	icon_state = "civtruck_1"
@@ -35,11 +36,12 @@
 /obj/vehicle/multitile/civtruck/civtruck_2
 	name = "civilian truck"
 	icon_state = "civtruck_2"
+	flatbed = FALSE
 
 /obj/vehicle/multitile/civtruck/civtruck_3
 	name = "civilian truck"
 	icon_state = "civtruck_3"
-
+	flatbed = FALSE
 /*
 ** PRESETS SPAWNERS
 */

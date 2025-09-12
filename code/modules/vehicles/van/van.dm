@@ -247,8 +247,8 @@
 	icon_state = "truck_base"
 	passengers_slots = 3
 	xenos_slots = 2
-	flatbed	= TRUE
-	max_stored = 2
+	flatbed = TRUE
+	max_stored_cargo = 2
 
 	interior_map = /datum/map_template/interior/truck
 

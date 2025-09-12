@@ -62,21 +62,22 @@
 
 
 /obj/vehicle/multitile/proc/load_cargo(obj/structure/O, mob/user)
-	if((istype(O,/obj/structure/pallet) || istype(O,/obj/structure/closet)) && contents.len < max_stored)
-		user.drop_inv_item_to_loc(O, src)
-		contents += O
-		O.forceMove(src)
+	if((istype(O,/obj/structure/pallet) || istype(O,/obj/structure/closet)) && cargo.len < max_stored_cargo)
+		//user.drop_inv_item_to_loc(O, src)
+		cargo += O
+		//O.forceMove(src)
+		//PC.loaded.forceMove(src)
 		to_chat(user, SPAN_NOTICE("You load \the [O] on \the [src]."))
 		playsound(loc, 'sound/machines/hydraulics_2.ogg',40,1)
 		update_icon()
 
 /obj/vehicle/multitile/proc/remove_cargo(obj/item/O, mob/user)
-	if(!contents.len)
+	if(!cargo.len)
 		to_chat(user, SPAN_WARNING("[src] is empty."))
 		return
 
-	var/obj/stored_obj = contents[contents.len]
-	contents -= stored_obj
+	var/obj/stored_obj = cargo[cargo.len]
+	cargo -= stored_obj
 	user.put_in_hands(stored_obj)
 	to_chat(user, SPAN_NOTICE("You grab a [stored_obj] from [src]."))
 	playsound(src, "gun_rustle", 25, TRUE)

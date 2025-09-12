@@ -41,7 +41,7 @@
 	desc = "A rather new hunk of metal with some locomotion, you know what to do. Entrance on the sides."
 	icon_state = "miltruck_2"
 	flatbed	= TRUE
-	max_stored = 2
+	max_stored_cargo = 2
 
 /obj/vehicle/multitile/miltruck/miltruck_3
 	name = "military covered truck"

@@ -6,6 +6,7 @@
 	icon_state = "concertina_wire"
 	w_class = SIZE_SMALL
 	max_amount = 50
+	stack_id = "concertina wire"
 	var/deployconcertina = /obj/structure/device/razorwire
 
 
@@ -137,6 +138,7 @@
 	icon_state = "frag_wire"
 	w_class = SIZE_SMALL
 	max_amount = 25
+	stack_id = "fragwire"
 	var/deployfragconcertina = /obj/item/explosive/fragwire
 
 

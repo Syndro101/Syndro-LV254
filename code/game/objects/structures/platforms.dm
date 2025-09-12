@@ -115,7 +115,7 @@
 		to_chat(user, SPAN_WARNING("Its already destroyed!"))
 		return XENO_NO_DELAY_ACTION
 
-	if(stat & explo_proof)
+	if(explo_proof)
 		to_chat(user, SPAN_WARNING("Its too strong for us!"))
 		return XENO_NO_DELAY_ACTION
 
@@ -205,10 +205,33 @@
 	creaking_sound = 'sound/effects/metal_creaking.ogg'
 	breaking_sound = 'sound/effects/metalhit.ogg'
 
+/obj/structure/platform/metal/ship/stair
+	icon_state = "ship_platform_stair"
+	creaking_sound = 'sound/effects/metal_creaking.ogg'
+	breaking_sound = 'sound/effects/metalhit.ogg'
+
+/obj/structure/platform/metal/ship/stair_alt
+	icon_state = "ship_platform_stair_alt"
+	creaking_sound = 'sound/effects/metal_creaking.ogg'
+	breaking_sound = 'sound/effects/metalhit.ogg'
+
 /obj/structure/platform/stone
 	icon_state = "kutjevo_rock"
 	creaking_sound = 'sound/effects/rock_creaking.ogg'
 	breaking_sound = 'sound/effects/meteorimpact.ogg'
+
+/obj/structure/platform/metal/almayer_smooth
+	icon_state = "platform_sm"
+	explo_proof = TRUE
+
+/obj/structure/platform/metal/almayer_smooth/north
+	dir = NORTH
+
+/obj/structure/platform/metal/almayer_smooth/east
+	dir = EAST
+
+/obj/structure/platform/metal/almayer_smooth/west
+	dir = WEST
 
 //------------------------------//
 //    Metal Stairs Platforms    //
@@ -241,6 +264,14 @@
 
 /obj/structure/platform/metal/stair_cut/shiva_right
 	icon_state = "shiva_stair_alt"
+
+/obj/structure/platform/metal/stair_cut/almayer_smooth_left
+	icon_state = "platform_sm_stair"
+	explo_proof = TRUE
+
+/obj/structure/platform/metal/stair_cut/almayer_smooth_right
+	icon_state = "platform_sm_stair_alt"
+	explo_proof = TRUE
 
 //------------------------------//
 //    Stone Stairs Platforms    //
@@ -294,6 +325,8 @@
 	dir = EAST
 /obj/structure/platform/metal/almayer/west
 	dir = WEST
+
+
 
 //ship pattern
 
@@ -455,6 +488,30 @@
 /obj/structure/platform_decoration/metal/almayer/southwest
 	dir = SOUTHWEST
 
+/obj/structure/platform_decoration/metal/almayer_smooth
+	icon_state = "platform_sm_deco"
+	explo_proof = TRUE
+
+/obj/structure/platform_decoration/metal/almayer_smooth/north
+	dir = NORTH
+
+/obj/structure/platform_decoration/metal/almayer_smooth/east
+	dir = EAST
+
+/obj/structure/platform_decoration/metal/almayer_smooth/west
+	dir = WEST
+
+/obj/structure/platform_decoration/metal/almayer_smooth/northeast
+	dir = NORTHEAST
+
+/obj/structure/platform_decoration/metal/almayer_smooth/northwest
+	dir = NORTHWEST
+
+/obj/structure/platform_decoration/metal/almayer_smooth/southeast
+	dir = SOUTHEAST
+
+/obj/structure/platform_decoration/metal/almayer_smooth/southwest
+	dir = SOUTHWEST
 
 /obj/structure/platform_decoration/metal/kutjevo
 	name = "raised metal corner"
@@ -506,6 +563,31 @@
 	dir = EAST
 /obj/structure/platform_decoration/metal/strata/west
 	dir = WEST
+
+// Simple metal post
+
+/obj/structure/platform_decoration/metal/post
+	name = "metal post"
+	desc = "A simple metal post."
+	icon_state = "post_deco"
+
+/obj/structure/platform_decoration/metal/post/north
+	dir = NORTH
+/obj/structure/platform_decoration/metal/post/east
+	dir = EAST
+/obj/structure/platform_decoration/metal/post/west
+	dir = WEST
+
+/obj/structure/platform_decoration/metal/post_small
+	name = "metal post"
+	desc = "A simple metal post."
+	icon_state = "post_small_deco"
+
+/obj/structure/platform_decoration/metal/post_small/north
+	dir = NORTH
+/obj/structure/platform_decoration/metal/post_small/east
+	dir = EAST
+/obj/structure/platform_decoration/metal/post_small/west
 
 //------------------------------------//
 // Rock based Platforms "decoration"  //

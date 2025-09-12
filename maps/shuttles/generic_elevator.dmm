@@ -1,28 +1,156 @@
-"a" = (/obj/structure/machinery/door/poddoor/almayer/locked{dir = 4; id = "east"},/turf/open/floor/almayer/no_build/test_floor4,/area/shuttle/generic_shuttle/elevator)
-"c" = (/turf/closed/shuttle/elevator/gears,/area/shuttle/generic_shuttle/elevator)
-"d" = (/obj/docking_port/mobile/generic_elevator,/turf/closed/shuttle/elevator{dir = 10},/area/shuttle/generic_shuttle/elevator)
-"m" = (/obj/structure/machinery/computer/shuttle/generic_elevator_controller,/turf/closed/shuttle/elevator/button/freight,/area/shuttle/generic_shuttle/elevator)
-"p" = (/obj/structure/sign/safety/elevator{pixel_y = -4},/turf/closed/shuttle/elevator{dir = 8},/area/shuttle/generic_shuttle/elevator)
-"s" = (/turf/open/floor/almayer/no_build/plating,/area/shuttle/generic_shuttle/elevator)
-"w" = (/obj/effect/decal/cleanable/blood,/turf/open/shuttle/escapepod/floor1/north,/area/shuttle/generic_shuttle/elevator)
-"x" = (/obj/effect/decal/warning_stripes{icon_state = "W"; dir = 1},/obj/effect/decal/cleanable/blood/drip,/turf/open/shuttle/escapepod,/area/shuttle/generic_shuttle/elevator)
-"y" = (/turf/closed/shuttle/elevator/freight,/area/shuttle/generic_shuttle/elevator)
-"E" = (/turf/closed/shuttle/elevator{dir = 4},/area/shuttle/generic_shuttle/elevator)
-"F" = (/obj/effect/decal/warning_stripes{icon_state = "W"; dir = 1},/turf/open/shuttle/escapepod,/area/shuttle/generic_shuttle/elevator)
-"G" = (/obj/structure/machinery/power/apc/almayer/hardened/north,/turf/open/shuttle/escapepod/floor1/north,/area/shuttle/generic_shuttle/elevator)
-"I" = (/obj/structure/machinery/door/poddoor/almayer/locked{dir = 4; id = "west"},/turf/open/floor/almayer/no_build/test_floor4,/area/shuttle/generic_shuttle/elevator)
-"K" = (/turf/closed/shuttle/elevator{dir = 5},/area/shuttle/generic_shuttle/elevator)
-"Q" = (/turf/closed/shuttle/elevator{dir = 9},/area/shuttle/generic_shuttle/elevator)
-"S" = (/turf/open/shuttle/escapepod/floor1/north,/area/shuttle/generic_shuttle/elevator)
-"V" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/almayer/no_build/plating,/area/shuttle/generic_shuttle/elevator)
-"X" = (/turf/closed/shuttle/elevator{dir = 6},/area/shuttle/generic_shuttle/elevator)
-"Y" = (/obj/effect/decal/warning_stripes{icon_state = "E"; dir = 1},/turf/open/shuttle/escapepod/north,/area/shuttle/generic_shuttle/elevator)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/machinery/door/poddoor/almayer/locked{
+	dir = 4;
+	id = "east"
+	},
+/turf/open/floor/almayer/no_build/test_floor4,
+/area/shuttle/generic_shuttle/elevator)
+"c" = (
+/turf/closed/shuttle/elevator/gears,
+/area/shuttle/generic_shuttle/elevator)
+"d" = (
+/obj/docking_port/mobile/generic_elevator,
+/turf/closed/shuttle/elevator{
+	dir = 10
+	},
+/area/shuttle/generic_shuttle/elevator)
+"m" = (
+/obj/structure/machinery/computer/shuttle/generic_elevator_controller,
+/turf/closed/shuttle/elevator/button/freight,
+/area/shuttle/generic_shuttle/elevator)
+"p" = (
+/obj/structure/sign/safety/elevator{
+	pixel_y = -4
+	},
+/turf/closed/shuttle/elevator{
+	dir = 8
+	},
+/area/shuttle/generic_shuttle/elevator)
+"s" = (
+/turf/open/floor/almayer/no_build/plating,
+/area/shuttle/generic_shuttle/elevator)
+"w" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/shuttle/escapepod/floor1/north,
+/area/shuttle/generic_shuttle/elevator)
+"x" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/shuttle/escapepod,
+/area/shuttle/generic_shuttle/elevator)
+"y" = (
+/turf/closed/shuttle/elevator/freight,
+/area/shuttle/generic_shuttle/elevator)
+"E" = (
+/turf/closed/shuttle/elevator{
+	dir = 4
+	},
+/area/shuttle/generic_shuttle/elevator)
+"F" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W";
+	dir = 1
+	},
+/turf/open/shuttle/escapepod,
+/area/shuttle/generic_shuttle/elevator)
+"G" = (
+/obj/structure/machinery/power/apc/almayer/hardened/north,
+/turf/open/shuttle/escapepod/floor1/north,
+/area/shuttle/generic_shuttle/elevator)
+"I" = (
+/obj/structure/machinery/door/poddoor/almayer/locked{
+	dir = 4;
+	id = "west"
+	},
+/turf/open/floor/almayer/no_build/test_floor4,
+/area/shuttle/generic_shuttle/elevator)
+"K" = (
+/turf/closed/shuttle/elevator{
+	dir = 5
+	},
+/area/shuttle/generic_shuttle/elevator)
+"Q" = (
+/turf/closed/shuttle/elevator{
+	dir = 9
+	},
+/area/shuttle/generic_shuttle/elevator)
+"S" = (
+/turf/open/shuttle/escapepod/floor1/north,
+/area/shuttle/generic_shuttle/elevator)
+"V" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/almayer/no_build/plating,
+/area/shuttle/generic_shuttle/elevator)
+"X" = (
+/turf/closed/shuttle/elevator{
+	dir = 6
+	},
+/area/shuttle/generic_shuttle/elevator)
+"Y" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	dir = 1
+	},
+/turf/open/shuttle/escapepod/north,
+/area/shuttle/generic_shuttle/elevator)
 
 (1,1,1) = {"
-QcmypcK
-IFsGsYa
-IxswsYa
-IFsSsYa
-IFVSsYa
-dcEEEcX
+Q
+I
+I
+I
+I
+d
+"}
+(2,1,1) = {"
+c
+F
+x
+F
+F
+c
+"}
+(3,1,1) = {"
+m
+s
+s
+s
+V
+E
+"}
+(4,1,1) = {"
+y
+G
+w
+S
+S
+E
+"}
+(5,1,1) = {"
+p
+s
+s
+s
+s
+E
+"}
+(6,1,1) = {"
+c
+Y
+Y
+Y
+Y
+c
+"}
+(7,1,1) = {"
+K
+a
+a
+a
+a
+X
 "}

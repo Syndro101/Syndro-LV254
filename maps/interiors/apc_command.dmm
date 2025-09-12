@@ -275,6 +275,12 @@
 	},
 /turf/open/shuttle/vehicle/floor_1_12,
 /area/interior/vehicle/apc/command)
+"H" = (
+/obj/structure/bed/chair/wheelchair/officechair{
+	dir = 1
+	},
+/turf/open/shuttle/vehicle/floor_1_5,
+/area/interior/vehicle/apc/command)
 "I" = (
 /obj/structure/bed/chair/vehicle{
 	dir = 1;
@@ -411,12 +417,6 @@
 /obj/effect/landmark/interior/spawn/weapons_loader,
 /turf/open/shuttle/vehicle/floor_3_6,
 /area/interior/vehicle/apc/command)
-"Z" = (
-/obj/structure/bed/chair/wheelchair/officechair{
-	dir = 1
-	},
-/turf/open/shuttle/vehicle/floor_1_5,
-/area/interior/vehicle/apc/command)
 
 (1,1,1) = {"
 p
@@ -440,7 +440,7 @@ k
 O
 D
 w
-Z
+H
 c
 h
 k

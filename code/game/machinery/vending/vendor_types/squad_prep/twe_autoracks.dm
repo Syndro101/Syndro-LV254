@@ -5,6 +5,8 @@
 
 /obj/structure/machinery/auto_rack/twe
 	budget_card = /obj/item/reqcard/twe
+	req_access = list()
+	req_one_access = list(ACCESS_TWE_ARMORY, ACCESS_TWE_COMMANDO, ACCESS_TWE_LEADERSHIP)
 
 //SA80
 

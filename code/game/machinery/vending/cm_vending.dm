@@ -1485,6 +1485,11 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 	icon = 'icons/obj/structures/machinery/vending.dmi'
 	icon_state = "C-TEST"
 	density = TRUE
+
+	req_access = list()
+	req_one_access = list()
+
+	var/locked = FALSE
 	var/stocked_weapon
 	var/restock_type
 	var/budget_card = /obj/item/reqcard
@@ -1492,7 +1497,7 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 	var/initial_stored = 0
 	var/max_restocks = 5
 	var/remaining_restocks = 5
-	var/restocking = FALSE
+	var/working = FALSE
 	var/damage = 500 //Industrial machine should tear your arm off... its gonna fucking hurt
 	var/penetration = 5000 // heavy machinery does not care about your body armor because fuck you thats why
 	var/target_limbs = list(
@@ -1503,6 +1508,7 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 /obj/structure/machinery/auto_rack/Initialize()
 	. = ..()
 	remaining_restocks = max_restocks
+
 	if(!stocked_weapon)
 		icon_state = "C-TEST"
 		return
@@ -1512,31 +1518,52 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 		while(i < initial_stored)
 			contents += new restock_type(src)
 			i++
+		if(locked)
+		locked = FALSE
+		INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,locking_animation_proc))
+
 	update_icon()
 
 /obj/structure/machinery/auto_rack/attackby(obj/item/O, mob/user)
-	if(!restocking == TRUE)
-		if(istype(O, stocked_weapon) && contents.len < max_stored)
+
+	if(!working == TRUE && istype(O, /obj/item/card/id))
+		if(allowed(user))
+			INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,locking_animation_proc))
+			locked = !locked
+			for(var/mob/mob in viewers(user, 3))
+				if((mob.client && !( mob.blinded )))
+					to_chat(mob, SPAN_NOTICE("The rack has been [locked ? null : "un"]locked by [user]."))
+					return
+	else
+		if(locked)
+			playsound(loc, 'sound/machines/chime.ogg', 25)
+			return
+		else if(istype(O, stocked_weapon) && contents.len < max_stored)
 			user.drop_inv_item_to_loc(O, src)
 			contents += O
 			update_icon()
-		if(istype(O, budget_card))
+			return
+		else if(istype(O, budget_card))
 			remaining_restocks = (max_restocks)
 			playsound(loc, 'sound/machines/chime.ogg', 25)
 			to_chat(user, SPAN_NOTICE("Additional supply budget has been authorized for this supply unit."))
+			return
 
 /obj/structure/machinery/auto_rack/attack_hand(mob/living/user)
-	if(!restocking == TRUE)
+	if(!working == TRUE && !locked)
 		if(!contents.len)
 			if(!remaining_restocks < 1)
 				to_chat(user, SPAN_WARNING("[src] begins to restock. Stand Clear!"))
-				INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,animation_proc))
+				INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,restock_animation_proc))
 				remaining_restocks = (remaining_restocks - 1)
 				return
 			if(remaining_restocks == 0)
 				to_chat(user, SPAN_WARNING("[src] requires supply budget re-allocation. Contact your Supply officer to reset!"))
 				return
-	if(restocking == TRUE)
+	else if(!working == TRUE && locked)
+		return
+
+	else if(working == TRUE)
 		if(prob(60))
 			user.visible_message(SPAN_NOTICE("[user]begins panicking as their arm becomes entangled in the moving parts of the [src], and pulls them in!"), \
 			SPAN_WARNING("Your arm becomes entangled in the moving parts of the [src]."))
@@ -1551,8 +1578,8 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 			playsound(loc, 'sound/effects/bone_break1.ogg', 100, 1)
 			playsound(loc, 'sound/effects/rip1.ogg', 25)
 			playsound(loc, 'sound/effects/splat.ogg', 25)
-			user.visible_message(SPAN_BOLDWARNING("[user]'s arm is torn off mercilessly by the [src] as their body is pulled in!"), \
-			SPAN_BOLDWARNING("Your arm is mercilessly torn off by the [src]. PLEASE GOD MAKE IT STOP!"))
+			user.visible_message(SPAN_BOLDWARNING("[user]'s mangled mercilessly by the [src] as their body is pulled in!"), \
+			SPAN_BOLDWARNING("Your body is mercilessly torn into and crushed by the [src]. PLEASE GOD MAKE IT STOP!"))
 			msg_admin_attack("[key_name(user)] suffered a traumatic industrial accident in [get_area(user)] ([user.loc.x],[user.loc.y],[user.loc.z]).", user.loc.x, user.loc.y, user.loc.z)
 
 	var/obj/stored_obj = contents[contents.len]
@@ -1567,8 +1594,8 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 		contents += new restock_type(src)
 	update_icon()
 
-/obj/structure/machinery/auto_rack/proc/animation_proc()
-	restocking = TRUE
+/obj/structure/machinery/auto_rack/proc/restock_animation_proc()
+	working = TRUE
 	icon_state = "[initial(icon_state)]_0"
 	overlays.Cut()
 	overlays += image(icon,icon_state)
@@ -1581,8 +1608,31 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 	restock()
 	overlays.Cut()
 	overlays += image(icon,icon_state)
-	restocking = FALSE
+	working = FALSE
 	to_chat("Restock complete.")
+
+/obj/structure/machinery/auto_rack/proc/locking_animation_proc()
+	working = TRUE
+	if(!locked)
+		overlays.Cut(overlays.len)
+		overlays += image(icon,"auto_rack_closing")
+		playsound(src, "sound/machines/weapon_rack_close.mp3", 25)
+		sleep(10)
+		overlays.Cut(overlays.len)
+		overlays += image(icon,icon_state)
+		working = FALSE
+		overlays += image(icon,"auto_rack_locked")
+		locked = TRUE
+		return
+	if(locked)
+		overlays.Cut(overlays.len)
+		overlays += image(icon,"auto_rack_opening")
+		playsound(src, "sound/machines/weapon_rack_open.mp3", 25)
+		sleep(10)
+		overlays += image(icon,icon_state)
+		working = FALSE
+		locked = FALSE
+		return
 
 /obj/structure/machinery/auto_rack/update_icon()
 	if(contents.len)

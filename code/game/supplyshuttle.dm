@@ -1330,72 +1330,11 @@ GLOBAL_DATUM_INIT(supply_controller, /datum/controller/supply, new())
 /obj/structure/machinery/computer/supply/asrs/vehicle
 	name = "vehicle ASRS console"
 	desc = "A console for an Automated Storage and Retrieval System. This one is tied to a deep storage unit for vehicles."
-	req_access = list(ACCESS_MARINE_CREWMAN)
+	req_one_access = list(ACCESS_MARINE_CREWMAN,ACCESS_MARINE_COMMAND,ACCESS_MARINE_ENGINEERING,ACCESS_MARINE_CARGO)
 	circuit = /obj/item/circuitboard/computer/supplycomp/vehicle
-	// Can only retrieve one vehicle per round
-	var/spent = FALSE
-	var/tank_unlocked = TRUE
-	var/list/allowed_roles = list(JOB_TANK_CREW)
-
-	var/list/vehicles
-
-/datum/vehicle_order
-	var/name = "vehicle order"
-
-	var/obj/vehicle/ordered_vehicle
-	var/unlocked = TRUE
-	var/failure_message = "<font color=\"red\"><b>Not enough resources were allocated to repair this vehicle during this operation.</b></font><br>"
-
-/datum/vehicle_order/proc/has_vehicle_lock()
-	return FALSE
-
-/datum/vehicle_order/proc/on_created(obj/vehicle/V)
-	return
-
-/datum/vehicle_order/tank
-	name = "M34A2 Longstreet Light Tank"
-	ordered_vehicle = /obj/effect/vehicle_spawner/tank/decrepit
-
-/datum/vehicle_order/tank/has_vehicle_lock()
-	return
-
-/datum/vehicle_order/tank/broken
-	name = "Smashed M34A2 Longstreet Light Tank"
-	ordered_vehicle = /obj/effect/vehicle_spawner/tank/hull/broken
-
-/datum/vehicle_order/tank/plain
-	name = "M34A2 Longstreet Light Tank"
-	ordered_vehicle = /obj/effect/vehicle_spawner/tank
-
-/datum/vehicle_order/apc
-	name = "M577 Armored Personnel Carrier"
-	ordered_vehicle = /obj/effect/vehicle_spawner/apc/decrepit
-
-/datum/vehicle_order/apc/med
-	name = "M577-MED Armored Personnel Carrier"
-	ordered_vehicle = /obj/effect/vehicle_spawner/apc_med/decrepit
-
-/datum/vehicle_order/apc/cmd
-	name = "M577-CMD Armored Personnel Carrier"
-	ordered_vehicle = /obj/effect/vehicle_spawner/apc_cmd/decrepit
-
-/datum/vehicle_order/apc/empty
-	name = "Barebones M577 Armored Personal Carrier"
-	ordered_vehicle = /obj/effect/vehicle_spawner/apc/unarmed/broken
-
-/datum/vehicle_order/arc
-	name = "M540-B Armored Recon Carrier"
-	ordered_vehicle = /obj/effect/vehicle_spawner/arc
-
-/datum/vehicle_order/arc/has_vehicle_lock()
-	return
 
 /obj/structure/machinery/computer/supply/asrs/vehicle/Initialize()
 	. = ..()
-
-	vehicles = list(
-		new /datum/vehicle_order/tank/plain
-	)
 
 	if(!GLOB.VehicleElevatorConsole)
 		GLOB.VehicleElevatorConsole = src
@@ -1404,113 +1343,54 @@ GLOBAL_DATUM_INIT(supply_controller, /datum/controller/supply, new())
 	GLOB.VehicleElevatorConsole = null
 	return ..()
 
-/obj/structure/machinery/computer/supply/asrs/vehicle/attack_hand(mob/living/carbon/human/H as mob)
+/obj/structure/machinery/computer/supply/asrs/vehicle/attack_hand(mob/user)
 	if(inoperable())
 		return
-
-	if(LAZYLEN(allowed_roles) && !allowed_roles.Find(H.job)) //replaced Z-level restriction with role restriction.
-		to_chat(H, SPAN_WARNING("This console isn't for you."))
+	if(!allowed(user))
+		to_chat(user, SPAN_DANGER("Access Denied."))
 		return
+	tgui_interact(user)
 
-	if(!allowed(H))
-		to_chat(H, SPAN_DANGER("Access Denied."))
-		return
+/obj/structure/machinery/computer/supply/asrs/vehicle/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "VehicleASRS", "Vehicle Elevator Control")
+		ui.open()
 
-	H.set_interaction(src)
-	post_signal("supply_vehicle")
+/obj/structure/machinery/computer/supply/asrs/vehicle/ui_state(mob/user)
+	return GLOB.not_incapacitated_and_adjacent_strict_state
 
-	var/dat = ""
+/obj/structure/machinery/computer/supply/asrs/vehicle/ui_data(mob/user)
+	var/list/data = list()
+
 	var/turf/upper_turf = get_turf(SSshuttle.getDock("almayer vehicle"))
+	data["has_elevator"] = !!SSshuttle.vehicle_elevator
 
-	if(!SSshuttle.vehicle_elevator)
-		return
-
-	dat += "Platform position: "
-	if (SSshuttle.vehicle_elevator.mode != SHUTTLE_IDLE)
-		dat += "Moving"
-	else
-		if(SSshuttle.vehicle_elevator.z == upper_turf.z)
-			dat += "Raised"
-			if(!spent)
-				dat += "<br>\[<a href='byond://?src=\ref[src];lower_elevator=1'>Lower</a>\]"
+	if(SSshuttle.vehicle_elevator)
+		if(SSshuttle.vehicle_elevator.mode != SHUTTLE_IDLE)
+			data["status"] = "Moving"
+		else if(SSshuttle.vehicle_elevator.z == upper_turf.z)
+			data["status"] = "Raised"
 		else
-			dat += "Lowered"
-	dat += "<br><hr>"
-
-	if(spent)
-		dat += "No vehicles are available for retrieval."
+			data["status"] = "Lowered"
 	else
-		dat += "Available vehicles:<br>"
+		data["status"] = "Unavailable"
 
-		for(var/d in vehicles)
-			var/datum/vehicle_order/VO = d
+	return data
 
-			if(VO.has_vehicle_lock())
-				dat += VO.failure_message
-			else
-				dat += "<a href='byond://?src=\ref[src];get_vehicle=\ref[VO]'>[VO.name]</a><br>"
-
-	show_browser(H, dat, asrs_name, "computer", width = 575, height = 450)
-
-/obj/structure/machinery/computer/supply/asrs/vehicle/Topic(href, href_list)
-	. = ..()
+/obj/structure/machinery/computer/supply/asrs/vehicle/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	if(..())
+		return
 
 	var/turf/upper_turf = get_turf(SSshuttle.getDock("almayer vehicle"))
 	var/turf/lower_turf = get_turf(SSshuttle.getDock("adminlevel vehicle"))
 
-	if(.)
-		return
+	switch(action)
+		if("raise")
+			if(SSshuttle.vehicle_elevator && SSshuttle.vehicle_elevator.mode == SHUTTLE_IDLE && SSshuttle.vehicle_elevator.z != upper_turf.z)
+				SSshuttle.vehicle_elevator.request(SSshuttle.getDock("almayer vehicle"))
+		if("lower")
+			if(SSshuttle.vehicle_elevator && SSshuttle.vehicle_elevator.mode == SHUTTLE_IDLE && SSshuttle.vehicle_elevator.z != lower_turf.z)
+				SSshuttle.vehicle_elevator.request(SSshuttle.getDock("adminlevel vehicle"))
 
-	if(!is_mainship_level(z))
-		return
-
-	if(spent)
-		return
-
-	if(!linked_supply_controller)
-		world.log << "## ERROR: Eek. The linked_supply_controller controller datum is missing somehow."
-		return
-
-	if (!SSshuttle.vehicle_elevator)
-		world.log << "## ERROR: Eek. The supply/elevator datum is missing somehow."
-		return
-
-	if(isturf(loc) && ( in_range(src, usr) || isSilicon(usr) ) )
-		usr.set_interaction(src)
-
-	if(href_list["get_vehicle"])
-		if((SSshuttle.vehicle_elevator.z == upper_turf.z) || SSshuttle.vehicle_elevator.mode != SHUTTLE_IDLE)
-			to_chat(usr, SPAN_WARNING("The elevator needs to be in the cargo bay dock to call a vehicle up!"))
-			return
-
-		var/turf/middle_turf = get_turf(SSshuttle.vehicle_elevator)
-
-		var/obj/vehicle/multitile/ordered_vehicle
-
-		var/datum/vehicle_order/VO = locate(href_list["get_vehicle"])
-		if(!(VO in vehicles))
-			return
-
-		if(VO?.has_vehicle_lock())
-			return
-
-		spent = TRUE
-		ordered_vehicle = new VO.ordered_vehicle(middle_turf)
-		SSshuttle.vehicle_elevator.request(SSshuttle.getDock("almayer vehicle"))
-
-		VO.on_created(ordered_vehicle)
-
-		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_VEHICLE_ORDERED, ordered_vehicle)
-
-	else if(href_list["lower_elevator"])
-		if(!is_mainship_level(SSshuttle.vehicle_elevator.z))
-			return
-
-		if(SSshuttle.vehicle_elevator.z == lower_turf.z)
-			to_chat(usr, SPAN_WARNING("The elevator is already lowered!"))
-			return
-
-		SSshuttle.vehicle_elevator.request(SSshuttle.getDock("adminlevel vehicle"))
-
-	add_fingerprint(usr)
-	updateUsrDialog()
+	return TRUE

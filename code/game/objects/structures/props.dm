@@ -1214,3 +1214,19 @@
 	desc = "A grizzly display of capital punishment. Staring at it makes you uncomfortable."
 	icon = 'icons/obj/structures/props/gallows.dmi'
 	icon_state = "head_stakes"
+
+// Church stuff
+
+/obj/structure/prop/church/mary
+	name = "Statue of Mary"
+	desc = "A polished stone statue of Mary, mother of Jesus, a central figure in Christianity, revered for her role in the Incarnation and celebrated for her humility and obedience to God."
+	icon = 'icons/obj/structures/props/32x48.dmi'
+	icon_state = "mary"
+	density = TRUE
+
+/obj/structure/prop/church/jesus
+	name = "Statue of Jesus"
+	desc = "A polished stone statue of Jesus nailed to a cross, you look upon it solemnly."
+	icon = 'icons/obj/structures/props/32x48.dmi'
+	icon_state = "cross"
+	density = TRUE

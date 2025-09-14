@@ -161,7 +161,8 @@
 
 // containment lights
 /obj/structure/machinery/light/containment
-	name = "containment light fixture"
+	name = "reinforced light fixture"
+	desc = "A reinforced light fixture with a thicker casing to prevent damage. Looking at it for too long makes your eyes go watery"
 	unslashable = TRUE
 	unacidable = TRUE
 
@@ -177,7 +178,12 @@
 /obj/structure/machinery/light/red
 	icon_state = "rtube1"
 	base_state = "rtube"
-	desc = "A lighting fixture that is fitted with a bright blue fluorescent light tube. Looking at it for too long makes your eyes go watery."
+	desc = "A lighting fixture that is fitted with a bright red fluorescent light tube. Looking at it for too long makes your eyes go watery."
+	light_color = LIGHT_COLOR_RED
+
+/obj/structure/machinery/light/orange
+	desc = "A lighting fixture that is fitted with a soft orange fluorescent light tube. Somewhat soothing to look at."
+	light_color = LIGHT_COLOR_LAVA
 
 // the smaller bulb light fixture
 
@@ -187,16 +193,21 @@
 	fitting = "bulb"
 	brightness = 4
 	desc = "A small lighting fixture that is fitted with a bright fluorescent light bulb. Looking at it for too long makes your eyes go watery."
+	idle_power_usage = 1
+	active_power_usage = 10
 	light_type = /obj/item/light_bulb/bulb
 
 /obj/structure/machinery/light/small/blue
 	icon_state = "bbulb1"
 	base_state = "bbulb"
-	fitting = "bulb"
-	brightness = 4
 	desc = "A small lighting fixture that is fitted with a bright blue fluorescent light bulb. Looking at it for too long makes your eyes go watery."
-	light_type = /obj/item/light_bulb/bulb
 	light_color = LIGHT_COLOR_XENON
+
+/obj/structure/machinery/light/small/red
+	icon_state = "rbulb1"
+	base_state = "rbulb"
+	desc = "A small lighting fixture that is fitted with a bright red fluorescent light bulb. Looking at it for too long makes your eyes go watery."
+	light_color = LIGHT_COLOR_RED
 
 /obj/structure/machinery/light/double
 	icon_state = "ptube1"
@@ -218,15 +229,37 @@
 	light_type = /obj/item/light_bulb/tube/large
 	brightness = 12
 
+/obj/structure/machinery/light/spot/containment
+	name = "reinforced spotlight"
+	desc = "A reinforced spotlight with a thicker casing to prevent damage. You want to sneeze just looking at it."
+	unslashable = TRUE
+	unacidable = TRUE
+
 /obj/structure/machinery/light/spot/blue
 	name = "spotlight"
 	icon_state = "bslight1"
 	base_state = "bslight"
 	desc = "A wide light fixture fitted with a large, blue, very bright fluorescent light tube. You want to sneeze just looking at it."
-	fitting = "large tube"
-	light_type = /obj/item/light_bulb/tube/large/
-	brightness = 12
 	light_color = LIGHT_COLOR_XENON
+
+/obj/structure/machinery/light/spot/blue/containment
+	name = "reinforced spotlight"
+	desc = "A reinforced spotlight with a thicker casing to prevent damage. You want to sneeze just looking at it, this version is fitted with a blue bulb."
+	unslashable = TRUE
+	unacidable = TRUE
+
+/obj/structure/machinery/light/spot/red
+	name = "spotlight"
+	icon_state = "rslight1"
+	base_state = "rslight"
+	desc = "A wide light fixture fitted with a large, red, very bright fluorescent light tube. You want to sneeze just looking at it."
+	light_color = LIGHT_COLOR_RED
+
+/obj/structure/machinery/light/spot/red/containment
+	name = "reinforced spotlight"
+	desc = "A reinforced spotlight with a thicker casing to prevent damage. You want to sneeze just looking at it, this version is fitted with a red bulb."
+	unslashable = TRUE
+	unacidable = TRUE
 
 // Dropship lights that use no power
 /obj/structure/machinery/light/dropship

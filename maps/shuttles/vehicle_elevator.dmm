@@ -15,6 +15,11 @@
 /obj/effect/decal/warning_stripes{
 	icon_state = "SW-out"
 	},
+/obj/structure/machinery/computer/supply/asrs/vehicle{
+	pixel_y = 16;
+	density = 0;
+	can_block_movement = 0
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/shuttle/vehicle_elevator)
 "d" = (
@@ -54,6 +59,28 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/shuttle/vehicle_elevator)
+"k" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "S"
+	},
+/obj/structure/machinery/door_control{
+	pixel_x = -8;
+	id = "BG Vehicle Under";
+	req_one_access = list(19,21,27);
+	name = "\improper Lower Railing Control";
+	pixel_y = 22;
+	req_access = list()
+	},
+/obj/structure/machinery/door_control/railings{
+	id = "BG Vehicle Railing";
+	pixel_x = 8;
+	req_one_access = list(19,21,27);
+	pixel_y = 22;
+	name = "\improper Upper Railing Control";
+	req_access = list()
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/shuttle/vehicle_elevator)
 
 (1,1,1) = {"
 a
@@ -70,7 +97,7 @@ e
 i
 "}
 (3,1,1) = {"
-b
+k
 e
 g
 e

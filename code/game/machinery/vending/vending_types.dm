@@ -464,12 +464,28 @@
 		/obj/item/explosive/plastic/breaching_charge/rubber = 6,
 	)
 
+/obj/structure/machinery/vending/security/prison
+	name = "\improper PrisonTech"
+	desc = "A prisoner equipment vendor."
+	product_ads = "Rot in jail, idiot.;You'd look good in orange.;Shank you very much!;Don't drop the soap!"
+	product_slogans = "Rot in jail, idiot.;You'd look good in orange.;Shank you very much!;Don't drop the soap!"
+	req_access = list(ACCESS_MARINE_BRIG)
+	products = list(
+		/obj/item/restraint/handcuffs = 20,
+		/obj/item/restraint/legcuffs = 20,
+		/obj/item/device/radio/headset = 20,
+		/obj/item/clothing/shoes/orange = 20,
+		/obj/item/clothing/under/color/orange = 20,
+		/obj/item/clothing/suit/straight_jacket = 5,
+		/obj/item/clothing/mask/muzzle = 5,
+		/obj/item/clothing/glasses/sunglasses/blindfold = 5,
+	)
+	contraband = list(/obj/item/shard = 5,)
+
 /obj/structure/machinery/vending/sea
 	name = "\improper SEATech"
 	desc = "An equipment vendor designed to save lives."
 	product_ads = "Semper Fi!;First to Fight!;Ooh Rah.;Leathernecks!;The Few. The Proud.;Esprit de Corps;Jarhead.;Devil Dogs."
-	icon_state = "sec"
-	icon_deny = "sec-deny"
 	hacking_safety = TRUE
 	wrenchable = FALSE
 	req_access = list(ACCESS_MARINE_SEA)

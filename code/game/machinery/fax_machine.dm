@@ -4,38 +4,51 @@
 
 GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 
-#define FAX_DEPARTMENT_WY_HC "Weyland-Yutani Directorate"
-#define FAX_DEPARTMENT_HC "USCM High Command"
+// Factional departments
+#define FAX_DEPARTMENT_CLF "Colonial Liberation Front"
 #define FAX_DEPARTMENT_CMB "CMB Incident Command Center, Local Operations"
-#define FAX_DEPARTMENT_PROVOST "USCM Provost Office"
+#define FAX_DEPARTMENT_HC "USCM High Command"
 #define FAX_DEPARTMENT_PRESS "Various Press Organizations"
+#define FAX_DEPARTMENT_PROVOST "USCM Provost Office"
 #define FAX_DEPARTMENT_TWE "Three World Empire"
 #define FAX_DEPARTMENT_UPP "Union of Progress Peoples"
-#define FAX_DEPARTMENT_CLF "Colonial Liberation Front"
+#define FAX_DEPARTMENT_WY_HC "Weyland-Yutani Directorate"
 #define FAX_DEPARTMENT_SPECIFIC_CODE "Specific Machine Code"//Used to send to a single specific machine.
 #define FAX_HIGHCOM_DEPARTMENTS list(FAX_DEPARTMENT_WY_HC, FAX_DEPARTMENT_HC, FAX_DEPARTMENT_CMB, FAX_DEPARTMENT_PROVOST, FAX_DEPARTMENT_PRESS, FAX_DEPARTMENT_TWE, FAX_DEPARTMENT_UPP, FAX_DEPARTMENT_CLF)
 
+// Almayer departments
 #define FAX_DEPARTMENT_ALMAYER "USS Almayer"
-#define FAX_DEPARTMENT_ALMAYER_COMMAND "USS Almayer Command"
-#define FAX_DEPARTMENT_ALMAYER_BRIG "USS Almayer Brig"
 #define FAX_DEPARTMENT_ALMAYER_AICORE "USS Almayer AI Core"
-#define FAX_DEPARTMENT_GENERAL_PUBLIC "General Public"
-#define FAX_DEPARTMENT_WY "Weyland-Yutani Local Operations"
-#define FAX_DEPARTMENT_USCM "USCM Local Operations"
+#define FAX_DEPARTMENT_ALMAYER_BRIG "USS Almayer Brig"
+#define FAX_DEPARTMENT_ALMAYER_COMMAND "USS Almayer Command"
 
+// Blackgold departments
+#define FAX_DEPARTMENT_BLACKGOLD "USS Blackgold"
+#define FAX_DEPARTMENT_BLACKGOLD_AICORE "USS Blackgold AI Core"
+#define FAX_DEPARTMENT_BLACKGOLD_BRIG "USS Blackgold Brig"
+#define FAX_DEPARTMENT_BLACKGOLD_COMMAND "USS Blackgold Command"
+#define FAX_DEPARTMENT_BLACKGOLD_ENGINEERING "USS Blackgold Engineering"
+#define FAX_DEPARTMENT_BLACKGOLD_MEDICAL "USS Blackgold Medical"
+
+// General departments
+#define FAX_DEPARTMENT_GENERAL_PUBLIC "General Public"
+#define FAX_DEPARTMENT_USCM "USCM Local Operations"
+#define FAX_DEPARTMENT_WY "Weyland-Yutani Local Operations"
+
+// High Command departments
+#define FAX_NET_CLF "Peridia Encrypted Network"
+#define FAX_NET_CLF_HC "Peridia Quantum Relay"
+#define FAX_NET_CMB "NC4 UA Federal Secure Network - CMB Relay"
+#define FAX_NET_PRESS_HC "Free Press Quantum Relay"
+#define FAX_NET_TWE "TWE Encrypted Network"
+#define FAX_NET_TWE_HC "TWE Imperial Command Quantum Relay"
+#define FAX_NET_UPP "UPP Encrypted Network"
+#define FAX_NET_UPP_HC "UPP High Command Quantum Relay"
 #define FAX_NET_USCM "USCM Encrypted Network"
 #define FAX_NET_USCM_HC "USCM High Command Quantum Relay"
 #define FAX_NET_WY "Weyland-Yutani Secure Network"
 #define FAX_NET_WY_COL "Weyland-Yutani Public Network"
 #define FAX_NET_WY_HC "Weyland-Yutani Quantum Relay"
-#define FAX_NET_CMB "NC4 UA Federal Secure Network - CMB Relay"
-#define FAX_NET_TWE "TWE Encrypted Network"
-#define FAX_NET_TWE_HC "TWE Imperial Command Quantum Relay"
-#define FAX_NET_UPP "UPP Encrypted Network"
-#define FAX_NET_UPP_HC "UPP High Command Quantum Relay"
-#define FAX_NET_CLF "Peridia Encrypted Network"
-#define FAX_NET_CLF_HC "Peridia Quantum Relay"
-#define FAX_NET_PRESS_HC "Free Press Quantum Relay"
 #define FAX_HC_NETWORKS list(FAX_NET_USCM_HC, FAX_NET_WY_HC, FAX_NET_CMB, FAX_NET_TWE_HC, FAX_NET_UPP_HC, FAX_NET_CLF_HC, FAX_NET_PRESS_HC)
 
 /obj/structure/machinery/faxmachine // why not fax_machine?
@@ -674,36 +687,32 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 						sent_radio_alert = TRUE
 		qdel(faxcontents)
 
-/obj/structure/machinery/faxmachine/cmb
-	name = "\improper CMB Incident Command Center Fax Machine"
-	network = FAX_NET_CMB
-	department = FAX_DEPARTMENT_CMB
-	can_send_priority = TRUE
 
-/obj/structure/machinery/faxmachine/corporate
-	name = "\improper W-Y Corporate Fax Machine"
-	department = FAX_DEPARTMENT_WY
-	network = FAX_NET_WY
-
-/obj/structure/machinery/faxmachine/corporate/liaison
-	department = "W-Y Liaison"
-
-/obj/structure/machinery/faxmachine/corporate/liaison/almayer
-	department = FAX_DEPARTMENT_ALMAYER
-	sub_name = "W-Y Liaison"
-	radio_alert_tag = ":Y"
-
-/obj/structure/machinery/faxmachine/corporate/highcom
-	department = FAX_DEPARTMENT_WY_HC
-	target_department = FAX_DEPARTMENT_ALMAYER
-	network = FAX_NET_WY_HC
-	can_send_priority = TRUE
+//----------------------------------------------//
+//---------------------USCM---------------------//
+//----------------------------------------------//
 
 /obj/structure/machinery/faxmachine/uscm
 	name = "\improper USCM Military Fax Machine"
 	department = FAX_DEPARTMENT_USCM
 	network = FAX_NET_USCM
 	target_department = FAX_DEPARTMENT_HC
+
+/obj/structure/machinery/faxmachine/uscm/highcom
+	name = "\improper USCM High Command Fax Machine"
+	department = FAX_DEPARTMENT_HC
+	target_department = null
+	network = FAX_NET_USCM_HC
+	can_send_priority = TRUE
+
+/obj/structure/machinery/faxmachine/uscm/provost
+	name = "\improper USCM Provost Fax Machine"
+	department = FAX_DEPARTMENT_PROVOST
+	target_department = null
+	network = FAX_NET_USCM_HC
+	can_send_priority = TRUE
+
+// Almayer
 
 /obj/structure/machinery/faxmachine/uscm/almayer
 	department = FAX_DEPARTMENT_ALMAYER
@@ -714,16 +723,227 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 
 /obj/structure/machinery/faxmachine/uscm/almayer/command
 	department = FAX_DEPARTMENT_ALMAYER_COMMAND
+	radio_alert_tag = ":v"
 
 /obj/structure/machinery/faxmachine/uscm/almayer/command/capt
 	sub_name = "Commanding Officer"
 	can_send_priority = TRUE
 
-/obj/structure/machinery/faxmachine/uscm/highcom
-	department = FAX_DEPARTMENT_HC
-	target_department = FAX_DEPARTMENT_ALMAYER_COMMAND
-	network = FAX_NET_USCM_HC
+/obj/structure/machinery/faxmachine/uscm/almayer/brig
+	name = "\improper USCM Military Police Fax Machine"
+	department = FAX_DEPARTMENT_ALMAYER_BRIG
+	target_department = FAX_DEPARTMENT_PROVOST
+	radio_alert_tag = ":P"
+
+/obj/structure/machinery/faxmachine/uscm/almayer/brig/chief
+	sub_name = "Chief MP"
+
+// Blackgold
+
+/obj/structure/machinery/faxmachine/uscm/blackgold
+	department = FAX_DEPARTMENT_BLACKGOLD
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/ai_core
+	sub_name = "AI Core"
+	department = FAX_DEPARTMENT_BLACKGOLD_AICORE
+	radio_alert_tag = ":+"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command
+	sub_name = "Command"
+	department = FAX_DEPARTMENT_BLACKGOLD_COMMAND
+	radio_alert_tag = ":v"
+	/// The bands that overlay the fax machines.
+	var/alpha_overlay = "alpha_overlay"
+	var/bravo_overlay = "bravo_overlay"
+	var/charlie_overlay = "charlie_overlay"
+	var/delta_overlay = "delta_overlay"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/co
+	name = "\improper Commanding Officer's Fax Machine"
+	sub_name = "Commanding Officer"
 	can_send_priority = TRUE
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/xo
+	name = "\improper Executive Officer's Fax Machine"
+	sub_name = "Executive Officer"
+
+// Company
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company
+	name = "\improper Company Commander's Fax Machine"
+	sub_name = "Company Commander"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/alpha
+	name = "\improper Alpha Company Commander's Fax Machine"
+	sub_name = "Alpha Company Commander"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/alpha/update_icon()
+	overlays += alpha_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/bravo
+	name = "\improper Bravo Company Commander's Fax Machine"
+	sub_name = "Bravo Company Commander"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/bravo/update_icon()
+	overlays += bravo_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/charlie
+	name = "\improper Charlie Company Commander's Fax Machine"
+	sub_name = "Charlie Company Commander"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/charlie/update_icon()
+	overlays += charlie_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/delta
+	name = "\improper Delta Company Commander's Fax Machine"
+	sub_name = "Delta Company Commander"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/company/delta/update_icon()
+	overlays += delta_overlay
+
+// Platoon
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon
+	name = "\improper Platoon Command Fax Machine"
+	sub_name = "Platoon Command"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/alpha
+	name = "\improper Alpha Platoon Command Fax Machine"
+	sub_name = "Alpha Platoon Command"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/alpha/update_icon()
+	overlays += alpha_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/bravo
+	name = "\improper Bravo Platoon Command Fax Machine"
+	sub_name = "Bravo Platoon Command"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/bravo/update_icon()
+	overlays += bravo_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/charlie
+	name = "\improper Charlie Platoon Command Fax Machine"
+	sub_name = "Charlie Platoon Command"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/charlie/update_icon()
+	overlays += charlie_overlay
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/delta
+	name = "\improper Delta Platoon Command Fax Machine"
+	sub_name = "Delta Platoon Command"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/command/platoon/delta/update_icon()
+	overlays += delta_overlay
+
+// Departments
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/medical
+	name = "\improper USCM Military Medical Fax Machine"
+	sub_name = "Medical"
+	department = FAX_DEPARTMENT_BLACKGOLD_MEDICAL
+	radio_alert_tag = ":m"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/medical/chief
+	name = "\improper Chief Medical Officer's Fax Machine"
+	sub_name = "Chief Medical Officer"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/engineering
+	name = "\improper USCM Military Engineering Fax Machine"
+	sub_name = "Engineering"
+	department = FAX_DEPARTMENT_BLACKGOLD_ENGINEERING
+	radio_alert_tag = ":n"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/engineering/chief
+	name = "\improper Chief Engineer's Fax Machine"
+	sub_name = "Chief Engineer"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/brig
+	name = "\improper USCM Military Police Fax Machine"
+	sub_name = "Brig"
+	department = FAX_DEPARTMENT_BLACKGOLD_BRIG
+	target_department = FAX_DEPARTMENT_PROVOST
+	radio_alert_tag = ":p"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/brig/chief
+	name = "\improper Chief MP's Fax Machine"
+	sub_name = "Chief MP"
+
+// Shipside
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/shipside
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/shipside/requisition
+	sub_name = "Requisition Bay"
+
+/obj/structure/machinery/faxmachine/uscm/blackgold/shipside/intel
+	sub_name = "Computer Lab"
+
+//----------------------------------------------//
+//----------------------WY----------------------//
+//----------------------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/obj/structure/machinery/faxmachine/cmb
+	name = "\improper CMB Incident Command Center Fax Machine"
+	network = FAX_NET_CMB
+	department = FAX_DEPARTMENT_CMB
+	can_send_priority = TRUE
+
+
+
+
+/obj/structure/machinery/faxmachine/corporate
+	name = "\improper W-Y Corporate Fax Machine"
+	department = FAX_DEPARTMENT_WY
+	network = FAX_NET_WY
+
+
+
+
+/obj/structure/machinery/faxmachine/corporate/liaison
+	department = "W-Y Liaison"
+
+
+
+
+/obj/structure/machinery/faxmachine/corporate/liaison/almayer
+	department = FAX_DEPARTMENT_ALMAYER
+	sub_name = "W-Y Liaison"
+	radio_alert_tag = ":Y"
+
+
+
+
+/obj/structure/machinery/faxmachine/corporate/highcom
+	department = FAX_DEPARTMENT_WY_HC
+	target_department = FAX_DEPARTMENT_ALMAYER
+	network = FAX_NET_WY_HC
+	can_send_priority = TRUE
+
+
+
+
+
+
+
 
 /obj/structure/machinery/faxmachine/uscm/almayer/brig
 	name = "\improper USCM Provost Fax Machine"
@@ -731,8 +951,14 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 	target_department = FAX_DEPARTMENT_PROVOST
 	radio_alert_tag = ":P"
 
+
+
+
 /obj/structure/machinery/faxmachine/uscm/almayer/brig/chief
 	sub_name = "Chief MP"
+
+
+
 
 /obj/structure/machinery/faxmachine/uscm/provost
 	name = "\improper USCM Provost Fax Machine"
@@ -741,11 +967,16 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 	network = FAX_NET_USCM_HC
 	can_send_priority = TRUE
 
+
+
+
 /obj/structure/machinery/faxmachine/upp
 	name = "\improper UPP Military Fax Machine"
 	department = "UPP Local Operations"
 	network = FAX_NET_UPP
 	target_department = FAX_DEPARTMENT_UPP
+
+
 
 /obj/structure/machinery/faxmachine/upp/highcom
 	department = FAX_DEPARTMENT_UPP
@@ -753,11 +984,17 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 	target_department = "UPP Local Operations"
 	can_send_priority = TRUE
 
+
+
+
 /obj/structure/machinery/faxmachine/clf
 	name = "\improper Hacked General Purpose Fax Machine"
 	department = "CLF Local Operations"
 	network = FAX_NET_CLF
 	target_department = FAX_DEPARTMENT_CLF
+
+
+
 
 /obj/structure/machinery/faxmachine/clf/highcom
 	department = FAX_DEPARTMENT_CLF
@@ -765,11 +1002,17 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 	target_department = "CLF Local Operations"
 	can_send_priority = TRUE
 
+
+
+
 /obj/structure/machinery/faxmachine/twe
 	name = "\improper TWE Military Fax Machine"
 	department = "TWE Local Operations"
 	network = FAX_NET_TWE
 	target_department = FAX_DEPARTMENT_TWE
+
+
+
 
 /obj/structure/machinery/faxmachine/twe/highcom
 	department = FAX_DEPARTMENT_TWE
@@ -777,11 +1020,17 @@ GLOBAL_DATUM_INIT(fax_network, /datum/fax_network, new)
 	target_department = "TWE Local Operations"
 	can_send_priority = TRUE
 
+
+
+
 /obj/structure/machinery/faxmachine/press/highcom
 	department = FAX_DEPARTMENT_PRESS
 	network = FAX_NET_PRESS_HC
 	target_department = FAX_DEPARTMENT_GENERAL_PUBLIC
 	can_send_priority = TRUE
+
+
+
 
 ///The deployed fax machine backpack
 /obj/structure/machinery/faxmachine/backpack

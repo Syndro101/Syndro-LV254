@@ -5,7 +5,7 @@
 	icon_state = "book-0"
 	anchored = TRUE
 	density = TRUE
-	opacity = TRUE
+	opacity = FALSE
 
 /obj/structure/bookcase/deconstruct(disassembled)
 	new /obj/item/stack/sheet/metal(loc)

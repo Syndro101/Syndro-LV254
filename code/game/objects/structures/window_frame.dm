@@ -170,6 +170,10 @@
 	icon_state = "alm_window0_frame"
 	basestate = "alm_window"
 
+/obj/structure/window_frame/almayer/chapel
+	icon_state = "alm_chapel0_frame"
+	basestate = "alm_chapel"
+
 /obj/structure/window_frame/almayer/white
 	icon_state = "white_window0_frame"
 	basestate = "white_window"

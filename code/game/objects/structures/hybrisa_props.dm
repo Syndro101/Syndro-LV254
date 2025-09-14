@@ -2817,7 +2817,7 @@
 	icon = 'icons/obj/structures/props/industrial/hybrisa_lattice.dmi'
 	icon_state = "lattice1"
 	density = FALSE
-	layer = ABOVE_XENO_LAYER
+	layer = BILLBOARD_LAYER
 	health = 1000
 
 /obj/structure/roof/hybrisa/lattice_prop/lattice_1

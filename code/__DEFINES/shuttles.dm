@@ -113,6 +113,18 @@
 #define STAT_GENERIC_LZ1 "generic_lz1"
 #define STAT_GENERIC_LZ2 "generic_lz2"
 
+#define MOBILE_CARGO_ELEVATOR "cargo"
+#define STAT_CARGO_EMPTY "cargo_empty"
+#define STAT_CARGO_OCCUPIED "cargo_occupied"
+#define STAT_CARGO_A "cargo_a"
+#define STAT_CARGO_B "cargo_b"
+
+#define MOBILE_SMALL_ELEVATOR "elevator_small"
+#define MOBILE_SMALL_ELEVATOR_NORTH "elevator_small_north"
+#define STAT_SMALL_EMPTY "elevator_small_empty"
+#define STAT_SMALL_OCCUPIED "elevator_small_occupied"
+#define STAT_SMALL_A "north"
+#define STAT_SMALL_B "south"
 
 #define MOBILE_SHUTTLE_LIFEBOAT_PORT "lifeboat-port"
 #define MOBILE_SHUTTLE_LIFEBOAT_STARBOARD "lifeboat-starboard"

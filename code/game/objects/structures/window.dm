@@ -583,6 +583,13 @@
 	dir = NORTHEAST
 	window_frame = /obj/structure/window_frame/almayer
 
+/obj/structure/window/framed/almayer/chapel
+	name = "reinforced stained-glass window"
+	desc = "A stained-glass window with a special rod matrix inside a wall frame. It looks rather zealous. Might take a few good hits to shatter it."
+	icon_state = "alm_chapel0"
+	basestate = "alm_chapel"
+	window_frame = /obj/structure/window_frame/almayer/chapel
+
 /obj/structure/window/framed/almayer/hull
 	name = "hull window"
 	desc = "A glass window with a special rod matrix inside a wall frame. This one was made out of exotic materials to prevent hull breaches. No way to get through here."

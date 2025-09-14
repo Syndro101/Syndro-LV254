@@ -120,3 +120,38 @@
 	var/obj/docking_port/mobile/generic_elevator/elev = M
 	elev.elevator_network = elevator_network
 	log_debug("Adding network [elevator_network] to [M.id]")
+
+/datum/map_template/shuttle/cargo
+	name = "Cargo Lift"
+	shuttle_id = MOBILE_CARGO_ELEVATOR
+	var/elevator_network
+
+/datum/map_template/shuttle/cargo/A
+	elevator_network = "A"
+
+/datum/map_template/shuttle/cargo/B
+	elevator_network = "B"
+
+/datum/map_template/shuttle/cargo/post_load(obj/docking_port/mobile/M)
+	. = ..()
+	var/obj/docking_port/mobile/cargo/elev = M
+	elev.elevator_network = elevator_network
+	log_debug("Adding network [elevator_network] to [M.id]")
+
+/datum/map_template/shuttle/small
+	name = "Service Lift"
+	shuttle_id = MOBILE_SMALL_ELEVATOR
+	var/elevator_network
+
+/datum/map_template/shuttle/small/south
+	elevator_network = "south"
+
+/datum/map_template/shuttle/small/north
+	shuttle_id = MOBILE_SMALL_ELEVATOR_NORTH
+	elevator_network = "north"
+
+/datum/map_template/shuttle/small/post_load(obj/docking_port/mobile/M)
+	. = ..()
+	var/obj/docking_port/mobile/small/elev = M
+	elev.elevator_network = elevator_network
+	log_debug("Adding network [elevator_network] to [M.id]")

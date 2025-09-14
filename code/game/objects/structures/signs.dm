@@ -789,6 +789,11 @@
 	desc = "An old recruitment poster for the USCM. Looking at it floods you with a mixture of pride and sincere regret."
 	icon_state = "prop3"
 
+/obj/structure/sign/cross
+	name = "\improper Stone Cross"
+	desc = "A wall-mounted polished stone cross, a symbol of faith for many."
+	icon_state = "cross"
+
 
 /obj/structure/sign/catclock
 	name = "cat clock"

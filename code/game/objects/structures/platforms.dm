@@ -204,6 +204,8 @@
 	icon_state = "ship_platform_deco"
 	creaking_sound = 'sound/effects/metal_creaking.ogg'
 	breaking_sound = 'sound/effects/metalhit.ogg'
+	layer = ABOVE_OBJ_LAYER
+	density = 0
 
 /obj/structure/platform/metal/ship/stair
 	icon_state = "ship_platform_stair"

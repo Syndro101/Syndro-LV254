@@ -13,6 +13,7 @@
 	destroyed_stack_amount = 1
 	crusher_resistant = FALSE
 	can_wire = FALSE
+	layer = OBJ_LAYER + 0.5
 	barricade_hitsound = 'sound/effects/metalhit.ogg'
 	projectile_coverage = PROJECTILE_COVERAGE_MINIMAL
 	var/build_state = BARRICADE_BSTATE_SECURED
@@ -254,7 +255,6 @@
 	color = "#b51c0b"
 	can_be_reinforced = FALSE
 	projectile_coverage = PROJECTILE_COVERAGE_LOW
-	layer = MOB_LAYER + 0.01
 
 /obj/structure/barricade/handrail/pizza
 	name = "\improper diner half-wall"
@@ -262,7 +262,6 @@
 	color = "#b51c0b"
 	can_be_reinforced = FALSE
 	projectile_coverage = PROJECTILE_COVERAGE_LOW
-	layer = MOB_LAYER + 0.01
 
 /obj/structure/barricade/handrail/boxing_ring
 	name = "\improper ring ropes"

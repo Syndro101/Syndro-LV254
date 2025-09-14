@@ -988,6 +988,19 @@
 
 	return ..()
 
+//----Larry----//
+
+/mob/living/simple_animal/hostile/retaliate/giant_lizard/larry
+	name = "Larry"
+	real_name = "Larry"
+	desc = "The Quartermaster's old, unauthorized pet gecko that wandered a bit too close to the ship's fusion reactors. Surprisingly instead of getting super cancer, Larry rapidly grew into a giant lizard, but not before being tossed down the ASRS by his owner. Larry now stalks the lower cargo bay, praying upon anything unfortunate enough to consider paperwork a 'fun' activity."
+	mob_size = MOB_SIZE_XENO
+	maxHealth = 1000
+	health = 1000
+
+	speak_chance = 4
+	melee_damage_lower = 50
+	melee_damage_upper = 70
 
 ///CLIENT EMOTES
 ////////////////

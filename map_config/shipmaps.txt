@@ -12,6 +12,9 @@ Format:
 	disabled (disables the map)
 endmap
 
-map almayer
+map blackgold
 	default
+endmap
+
+map almayer
 endmap

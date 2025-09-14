@@ -22,6 +22,8 @@
 	var/operating = DOOR_OPERATING_IDLE
 	var/autoclose = FALSE
 	var/glass = FALSE
+	/// If TRUE, disables ID-based opening and requires external activation
+	var/external_activation = FALSE
 	/// If FALSE it speeds up the autoclosing timing.
 	var/normalspeed = TRUE
 	/// Time to open/close airlock, default is 1 second.
@@ -91,12 +93,12 @@
 	return !!(locate(/turf/open/space) in range(1, src))
 
 /obj/structure/machinery/door/Collided(atom/movable/AM)
-	if(panel_open || operating)
+	if(panel_open || operating || external_activation)
 		return
 	if(ismob(AM))
 		var/mob/M = AM
 		if(world.time - M.last_bumped <= openspeed)
-			return //Can bump-open one airlock per second. This is to prevent shock spam.
+			return
 		M.last_bumped = world.time
 		if(!M.is_mob_restrained() && M.mob_size > MOB_SIZE_SMALL)
 			bumpopen(M)
@@ -113,6 +115,9 @@
 		return
 
 /obj/structure/machinery/door/proc/bumpopen(mob/user as mob)
+	if(external_activation)
+		return
+
 	if(operating)
 		return
 	add_fingerprint(user)
@@ -132,6 +137,9 @@
 	return try_to_activate_door(user)
 
 /obj/structure/machinery/door/proc/try_to_activate_door(mob/user)
+	if(external_activation)
+		return
+
 	add_fingerprint(user)
 	if(operating)
 		return
@@ -283,7 +291,7 @@
 	operating = DOOR_OPERATING_IDLE
 
 /obj/structure/machinery/door/proc/requiresID()
-	return TRUE
+	return !external_activation
 
 /// Used for overriding in airlocks
 /obj/structure/machinery/door/proc/autoclose()

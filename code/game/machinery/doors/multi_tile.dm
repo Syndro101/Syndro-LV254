@@ -525,6 +525,11 @@
 /obj/structure/machinery/door/airlock/multi_tile/almayer/secdoor/glass/reinforced
 	masterkey_resist = TRUE
 
+/obj/structure/machinery/door/airlock/multi_tile/almayer/secdoor/glass/reinforced/external
+	external_activation = TRUE
+	autoclose = 0
+	no_panel = 1
+
 /obj/structure/machinery/door/airlock/multi_tile/almayer/secdoor/glass/reinforced/colony
 	req_access = null
 	req_one_access = list(ACCESS_CIVILIAN_BRIG, ACCESS_CIVILIAN_COMMAND)

@@ -113,7 +113,7 @@
 				viewed_report = null
 
 		if ("toggle_doors")
-			for (var/obj/structure/machinery/door/poddoor/almayer/locked/door in targets)
+			for (var/obj/structure/machinery/door/door in targets)
 				if (door.density)
 					door.open()
 				else
@@ -298,7 +298,7 @@
 		if(F.id == id)
 			targets += F
 
-	for(var/obj/structure/machinery/door/poddoor/almayer/locked/P in GLOB.machines)
+	for(var/obj/structure/machinery/door/P in GLOB.machines)
 		if(P.id == id)
 			targets += P
 

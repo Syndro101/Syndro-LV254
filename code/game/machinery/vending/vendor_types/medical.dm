@@ -517,7 +517,7 @@
 		list("M276 Pattern Medical Storage Rig", floor(scale * 2), /obj/item/storage/belt/medical, VENDOR_ITEM_REGULAR),
 		list("Medical HUD Glasses", floor(scale * 3), /obj/item/clothing/glasses/hud/health, VENDOR_ITEM_REGULAR),
 		list("Stasis Bag", floor(scale * 3), /obj/item/bodybag/cryobag, VENDOR_ITEM_REGULAR),
-		list("Syringe", floor(scale * 7), /obj/item/reagent_container/syringe, VENDOR_ITEM_REGULAR)
+		list("Syringe", floor(scale * 7), /obj/item/reagent_container/syringe, VENDOR_ITEM_REGULAR),
 		list("Roller Bed", floor(scale * 10), /obj/item/roller, VENDOR_ITEM_REGULAR)
 	)
 

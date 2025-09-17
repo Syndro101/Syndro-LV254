@@ -307,7 +307,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 	/obj/item/prop/helmetgarb/helmet_nvg = PREFIX_HELMET_GARB_OVERRIDE, // helmet_
 	/obj/item/prop/helmetgarb/helmet_nvg/cosmetic = PREFIX_HELMET_GARB_OVERRIDE, // helmet_
 	/obj/item/prop/helmetgarb/helmet_nvg/marsoc = PREFIX_HELMET_GARB_OVERRIDE, // helmet_
-	/obj/item/prop/helmetgarb/helmet_gasmask = NO_GARB_OVERRIDE,
 	/obj/item/prop/helmetgarb/flair_initech = NO_GARB_OVERRIDE,
 	/obj/item/prop/helmetgarb/flair_io = NO_GARB_OVERRIDE,
 	/obj/item/prop/helmetgarb/flair_peace = NO_GARB_OVERRIDE,

@@ -50,19 +50,15 @@
 
 	if(prob(15))
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs/earplugs(new_human), WEAR_R_EAR)
-	if(prob(35))
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs(new_human), WEAR_R_EAR)
 	else
-		new_human.equip_to_slot_or_del(new /obj/item/prop/helmetgarb/helmet_gasmask(new_human), WEAR_R_EAR) //fuck you I know this is shitcode
+		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs(new_human), WEAR_R_EAR)
 //mask
 	if(prob(15))
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather/scarf/tacticalmask/red(new_human), WEAR_FACE)
 	if(prob(25))
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather/scarf/tacticalmask/black(new_human), WEAR_FACE)
-	if(prob(30))
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/tornscarf/urban(new_human), WEAR_FACE)
 	else
-		new_human.equip_to_slot_or_del(new /obj/item/prop/helmetgarb/helmet_gasmask(new_human), WEAR_FACE)
+		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/tornscarf/urban(new_human), WEAR_FACE)
 	. = ..()
 
 
@@ -102,10 +98,8 @@
 
 	if(prob(15))
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs/earplugs(new_human), WEAR_R_EAR)
-	if(prob(35))
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs(new_human), WEAR_R_EAR)
 	else
-		new_human.equip_to_slot_or_del(new /obj/item/prop/helmetgarb/helmet_gasmask(new_human), WEAR_R_EAR) //fuck you I know this is shitcode
+		new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs(new_human), WEAR_R_EAR)
 //----------Zealot
 
 /datum/equipment_preset/colonist/som_z
@@ -262,10 +256,8 @@
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather/scarf/tacticalmask/red(new_human), WEAR_FACE)
 	if(prob(25))
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/rebreather/scarf/tacticalmask/black(new_human), WEAR_FACE)
-	if(prob(30))
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/tornscarf/urban(new_human), WEAR_FACE)
 	else
-		new_human.equip_to_slot_or_del(new /obj/item/prop/helmetgarb/helmet_gasmask(new_human), WEAR_FACE)
+		new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/tornscarf/urban(new_human), WEAR_FACE)
 	. = ..()
 
 //----------Ascended

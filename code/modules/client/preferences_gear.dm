@@ -453,10 +453,6 @@ GLOBAL_LIST_EMPTY(roles_with_gear)
 	display_name = "Flair, USCM"
 	path = /obj/item/prop/helmetgarb/flair_uscm
 
-/datum/gear/helmet_garb/helmet_gasmask
-	display_name = "M5 integrated gasmask"
-	path = /obj/item/prop/helmetgarb/helmet_gasmask
-
 /datum/gear/helmet_garb/gunoil
 	display_name = "Gun oil"
 	path = /obj/item/prop/helmetgarb/gunoil

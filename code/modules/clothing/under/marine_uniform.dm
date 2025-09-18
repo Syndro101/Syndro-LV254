@@ -197,7 +197,7 @@
 	flags_cold_protection = ICE_PLANET_MIN_COLD_PROT
 	specialty = "pilot officer"
 	snow_name = " snow bodysuit"
-	suit_restricted = list(/obj/item/clothing/suit/armor/vest/pilot, /obj/item/clothing/suit/storage/marine/light/vest/dcc, /obj/item/clothing/suit/storage/jacket/marine/pilot, /obj/item/clothing/suit/storage/marine/light/vest)
+	suit_restricted = list(/obj/item/clothing/suit/armor/vest/pilot, /obj/item/clothing/suit/storage/jacket/marine/pilot, /obj/item/clothing/suit/storage/marine/light)
 	flags_atom = FPRINT
 
 /obj/item/clothing/under/marine/officer/pilot/flight
@@ -230,7 +230,7 @@
 	desc = "A uniform worn by vehicle crewmen of the USCM. Do the corps proud. It has shards of light Venlar to help protect against stabbing weapons and bullets."
 	icon_state = "marine_tanker"
 	worn_state = "marine_tanker"
-	suit_restricted = list(/obj/item/clothing/suit/storage/marine/tanker, /obj/item/clothing/suit/storage/jacket/marine/service/tanker)
+	suit_restricted = list(/obj/item/clothing/suit/storage/marine/light, /obj/item/clothing/suit/storage/jacket/marine/service/tanker)
 	specialty = "vehicle crewman"
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
 	item_state_slots = list(WEAR_BODY = "marine_tanker")

@@ -32,13 +32,10 @@
 		list("Shoulder Holster", floor(scale * 1), /obj/item/clothing/accessory/storage/holster, VENDOR_ITEM_REGULAR),
 
 		list("ARMOR", -1, null, null),
-		list("M3 Pattern Carrier Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/carrier, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Padded Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/padded, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Padless Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/padless, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Ridged Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/padless_lines, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Skull Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/skull, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Smooth Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium/smooth, VENDOR_ITEM_REGULAR),
-		list("M3-EOD Pattern Heavy Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/heavy, VENDOR_ITEM_REGULAR),
+		list("M3 Pattern Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium, VENDOR_ITEM_REGULAR),
+		list("M3 Pattern Carrier Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/carrier, VENDOR_ITEM_REGULAR),
+		list("M3 Pattern Skull Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/skull, VENDOR_ITEM_REGULAR),
+		list("M3-H Pattern Heavy Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/heavy, VENDOR_ITEM_REGULAR),
 		list("M3-L Pattern Light Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/light, VENDOR_ITEM_REGULAR),
 
 		list("BACKPACK", -1, null, null, null),

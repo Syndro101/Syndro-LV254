@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_sea, list(
 		list("M10 Helmet", 0, /obj/item/clothing/head/helmet/marine, MARINE_CAN_BUY_COMBAT_HELMET, VENDOR_ITEM_REGULAR),
 		list("M3-VL Pattern Ballistics Vest", 0, /obj/item/clothing/suit/storage/marine/light/vest, MARINE_CAN_BUY_COMBAT_ARMOR, VENDOR_ITEM_REGULAR),
 		list("M3-L Pattern Light Armor", 0, /obj/item/clothing/suit/storage/marine/light, MARINE_CAN_BUY_COMBAT_ARMOR, VENDOR_ITEM_RECOMMENDED),
-		list("M3 Pattern Padded Armor", 0, /obj/item/clothing/suit/storage/marine/medium/padded, MARINE_CAN_BUY_COMBAT_ARMOR, VENDOR_ITEM_REGULAR),
+		list("M3 Pattern Padded Armor", 0, /obj/item/clothing/suit/storage/marine, MARINE_CAN_BUY_COMBAT_ARMOR, VENDOR_ITEM_REGULAR),
 		list("Bulletproof Vest", 0, /obj/item/clothing/suit/armor/bulletproof, MARINE_CAN_BUY_COMBAT_ARMOR, VENDOR_ITEM_REGULAR),
 
 		list("EYEWEAR (CHOOSE 1)", 0, null, null, null),

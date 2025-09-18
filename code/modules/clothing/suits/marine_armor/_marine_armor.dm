@@ -32,18 +32,18 @@
 
 /obj/item/clothing/suit/storage/marine
 	name = "\improper M3 pattern marine armor"
-	desc = "A standard Colonial Marines M3 Pattern Chestplate. Protects the chest from ballistic rounds, bladed objects and accidents. It has a small leather pouch strapped to it for limited storage."
-	icon_state = "1"
-	item_state = "marine_armor" //Make unique states for Officer & Intel armors.
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/jungle.dmi'
+	desc = "A standard Colonial Marines M3 Pattern Chestplate. Protects the chest from ballistic rounds, bladed objects and accidents."
+	icon_state = "M1"
+	item_state = "M1" //Make unique states for Officer & Intel armors.
+	icon = 'icons/obj/items/clothing/suits/suits_by_map/chest_grayscale.dmi'
 	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/jungle.dmi'
+		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/chest_grayscale.dmi'
 	)
 	flags_atom = FPRINT|CONDUCT
 	flags_inventory = BLOCKSHARPOBJ
-	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
-	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
-	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
+	flags_armor_protection = BODY_FLAG_CHEST
+	flags_cold_protection = BODY_FLAG_CHEST
+	flags_heat_protection = BODY_FLAG_CHEST
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROT
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROT
 	blood_overlay_type = "armor"
@@ -57,7 +57,7 @@
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
-	storage_slots = 6
+	storage_slots = 2
 	siemens_coefficient = 0.7
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	allowed = list(
@@ -84,7 +84,7 @@
 	)
 	valid_accessory_slots = list(ACCESSORY_SLOT_MEDAL, ACCESSORY_SLOT_PONCHO)
 
-	light_power = 3
+	light_power = 4
 	light_range = 4
 	light_color = LIGHT_COLOR_TUNGSTEN
 	light_system = MOVABLE_LIGHT
@@ -113,16 +113,18 @@
 	if(!(flags_atom & NO_NAME_OVERRIDE))
 		name = "[specialty]"
 		if(SSmapping.configs[GROUND_MAP].environment_traits[MAP_COLD])
-			name += " snow armor" //Leave marine out so that armors don't have to have "Marine" appended (see: generals).
+			name += " snow armor"
 		else
 			name += " armor"
 
 	if(!(flags_atom & NO_GAMEMODE_SKIN))
 		select_gamemode_skin(type)
-	armor_overlays = list("lamp") //Just one for now, can add more later.
+
+	armor_overlays = list("lamp")
 	if(armor_variation && mapload)
 		set_armor_style("Random")
 	update_icon()
+
 	pockets.max_w_class = SIZE_SMALL //Can contain small items AND rifle magazines.
 	pockets.bypass_w_limit = list(
 		/obj/item/ammo_magazine/rifle,
@@ -157,22 +159,10 @@
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/suits/suits_by_map/jungle.dmi'
-			item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/suits/suits_by_map/classic.dmi'
-			item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/suits/suits_by_map/desert.dmi'
-			item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/suits/suits_by_map/snow.dmi'
-			item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/suits/suits_by_map/urban.dmi'
-			item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/urban.dmi'
+	icon = 'icons/obj/items/clothing/suits/suits_by_map/chest_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/chest_grayscale.dmi'
 
 /obj/item/clothing/suit/storage/marine/post_vendor_spawn_hook(mob/living/carbon/human/user) //used for randomizing/selecting a variant for armors.
 	if(!armor_variation)
@@ -397,72 +387,20 @@
 	valid_accessory_slots = list(ACCESSORY_SLOT_MEDAL, ACCESSORY_SLOT_RANK)
 	flags_atom = NO_GAMEMODE_SKIN
 
-/obj/item/clothing/suit/storage/marine/medium/leader
-	name = "\improper B12 pattern marine armor"
-	desc = "A lightweight suit of carbon fiber body armor built for quick movement. Designed in a lovely forest green. Use it to toggle the built-in flashlight."
-	icon_state = "7"
-	armor_variation = 0
-	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUM
-	specialty = "B12 pattern marine"
-	light_range = 5
-
-/obj/item/clothing/suit/storage/marine/tanker
-	name = "\improper M3 pattern tanker armor"
-	desc = "A modified and refashioned suit of M3 Pattern armor designed to be worn by the loader of a USCM vehicle crew. While the suit is a bit more encumbering to wear with the crewman uniform, it offers the loader a degree of protection that would otherwise not be enjoyed."
-	icon_state = "tanker"
-	uniform_restricted = list(/obj/item/clothing/under/marine/officer/tanker)
-	specialty = "M3 pattern tanker"
-	storage_slots = 2
-
 //===========================//PFC ARMOR CLASSES\\================================\\
 //=================================================================================\\
 
 // M3 pattern marine armor
-/obj/item/clothing/suit/storage/marine/medium
-	armor_variation = 6
-	light_power = 4
 
-/obj/item/clothing/suit/storage/marine/medium/padded
-	name = "M3 pattern padded marine armor"
-	icon_state = "1"
-	armor_variation = 0
-	specialty = "M3 pattern padded marine"
-
-/obj/item/clothing/suit/storage/marine/medium/padless
-	name = "M3 pattern padless marine armor"
-	icon_state = "2"
-	armor_variation = 0
-	specialty = "M3 pattern padless marine"
-
-/obj/item/clothing/suit/storage/marine/medium/padless_lines
-	name = "M3 pattern ridged marine armor"
-	icon_state = "3"
-	armor_variation = 0
-	specialty = "M3 pattern ridged marine"
-
-/obj/item/clothing/suit/storage/marine/medium/carrier
+/obj/item/clothing/suit/storage/marine/carrier
 	name = "M3 pattern carrier marine armor"
-	icon_state = "4"
-	armor_variation = 0
 	specialty = "M3 pattern carrier marine"
+	flags_marine_armor = STYLE_CARRIER
 
-/obj/item/clothing/suit/storage/marine/medium/skull
+/obj/item/clothing/suit/storage/marine/skull
 	name = "M3 pattern skull marine armor"
-	icon_state = "5"
-	armor_variation = 0
 	specialty = "M3 pattern skull marine"
-
-/obj/item/clothing/suit/storage/marine/medium/smooth
-	name = "M3 pattern smooth marine armor"
-	icon_state = "6"
-	armor_variation = 0
-	specialty = "M3 pattern smooth marine"
+	flags_marine_armor = STYLE_SKULL
 
 // M3-L pattern light armor
 /obj/item/clothing/suit/storage/marine/light
@@ -470,10 +408,6 @@
 	desc = "A lighter, cut down version of the standard M3 pattern armor. It sacrifices durability for more speed."
 	specialty = "\improper M3-L pattern light"
 	icon_state = "L1"
-	armor_variation = 6
-	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_ARMS
-	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_ARMS
-	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_ARMS
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_HIGH
@@ -481,54 +415,32 @@
 	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
 	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
 	armor_internaldamage = CLOTHING_ARMOR_LOW
-	storage_slots = 6
-
-/obj/item/clothing/suit/storage/marine/light/padded
-	icon_state = "L1"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/light/padless
-	icon_state = "L2"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/light/padless_lines
-	icon_state = "L3"
-	armor_variation = 0
 
 /obj/item/clothing/suit/storage/marine/light/carrier
-	icon_state = "L4"
-	armor_variation = 0
+	name = "M3-L pattern carrier marine armor"
+	specialty = "M3-L pattern carrier marine"
+	flags_marine_armor = STYLE_CARRIER
 
 /obj/item/clothing/suit/storage/marine/light/skull
-	icon_state = "L5"
-	armor_variation = 0
+	name = "M3-L pattern skull marine armor"
+	specialty = "M3-L pattern skull marine"
+	flags_marine_armor = STYLE_SKULL
 
-/obj/item/clothing/suit/storage/marine/light/smooth
-	icon_state = "L6"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/light/vest
-	name = "\improper M3-VL pattern ballistics vest"
-	desc = "Up until 2182 USCM non-combat personnel were issued non-standardized ballistics vests, though the lack of IMP compatibility and suit lamps proved time and time again inefficient. This modified M3-L shell is the result of a 6-year R&D program; It provides utility, protection, AND comfort to all USCM non-combat personnel."
-	icon_state = "VL"
-	icon = 'icons/obj/items/clothing/suits/armor.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/armor.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	flags_marine_armor = ARMOR_LAMP_OVERLAY //No squad colors when wearing this since it'd look funny.
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_HIGH
+/obj/item/clothing/suit/storage/marine/light/synth
+	name = "\improper M3-LS pattern light armor"
+	desc = "This variant of the ubiquitous M3-L pattern light armor has the majority of its plating stripped in exchange for extra storage. Synthetic programming compliant."
+	specialty = "M3-LS pattern synth"
+	flags_marine_armor = STYLE_SYNTH|SYNTH_ALLOWED //No squad colors + can be worn by synths.
+	armor_melee = CLOTHING_ARMOR_LOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_energy = CLOTHING_ARMOR_LOW
+	armor_laser = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_VERYLOW
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
-	storage_slots = 1
-	time_to_unequip = 0.5 SECONDS
-	time_to_equip = 1 SECONDS
-	siemens_coefficient = 0.7
-	uniform_restricted = null
+	armor_internaldamage = CLOTHING_ARMOR_LOW
+	storage_slots = 4
+	slowdown = SLOWDOWN_ARMOR_SUPER_LIGHT
 
 /obj/item/clothing/suit/storage/marine/light/vest/forecon_scuba
 	name = "\improper MK50. wetsuit armored vest"
@@ -536,83 +448,6 @@
 	armor_melee = CLOTHING_ARMOR_ULTRAHIGHPLUS
 	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
 
-/obj/item/clothing/suit/storage/marine/light/vest/dcc
-	name = "\improper M3-VL pattern flak vest"
-	desc = "A combination of the standard non-combat M3-VL ballistics vest and M70 flak jacket, this piece of armor has been distributed to dropship crew to keep them safe from threats external and internal..."
-	icon_state = "VL_FLAK"
-	icon = 'icons/obj/items/clothing/suits/suits_by_faction/UA.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/UA.dmi'
-	)
-	storage_slots = 2
-
-/obj/item/clothing/suit/storage/marine/light/synvest
-	name = "\improper M3A1 Synthetic Utility Vest"
-	desc = "This variant of the ubiquitous M3 pattern vest has been extensively modified, providing no protection in exchange for maximum mobility and added storage. Synthetic programming compliant."
-	icon_state = "VL_syn_camo"
-	flags_atom = NO_NAME_OVERRIDE
-	flags_marine_armor = ARMOR_LAMP_OVERLAY|SYNTH_ALLOWED //No squad colors + can be worn by synths.
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_energy = CLOTHING_ARMOR_LOW
-	armor_laser = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_VERYLOW
-	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
-	storage_slots = 6
-	slowdown = SLOWDOWN_ARMOR_SUPER_LIGHT
-	time_to_unequip = 0.5 SECONDS
-	time_to_equip = 1 SECONDS
-	uniform_restricted = null
-
-/obj/item/clothing/suit/storage/marine/light/synvest/grey
-	icon_state = "VL_syn"
-	icon = 'icons/obj/items/clothing/suits/armor.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/armor.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-
-/obj/item/clothing/suit/storage/marine/light/synvest/jungle
-	icon_state = "VL_syn_camo"
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/jungle.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/jungle.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-
-/obj/item/clothing/suit/storage/marine/light/synvest/snow
-	icon_state = "VL_syn_camo"
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/snow.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/snow.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/snow_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/snow_righthand.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN
-
-/obj/item/clothing/suit/storage/marine/light/synvest/desert
-	icon_state = "VL_syn_camo"
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/desert.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/desert.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_righthand.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-
-/obj/item/clothing/suit/storage/marine/light/synvest/dgrey
-	icon_state = "VL_syn_camo"
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/classic.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/classic.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/classic_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/classic_righthand.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
 
 /obj/item/clothing/suit/storage/marine/light/recon
 	name = "M3-R pattern light armor"
@@ -634,43 +469,24 @@
 	desc_lore = "This configuration of the iconic armor was developed during the Canton War in 2160 between the UPP and USCM - Designed in response to a need for higher protection for ComTechs assigned as EODs during the conflict, this is the pinnacle of protection for your average marine. The shoulders and kneepads have both been expanded upon heavily, covering up the arteries on each limb. A special spall liner was developed for this suit, with the same technology being used in the M70 Flak Jacket being developed at the same time."
 	specialty = "\improper M3-EOD pattern"
 	icon_state = "H1"
-	armor_variation = 6
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_VERYHIGH
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
 	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
-	storage_slots = 6
-	storage_slots = 2
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
-	light_power = 4
-	light_range = 5
-
-/obj/item/clothing/suit/storage/marine/heavy/padded
-	icon_state = "H1"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/heavy/padless
-	icon_state = "H2"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/heavy/padless_lines
-	icon_state = "H3"
-	armor_variation = 0
 
 /obj/item/clothing/suit/storage/marine/heavy/carrier
-	icon_state = "H4"
-	armor_variation = 0
+	name = "M3-H pattern carrier marine armor"
+	specialty = "M3-H pattern carrier marine"
+	flags_marine_armor = STYLE_CARRIER
 
 /obj/item/clothing/suit/storage/marine/heavy/skull
-	icon_state = "H5"
-	armor_variation = 0
-
-/obj/item/clothing/suit/storage/marine/heavy/smooth
-	icon_state = "H6"
-	armor_variation = 0
+	name = "M3-H pattern skull marine armor"
+	specialty = "M3-H pattern skull marine"
+	flags_marine_armor = STYLE_SKULL
 
 //===========================//SPECIALIST\\================================\\
 //=======================================================================\\

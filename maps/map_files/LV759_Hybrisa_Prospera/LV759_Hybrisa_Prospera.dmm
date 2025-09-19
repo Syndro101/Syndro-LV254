@@ -114732,7 +114732,7 @@
 /area/lv759/indoors/caves/south_west_caves)
 "qpX" = (
 /obj/structure/closet/firecloset/full,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redcorner/north,
 /area/lv759/indoors/colonial_marshals/armory_foyer)
 "qqb" = (

@@ -44,8 +44,8 @@
 /obj/structure/closet/secure_closet/guncabinet{
 	req_access = null
 	},
-/obj/item/prop/helmetgarb/riot_shield,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
+/obj/item/prop/helmetgarb/visor,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/head/helmet/marine/veteran/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,

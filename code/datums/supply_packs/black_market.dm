@@ -682,7 +682,7 @@ USCM spare items, miscellaneous gear that's too niche and distant (or restricted
 		/obj/item/storage/box/packet/m15/rubber,
 		/obj/item/storage/box/guncase/m79,
 		/obj/item/clothing/head/helmet/marine/MP,
-		/obj/item/prop/helmetgarb/riot_shield,
+		/obj/item/prop/helmetgarb/visor,
 	)
 	dollar_cost = 55
 	containertype = /obj/structure/largecrate/black_market

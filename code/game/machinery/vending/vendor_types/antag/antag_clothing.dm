@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth_upp, list(
 	list("HELMET", 0, null, null, null),
 	list("UM4 Helmet", 12, /obj/item/clothing/head/helmet/marine/veteran/UPP, null, VENDOR_ITEM_REGULAR),
 	list("White Corpsman Helmet (Non-Standard)", 12, /obj/item/clothing/head/helmet/marine/medic/white, null, VENDOR_ITEM_REGULAR),
-	list("Attachable Helmet Shield", 12, /obj/item/prop/helmetgarb/riot_shield, null, VENDOR_ITEM_REGULAR),
+	list("Attachable Helmet Shield", 12, /obj/item/prop/helmetgarb/visor, null, VENDOR_ITEM_REGULAR),
 
 	list("MASK", 0, null, null, null),
 	list("Surgical Mask", 12, /obj/item/clothing/mask/surgical, null, VENDOR_ITEM_REGULAR),

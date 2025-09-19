@@ -159,7 +159,7 @@
 /obj/item/ammo_magazine/shotgun/buckshot,
 /obj/item/reagent_container/glass/bottle/robot/antitoxin,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "gl" = (
@@ -257,7 +257,7 @@
 /obj/item/storage/belt/shotgun,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "lv" = (
@@ -491,7 +491,7 @@
 /obj/item/storage/belt/marine,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "sj" = (
@@ -506,7 +506,7 @@
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "tf" = (
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison,
 /area/fiorina/station/security)
 "th" = (
@@ -646,7 +646,7 @@
 	},
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "zb" = (
@@ -958,7 +958,7 @@
 /obj/item/storage/belt/marine,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "NL" = (
@@ -989,7 +989,7 @@
 /turf/open/floor/prison,
 /area/fiorina/lz/near_lzII)
 "Pt" = (
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/floor_plate,
 /area/fiorina/station/security)
 "PA" = (

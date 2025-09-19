@@ -1466,7 +1466,7 @@
 /turf/open/floor/prison/darkyellowfull2/east,
 /area/fiorina/station/telecomm/lz1_tram)
 "bcq" = (
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison,
 /area/fiorina/station/security)
 "bcz" = (
@@ -1812,7 +1812,7 @@
 /obj/item/storage/belt/marine,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "bqX" = (
@@ -3606,7 +3606,7 @@
 /obj/item/ammo_magazine/shotgun/buckshot,
 /obj/item/reagent_container/glass/bottle/robot/antitoxin,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "cLu" = (
@@ -11791,7 +11791,7 @@
 /obj/item/storage/belt/shotgun,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "jbU" = (
@@ -16580,7 +16580,7 @@
 /turf/open/floor/prison/darkbrown2/north,
 /area/fiorina/maintenance)
 "mKp" = (
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/floor_plate,
 /area/fiorina/station/security)
 "mKx" = (
@@ -16702,7 +16702,7 @@
 	},
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "mQB" = (
@@ -25843,7 +25843,7 @@
 /obj/item/storage/belt/marine,
 /obj/item/clothing/under/marine/ua_riot,
 /obj/item/clothing/suit/storage/marine/veteran/ua_riot,
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /turf/open/floor/prison/redfull,
 /area/fiorina/station/security)
 "tNV" = (

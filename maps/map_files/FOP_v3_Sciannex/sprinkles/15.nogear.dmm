@@ -132,7 +132,7 @@
 /turf/open/floor/prison,
 /area/template_noop)
 "F" = (
-/obj/item/prop/helmetgarb/riot_shield,
+/obj/item/prop/helmetgarb/visor,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/prison/floor_plate,
 /area/template_noop)

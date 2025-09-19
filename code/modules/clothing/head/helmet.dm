@@ -369,7 +369,9 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 	/obj/item/clothing/accessory/patch/medic_patch = NO_GARB_OVERRIDE,
 	/obj/item/clothing/accessory/patch/clf_patch = NO_GARB_OVERRIDE,
 	/obj/item/ammo_magazine/handful = NO_GARB_OVERRIDE,
-	/obj/item/prop/helmetgarb/riot_shield = NO_GARB_OVERRIDE,
+	/obj/item/prop/helmetgarb/visor = NO_GARB_OVERRIDE,
+	/obj/item/prop/helmetgarb/visor/light = NO_GARB_OVERRIDE,
+	/obj/item/prop/helmetgarb/visor/heavy = NO_GARB_OVERRIDE,
 	/obj/item/attachable/flashlight = NO_GARB_OVERRIDE,
 	/obj/item/prop/helmetgarb/chaplain_patch = NO_GARB_OVERRIDE,
 

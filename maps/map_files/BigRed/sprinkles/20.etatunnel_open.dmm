@@ -165,7 +165,7 @@
 /area/bigredv2/caves/mining)
 "wW" = (
 /obj/structure/surface/table/reinforced/prison,
-/obj/item/prop/helmetgarb/riot_shield{
+/obj/item/prop/helmetgarb/visor{
 	pixel_y = -15
 	},
 /obj/item/weapon/gun/launcher/grenade/m81/m79{

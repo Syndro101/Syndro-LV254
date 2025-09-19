@@ -558,10 +558,26 @@
 	desc = "Two original, crisp, orange, tickets to the one and only Space Jam of 2181. And what a jam it was."
 	icon_state = "tickets_to_space_jam"
 
-/obj/item/prop/helmetgarb/riot_shield
-	name = "\improper RC6 riot shield"
-	desc = "The complimentary, but sold separate face shield associated with the RC6 riot helmet."
-	icon_state = "riot_shield"
+/obj/item/prop/helmetgarb/visor
+	name = "\improper M2 Ballistic Face Shield"
+	desc = "A full-face shield used in many fields to provide protection from harsh chemicals or stray debris. This one is made of a thick poly-carbonate to provide minor protection against bullets."
+	icon_state = "medium"
+	item_icons = list(
+		WEAR_AS_GARB = 'icons/mob/humans/onmob/clothing/helmet_garb/visors.dmi',
+	)
+
+/obj/item/prop/helmetgarb/visor/light
+	name = "\improper M2 Ballistic Visor"
+	desc = "A small visor used in many fields to provide eye protection from harsh chemicals or stray debris. This one is made of a thick poly-carbonate to provide minor protection against bullets."
+	icon_state = "light"
+	item_icons = list(
+		WEAR_AS_GARB = 'icons/mob/humans/onmob/clothing/helmet_garb/visors.dmi',
+	)
+
+/obj/item/prop/helmetgarb/visor/heavy
+	name = "\improper M2 Heavy Ballistic Face Shield"
+	desc = "A large, bulky face shield made of venlar and steel to provide moderate ballistic protection, provides less protection against chemicals than other visors."
+	icon_state = "heavy"
 	item_icons = list(
 		WEAR_AS_GARB = 'icons/mob/humans/onmob/clothing/helmet_garb/visors.dmi',
 	)

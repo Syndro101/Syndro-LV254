@@ -222,6 +222,18 @@
 	)
 	initial_icon_state = "jacket_tanker"
 
+/obj/item/clothing/suit/storage/jacket/marine/service/pilot
+	name = "bomber jacket"
+	desc = "A bomber jacket typically seen on USCM pilots. A timless classic, helping keep its user warm high in the sky."
+	has_buttons = TRUE
+	flags_atom = NO_GAMEMODE_SKIN
+	icon_state = "bomber"
+	icon = 'icons/obj/items/clothing/suits/jackets.dmi'
+	item_icons = list(
+		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/jackets.dmi'
+	)
+	initial_icon_state = "bomber"
+
 /obj/item/clothing/suit/storage/jacket/marine/chef
 	name = "mess technician jacket"
 	desc = "Smells like vanilla. Signifies prestige and power, if a little flashy."

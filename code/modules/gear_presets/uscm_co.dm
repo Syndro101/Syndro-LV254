@@ -24,7 +24,7 @@
 	)
 
 
-	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer/boiler)
+	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
 	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm/tan)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses, /obj/item/clothing/glasses/sunglasses/big, /obj/item/clothing/glasses/sunglasses/aviator, /obj/item/clothing/glasses/mbcg)
 
@@ -210,7 +210,7 @@
 		WEAR_FEET =	/obj/item/clothing/shoes/marine/knife,
 		WEAR_HANDS = /obj/item/clothing/gloves/black,
 		WEAR_JACKET = /obj/item/clothing/suit/storage/windbreaker/windbreaker_brown,
-		WEAR_BODY = /obj/item/clothing/under/marine/officer/boiler,
+		WEAR_BODY = /obj/item/clothing/under/marine/officer,
 		WEAR_FACE = /obj/item/clothing/mask/rebreather/scarf/tacticalmask/tan,
 		WEAR_HEAD = /obj/item/clothing/head/cmcap/req/ro,
 	)

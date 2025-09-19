@@ -6,7 +6,7 @@
 	name = "\improper USCM uniform"
 	desc = "Standard-issue Marine uniform. They have shards of light Venlar to help protect against stabbing weapons and bullets."
 	icon_state = "marine_jumpsuit"
-	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/jungle.dmi'
+	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/uniform_grayscale.dmi'
 	worn_state = "marine_jumpsuit"
 	armor_melee = CLOTHING_ARMOR_LOW
 	armor_bullet = CLOTHING_ARMOR_LOW
@@ -24,7 +24,7 @@
 	var/snow_name = " snow uniform"
 	layer = UPPER_ITEM_LAYER
 	item_icons = list(
-		WEAR_BODY = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/jungle.dmi',
+		WEAR_BODY = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/uniform_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/clothing/uniforms_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/clothing/uniforms_righthand.dmi',
 	)
@@ -46,23 +46,10 @@
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/jungle.dmi'
-			item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/classic.dmi'
-			item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/desert.dmi'
-			item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/snow.dmi'
-			item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/snow.dmi'
-			flags_jumpsuit |= UNIFORM_DO_NOT_HIDE_ACCESSORIES
-		if("urban")
-			icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/urban.dmi'
-			item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/urban.dmi'
+	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/uniform_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_BODY] = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/uniform_grayscale.dmi'
 
 /obj/item/clothing/under/marine/set_sensors(mob/user)
 	if(!skillcheckexplicit(user, SKILL_ANTAG, SKILL_ANTAG_AGENT))
@@ -105,8 +92,8 @@
 
 /obj/item/clothing/under/marine/tanker
 	name = "\improper USCM tanker uniform"
-	icon_state = "marine_tanker"
-	worn_state = "marine_tanker"
+	icon_state = "tanker_jumpsuit"
+	worn_state = "tanker_jumpsuit"
 	flags_jumpsuit = FALSE
 	specialty = "USCM tanker"
 
@@ -136,63 +123,24 @@
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE|UNIFORM_SLEEVE_CUTTABLE|UNIFORM_JACKET_REMOVABLE
 	specialty = "military police"
 
-/obj/item/clothing/under/marine/mp/standard
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-
-/obj/item/clothing/under/marine/mp/darker
-	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_map/desert.dmi'
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	item_icons = list(
-		WEAR_BODY = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_map/desert.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_righthand.dmi'
-	)
-
-/obj/item/clothing/under/marine/warden
-	name = "military warden jumpsuit"
-	desc = "Standard-issue Military Warden uniform. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = "warden_jumpsuit"
-	worn_state = "warden_jumpsuit"
-	suit_restricted = list(/obj/item/clothing/suit/storage/marine, /obj/item/clothing/suit/armor/riot/marine, /obj/item/clothing/suit/storage/jacket/marine/service/warden)
-	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE|UNIFORM_SLEEVE_CUTTABLE|UNIFORM_JACKET_REMOVABLE
-	specialty = "military warden"
-
 /obj/item/clothing/under/marine/officer
-	name = "marine officer uniform"
-	desc = "Softer than silk. Lighter than feather. More protective than Venlar. Fancier than a regular jumpsuit, too. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = ""
-	item_state = ""
-	worn_state = ""
+	name = "marine operations uniform"
+	desc = "An operations uniform worn by members of the USCM. Do the corps proud. It has shards of light Venlar to help protect against stabbing weapons and bullets."
+	icon_state = "boiler_jumpsuit"
+	item_state = "boiler_jumpsuit"
+	worn_state = "boiler_jumpsuit"
 	suit_restricted = null //so most officers can wear whatever suit they want
-	flags_jumpsuit = FALSE
-	specialty = "marine officer"
+	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE|UNIFORM_JACKET_REMOVABLE
+	specialty = " marine operations"
 	black_market_value = 25
-	flags_atom = FPRINT|NO_GAMEMODE_SKIN // same sprite for all gamemodes
-
-/obj/item/clothing/under/marine/officer/intel
-	name = "\improper marine intelligence officer sweatsuit"
-	desc = "Tighter than a vice. Slicker than beard oil. Covered from head to toe in pouches, pockets, bags, straps, and belts. Clearly, you are not only the most intelligent of intelligence officers, but the most fashionable as well. This suit took an entire R&D team five days to develop. It is more expensive than the entire Almayer... probably."
-	icon_state = "io"
-	item_state = "io"
-	worn_state = "io"
-	specialty = "marine intelligence officer"
-
-/obj/item/clothing/under/marine/officer/warrant
-	name = "\improper chief MP uniform"
-	desc = "A uniform typically worn by a Chief MP of the USCM. It has shards of light Venlar to help protect against stabbing weapons, bullets, and shrapnel from explosions. This uniform includes a small EMF distributor to help nullify energy-based weapon fire, along with a hazmat chemical filter woven throughout the material to ward off biological and radiation hazards."
-	icon_state = "WO_jumpsuit"
-	item_state = "WO_jumpsuit"
-	worn_state = "WO_jumpsuit"
-	suit_restricted = list(/obj/item/clothing/suit/storage/marine, /obj/item/clothing/suit/armor/riot/marine, /obj/item/clothing/suit/storage/jacket/marine/service/cmp)
-	flags_jumpsuit = FALSE
-	specialty = "chief MP"
+	flags_atom = FPRINT
 
 /obj/item/clothing/under/marine/officer/pilot
 	name = "pilot officer bodysuit"
 	desc = "A bodysuit worn by pilot officers of the USCM, and is meant for survival in inhospitable conditions. Fly the marines onwards to glory. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = "pilot_flightsuit"
-	item_state = "pilot_flightsuit"
-	worn_state = "pilot_flightsuit"
+	icon_state = "pilot_jumpsuit"
+	item_state = "pilot_jumpsuit"
+	worn_state = "pilot_jumpsuit"
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
 	flags_cold_protection = ICE_PLANET_MIN_COLD_PROT
 	specialty = "pilot officer"
@@ -200,40 +148,15 @@
 	suit_restricted = list(/obj/item/clothing/suit/armor/vest/pilot, /obj/item/clothing/suit/storage/jacket/marine/pilot, /obj/item/clothing/suit/storage/marine/light)
 	flags_atom = FPRINT
 
-/obj/item/clothing/under/marine/officer/pilot/flight
-	name = "tactical pilot officer flightsuit"
-	desc = "A flightsuit worn by pilot officers of the USCM, with plenty of leather straps, pouches, and other essential gear you will never use. Looks badass."
-	icon_state = "pilot_flightsuit_alt"
-	worn_state = "pilot_flightsuit_alt"
-	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_faction/UA.dmi'
-	flags_jumpsuit = UNIFORM_JACKET_REMOVABLE
-	flags_atom = NO_NAME_OVERRIDE|NO_GAMEMODE_SKIN
-	flags_cold_protection = ICE_PLANET_MIN_COLD_PROT
-	item_icons = list(
-		WEAR_BODY = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_faction/UA.dmi',
-	)
-
-/obj/item/clothing/under/marine/officer/pilot/dcc
-	name = "dropship crew chief bodysuit"
-	desc = "A bodysuit worn by dropship crew chiefs of the USCM, and is meant for survival in inhospitable conditions. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = "crewchief_flightsuit"
-	worn_state = "crewchief_flightsuit"
-	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_faction/UA.dmi'
-	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	item_icons = list(
-		WEAR_BODY = 'icons/mob/humans/onmob/clothing/uniforms/uniforms_by_faction/UA.dmi',
-	)
-
-/obj/item/clothing/under/marine/officer/tanker
-	name = "vehicle crewman uniform"
-	desc = "A uniform worn by vehicle crewmen of the USCM. Do the corps proud. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = "marine_tanker"
-	worn_state = "marine_tanker"
-	suit_restricted = list(/obj/item/clothing/suit/storage/marine/light, /obj/item/clothing/suit/storage/jacket/marine/service/tanker)
-	specialty = "vehicle crewman"
-	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
-	item_state_slots = list(WEAR_BODY = "marine_tanker")
+/obj/item/clothing/under/marine/crewman
+	name = "crewman utility uniform"
+	desc = "A specially designed utility uniform worn by USCM air and ground support crews, do the corps proud. It has shards of light Venlar to help protect against stabbing weapons and bullets."
+	icon_state = "crew_jumpsuit"
+	worn_state = "crew_jumpsuit"
+	suit_restricted = list(/obj/item/clothing/suit/storage/marine/light, /obj/item/clothing/suit/storage/jacket/marine/service/tanker, /obj/item/clothing/suit/storage/jacket/marine/service/pilot)
+	specialty = "crewman"
+	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE|UNIFORM_JACKET_REMOVABLE
+	item_state_slots = list(WEAR_BODY = "crew_jumpsuit")
 
 /obj/item/clothing/under/marine/officer/bridge
 	name = "marine service uniform"
@@ -246,15 +169,6 @@
 	worn_state = "BO_jumpsuit"
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-
-/obj/item/clothing/under/marine/officer/boiler
-	name = "marine operations uniform"
-	desc = "An operations uniform worn by members of the USCM. Do the corps proud. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	icon_state = "uscmboiler"
-	worn_state = "uscmboiler"
-	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE|UNIFORM_JACKET_REMOVABLE
-	specialty = "marine operations"
-	flags_atom = FPRINT
 
 /obj/item/clothing/under/marine/officer/command
 	name = "\improper USCM officer uniform"

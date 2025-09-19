@@ -384,11 +384,11 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 /obj/item/clothing/head/helmet/marine
 	name = "\improper M10 pattern marine helmet"
 	desc = "A standard M10 Pattern Helmet. The inside label, along with washing information, reads, 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'. There is a built-in camera on the right side."
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-	icon_state = "helmet"
-	item_state = "helmet"
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon_state = "H1"
+	item_state = "H1"
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 	)
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
@@ -485,22 +485,10 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/helmet/marine/Destroy(force)
 	QDEL_NULL(camera)
@@ -521,7 +509,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 
 	if(pockets.handle_attack_hand(user))
 		..(user)
-
 
 /obj/item/clothing/head/helmet/marine/MouseDrop(over_object, src_location, over_location)
 	SEND_SIGNAL(usr, COMSIG_ITEM_DROPPED, usr)

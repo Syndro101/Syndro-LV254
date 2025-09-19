@@ -236,10 +236,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 	path = /obj/item/clothing/under/marine/officer/engi
 
 /datum/gear/synthetic/uscm/mp
-	path = /obj/item/clothing/under/marine/mp/standard
-
-/datum/gear/synthetic/uscm/mp_dark
-	path = /obj/item/clothing/under/marine/mp/darker
+	path = /obj/item/clothing/under/marine/mp
 
 /datum/gear/synthetic/civilian
 	category = "Civilian Uniforms"

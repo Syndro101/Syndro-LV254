@@ -140,20 +140,42 @@
 	return ..()
 
 /obj/item/clothing/suit/storage/marine/update_icon(mob/user)
-	var/image/I
-	overlays -= armor_overlays["lamp"]
-	armor_overlays["lamp"] = null
-	if(flags_marine_armor & ARMOR_LAMP_OVERLAY)
-		if(flags_marine_armor & ARMOR_LAMP_ON)
-			I = image('icons/obj/items/clothing/suits/misc_ert.dmi', src, "lamp-on")
+	for (var/overlay_id in armor_overlays)
+		overlays -= armor_overlays[overlay_id]
+		armor_overlays[overlay_id] = null
+
+	// lamp overlay
+	if (flags_marine_armor & ARMOR_LAMP_OVERLAY)
+		var/image/lamp_overlay
+		if (flags_marine_armor & ARMOR_LAMP_ON)
+			lamp_overlay = image('icons/obj/items/clothing/suits/misc_ert.dmi', src, "lamp-on")
 		else
-			I = image('icons/obj/items/clothing/suits/misc_ert.dmi', src, "lamp-off")
-		armor_overlays["lamp"] = I
-		overlays += I
-	else
-		armor_overlays["lamp"] = null
-	if(user)
+			lamp_overlay = image('icons/obj/items/clothing/suits/misc_ert.dmi', src, "lamp-off")
+
+		armor_overlays["lamp"] = lamp_overlay
+		overlays += lamp_overlay
+
+	// 0 = Smooth (no overlay)
+	if (armor_variation > 0)
+		var/style_state
+		switch(armor_variation)
+			if (1) style_state = "carrier"
+			if (2) style_state = "skull"
+			// more styles later
+
+		if (style_state)
+			var/image/style_overlay = image(
+				'icons/mob/humans/onmob/clothing/suits/suits_by_map/chest_grayscale.dmi',
+				src,
+				style_state
+			)
+			armor_overlays["style"] = style_overlay
+			overlays += style_overlay
+
+	// update icons
+	if (user)
 		user.update_inv_wear_suit()
+
 
 /obj/item/clothing/suit/storage/marine/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
@@ -264,90 +286,23 @@
 	light_range = 5 //slightly higher
 	specialty = "M4 pattern marine"
 
-/obj/item/clothing/suit/storage/marine/MP
-	name = "\improper M2 pattern MP armor"
-	desc = "A standard Colonial Marines M2 Pattern Chestplate. Protects the chest from ballistic rounds, bladed objects and accidents. It has a small leather pouch strapped to it for limited storage."
-	icon_state = "mp_armor"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_LOW
-	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
-	storage_slots = 2
-	slowdown = SLOWDOWN_ARMOR_LIGHT
-	allowed = list(
-		/obj/item/weapon/gun,
-		/obj/item/tank/emergency_oxygen,
-		/obj/item/device/flashlight,
-		/obj/item/ammo_magazine/,
-		/obj/item/storage/fancy/cigarettes,
-		/obj/item/tool/lighter,
-		/obj/item/weapon/baton,
-		/obj/item/restraint/handcuffs,
-		/obj/item/explosive/grenade,
-		/obj/item/device/binoculars,
-		/obj/item/attachable/bayonet,
-		/obj/item/storage/backpack/general_belt,
-		/obj/item/device/hailer,
-		/obj/item/storage/belt/gun,
-		/obj/item/weapon/sword/ceremonial,
-		/obj/item/device/motiondetector,
-		/obj/item/device/walkman,
-	)
-	uniform_restricted = list(/obj/item/clothing/under/marine/mp)
-	specialty = "M2 pattern MP"
-	black_market_value = 20
-
-/obj/item/clothing/suit/storage/marine/MP/warden
-	name = "\improper M3 pattern warden MP armor"
-	desc = "A well-crafted suit of M3 Pattern Armor typically distributed to Wardens. Useful for letting your men know who is in charge."
-	icon_state = "warden"
-	uniform_restricted = list(/obj/item/clothing/under/marine/warden)
-	specialty = "M3 pattern warden MP"
-
-/obj/item/clothing/suit/storage/marine/MP/WO
-	name = "\improper M3 pattern chief MP armor"
-	desc = "A well-crafted suit of M3 Pattern Armor typically distributed to Chief MPs. Useful for letting your men know who is in charge."
-	icon_state = "warrant_officer"
-	uniform_restricted = list(/obj/item/clothing/under/marine/officer/warrant)
-	specialty = "M3 pattern chief MP"
-	black_market_value = 30
-
-/obj/item/clothing/suit/storage/marine/MP/general
-	name = "\improper M3 pattern general officer armor"
-	desc = "A well-crafted suit of M3 Pattern Armor with a gold shine. It looks very expensive, but shockingly fairly easy to carry and wear."
-	icon_state = "golden"
-	icon = 'icons/obj/items/clothing/suits/suits_by_faction/UA.dmi'
-	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/UA.dmi'
-	)
+/obj/item/clothing/suit/storage/marine/officer
+	name = "\improper M4 pattern officer armor"
+	desc = "A well-crafted suit of M4 Pattern Armor with a gold shine. It looks very expensive, but shockingly fairly easy to carry and wear."
+	icon_state = "M2"
 	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	uniform_restricted = list(/obj/item/clothing/under/marine/officer/general)
-	specialty = "M3 pattern general"
-	item_state_slots = list(WEAR_JACKET = "golden")
+	specialty = "M4 pattern officer"
 	w_class = SIZE_MEDIUM
-	flags_atom = FPRINT|CONDUCT|NO_GAMEMODE_SKIN // same sprite for all gamemodes
-
-/obj/item/clothing/suit/storage/marine/MP/SO
-	name = "\improper M3 pattern officer armor"
-	desc = "A well-crafted suit of M3 Pattern Armor typically found in the hands of higher-ranking officers. Useful for letting your men know who is in charge when taking to the field."
-	icon_state = "officer"
-	storage_slots = 3
-	flags_atom = null
-	uniform_restricted = list(/obj/item/clothing/under/marine/officer, /obj/item/clothing/under/rank/qm_suit, /obj/item/clothing/under/rank/chief_medical_officer, /obj/item/clothing/under/marine/dress)
-	specialty = "M3 pattern officer"
-	item_state_slots = list(WEAR_JACKET = "officer")
+	flags_atom = FPRINT|CONDUCT
 
 //Making a new object because we might want to edit armor values and such.
 //Or give it its own sprite. It's more for the future.
-/obj/item/clothing/suit/storage/marine/MP/CO
+/obj/item/clothing/suit/storage/marine/officer/commander
 	name = "\improper M3 pattern commanding officer armor"
-	desc = "A robust, well-polished suit of armor for the Commanding Officer. Custom-made to fit its owner with special straps to operate a smartgun. Show those Marines who's really in charge."
-	icon_state = "co"
+	desc = "A robust, well-polished suit of armor for Commanders. Custom-made to fit its owner with special straps to operate a smartgun. Show those Marines who's really in charge."
+	icon_state = "H2"
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	storage_slots = 6
 	flags_atom = NO_NAME_OVERRIDE
@@ -359,7 +314,6 @@
 	black_market_value = 35
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
-
 
 /obj/item/clothing/suit/storage/marine/MP/CO/jacket
 	name = "\improper M3 pattern commanding officer armored coat"
@@ -395,12 +349,12 @@
 /obj/item/clothing/suit/storage/marine/carrier
 	name = "M3 pattern carrier marine armor"
 	specialty = "M3 pattern carrier marine"
-	flags_marine_armor = STYLE_CARRIER
+	armor_variation = 1
 
 /obj/item/clothing/suit/storage/marine/skull
 	name = "M3 pattern skull marine armor"
 	specialty = "M3 pattern skull marine"
-	flags_marine_armor = STYLE_SKULL
+	armor_variation = 2
 
 // M3-L pattern light armor
 /obj/item/clothing/suit/storage/marine/light
@@ -419,12 +373,12 @@
 /obj/item/clothing/suit/storage/marine/light/carrier
 	name = "M3-L pattern carrier marine armor"
 	specialty = "M3-L pattern carrier marine"
-	flags_marine_armor = STYLE_CARRIER
+	armor_variation = 1
 
 /obj/item/clothing/suit/storage/marine/light/skull
 	name = "M3-L pattern skull marine armor"
 	specialty = "M3-L pattern skull marine"
-	flags_marine_armor = STYLE_SKULL
+	armor_variation = 2
 
 /obj/item/clothing/suit/storage/marine/light/synth
 	name = "\improper M3-LS pattern light armor"
@@ -481,12 +435,12 @@
 /obj/item/clothing/suit/storage/marine/heavy/carrier
 	name = "M3-H pattern carrier marine armor"
 	specialty = "M3-H pattern carrier marine"
-	flags_marine_armor = STYLE_CARRIER
+	armor_variation = 1
 
 /obj/item/clothing/suit/storage/marine/heavy/skull
 	name = "M3-H pattern skull marine armor"
 	specialty = "M3-H pattern skull marine"
-	flags_marine_armor = STYLE_SKULL
+	armor_variation = 2
 
 //===========================//SPECIALIST\\================================\\
 //=======================================================================\\

@@ -173,7 +173,7 @@
 
 	new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/mcom/vc(new_human), WEAR_L_EAR)
 	new_human.equip_to_slot_or_del(new back_item(new_human), WEAR_BACK)
-	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/officer/tanker(new_human), WEAR_BODY)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/crewman(new_human), WEAR_BODY)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/knife(new_human), WEAR_FEET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/marine/service/tanker, WEAR_JACKET)
 
@@ -186,11 +186,11 @@
 	name = "USCM Vehicle Crewman (CRMN)"
 	flags = EQUIPMENT_PRESET_EXTRA|EQUIPMENT_PRESET_MARINE
 
-	utility_under = list(/obj/item/clothing/under/marine/officer/tanker)
+	utility_under = list(/obj/item/clothing/under/marine/crewman)
 
 /datum/equipment_preset/uscm/tank/full/load_gear(mob/living/carbon/human/new_human)
 	new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/mcom/vc(new_human), WEAR_L_EAR)
-	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/officer/tanker(new_human), WEAR_BODY)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/crewman(new_human), WEAR_BODY)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/knife(new_human), WEAR_FEET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/yellow(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/m4a3/mod88(new_human), WEAR_WAIST)
@@ -224,7 +224,7 @@
 	minimap_icon = "io"
 	minimap_background = "background_intel"
 
-	utility_under = list(/obj/item/clothing/under/marine/officer/intel)
+	utility_under = list(/obj/item/clothing/under/marine/officer)
 
 	minimap_icon = "io"
 	dress_under = list(/obj/item/clothing/under/marine/dress/blues/senior)
@@ -237,7 +237,7 @@
 		back_item = /obj/item/storage/backpack/marine
 
 	new_human.equip_to_slot_or_del(new back_item(new_human), WEAR_BACK)
-	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/officer/intel(new_human), WEAR_BODY)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/under/marine/officer(new_human), WEAR_BODY)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/knife(new_human), WEAR_FEET)
 
 /datum/equipment_preset/uscm/intel/load_status(mob/living/carbon/human/new_human)
@@ -249,11 +249,11 @@
 	name = "USCM Intelligence Officer (IO)"
 	flags = EQUIPMENT_PRESET_EXTRA|EQUIPMENT_PRESET_MARINE
 
-	utility_under = list(/obj/item/clothing/under/marine/officer/intel)
+	utility_under = list(/obj/item/clothing/under/marine/officer)
 
 /datum/equipment_preset/uscm/intel/full/load_gear(mob/living/carbon/human/new_human)
 
-	var/obj/item/clothing/under/marine/officer/intel/U = new(new_human)
+	var/obj/item/clothing/under/marine/officer/U = new(new_human)
 	new_human.equip_to_slot_or_del(U, WEAR_BODY)
 	new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/intel(new_human), WEAR_L_EAR)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/knife(new_human), WEAR_FEET)

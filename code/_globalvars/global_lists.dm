@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(backbaglist, list("Backpack", "Satchel"))
 	//NVG colors
 GLOBAL_LIST_INIT(nvg_color_list, list("Green", "White", "Yellow", "Orange", "Red", "Blue"))
 	//Armor styles
-GLOBAL_LIST_INIT(armor_style_list, list("Padded" = 1, "Padless" = 2, "Ridged" = 3, "Carrier" = 4, "Skull" = 5, "Smooth" = 6, "Random"))
+GLOBAL_LIST_INIT(armor_style_list, list("Smooth" = 0, "Carrier" = 1, "Skull" = 2, "Police" = 3, "Random"))
 
 // var/global/list/exclude_jobs = list(/datum/job/ai,/datum/job/cyborg)
 GLOBAL_VAR_INIT(round_should_check_for_win, TRUE)

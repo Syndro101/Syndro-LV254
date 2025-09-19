@@ -1,8 +1,8 @@
 // =========================
 // CAMO COLOR DEFINES
 // =========================
-#define CAMO_JUNGLE "#a3aa8b"
-#define CAMO_DESERT "#beb19e"
+#define CAMO_JUNGLE "#9ca779"
+#define CAMO_DESERT "#d3b893"
 #define CAMO_SNOW   "#e4e4e4"
 #define CAMO_URBAN  "#999e95"
 #define CAMO_BLACK  "#505050"
@@ -29,6 +29,7 @@
 		"snow"   = CAMO_SNOW,
 		"urban"  = CAMO_URBAN,
 		"black"  = CAMO_BLACK,
+		"brown"  = CAMO_BROWN,
 		"red"    = CAMO_RED,
 		"blue"   = CAMO_BLUE,
 		"gold"   = CAMO_GOLD,

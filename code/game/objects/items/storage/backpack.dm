@@ -719,7 +719,7 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	phone_category = PHONE_UPP_SOLDIER
 
 /obj/item/storage/backpack/marine/satchel/rto/io
-	uniform_restricted = list(/obj/item/clothing/under/marine/officer/intel)
+	uniform_restricted = list(/obj/item/clothing/under/marine/officer)
 	phone_category = PHONE_IO
 
 /obj/item/storage/backpack/marine/smock

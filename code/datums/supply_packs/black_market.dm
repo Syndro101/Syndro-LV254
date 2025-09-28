@@ -1020,7 +1020,6 @@ This is where the RO can reclaim their lost honor and purchase the M44 custom, t
 	randomised_num_contained = 1
 	contains = list(
 		/obj/item/clothing/head/cmbandana,
-		/obj/item/clothing/head/cmbandana/tan,
 	)
 	dollar_cost = 10
 	containertype = /obj/structure/largecrate/black_market

@@ -813,47 +813,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 	specialty = "M10 welding"
 	built_in_visors = list(new /obj/item/device/helmet_visor, new /obj/item/device/helmet_visor/welding_visor)
 
-
-/obj/item/clothing/head/helmet/marine/grey
-	desc = "A standard M10 Pattern Helmet. This one has not had a camouflage pattern applied to it yet. There is a built-in camera on the right side."
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/classic_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/classic_righthand.dmi'
-	)
-
-
-/obj/item/clothing/head/helmet/marine/jungle
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
-	)
-
-
-/obj/item/clothing/head/helmet/marine/snow
-	name = "\improper M10 marine snow helmet"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/snow_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/snow_righthand.dmi'
-	)
-
-/obj/item/clothing/head/helmet/marine/desert
-	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi',
-		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_lefthand.dmi',
-		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/desert_righthand.dmi'
-	)
-
 /obj/item/clothing/head/helmet/marine/tech/tanker
 	name = "\improper M50 tanker helmet"
 	desc = "The lightweight M50 tanker helmet is designed for use by armored crewmen in the USCM. It offers low weight protection, and allows agile movement inside the confines of an armored vehicle. Features a toggleable welding screen for eye protection."
@@ -1398,7 +1357,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 /obj/item/clothing/head/helmet/specrag
 	name = "weapons specialist head-rag"
 	desc = "A hat worn by heavy-weapons operators to block sweat."
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
 	icon_state = "spec"
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
@@ -1417,23 +1375,12 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 
 /obj/item/clothing/head/helmet/specrag/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/helmet/specrag/Initialize(mapload, ...)
 	. = ..()
@@ -1442,7 +1389,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 /obj/item/clothing/head/helmet/skullcap
 	name = "skullcap"
 	desc = "Good for keeping sweat out of your eyes"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
 	icon_state = "skullcap"
 	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
 	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
@@ -1465,37 +1411,12 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 
 /obj/item/clothing/head/helmet/skullcap/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-
-
-/obj/item/clothing/head/helmet/skullcap/jungle
-	name = "\improper M8 marksman cowl"
-	desc = "A cowl worn to conceal the face of a marksman in the jungle."
-	icon_state = "skullcapm"
-
-/obj/item/clothing/head/helmet/skullcap/jungle/New(loc, type,
-	new_protection[] = list(MAP_ICE_COLONY = ICE_PLANET_MIN_COLD_PROT))
-	select_gamemode_skin(type, override_protection = new_protection)
-	..()
-	switch(icon_state)
-		if("s_skullcapm")
-			desc = "A hood meant to protect the wearer from both the cold and the guise of the enemy in the tundra."
-			flags_inv_hide = HIDEEARS|HIDEALLHAIR
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 //===========================//HELGHAST - MERCENARY\\================================\\
 //=====================================================================\\

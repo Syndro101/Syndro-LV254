@@ -40,34 +40,6 @@
 	if(!(flags_atom & NO_GAMEMODE_SKIN))
 		select_gamemode_skin(/obj/item/clothing/head/cmbandana)
 
-/obj/item/clothing/head/cmbandana/tan
-	icon_state = "band2"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-	)
-	flags_atom = null
-
-/obj/item/clothing/head/cmbandana/tan/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
-	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-
-
 /obj/item/clothing/head/beanie
 	name = "beanie"
 	desc = "A standard military beanie, often worn by non-combat military personnel and support crews, though it is not uncommon to see combat personnel who no longer care about self-preservation wearing one of these as well. Popular due to being comfortable and snug."
@@ -102,52 +74,12 @@
 
 /obj/item/clothing/head/beret/cm/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-
-/obj/item/clothing/head/beret/cm/tan
-	icon_state = "berettan"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-	)
-
-/obj/item/clothing/head/beret/cm/tan/Initialize(mapload, ...)
-	. = ..()
-	select_gamemode_skin(/obj/item/clothing/head/beret/cm/tan)
-
-/obj/item/clothing/head/beret/cm/red
-	icon_state = "beretred"
-	flags_atom = NO_GAMEMODE_SKIN
-
-/obj/item/clothing/head/beret/cm/white
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-	)
-	flags_atom = NO_GAMEMODE_SKIN
-
-/obj/item/clothing/head/beret/cm/black
-	icon_state = "beret_black"
-	flags_atom = NO_GAMEMODE_SKIN
-
-/obj/item/clothing/head/beret/cm/green
-	icon_state = "beret_green"
-	flags_atom = NO_GAMEMODE_SKIN
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/beret/cm/squadberet
 	icon_state = "beret_squad"
@@ -195,47 +127,14 @@
 			desc = initial(desc)
 		H.update_inv_head()
 
-/obj/item/clothing/head/beret/civilian
-	name = "Tan Beret"
-	desc = "A nice fashionable beret, popular with executives."
-	icon_state = "berettan"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-	)
-
-/obj/item/clothing/head/beret/civilian/brown
-	name = "Brown Beret"
-	icon_state = "berettan"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-	)
-
-/obj/item/clothing/head/beret/civilian/black
-	name = "Black Beret"
-	icon_state = "beret_black"
-	icon = 'icons/obj/items/clothing/hats/berets.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/berets.dmi'
-	)
-
-/obj/item/clothing/head/beret/civilian/white
-	name = "White Beret"
-	icon_state = "beret"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-	)
-
 /obj/item/clothing/head/headband
 	name = "headband"
 	desc = "A rag typically worn by the less-orthodox weapons operators. While it offers no protection, it is certainly comfortable to wear compared to the standard helmet. Comes in two stylish colors."
 	icon_state = "headband"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
 	flags_obj = OBJ_NO_HELMET_BAND|OBJ_IS_HELMET_GARB
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
 		WEAR_AS_GARB = 'icons/mob/humans/onmob/clothing/helmet_garb/headbands.dmi',
 	)
 	item_state_slots = list(WEAR_AS_GARB = "headband")
@@ -247,27 +146,12 @@
 
 /obj/item/clothing/head/headband/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-			item_icons[WEAR_AS_GARB] = 'icons/mob/humans/onmob/clothing/helmet_garb/helmet_garb_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-			item_icons[WEAR_AS_GARB] = 'icons/mob/humans/onmob/clothing/helmet_garb/helmet_garb_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-			item_icons[WEAR_AS_GARB] = 'icons/mob/humans/onmob/clothing/helmet_garb/helmet_garb_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-			item_icons[WEAR_AS_GARB] = 'icons/mob/humans/onmob/clothing/helmet_garb/helmet_garb_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
-			item_icons[WEAR_AS_GARB] = 'icons/mob/humans/onmob/clothing/helmet_garb/helmet_garb_by_map/urban.dmi'
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/headband/red
 	icon_state = "headbandred"
@@ -426,9 +310,9 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "patrol cap"
 	desc = "A casual cap issued as part of the non-combat uniform. While it only protects from the sun, it's much more comfortable than a helmet."
 	icon_state = "cap"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
 	)
@@ -462,22 +346,12 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 
 /obj/item/clothing/head/cmcap/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/cmcap/Destroy()
 	QDEL_NULL(pockets)
@@ -726,9 +600,9 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "marine commanding officer beret"
 	desc = "A beret with the commanding officer's insignia emblazoned on it. Wearer may suffer the heavy weight of responsibility upon their head and shoulders."
 	icon_state = "coberet"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 	)
 	black_market_value = 30
 
@@ -739,22 +613,12 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 
 /obj/item/clothing/head/beret/marine/commander/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 /obj/item/clothing/head/beret/marine/commander/dress
 	name = "marine major white beret"
@@ -1077,32 +941,22 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "durag"
 	desc = "An improvised head wrap made out of a standard issue neckerchief. Great for keeping the sweat out of your eyes and protecting your hair."
 	icon_state = "durag"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
 	flags_inv_hide = HIDETOPHAIR
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
 	)
 
 /obj/item/clothing/head/durag/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
-	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
-		if("jungle")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/jungle.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/jungle.dmi'
-		if("classic")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/classic.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/classic.dmi'
-		if("desert")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/desert.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/desert.dmi'
-		if("snow")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/snow.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/snow.dmi'
-		if("urban")
-			icon = 'icons/obj/items/clothing/hats/hats_by_map/urban.dmi'
-			item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/urban.dmi'
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
 
 
 /obj/item/clothing/head/durag/Initialize(mapload, ...)

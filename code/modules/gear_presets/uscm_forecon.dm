@@ -18,7 +18,7 @@
 	utility_hat = list(/obj/item/clothing/head/cmcap)
 	utility_gloves = list(/obj/item/clothing/gloves/marine)
 	utility_shoes = list(/obj/item/clothing/shoes/marine)
-	utility_extra = list(/obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/bridge)
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service, /obj/item/clothing/suit/storage/jacket/marine/service/mp)
@@ -69,7 +69,7 @@
 			new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beret/cm(new_human), WEAR_HEAD)
 			new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/marine/overwatch_camera/forecon(new_human), WEAR_L_EAR)
 		if (3)
-			new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beret/cm/tan(new_human), WEAR_HEAD)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beret/cm(new_human), WEAR_HEAD)
 			new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/almayer/marine/overwatch_camera/forecon(new_human), WEAR_L_EAR)
 		if (4)
 			new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beanie(new_human), WEAR_HEAD)
@@ -218,7 +218,7 @@
 	minimap_background = "background_command"
 
 	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
-	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses,/obj/item/clothing/glasses/sunglasses/big,/obj/item/clothing/glasses/sunglasses/aviator,/obj/item/clothing/glasses/mbcg)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/bridge)

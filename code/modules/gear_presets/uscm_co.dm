@@ -25,7 +25,7 @@
 
 
 	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
-	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses, /obj/item/clothing/glasses/sunglasses/big, /obj/item/clothing/glasses/sunglasses/aviator, /obj/item/clothing/glasses/mbcg)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/formal/gray, /obj/item/clothing/under/marine/officer/formal/turtleneck)
@@ -266,7 +266,7 @@
 		WEAR_BODY = /obj/item/clothing/under/marine/officer/command,
 		WEAR_ACCESSORY = /obj/item/clothing/accessory/storage/tool_webbing,
 		WEAR_JACKET = /obj/item/clothing/suit/storage/jacket/marine/vest/tan,
-		WEAR_HEAD = /obj/item/clothing/head/beret/cm/tan,
+		WEAR_HEAD = /obj/item/clothing/head/beret/cm,
 	)
 
 /datum/equipment_preset/uscm_co/logistics/council

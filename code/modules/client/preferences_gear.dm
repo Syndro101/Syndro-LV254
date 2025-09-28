@@ -357,10 +357,6 @@ GLOBAL_LIST_EMPTY(roles_with_gear)
 	display_name = "USCM bandana, green"
 	path = /obj/item/clothing/head/cmbandana
 
-/datum/gear/headwear/uscm/bandana_tan
-	display_name = "USCM bandana, tan"
-	path = /obj/item/clothing/head/cmbandana/tan
-
 /datum/gear/headwear/uscm/beanie_grey
 	display_name = "USCM beanie, grey"
 	path = /obj/item/clothing/head/beanie/gray
@@ -377,29 +373,9 @@ GLOBAL_LIST_EMPTY(roles_with_gear)
 	display_name = "USCM beret, squad specific"
 	path = /obj/item/clothing/head/beret/cm/squadberet
 
-/datum/gear/headwear/uscm/beret_green
-	display_name = "USCM beret, green"
-	path = /obj/item/clothing/head/beret/cm/green
-
-/datum/gear/headwear/uscm/beret_tan
-	display_name = "USCM beret, tan"
-	path = /obj/item/clothing/head/beret/cm/tan
-
-/datum/gear/headwear/uscm/beret_black
-	display_name = "USCM beret, black"
-	path = /obj/item/clothing/head/beret/cm/black
-
-/datum/gear/headwear/uscm/beret_white
-	display_name = "USCM beret, white"
-	path = /obj/item/clothing/head/beret/cm/white
-
 /datum/gear/headwear/uscm/boonie_olive
 	display_name = "USCM boonie hat, olive"
 	path = /obj/item/clothing/head/cmcap/boonie
-
-/datum/gear/headwear/uscm/boonie_tan
-	display_name = "USCM boonie hat, tan"
-	path = /obj/item/clothing/head/cmcap/boonie/tan
 
 /datum/gear/headwear/uscm/cap
 	display_name = "USCM cap"

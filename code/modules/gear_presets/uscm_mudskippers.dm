@@ -15,7 +15,7 @@
 	utility_hat = list(/obj/item/clothing/head/cmcap)
 	utility_gloves = list(/obj/item/clothing/gloves/marine)
 	utility_shoes = list(/obj/item/clothing/shoes/marine)
-	utility_extra = list(/obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/bridge)
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service, /obj/item/clothing/suit/storage/jacket/marine/service/mp)
@@ -75,7 +75,7 @@
 	minimap_background = "background_command"
 
 	utility_under = list(/obj/item/clothing/under/marine,/obj/item/clothing/under/marine/officer/command)
-	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses,/obj/item/clothing/glasses/sunglasses/big,/obj/item/clothing/glasses/sunglasses/aviator,/obj/item/clothing/glasses/mbcg)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/formal/gray, /obj/item/clothing/under/marine/officer/formal/turtleneck)
@@ -156,7 +156,7 @@
 	minimap_background = "background_command"
 
 	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
-	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses,/obj/item/clothing/glasses/sunglasses/big,/obj/item/clothing/glasses/sunglasses/aviator,/obj/item/clothing/glasses/mbcg)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/bridge)
@@ -250,7 +250,7 @@
 	minimap_background = "background_command"
 
 	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
-	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 	utility_extra = list(/obj/item/clothing/glasses/sunglasses,/obj/item/clothing/glasses/sunglasses/big,/obj/item/clothing/glasses/sunglasses/aviator,/obj/item/clothing/glasses/mbcg)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/formal/gray, /obj/item/clothing/under/marine/officer/formal/turtleneck)
@@ -336,7 +336,7 @@
 	minimap_background = "background_command"
 
 	utility_under = list(/obj/item/clothing/under/marine, /obj/item/clothing/under/marine/officer/command, /obj/item/clothing/under/marine/officer)
-	utility_hat = list(/obj/item/clothing/head/cmcap,/obj/item/clothing/head/beret/cm/tan)
+	utility_hat = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 
 /datum/equipment_preset/uscm_mudskippers/pc/New()
 	. = ..()

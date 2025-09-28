@@ -50,10 +50,6 @@ GLOBAL_LIST_INIT(cm_vending_clothing_corporate_liaison, list(
 
 	list("HATS (CHOOSE 5)", 0, null, null, null),
 	list("Company Baseball Cap", 0, /obj/item/clothing/head/cmcap/wy_cap, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_RECOMMENDED),
-	list("Tan Beret", 0, /obj/item/clothing/head/beret/civilian, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
-	list("Brown Beret", 0, /obj/item/clothing/head/beret/civilian/brown, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
-	list("Black Beret", 0, /obj/item/clothing/head/beret/civilian/black, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
-	list("White Beret", 0, /obj/item/clothing/head/beret/civilian/white, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
 	list("Tan Fedora", 0, /obj/item/clothing/head/fedora, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
 	list("Brown Fedora", 0, /obj/item/clothing/head/fedora/brown, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),
 	list("Grey Fedora", 0, /obj/item/clothing/head/fedora/grey, CIVILIAN_CAN_BUY_HAT, VENDOR_ITEM_REGULAR),

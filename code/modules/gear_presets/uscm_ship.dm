@@ -9,7 +9,7 @@
 	utility_hat = list(/obj/item/clothing/head/cmcap)
 	utility_gloves = list(/obj/item/clothing/gloves/marine)
 	utility_shoes = list(/obj/item/clothing/shoes/marine/knife)
-	utility_extra = list(/obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/beret/cm)
 
 	service_under = list(/obj/item/clothing/under/marine/officer/bridge)
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service, /obj/item/clothing/suit/storage/jacket/marine/service/mp)
@@ -732,7 +732,7 @@
 
 	utility_hat = list(/obj/item/clothing/head/beret/cm)
 	utility_gloves = list(/obj/item/clothing/gloves/marine)
-	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/cmcap)
 
 	service_hat = list(/obj/item/clothing/head/beret/cm)
 	service_shoes = list(/obj/item/clothing/shoes/dress/commander)

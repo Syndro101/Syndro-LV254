@@ -599,7 +599,6 @@ GLOBAL_LIST_INIT(rebel_rifles, list(
 		/obj/item/clothing/head/helmet/skullcap,
 		/obj/item/clothing/head/bandana,
 		/obj/item/clothing/head/cmbandana,
-		/obj/item/clothing/head/cmbandana/tan,
 		/obj/item/clothing/head/beanie,
 		/obj/item/clothing/head/headband,
 		/obj/item/clothing/head/headband/red,

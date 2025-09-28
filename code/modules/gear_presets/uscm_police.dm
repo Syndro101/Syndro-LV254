@@ -36,7 +36,7 @@
 
 	utility_under = list(/obj/item/clothing/under/marine/mp)
 	utility_hat = list(/obj/item/clothing/head/beret/marine/mp)
-	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service/mp)
 
@@ -95,7 +95,7 @@
 
 	utility_under = list(/obj/item/clothing/under/marine/mp)
 	utility_hat = list(/obj/item/clothing/head/beret/marine/mp/warden)
-	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service/warden)
 
@@ -157,7 +157,7 @@
 
 	utility_under = list(/obj/item/clothing/under/marine/officer)
 	utility_hat = list(/obj/item/clothing/head/beret/marine/mp/cmp)
-	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 
 	service_over = list(/obj/item/clothing/suit/storage/jacket/marine/service/cmp)
 
@@ -216,7 +216,7 @@
 
 	utility_under = list(/obj/item/clothing/under/marine/officer)
 	utility_hat = list(/obj/item/clothing/head/beret/marine/mp/cmp)
-	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm, /obj/item/clothing/head/beret/cm/tan)
+	utility_extra = list(/obj/item/clothing/head/cmcap, /obj/item/clothing/head/beret/cm)
 
 /datum/equipment_preset/uscm_ship/uscm_police/riot_mp/New()
 	. = ..()

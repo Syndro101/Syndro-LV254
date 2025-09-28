@@ -341,20 +341,8 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 /datum/gear/synthetic/headwear/beret_purple
 	path = /obj/item/clothing/head/beret/jan
 
-/datum/gear/synthetic/headwear/beret_red
-	path = /obj/item/clothing/head/beret/cm/red
-
 /datum/gear/synthetic/headwear/beret
 	path = /obj/item/clothing/head/beret/cm
-
-/datum/gear/synthetic/headwear/beret_tan
-	path = /obj/item/clothing/head/beret/cm/tan
-
-/datum/gear/synthetic/headwear/beret_black
-	path = /obj/item/clothing/head/beret/cm/black
-
-/datum/gear/synthetic/headwear/beret_white
-	path = /obj/item/clothing/head/beret/cm/white
 
 /datum/gear/synthetic/headwear/cap
 	path = /obj/item/clothing/head/cmcap
@@ -379,18 +367,6 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 
 /datum/gear/synthetic/helmet/marine
 	path = /obj/item/clothing/head/helmet/marine
-
-/datum/gear/synthetic/helmet/marine_grey
-	path = /obj/item/clothing/head/helmet/marine/grey
-
-/datum/gear/synthetic/helmet/marine_jungle
-	path = /obj/item/clothing/head/helmet/marine/jungle
-
-/datum/gear/synthetic/helmet/marine_snow
-	path = /obj/item/clothing/head/helmet/marine/snow
-
-/datum/gear/synthetic/helmet/marine_desert
-	path = /obj/item/clothing/head/helmet/marine/desert
 
 /datum/gear/synthetic/mask
 	category = "Mask"

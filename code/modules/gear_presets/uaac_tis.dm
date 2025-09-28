@@ -123,7 +123,7 @@
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud/hidden/prescription(new_human), WEAR_EYES)
 	else
 		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud/hidden(new_human), WEAR_EYES)
-	new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beret/cm/black(new_human), WEAR_HEAD)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/head/beret/uaac/tis(new_human), WEAR_HEAD)
 	new_human.equip_to_slot_or_del(new back_item(new_human), WEAR_BACK)
 	new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/document(new_human), WEAR_L_STORE)
 	new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/general/large(new_human), WEAR_R_STORE)

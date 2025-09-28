@@ -180,6 +180,10 @@
 	var/list/random_spawn_stock = list()
 	///This will link to one of the attachments, or remain null.
 	var/obj/item/attachable/attached_gun/active_attachable = null
+	///Chance for random spawn to give this gun a cosmetic attachment.
+	var/random_cosmetic_chance = 100
+	///Used when a gun will have a chance to spawn with attachments.
+	var/list/random_spawn_cosmetic = list()
 	///What attachments this gun starts with THAT CAN BE REMOVED. Important to avoid nuking the attachments on restocking! Added on New()
 	var/list/starting_attachment_types = null
 
@@ -262,7 +266,7 @@
 /obj/item/weapon/gun/Initialize(mapload, spawn_empty) //You can pass on spawn_empty to make the sure the gun has no bullets or mag or anything when created.
 	. = ..() //This only affects guns you can get from vendors for now. Special guns spawn with their own things regardless.
 	base_gun_icon = icon_state
-	attachable_overlays = list("muzzle" = null, "rail" = null, "under" = null, "stock" = null, "mag" = null, "special" = null)
+	attachable_overlays = list("muzzle" = null, "rail" = null, "under" = null, "stock" = null, "mag" = null, "special" = null, "cosmetic" = null)
 
 	LAZYSET(item_state_slots, WEAR_BACK, item_state)
 	LAZYSET(item_state_slots, WEAR_JACKET, item_state)
@@ -487,6 +491,14 @@
 			update_attachable(S.slot)
 			attachmentchoice = FALSE
 
+	var/cosmeticchance = random_cosmetic_chance
+	if(prob(cosmeticchance) && !attachments["cosmetic"]) // Cosmetic
+		attachmentchoice = SAFEPICK(random_spawn_cosmetic)
+		if(attachmentchoice)
+			var/obj/item/attachable/C = new attachmentchoice(src)
+			C.Attach(src)
+			update_attachable(C.slot)
+			attachmentchoice = FALSE
 
 /obj/item/weapon/gun/proc/handle_starting_attachment()
 	if(LAZYLEN(starting_attachment_types))
@@ -507,8 +519,8 @@ Note: pickup and dropped on weapons must have both the ..() to update zoom AND t
 As sniper rifles have both and weapon mods can change them as well. ..() deals with zoom only.
 */
 /obj/item/weapon/gun/equipped(mob/living/user, slot)
-	if(flags_item & NODROP)
-		return
+//	if(flags_item & NODROP)
+//		return
 
 	unwield(user)
 	pull_time = world.time + wield_delay

@@ -601,7 +601,7 @@
 //*****************************************************************************************************
 /datum/equipment_preset/synth/working_joe/scav
 	name = "Synthetic - Scavin Joe"
-	joe_type = SYNTH_HAZARD_JOE
+	joe_type = SYNTH_UPP_JOE
 	paygrades = list(PAY_SHORT_STLK = JOB_PLAYTIME_TIER_0)
 	flags = EQUIPMENT_PRESET_EXTRA
 	assignment = "S.T.A.L.K.E.R."

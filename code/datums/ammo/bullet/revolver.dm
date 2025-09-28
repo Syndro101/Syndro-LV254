@@ -10,6 +10,7 @@
 	damage = 15
 	penetration = 0
 	accuracy = HIT_ACCURACY_TIER_1
+	vehicle_pen = VEHICLE_PEN_SOFT
 
 /datum/ammo/bullet/revolver/marksman
 	name = "marksman revolver bullet"
@@ -18,6 +19,7 @@
 	damage_falloff = 0
 	accurate_range = 12
 	penetration = ARMOR_PENETRATION_TIER_7
+	vehicle_pen = VEHICLE_PEN_HEAVY
 
 /datum/ammo/bullet/revolver/heavy
 	name = "heavy revolver bullet"
@@ -64,6 +66,7 @@
 	shrapnel_chance = 0
 
 	penetration = ARMOR_PENETRATION_TIER_10
+	vehicle_pen = VEHICLE_PEN_LIGHT_ARMOR
 
 /datum/ammo/bullet/revolver/penetrating/set_bullet_traits()
 	. = ..()
@@ -166,14 +169,12 @@
 	damage_var_high = PROJECTILE_VARIANCE_TIER_1
 	penetration = ARMOR_PENETRATION_TIER_10
 	flags_ammo_behavior = AMMO_EXPLOSIVE|AMMO_BALLISTIC
+	he_shell = TRUE
+	heat_shell = TRUE
 
 /datum/ammo/bullet/revolver/mateba/highimpact/explosive/on_hit_mob(mob/M, obj/projectile/P)
 	..()
 	cell_explosion(get_turf(M), 120, 30, EXPLOSION_FALLOFF_SHAPE_LINEAR, P.dir, P.weapon_cause_data)
-
-/datum/ammo/bullet/revolver/mateba/highimpact/explosive/on_hit_obj(obj/O, obj/projectile/P)
-	..()
-	cell_explosion(get_turf(O), 120, 30, EXPLOSION_FALLOFF_SHAPE_LINEAR, P.dir, P.weapon_cause_data)
 
 /datum/ammo/bullet/revolver/mateba/highimpact/explosive/on_hit_turf(turf/T, obj/projectile/P)
 	..()

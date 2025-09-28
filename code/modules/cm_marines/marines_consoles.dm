@@ -1042,7 +1042,7 @@ GLOBAL_LIST_EMPTY_TYPED(crew_monitor, /datum/crewmonitor)
 				JOB_PMC_LEADER = 220,
 				JOB_PMC_LEAD_INVEST = 220,
 				JOB_PMC_SYNTH = 221,
-				JOB_PMC_XENO_HANDLER = 221,
+				JOB_WY_COMMANDO_DOGCATHER = 221,
 				JOB_PMC_SNIPER = 222,
 				JOB_PMC_GUNNER = 223,
 				JOB_PMC_MEDIC = 224,
@@ -1107,7 +1107,7 @@ GLOBAL_LIST_EMPTY_TYPED(crew_monitor, /datum/crewmonitor)
 				// 40-49: MedSci
 				JOB_PMC_SYNTH = 40,
 				JOB_WY_RESEARCH_LEAD = 40,
-				JOB_PMC_XENO_HANDLER = 41,
+				JOB_WY_COMMANDO_DOGCATHER = 41,
 				JOB_PMC_DOCTOR = 42,
 				JOB_WY_RESEARCHER = 43,
 				// 50-59: Engineering & Vehicle Crew

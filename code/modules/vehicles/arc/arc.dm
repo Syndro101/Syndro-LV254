@@ -27,15 +27,16 @@
 	entrance_speed = 0.5 SECONDS
 
 	required_skill = SKILL_VEHICLE_LARGE
+	vehicle_pen_armor = VEHICLE_ARMOR_MEDIUM_ARMOR
 
 	movement_sound = 'sound/vehicles/tank_driving.ogg'
 
 	luminosity = 7
 
 	hardpoints_allowed = list(
-		/obj/item/hardpoint/locomotion/arc_wheels,
-		/obj/item/hardpoint/primary/arc_sentry,
-		/obj/item/hardpoint/support/arc_antenna,
+		/obj/item/hardpoint/support/arc/arc_wheels,
+		/obj/item/hardpoint/primary/arc/sentry,
+		/obj/item/hardpoint/support/arc/antenna,
 	)
 
 	seats = list(
@@ -118,7 +119,7 @@
 	if((health <= 0) || !visible_in_tacmap || !is_ground_level(arc_turf.z))
 		return
 
-	var/obj/item/hardpoint/support/arc_antenna/antenna = locate() in hardpoints
+	var/obj/item/hardpoint/support/arc/antenna/antenna = locate() in hardpoints
 	if(!antenna || (antenna.health <= 0))
 		for(var/datum/weakref/xeno as anything in minimap_added)
 			SSminimaps.remove_marker(xeno.resolve())
@@ -265,6 +266,6 @@
 	ARC.update_icon()
 
 /obj/effect/vehicle_spawner/arc/load_hardpoints(obj/vehicle/multitile/arc/vehicle)
-	vehicle.add_hardpoint(new /obj/item/hardpoint/locomotion/arc_wheels)
-	vehicle.add_hardpoint(new /obj/item/hardpoint/primary/arc_sentry)
-	vehicle.add_hardpoint(new /obj/item/hardpoint/support/arc_antenna)
+	vehicle.add_hardpoint(new /obj/item/hardpoint/support/arc/arc_wheels)
+	vehicle.add_hardpoint(new /obj/item/hardpoint/primary/arc/sentry)
+	vehicle.add_hardpoint(new /obj/item/hardpoint/support/arc/antenna)

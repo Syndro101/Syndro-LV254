@@ -328,7 +328,7 @@
 	desc = "A semi-rectangular box of rounds for the M41AE2 Heavy Pulse Rifle."
 	icon = 'icons/obj/items/weapons/guns/ammo_by_faction/USCM/machineguns.dmi'
 	icon_state = "m41ae2"
-	max_rounds = 300
+	max_rounds = 200
 	gun_type = /obj/item/weapon/gun/rifle/lmg
 	flags_magazine = AMMUNITION_CANNOT_REMOVE_BULLETS|AMMUNITION_REFILLABLE|AMMUNITION_SLAP_TRANSFER
 	ammo_band_icon = "+m41ae2_band"
@@ -345,14 +345,14 @@
 	name = "\improper M41AE2 ammo box (10x24mm armor-piercing)"
 	desc = "A semi-rectangular box of armor-piercing rounds for the M41AE2 Heavy Pulse Rifle."
 	default_ammo = /datum/ammo/bullet/rifle/ap
-	max_rounds = 300
+	max_rounds = 200
 	ammo_band_color = AMMO_BAND_COLOR_AP
 
 /obj/item/ammo_magazine/rifle/lmg/heap
 	name = "\improper M41AE2 ammo box (10x24mm high-explosive armor-piercing)"
 	desc = "A semi-rectangular box of rounds for the M41AE2 Heavy Pulse Rifle. This one contains the standard Armor-Piercing explosive tipped round of the USCM."
 	default_ammo = /datum/ammo/bullet/rifle/heap
-	max_rounds = 300
+	max_rounds = 200
 	gun_type = /obj/item/weapon/gun/rifle/lmg
 	ammo_band_color = AMMO_BAND_COLOR_HEAP
 
@@ -796,3 +796,36 @@
 	max_rounds = 50
 	gun_type = /obj/item/weapon/gun/plasma/xm99a
 	default_ammo = /datum/ammo/bullet/rifle/explosive/xm99a
+
+//-------------------------------------------------------
+//P9 SHARP Rifle
+
+/obj/item/ammo_magazine/rifle/sharp
+	name = "sharp rifle magazine"
+	icon = 'icons/obj/items/weapons/guns/ammo_by_faction/USCM/grenade_launchers.dmi'
+	icon_state = "sharp_explosive_mag"
+	item_state = "sharprifle"
+	caliber = "Dart"
+	w_class = SIZE_MEDIUM
+	max_rounds = 10
+	default_ammo = /datum/ammo/rifle/sharp/explosive
+	gun_type = /obj/item/weapon/gun/rifle/sharp
+	transfer_handful_amount = 5
+	description_ammo = "darts"
+
+/obj/item/ammo_magazine/rifle/sharp/explosive
+	name = "\improper 9X-E sticky explosive dart magazine"
+	desc = "A specialized explosive sticky dart magazine for the SHARP rifle."
+
+/obj/item/ammo_magazine/rifle/sharp/incendiary
+	name = "\improper 9X-T sticky incendiary dart magazine"
+	desc = "A specialized incendiary dart magazine for the SHARP rifle."
+	icon_state = "sharp_incendiary_mag"
+	default_ammo = /datum/ammo/rifle/sharp/incendiary
+
+/obj/item/ammo_magazine/rifle/sharp/flechette
+	name = "\improper 9X-F flechette dart magazine"
+	desc = "A specialized flechette dart magazine for the SHARP rifle."
+	icon_state = "sharp_flechette_mag"
+	default_ammo = /datum/ammo/rifle/sharp/flechette
+

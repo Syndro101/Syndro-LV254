@@ -332,6 +332,8 @@
 				sound = pick('sound/weapons/gun_nsg23_1.ogg','sound/weapons/gun_nsg23_2.ogg')
 			if("gun_pkd")
 				sound = pick('sound/weapons/gun_pkd_fire01.ogg','sound/weapons/gun_pkd_fire02.ogg','sound/weapons/gun_pkd_fire03.ogg')
+			if("smartgun_knockdown")
+				sound = pick('sound/weapons/smartgun_knockdown.ogg', 'sound/weapons/smartgun_knockdown_2.ogg', 'sound/weapons/smartgun_knockdown_3.ogg', 'sound/weapons/smartgun_move.mp3', 'sound/weapons/smartgun_move2.mp3',)
 
 			// Xeno
 			if("acid_hit")
@@ -449,6 +451,12 @@
 				sound = pick('sound/effects/giant_lizard_hiss1.ogg', 'sound/effects/giant_lizard_hiss2.ogg')
 			if("evo_screech")
 				sound = pick('sound/voice/alien_echoroar_1.ogg', 'sound/voice/alien_echoroar_2.ogg', 'sound/voice/alien_echoroar_3.ogg')
+			if("wy_droid_pain")
+				sound = pick('sound/voice/wy_droid/wy_droid_pain1.ogg', 'sound/voice/wy_droid/wy_droid_pain2.ogg', 'sound/voice/wy_droid/wy_droid_pain3.ogg', 'sound/voice/wy_droid/wy_droid_pain4.ogg', 'sound/voice/wy_droid/wy_droid_pain5.ogg')
+			if("wy_droid_death")
+				sound = pick('sound/voice/wy_droid/wy_droid_death1.ogg', 'sound/voice/wy_droid/wy_droid_death2.ogg', 'sound/voice/wy_droid/wy_droid_death3.ogg', 'sound/voice/wy_droid/wy_droid_death4.ogg', 'sound/voice/wy_droid/wy_droid_death5.ogg', 'sound/voice/wy_droid/wy_droid_death6.ogg', 'sound/voice/wy_droid/wy_droid_death7.ogg')
+			if("wy_droid_cloaker_death")
+				sound = pick('sound/voice/wy_droid/wy_stealth_droid_death1.ogg', 'sound/voice/wy_droid/wy_stealth_droid_death2.ogg')
 	return sound
 
 /client/proc/generate_sound_queues()

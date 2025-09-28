@@ -615,6 +615,7 @@
 		"Sniper ammo",
 		"Pyrotechnician tanks",
 		"Scout ammo",
+		"SHARP ammo",
 		"Smartgun ammo",
 		"Medical Supplies",
 		"Engineering Supplies",
@@ -653,6 +654,9 @@
 			to_chat(usr, SPAN_NOTICE("Engineering Supplies will now drop!"))
 		if("General Purpose Resupply")
 			supply_drop = 9
+			to_chat(usr, SPAN_NOTICE("Food and supplies will now drop!"))
+		if("SHARP ammo")
+			supply_drop = 10
 			to_chat(usr, SPAN_NOTICE("Food and supplies will now drop!"))
 		else
 			return
@@ -787,6 +791,16 @@
 			/obj/item/storage/box/m94/signal,
 			/obj/item/ammo_box/magazine/misc/mre,
 			/obj/item/device/whiskey_supply_beacon)
+		if(10) //SHARP
+			spawnitems = list(
+		/obj/item/ammo_magazine/rifle/sharp/explosive,
+		/obj/item/ammo_magazine/rifle/sharp/explosive,
+		/obj/item/ammo_magazine/rifle/sharp/explosive,
+		/obj/item/ammo_magazine/rifle/sharp/explosive,
+		/obj/item/ammo_magazine/rifle/sharp/flechette,
+		/obj/item/ammo_magazine/rifle/sharp/flechette,
+		/obj/item/ammo_magazine/rifle/sharp/incendiary,
+		/obj/item/ammo_magazine/rifle/sharp/incendiary)
 	crate.storage_capacity = 60
 	for(var/path in spawnitems)
 		new path(crate)

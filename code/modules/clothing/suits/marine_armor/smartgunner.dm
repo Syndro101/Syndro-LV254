@@ -13,13 +13,17 @@
 	allowed = list(
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/device/flashlight,
-		/obj/item/ammo_magazine,
+		/obj/item/ammo_magazine/pistol,
+		/obj/item/ammo_magazine/revolver,
+		/obj/item/ammo_magazine/handful,
 		/obj/item/explosive/mine,
+		/obj/item/explosive/atmine,
+		/obj/item/explosive/grenade,
 		/obj/item/attachable/bayonet,
 		/obj/item/weapon/gun/smartgun,
 		/obj/item/weapon/gun/plasma/xm99a,
 		/obj/item/storage/backpack/general_belt,
-		/obj/item/device/motiondetector,
+		/obj/item/weapon/gun/rifle/lmg/braced,
 		/obj/item/device/walkman,
 	)
 
@@ -62,5 +66,15 @@
 
 /obj/item/clothing/suit/storage/marine/smartgunner/unequipped(mob/user, slot)
 	. = ..()
+	for(var/obj/item/weapon/gun/smartgun/smartgun_armbrace in user.contents)
+		smartgun_armbrace.force_off_armbrace(user)
+		user.drop_inv_item_on_ground(smartgun_armbrace)
+	for(var/obj/item/weapon/gun/plasma/xm99a/xm99a_armbrace in user.contents)
+		xm99a_armbrace.force_off_armbrace(user)
+		user.drop_inv_item_on_ground(xm99a_armbrace)
+	for(var/obj/item/weapon/gun/rifle/lmg/braced/hpr_armbrace in user.contents)
+		hpr_armbrace.force_off_armbrace(user)
+		user.drop_inv_item_on_ground(hpr_armbrace)
+
 
 	UnregisterSignal(user, COMSIG_HUMAN_ATTEMPTING_EQUIP)

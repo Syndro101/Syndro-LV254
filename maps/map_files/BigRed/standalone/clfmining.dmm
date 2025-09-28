@@ -2488,7 +2488,7 @@
 	dir = 8
 	},
 /obj/structure/surface/rack,
-/obj/item/hardpoint/locomotion/van_wheels,
+/obj/item/hardpoint/support/locomotion,
 /turf/open/floor/plating/platingdmg3/west,
 /area/bigredv2/caves/mining)
 "MX" = (

@@ -19,6 +19,7 @@
 	damage = 60
 	damage_var_high = PROJECTILE_VARIANCE_TIER_8
 	penetration = ARMOR_PENETRATION_TIER_10
+	vehicle_pen = VEHICLE_PEN_MEDIUM_ARMOR
 	accurate_range = 32
 	max_range = 32
 	shell_speed = AMMO_SPEED_TIER_6
@@ -51,6 +52,7 @@
 	damage = 50
 	damage_var_high = PROJECTILE_VARIANCE_TIER_8
 	penetration = ARMOR_PENETRATION_TIER_10
+	vehicle_pen = VEHICLE_PEN_MEDIUM_ARMOR
 	accurate_range = 10
 	max_range = 12
 	shell_speed = AMMO_SPEED_TIER_5
@@ -89,6 +91,7 @@
 	accurate_range = 12
 	damage = 40
 	penetration = ARMOR_PENETRATION_TIER_10
+	vehicle_pen = VEHICLE_PEN_MEDIUM_ARMOR
 	damage_armor_punch = 1
 
 /datum/ammo/bullet/tank/setup_faction_clash_values()

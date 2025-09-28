@@ -119,7 +119,7 @@
 
 //PRESET: only wheels installed
 /obj/effect/vehicle_spawner/apc_med/plain/load_hardpoints(obj/vehicle/multitile/apc/medical/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/apc_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/apc/apc_wheels)
 
 //PRESET: default hardpoints, destroyed
 /obj/effect/vehicle_spawner/apc_med/decrepit/spawn_vehicle()
@@ -132,14 +132,14 @@
 	APC.update_icon()
 
 /obj/effect/vehicle_spawner/apc_med/decrepit/load_hardpoints(obj/vehicle/multitile/apc/medical/V)
-	V.add_hardpoint(new /obj/item/hardpoint/primary/dualcannon)
-	V.add_hardpoint(new /obj/item/hardpoint/secondary/frontalcannon)
-	V.add_hardpoint(new /obj/item/hardpoint/support/flare_launcher)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/apc_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/primary/apc/dualcannon)
+	V.add_hardpoint(new /obj/item/hardpoint/secondary/apc/frontalcannon)
+	V.add_hardpoint(new /obj/item/hardpoint/support/apc/flare_launcher)
+	V.add_hardpoint(new /obj/item/hardpoint/support/apc/apc_wheels)
 
 //PRESET: default hardpoints
 /obj/effect/vehicle_spawner/apc_med/fixed/load_hardpoints(obj/vehicle/multitile/apc/medical/V)
-	V.add_hardpoint(new /obj/item/hardpoint/primary/dualcannon)
-	V.add_hardpoint(new /obj/item/hardpoint/secondary/frontalcannon)
-	V.add_hardpoint(new /obj/item/hardpoint/support/flare_launcher)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/apc_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/primary/apc/dualcannon)
+	V.add_hardpoint(new /obj/item/hardpoint/secondary/apc/frontalcannon)
+	V.add_hardpoint(new /obj/item/hardpoint/support/apc/flare_launcher)
+	V.add_hardpoint(new /obj/item/hardpoint/support/apc/apc_wheels)

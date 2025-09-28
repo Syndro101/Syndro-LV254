@@ -555,35 +555,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 				var/can_buy_flags = itemspec[4]
 				if(can_buy_flags)
 					if(can_buy_flags == MARINE_CAN_BUY_ESSENTIALS)
-						if(vendor_role.Find(JOB_SQUAD_SPECIALIST))
-							// handle specalist essential gear assignment
-							if(user.job != JOB_SQUAD_SPECIALIST)
-								to_chat(user, SPAN_WARNING("Only specialists can take specialist sets."))
-								vend_fail()
-								return FALSE
 
-							else if(!user.skills || user.skills.get_skill_level(SKILL_SPEC_WEAPONS) != SKILL_SPEC_TRAINED)
-								to_chat(user, SPAN_WARNING("You already have a specialization."))
-								vend_fail()
-								return FALSE
-
-							var/p_name = itemspec[1]
-							if(!(p_name in GLOB.specialist_set_name_dict))
-								return
-
-							if(GLOB.specialist_set_name_dict[p_name].get_available_vendor_num() <= 0)
-								to_chat(user, SPAN_WARNING("That set is already taken."))
-								vend_fail()
-								return FALSE
-
-							var/obj/item/card/id/card = human_user.get_idcard()
-							if(!istype(card) || !card.check_biometrics(user))
-								to_chat(user, SPAN_WARNING("You must be wearing your [SPAN_INFO("dog tags")] to select a specialization!"))
-								return FALSE
-
-							GLOB.specialist_set_name_dict[p_name].redeem_set(human_user)
-
-						else if(vendor_role.Find(JOB_SYNTH))
+						if(vendor_role.Find(JOB_SYNTH))
 							if(user.job != JOB_SYNTH)
 								to_chat(user, SPAN_WARNING("Only USCM Synthetics may vend experimental tool tokens."))
 								vend_fail()
@@ -1479,6 +1452,16 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 	if(destroy)
 		qdel(src)
 
+//----------------Budget_item----------------\\
+
+/obj/item/reqcard
+	name = "Military budget Authorization card"
+	desc = "Used to allocate funding to automated equipment vendors and weapon racks around the ship."
+	icon = 'icons/obj/items/card.dmi'
+	icon_state = "centcom_old"
+	w_class = SIZE_TINY
+	var/budget_funds = 500000
+
 /obj/structure/machinery/auto_rack
 	name = "ColMarTech Automated Armaments Storage Carousel"
 	desc = "The ARMAT brand weapons rack has deceptively small storage, presenting only a limited single stack of storage clamps, the device automatically cycles to a fully stocked shelf when the current one is depleted. This one is configured to hold ."
@@ -1497,6 +1480,7 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 	var/initial_stored = 0
 	var/max_restocks = 5
 	var/remaining_restocks = 5
+	var/restock_cost = 10000
 	var/working = FALSE
 	var/damage = 500 //Industrial machine should tear your arm off... its gonna fucking hurt
 	var/penetration = 5000 // heavy machinery does not care about your body armor because fuck you thats why
@@ -1518,7 +1502,7 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 		while(i < initial_stored)
 			contents += new restock_type(src)
 			i++
-		if(locked)
+	if(locked)
 		locked = FALSE
 		INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,locking_animation_proc))
 
@@ -1528,15 +1512,19 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 
 	if(!working == TRUE && istype(O, /obj/item/card/id))
 		if(allowed(user))
+			playsound(loc, 'sound/machines/chime.ogg', 25)
 			INVOKE_ASYNC(src,TYPE_PROC_REF(/obj/structure/machinery/auto_rack/,locking_animation_proc))
 			locked = !locked
 			for(var/mob/mob in viewers(user, 3))
 				if((mob.client && !( mob.blinded )))
 					to_chat(mob, SPAN_NOTICE("The rack has been [locked ? null : "un"]locked by [user]."))
 					return
+		else
+			playsound(loc, 'sound/machines/buzz-sigh.ogg', 25)
+			return
 	else
 		if(locked)
-			playsound(loc, 'sound/machines/chime.ogg', 25)
+			playsound(loc, 'sound/machines/buzz-sigh.ogg', 25)
 			return
 		else if(istype(O, stocked_weapon) && contents.len < max_stored)
 			user.drop_inv_item_to_loc(O, src)
@@ -1558,6 +1546,7 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 				remaining_restocks = (remaining_restocks - 1)
 				return
 			if(remaining_restocks == 0)
+				playsound(loc, 'sound/machines/buzz-sigh.ogg', 25)
 				to_chat(user, SPAN_WARNING("[src] requires supply budget re-allocation. Contact your Supply officer to reset!"))
 				return
 	else if(!working == TRUE && locked)
@@ -1643,12 +1632,3 @@ GLOBAL_LIST_INIT(cm_vending_gear_corresponding_types_list, list(
 		icon_state = "[initial(icon_state)]_0"
 		overlays.Cut()
 		overlays += image(icon,icon_state)
-
-//----------------Budget_item----------------\\
-
-/obj/item/reqcard
-	name = "Military budget Authorization card"
-	desc = "Used to allocate funding to automated equipment vendors and weapon racks around the ship."
-	icon = 'icons/obj/items/card.dmi'
-	icon_state = "centcom_old"
-	w_class = SIZE_TINY

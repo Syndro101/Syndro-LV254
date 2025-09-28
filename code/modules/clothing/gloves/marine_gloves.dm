@@ -132,12 +132,11 @@
 	armor_rad = CLOTHING_ARMOR_VERYHIGH
 	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
 	unacidable = TRUE
-	flags_item = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE
 	adopts_squad_color = FALSE
 
 /obj/item/clothing/gloves/marine/veteran
 	name = "armored gloves"
-	desc = "Non-standard kevlon fiber gloves. They're insulated and heavily armored."
+	desc = "Non-standard venlar fiber gloves. They're insulated and heavily armored."
 	icon_state = "veteran"
 	item_state = "veteran"
 	siemens_coefficient = 0
@@ -156,7 +155,7 @@
 
 /obj/item/clothing/gloves/marine/veteran/insulated
 	name = "insulated armored gloves"
-	desc = "Non-standard kevlon fiber gloves. These are apparently ESPECIALLY insulated."
+	desc = "Non-standard venlar fiber gloves. These are apparently ESPECIALLY insulated."
 	icon_state = "insulated"
 	item_state = "insulated"
 
@@ -164,22 +163,45 @@
 	name = "\improper WY PMC gloves"
 	icon_state = "pmc"
 	item_state = "pmc"
-	desc = "Standard issue kevlon fiber gloves manufactured for and by Weyland-Yutani PMC dispatch division. They are insulated against electrical shock."
+	desc = "Standard issue venlar fiber gloves manufactured for and by Weyland-Yutani PMC dispatch division. They are insulated against electrical shock."
 
 /obj/item/clothing/gloves/marine/veteran/pmc/commando
-	name = "\improper M5X gauntlets"
-	desc = "A pair of heavily armored gloves made to complete the M5X exoskeleton armor"
+	name = "\improper W-Y Commando gloves"
+	desc = "Standard issue kevlon fiber gloves manufactured for and by Weyland-Yutani Commandos. They are insulated against electrical shock."
+	icon_state = "pmc_elite"
+	item_state = "pmc_elite"
+	armor_bio = CLOTHING_ARMOR_HIGH
+	armor_bomb = CLOTHING_ARMOR_HIGH
+	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_rad = CLOTHING_ARMOR_HIGH
+	armor_internaldamage = CLOTHING_ARMOR_HIGH
+
+/obj/item/clothing/gloves/marine/veteran/pmc/commando/leader
+	icon_state = "pmc_elite_leader"
+	item_state = "pmc_elite_leader"
+
+/obj/item/clothing/gloves/marine/veteran/pmc/apesuit
+	desc = "A pair of heavily armored gloves made to pair up the M5X Apesuit system."
 	icon_state = "gauntlets"
 	item_state = "bgloves"
+	siemens_coefficient = 0
+	armor_melee = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_VERYHIGH
+	unacidable = TRUE
+
+/obj/item/clothing/gloves/marine/veteran/pmc/combat_droid
+	name = "\improper M7X gauntlets"
+	desc = "A pair of heavily armored gloves made to pair up the M7X Apesuit system."
+	icon_state = "combat_android_gloves"
+	item_state = "bgloves"
+	item_state_slots = list(WEAR_HANDS = "marine_grey")
 	siemens_coefficient = 0
 	armor_melee = CLOTHING_ARMOR_VERYHIGH
 	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
 	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
 	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
-	armor_internaldamage = CLOTHING_ARMOR_ULTRAHIGH
-	unacidable = TRUE
 
 /obj/item/clothing/gloves/marine/dress
 	name = "dress gloves"

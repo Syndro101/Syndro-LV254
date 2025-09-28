@@ -22,8 +22,10 @@
 
 	var/buff_applied = FALSE
 
+	var/point_cost = 0
+
 	//------ICON VARS----------
-	icon = 'icons/obj/vehicles/hardpoints/tank.dmi'
+	icon = 'icons/obj/vehicles/hardpoints/longstreet.dmi'
 	icon_state = "tires" //Placeholder
 
 	//Strings, used to get the overlay for the armored vic
@@ -55,8 +57,6 @@
 	/// Sounds to play when the module activated/fired.
 	var/list/activation_sounds
 
-
-
 	//------INTERACTION VARS----------
 
 	/// Which seat can use this module.
@@ -85,6 +85,9 @@
 	var/list/backup_clips
 	/// Maximum amount of spare mags.
 	var/max_clips = 0
+
+	/// Tell the hardpoints what ammo they can use, if they have multiple types
+	var/list/allowed_ammo_types = list()
 
 	/// An assoc list in the format list(/datum/element/bullet_trait_to_give = list(...args))
 	/// that will be given to a projectile fired from the hardpoint.
@@ -122,7 +125,6 @@
 	var/extra_delay = 0
 	/// If the gun is currently burst firing.
 	var/burst_firing = FALSE
-
 	/// Currently selected target to fire at. Set with set_target().
 	var/atom/target
 	/// The type of projectile to fire
@@ -585,26 +587,39 @@
 /// Actually fires the gun, sets up the projectile and fires it.
 /obj/item/hardpoint/proc/handle_fire(atom/target, mob/living/user, params)
 	var/turf/origin_turf = get_origin_turf()
-
 	var/obj/projectile/projectile_to_fire = generate_bullet(user, origin_turf)
 	ammo.current_rounds--
 	SEND_SIGNAL(projectile_to_fire, COMSIG_BULLET_USER_EFFECTS, user)
 
-	// turf-targeted projectiles are fired without scatter, because proc would raytrace them further away
 	var/ammo_flags = projectile_to_fire.ammo.flags_ammo_behavior | projectile_to_fire.projectile_override_flags
-	if(!HAS_FLAG(ammo_flags, AMMO_HITS_TARGET_TURF) && !HAS_FLAG(ammo_flags, AMMO_EXPLOSIVE)) //AMMO_EXPLOSIVE is also a turf-targeted projectile
+	if(!HAS_FLAG(ammo_flags, AMMO_HITS_TARGET_TURF) && !HAS_FLAG(ammo_flags, AMMO_EXPLOSIVE))
 		projectile_to_fire.scatter = scatter
 		target = simulate_scatter(projectile_to_fire, target, origin_turf, get_turf(target), user)
 
-	INVOKE_ASYNC(projectile_to_fire, TYPE_PROC_REF(/obj/projectile, fire_at), target, user, src, projectile_to_fire.ammo.max_range, projectile_to_fire.ammo.shell_speed)
-	projectile_to_fire = null
+	if(HAS_FLAG(ammo_flags, AMMO_ROCKET))
+		// 1.5 second delay for balance (requires good positioning)
+		// Used currently for the TOW launchers
+		playsound(src, 'sound/machines/terminal_success.ogg', 20, 1, 5)
+		spawn(15)
+			if(projectile_to_fire)
+				INVOKE_ASYNC(projectile_to_fire, TYPE_PROC_REF(/obj/projectile, fire_at), target, user, src, projectile_to_fire.ammo.max_range, projectile_to_fire.ammo.shell_speed)
+				projectile_to_fire = null
 
-	shots_fired++
-	play_firing_sounds()
-	if(use_muzzle_flash)
-		muzzle_flash(Get_Angle(origin_turf, target))
+				play_firing_sounds()
+				shots_fired++
+				if(use_muzzle_flash)
+					muzzle_flash(Get_Angle(origin_turf, target))
+				set_fire_cooldown(gun_firemode)
+	else
+		// No delay
+		INVOKE_ASYNC(projectile_to_fire, TYPE_PROC_REF(/obj/projectile, fire_at), target, user, src, projectile_to_fire.ammo.max_range, projectile_to_fire.ammo.shell_speed)
+		projectile_to_fire = null
 
-	set_fire_cooldown(gun_firemode)
+		shots_fired++
+		play_firing_sounds()
+		if(use_muzzle_flash)
+			muzzle_flash(Get_Angle(origin_turf, target))
+		set_fire_cooldown(gun_firemode)
 
 	return AUTOFIRE_CONTINUE
 
@@ -724,11 +739,11 @@
 	var/muzzle_flash_y = muzzle_flash_pos["[dir]"][2] + 64
 
 	// Account for turret rotation
-	if(istype(loc, /obj/item/hardpoint/holder))
-		var/obj/item/hardpoint/holder/H = loc
-		if(LAZYLEN(H.px_offsets))
-			muzzle_flash_x += H.px_offsets["[H.loc.dir]"][1]
-			muzzle_flash_y += H.px_offsets["[H.loc.dir]"][2]
+	if(istype(loc, /obj/item/hardpoint/support))
+		var/obj/item/hardpoint/support/S = loc
+		if(S.is_turret() && LAZYLEN(S.px_offsets))
+			muzzle_flash_x += S.px_offsets["[S.loc.dir]"][1]
+			muzzle_flash_y += S.px_offsets["[S.loc.dir]"][2]
 
 	var/image_layer = owner.layer + 0.1
 	if(underlayer_north_muzzleflash && dir == NORTH)

@@ -43,6 +43,9 @@
 /obj/docking_port/mobile/small/south
 	elevator_network = "south"
 
+/obj/docking_port/mobile/small/liaison
+	elevator_network = "liaison"
+
 /obj/docking_port/stationary/small
 	dir=NORTH
 	height=4
@@ -151,7 +154,7 @@
 	id = STAT_SMALL_A
 	airlock_area=/area/shuttle/small/a
 	airlock_exit = "south"
-	roundstart_template = /datum/map_template/shuttle/small
+	roundstart_template = /datum/map_template/shuttle/small/south
 	elevator_network = "south"
 
 /obj/docking_port/stationary/small/empty
@@ -160,6 +163,21 @@
 	airlock_exit = "south"
 	airlock_area=/area/shuttle/small/c
 	elevator_network = "south"
+
+/obj/docking_port/stationary/small/occupied/liaison
+	name = "Starboard Lower Deck"
+	id = STAT_SMALL_C
+	airlock_area=/area/shuttle/small/a
+	airlock_exit = "liaison"
+	roundstart_template = /datum/map_template/shuttle/small/liaison
+	elevator_network = "liaison"
+
+/obj/docking_port/stationary/small/empty/liaison
+	name = "Starboard UnderDeck Corporate Exit"
+	id = STAT_SMALL_C
+	airlock_exit = "liaison"
+	airlock_area=/area/shuttle/small/c
+	elevator_network = "liaison"
 
 
 // North facing version

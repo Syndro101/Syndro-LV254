@@ -146,6 +146,11 @@
 /datum/map_template/shuttle/small/south
 	elevator_network = "south"
 
+/datum/map_template/shuttle/small/liaison
+	shuttle_id = MOBILE_SMALL_ELEVATOR_LIAISON
+
+	elevator_network = "liaison"
+
 /datum/map_template/shuttle/small/north
 	shuttle_id = MOBILE_SMALL_ELEVATOR_NORTH
 	elevator_network = "north"

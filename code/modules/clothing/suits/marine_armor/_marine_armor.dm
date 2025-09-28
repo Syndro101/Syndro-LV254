@@ -107,6 +107,8 @@
 	var/squad_overlay_icon = 'icons/obj/items/clothing/suits/misc_ert.dmi'
 
 	var/atom/movable/marine_light/light_holder
+/// Icon state of the on-armor lamp
+	var/lamp_light_color = LIGHT_COLOR_TUNGSTEN
 
 /obj/item/clothing/suit/storage/marine/Initialize(mapload)
 	. = ..()
@@ -217,6 +219,7 @@
 		return
 	set_light_range(initial(light_range))
 	set_light_power(floor(initial(light_power) * 0.5))
+	set_light_color(lamp_light_color)
 	set_light_on(toggle_on)
 	flags_marine_armor ^= ARMOR_LAMP_ON
 
@@ -730,7 +733,6 @@
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
-	flags_item = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
@@ -746,7 +748,6 @@
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	specialty = "M3-T light"
-	flags_item = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE
 	unacidable = TRUE
 
 /obj/item/clothing/suit/storage/marine/M3S
@@ -756,7 +757,6 @@
 	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	specialty = "M3-S light"
-	flags_item = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE
 	unacidable = TRUE
 
 /obj/item/clothing/suit/storage/marine/odst

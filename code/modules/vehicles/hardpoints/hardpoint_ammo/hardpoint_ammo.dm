@@ -2,6 +2,9 @@
 /obj/item/ammo_magazine/hardpoint
 	flags_magazine = 0 //No refilling
 
+//how many points it costs to build this with the fabricator, set to 0 if unbuildable.
+	var/point_cost = 0
+
 /obj/item/ammo_magazine/hardpoint/attackby(obj/item/O, mob/user)
 	if(O.type != type)
 		to_chat(user, SPAN_WARNING("You need another [initial(name)] to be able to transfer ammo."))

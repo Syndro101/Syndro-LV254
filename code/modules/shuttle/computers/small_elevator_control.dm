@@ -9,17 +9,14 @@
 /obj/structure/machinery/computer/shuttle/small/elevator_call/get_landing_zones()
 	return list(SSshuttle.getDock(dockId))
 
-/obj/structure/machinery/computer/shuttle/small/elevator_call/occupied
-	dockId = STAT_SMALL_OCCUPIED
-
-/obj/structure/machinery/computer/shuttle/small/elevator_call/empty
-	dockId = STAT_SMALL_EMPTY
-
 /obj/structure/machinery/computer/shuttle/small/elevator_call/A
 	dockId = STAT_SMALL_A
 
 /obj/structure/machinery/computer/shuttle/small/elevator_call/B
 	dockId = STAT_SMALL_B
+
+/obj/structure/machinery/computer/shuttle/small/elevator_call/C
+	dockId = STAT_SMALL_C
 
 /obj/structure/machinery/computer/shuttle/small
 	name = "\improper Elevator Panel"

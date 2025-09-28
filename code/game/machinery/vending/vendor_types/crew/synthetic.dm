@@ -110,8 +110,11 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 
 		list("HELMET (CHOOSE 1)", 0, null, null, null),
 		list("Expedition Cap", 0, /obj/item/clothing/head/cmcap/flap, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_REGULAR),
+		list("Patrol Cap", 0, /obj/item/clothing/head/cmcap, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_RECOMMENDED),
+		list("Officer Cap", 0, /obj/item/clothing/head/cmcap/bridge, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_RECOMMENDED),
 		list("Hard Hat, Orange", 0, /obj/item/clothing/head/hardhat/orange, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_REGULAR),
 		list("Welding Helmet", 0, /obj/item/clothing/head/welding, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_REGULAR),
+		list("Marine Helmet (Mission-Specific Camo)", 0, /obj/item/clothing/head/helmet/marine, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_REGULAR),
 		list("Marine Helmet (Mission-Specific Camo)", 0, /obj/item/clothing/head/helmet/marine, MARINE_CAN_BUY_HELMET, VENDOR_ITEM_REGULAR),
 
 		list("SUIT (CHOOSE 1)", 0, null, null, null),
@@ -122,6 +125,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 		list("M3A1 Pattern Synthetic Utility Vest (UA Snow)", 0, /obj/item/clothing/suit/storage/marine/light/synvest/snow, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
 		list("M3A1 Pattern Synthetic Utility Vest (UA Desert)", 0, /obj/item/clothing/suit/storage/marine/light/synvest/desert, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
 		list("USCM Trench Coat", 0, /obj/item/clothing/suit/storage/jacket/marine/service/trenchcoat, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
+		list("Utility Vest", 0, /obj/item/clothing/suit/storage/utility_vest, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
 		list("Hazard Vest(Orange)", 0, /obj/item/clothing/suit/storage/hazardvest, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
 		list("Hazard Vest(Blue)", 0, /obj/item/clothing/suit/storage/hazardvest/blue, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),
 		list("Hazard Vest(Yellow)", 0, /obj/item/clothing/suit/storage/hazardvest/yellow, MARINE_CAN_BUY_ARMOR, VENDOR_ITEM_REGULAR),

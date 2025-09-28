@@ -43,7 +43,7 @@
 			to_chat(user, SPAN_WARNING("You don't know how to use \the [O.name]."))
 			return
 
-		for(var/obj/item/hardpoint/locomotion/Loco in hardpoints)
+		for(var/obj/item/hardpoint/support/Loco in hardpoints)
 			user.visible_message(SPAN_WARNING("[user] attaches the vehicle clamp to \the [src]."), SPAN_NOTICE("You attach the vehicle clamp to \the [src] and lock the mechanism."))
 			attach_clamp(O, user)
 			return
@@ -145,7 +145,7 @@
 	if(health > max_hp)
 		health = max_hp
 		to_chat(user, SPAN_NOTICE("The hull is fully intact."))
-		for(var/obj/item/hardpoint/holder/H in hardpoints)
+		for(var/obj/item/hardpoint/support/H in hardpoints)
 			if(H.health > 0)
 				if(!iswelder(O))
 					to_chat(user, SPAN_WARNING("You need welding tool to repair \the [H.name]."))
@@ -534,7 +534,7 @@
 	clamped = FALSE
 	move_delay = initial(move_delay)
 
-	var/obj/item/hardpoint/locomotion/Loco
+	var/obj/item/hardpoint/support/Loco
 	for(Loco in hardpoints)
 		Loco.on_install(src) //we restore speed respective to wheels/treads if any installed
 

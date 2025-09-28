@@ -119,7 +119,7 @@
 
 /datum/ammo/energy/yautja/caster/bolt
 	name = "plasma bolt"
-	icon_state = "pulse1"
+	icon_state = "pulse"
 	flags_ammo_behavior = AMMO_IGNORE_RESIST
 	shell_speed = AMMO_SPEED_TIER_6
 	damage = 35

@@ -4920,6 +4920,71 @@
 /turf/open/floor/almayer/squad_arrow_delta/west
 	dir = WEST
 
+/turf/open/floor/almayer/green_pointer
+	icon_state ="green_pointer"
+	dir = NORTH
+
+/turf/open/floor/almayer/green_pointer/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/green_pointer/east
+	dir = EAST
+
+/turf/open/floor/almayer/green_pointer/west
+	dir = WEST
+
+/turf/open/floor/almayer/red_pointer
+	icon_state ="red_pointer"
+	dir = NORTH
+
+/turf/open/floor/almayer/red_pointer/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/red_pointer/east
+	dir = EAST
+
+/turf/open/floor/almayer/red_pointer/west
+	dir = WEST
+
+/turf/open/floor/almayer/blue_pointer
+	icon_state ="blue_pointer"
+	dir = NORTH
+
+/turf/open/floor/almayer/blue_pointer/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/blue_pointer/east
+	dir = EAST
+
+/turf/open/floor/almayer/blue_pointer/west
+	dir = WEST
+
+/turf/open/floor/almayer/orange_pointer
+	icon_state ="orange_pointer"
+	dir = NORTH
+
+/turf/open/floor/almayer/orange_pointer/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/orange_pointer/east
+	dir = EAST
+
+/turf/open/floor/almayer/orange_pointer/west
+	dir = WEST
+
+/turf/open/floor/almayer/purple_pointer
+	icon_state ="purple_pointer"
+	dir = NORTH
+
+/turf/open/floor/almayer/purple_pointer/south
+	dir = SOUTH
+
+/turf/open/floor/almayer/purple_pointer/east
+	dir = EAST
+
+/turf/open/floor/almayer/purple_pointer/west
+	dir = WEST
+
 /turf/open/floor/almayer/arena/north
 	dir = NORTH
 

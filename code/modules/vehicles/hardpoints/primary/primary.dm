@@ -28,6 +28,10 @@
 	ammo = new /obj/item/ammo_magazine/hardpoint/m56_cupola
 	max_clips = 2
 
+	allowed_ammo_types = list(
+		/obj/item/ammo_magazine/hardpoint/m56_cupola,
+	)
+
 	use_muzzle_flash = FALSE
 
 	scatter = 1

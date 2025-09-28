@@ -189,8 +189,6 @@
 			overlays += image(E.icon_path, icon_state = E.obj_icon_state_path)
 	return
 
-
-
 /obj/item/proc/updateSelfDialog()
 	var/mob/M = loc
 	if(istype(M) && M.client && M.interactee == src)
@@ -207,7 +205,6 @@
 
 /obj/proc/hide(h)
 	return
-
 
 /obj/proc/hear_talk(mob/living/M as mob, msg, verb="says", datum/language/speaking, italics = 0)
 	return

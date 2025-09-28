@@ -1409,6 +1409,44 @@
 
 //*****************************************************************************************************/
 
+/datum/equipment_preset/clf/soldier/sg
+	name = "Insurgent Smartgunner"
+	flags = EQUIPMENT_PRESET_EXTRA
+	assignment = JOB_CLF_SPECIALIST
+	rank = JOB_CLF_SPECIALIST
+	paygrades = list(PAY_SHORT_REB = JOB_PLAYTIME_TIER_0)
+	role_comm_title = "SG"
+
+	skills = /datum/skills/clf/specialist
+
+/datum/equipment_preset/clf/soldier/sg/New()
+	. = ..()
+	access = get_access(ACCESS_LIST_CLF_ALL)
+
+/datum/equipment_preset/clf/soldier/sg/load_gear(mob/living/carbon/human/new_human)
+	//jumpsuit and their webbing
+	var/obj/item/clothing/under/colonist/insurgent/fighter/CLF = new()
+	var/obj/item/clothing/accessory/storage/webbing/five_slots/W = new()
+	CLF.attach_accessory(new_human, W)
+	new_human.equip_to_slot_or_del(CLF, WEAR_BODY)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/accessory/patch/clf_patch, WEAR_ACCESSORY)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/swat(new_human), WEAR_HEAD)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/combat(new_human), WEAR_HANDS)
+
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/ears/earmuffs(new_human), WEAR_R_EAR)
+	new_human.equip_to_slot_or_del(new /obj/item/device/radio/headset/distress/CLF/cct(new_human), WEAR_L_EAR)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night(new_human), WEAR_EYES)
+
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/militia/smartgun(new_human), WEAR_JACKET)
+	new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun/clf(new_human), WEAR_J_STORE)
+	new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/teamwork/clf(new_human), WEAR_WAIST)
+	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/upp/knife(new_human), WEAR_FEET)
+
+	new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/survival/full(new_human), WEAR_L_STORE)
+	new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(new_human), WEAR_R_STORE)
+
+//*****************************************************************************************************/
+
 /datum/equipment_preset/clf/synth
 	name = "Insurgent Fight'n Joe Synthetic"
 	flags = EQUIPMENT_PRESET_EXTRA
@@ -1687,7 +1725,7 @@
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/militia/smartgun(new_human), WEAR_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/revolver/mateba/highimpact(new_human), WEAR_IN_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/revolver/mateba/highimpact(new_human), WEAR_IN_JACKET)
-	new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun/clf(new_human), WEAR_J_STORE)
+	new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun/clf/leader(new_human), WEAR_J_STORE)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(new_human), WEAR_HANDS)
 	new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/clf/full(new_human), WEAR_WAIST)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/shoes/marine/upp/knife(new_human), WEAR_FEET)

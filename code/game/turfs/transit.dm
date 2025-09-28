@@ -118,7 +118,7 @@
 	return 7
 
 /mob/living/carbon/human/can_paradrop()
-	if(istype(back, /obj/item/parachute))
+	if(istype(back, /obj/item/parachute) || istype(back, /obj/item/hoverpack))
 		return TRUE
 	return ..()
 
@@ -132,6 +132,12 @@
 	return TRUE
 
 /obj/structure/largecrate/get_paradrop_scatter()
+	return 4
+
+/obj/structure/pallet/can_paradrop()
+	return TRUE
+
+/obj/structure/pallet/get_paradrop_scatter()
 	return 4
 
 /atom/movable/proc/handle_paradrop(turf/target, dropship_name)

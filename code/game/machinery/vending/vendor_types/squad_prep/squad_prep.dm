@@ -51,7 +51,6 @@
 		list("Underbarrel Flashlight Grip", floor(scale * 5), /obj/item/attachable/flashlight/grip, VENDOR_ITEM_RECOMMENDED),
 		list("Underslung Grenade Launcher", floor(scale * 10), /obj/item/attachable/attached_gun/grenade, VENDOR_ITEM_REGULAR), //They already get these as on-spawns, might as well formalize some spares.
 
-
 		list("UTILITIES", -1, null, null),
 		list("Earplugs", round(scale * 5), /obj/item/clothing/ears/earmuffs/earplugs, VENDOR_ITEM_REGULAR),
 		list("M5 Bayonet", floor(scale * 10), /obj/item/attachable/bayonet, VENDOR_ITEM_REGULAR),
@@ -115,8 +114,11 @@
 		list("Marine Grey Combat Gloves", floor(scale * 15), /obj/item/clothing/gloves/marine/grey, VENDOR_ITEM_REGULAR),
 		list("Marine Radio Headset", floor(scale * 15), /obj/item/device/radio/headset/almayer, VENDOR_ITEM_REGULAR),
 		list("M10 Pattern Marine Helmet", floor(scale * 15), /obj/item/clothing/head/helmet/marine, VENDOR_ITEM_REGULAR),
+		list("Patrol Cap", floor(scale * 15), /obj/item/clothing/head/cmcap, VENDOR_ITEM_REGULAR),
+		list("Patrol Cap", floor(scale * 15), /obj/item/clothing/head/cmcap/bridge, VENDOR_ITEM_REGULAR),
 
 		list("WEBBINGS", -1, null, null),
+		list("External Webbing Vest", floor(scale * 5), /obj/item/clothing/suit/storage/webbing, VENDOR_ITEM_REGULAR),
 		list("Brown Webbing Vest", 1, /obj/item/clothing/accessory/storage/black_vest/brown_vest, VENDOR_ITEM_REGULAR),
 		list("Black Webbing Vest", 1, /obj/item/clothing/accessory/storage/black_vest, VENDOR_ITEM_REGULAR),
 		list("Webbing", floor(scale * 2), /obj/item/clothing/accessory/storage/webbing, VENDOR_ITEM_REGULAR),

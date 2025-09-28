@@ -6,11 +6,9 @@
 /turf/open/void/vehicle,
 /area/space)
 "b" = (
-/obj/structure/surface/table/reinforced/prison,
-/obj/structure/machinery/recharger{
-	pixel_x = -5
+/obj/structure/machinery/medical_pod/bodyscanner{
+	pixel_y = 2
 	},
-/obj/item/device/defibrillator,
 /turf/open/shuttle/vehicle/dark_sterile_green_11,
 /area/interior/vehicle/apc/med)
 "c" = (
@@ -22,6 +20,7 @@
 /obj/effect/decal/medical_decals/permanent{
 	icon_state = "triagedecalbottom"
 	},
+/obj/structure/machinery/body_scanconsole,
 /turf/open/shuttle/vehicle/dark_sterile_green_5,
 /area/interior/vehicle/apc/med)
 "d" = (
@@ -31,6 +30,12 @@
 /obj/effect/decal/medical_decals/permanent{
 	icon_state = "triagedecaltopright"
 	},
+/obj/structure/surface/table/reinforced/prison,
+/obj/structure/machinery/recharger{
+	pixel_x = -5
+	},
+/obj/item/device/defibrillator,
+/obj/item/tool/portadialysis,
 /turf/open/shuttle/vehicle/dark_sterile_green_14,
 /area/interior/vehicle/apc/med)
 "e" = (
@@ -94,6 +99,8 @@
 	icon_state = "triagedecaltop";
 	pixel_y = -2
 	},
+/obj/structure/bed/roller/heavy,
+/obj/structure/closet/bodybag/cryobag,
 /turf/open/shuttle/vehicle/dark_sterile_green_7,
 /area/interior/vehicle/apc/med)
 "n" = (
@@ -212,11 +219,12 @@
 /obj/structure/machinery/iv_drip{
 	anchored = 1
 	},
-/obj/structure/bed/roller,
 /obj/effect/landmark/interior/spawn/interior_viewport{
 	pixel_x = -6;
 	pixel_y = 23
 	},
+/obj/structure/bed/portable_surgery,
+/obj/structure/closet/bodybag/cryobag,
 /turf/open/shuttle/vehicle/dark_sterile_green_12,
 /area/interior/vehicle/apc/med)
 "C" = (

@@ -93,11 +93,14 @@
 	name = "Service Lift"
 	icon = 'icons/turf/area_almayer.dmi'
 	icon_state = "lifeboat"
+	base_lighting_alpha = 0
 
 /area/shuttle/small/elevator
 	requires_power = TRUE
 	unlimited_power = FALSE
 	powernet_name = "ship"
+	base_lighting_alpha = 255
+	base_lighting_color = LIGHT_COLOR_ORANGE
 
 /area/shuttle/small/a
 	name = "Service Lift A"
@@ -110,6 +113,12 @@
 
 /area/shuttle/small/d
 	name = "Service Lift D"
+
+/area/shuttle/small/e
+	name = "Service Lift E"
+
+/area/shuttle/small/f
+	name = "Service Lift F"
 
 /area/shuttle/generic_shuttle
 	name = "Freight Tram"

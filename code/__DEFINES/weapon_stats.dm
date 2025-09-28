@@ -259,6 +259,10 @@ As such, don't expect any values assigned to common firearms to even consider ho
 #define AMMO_SPEED_TIER_4 4
 #define AMMO_SPEED_TIER_5 5
 #define AMMO_SPEED_TIER_6 6
+#define AMMO_SPEED_TIER_7 7
+#define AMMO_SPEED_TIER_8 8
+#define AMMO_SPEED_TIER_9 9
+
 
 /*
 ////ARMOR PENETRATION////
@@ -275,6 +279,19 @@ As such, don't expect any values assigned to common firearms to even consider ho
 #define ARMOR_PENETRATION_TIER_8 40
 #define ARMOR_PENETRATION_TIER_9 45
 #define ARMOR_PENETRATION_TIER_10 50
+
+/*
+////VEHICLE ARMOR PENETRATION////
+//See Neth's armor comments for how this works. Higher is better.
+*/
+
+#define VEHICLE_PEN_NONE 0 //tasers and rubber bullets
+#define VEHICLE_PEN_SOFT 1
+#define VEHICLE_PEN_HEAVY 2
+#define VEHICLE_PEN_LIGHT_ARMOR 3
+#define VEHICLE_PEN_MEDIUM_ARMOR 4
+#define VEHICLE_PEN_HEAVY_ARMOR 5
+#define VEHICLE_PEN_VERY_HEAVY_ARMOR 6
 
 /*
 ////EXTRA PROJECTILES////

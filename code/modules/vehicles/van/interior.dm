@@ -41,6 +41,36 @@
 	icon_state = "back_1"
 	dir = WEST
 
+// Jeep
+
+/obj/structure/interior_exit/vehicle/jeep/left
+	name = "Jeep left door"
+	icon = 'icons/obj/vehicles/interiors/van.dmi'
+	icon_state = "interior_door"
+
+/obj/structure/interior_exit/vehicle/jeep/right
+	name = "Jeep right door"
+	icon = 'icons/obj/vehicles/interiors/van.dmi'
+	icon_state = "exterior_door_unique"
+	dir = SOUTH
+
+/obj/structure/interior_exit/vehicle/jeep/left_rear
+	name = "Jeep rear left door"
+	icon = 'icons/obj/vehicles/interiors/van.dmi'
+	icon_state = "interior_door"
+
+/obj/structure/interior_exit/vehicle/jeep/right_rear
+	name = "Jeep rear right door"
+	icon = 'icons/obj/vehicles/interiors/van.dmi'
+	icon_state = "exterior_door_unique"
+	dir = SOUTH
+
+/obj/structure/interior_exit/vehicle/jeep/rear
+	name = "Jeep rear cargo hatch"
+	icon = 'icons/obj/vehicles/interiors/van.dmi'
+	icon_state = "back_1"
+	dir = WEST
+
 //CLF Van
 
 /obj/structure/interior_wall/clf_van

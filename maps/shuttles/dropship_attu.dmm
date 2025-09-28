@@ -1,4 +1,65 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/closed/shuttle/attu{
+	icon_state = "103";
+	dir = 4
+	},
+/area/shuttle/attu)
+"ab" = (
+/turf/closed/shuttle/attu{
+	icon_state = "103"
+	},
+/area/shuttle/attu)
+"ac" = (
+/obj/structure/machinery/door/airlock/multi_tile/almayer/dropshiprear/dropshipside/ds3{
+	name = "\improper Attu dropship hatch";
+	dir = 2;
+	id = "port_door"
+	},
+/obj/structure/blocker/forcefield/multitile_vehicles,
+/turf/open/shuttle/dropship{
+	icon_state = "rasputin15"
+	},
+/area/shuttle/attu)
+"ad" = (
+/obj/structure/machinery/door/airlock/multi_tile/almayer/dropshiprear/dropshipside/ds3{
+	name = "\improper Attu dropship hatch";
+	dir = 1;
+	id = "starboard_door"
+	},
+/obj/structure/blocker/forcefield/multitile_vehicles,
+/turf/open/shuttle/dropship{
+	icon_state = "rasputin15"
+	},
+/area/shuttle/attu)
+"ae" = (
+/obj/structure/bed/chair/vehicle{
+	pixel_x = 8
+	},
+/obj/structure/bed/chair/vehicle{
+	pixel_x = -8
+	},
+/obj/structure/extinguisher_cabinet/alt{
+	pixel_y = 26
+	},
+/turf/open/shuttle/dropship{
+	icon_state = "rasputin15"
+	},
+/area/shuttle/attu)
+"af" = (
+/obj/structure/bed/chair/vehicle{
+	pixel_x = 8
+	},
+/obj/structure/bed/chair/vehicle{
+	pixel_x = -8
+	},
+/obj/structure/machinery/cm_vending/sorted/medical/wall_med/vehicle{
+	pixel_y = 25
+	},
+/turf/open/shuttle/dropship{
+	icon_state = "rasputin15"
+	},
+/area/shuttle/attu)
 "bk" = (
 /turf/closed/shuttle/attu/transparent{
 	icon_state = "22"
@@ -11,6 +72,7 @@
 /area/shuttle/attu)
 "cs" = (
 /obj/structure/blocker/forcefield/multitile_vehicles,
+/obj/structure/barricade/handrail,
 /turf/open/shuttle/dropship{
 	icon_state = "floor8"
 	},
@@ -66,10 +128,6 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "fj" = (
-/obj/structure/extinguisher_cabinet/alt{
-	pixel_x = -14;
-	pixel_y = -9
-	},
 /turf/closed/shuttle/attu{
 	icon_state = "81"
 	},
@@ -80,9 +138,6 @@
 	},
 /area/shuttle/attu)
 "gJ" = (
-/obj/structure/closet/fireaxecabinet{
-	pixel_y = -10
-	},
 /turf/closed/shuttle/attu{
 	icon_state = "76"
 	},
@@ -102,8 +157,11 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "hG" = (
-/obj/structure/machinery/camera/autoname/almayer/attu{
-	pixel_y = 30
+/obj/structure/machinery/cm_vending/sorted/cargo_guns/squad{
+	req_access = null;
+	req_one_access = null;
+	pixel_y = 30;
+	density = 0
 	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin6"
@@ -115,6 +173,12 @@
 	},
 /area/shuttle/attu)
 "hS" = (
+/obj/structure/machinery/cm_vending/sorted/cargo_guns/squad_prep{
+	req_access = null;
+	req_one_access = null;
+	pixel_y = 30;
+	density = 0
+	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin7"
 	},
@@ -125,9 +189,15 @@
 	},
 /area/shuttle/attu)
 "jM" = (
-/obj/structure/machinery/cm_vending/sorted/cargo_guns/squad{
-	req_access = null;
-	req_one_access = null
+/obj/structure/bed/chair/vehicle{
+	pixel_x = 8
+	},
+/obj/structure/bed/chair/vehicle{
+	pixel_x = -8
+	},
+/obj/structure/machinery/camera/autoname/almayer/attu{
+	dir = 8;
+	pixel_x = 1
 	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
@@ -147,10 +217,10 @@
 	},
 /area/shuttle/attu)
 "ky" = (
-/obj/structure/machinery/door/airlock/hatch/cockpit/two{
+/obj/structure/blocker/forcefield/multitile_vehicles,
+/obj/structure/machinery/door/airlock/hatch/cockpit/three{
 	dir = 1
 	},
-/obj/structure/blocker/forcefield/multitile_vehicles,
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
 	},
@@ -194,15 +264,6 @@
 	icon_state = "rasputin15"
 	},
 /area/shuttle/attu)
-"rh" = (
-/obj/structure/machinery/cm_vending/sorted/medical/wall_med/vehicle{
-	pixel_x = 5;
-	pixel_y = -6
-	},
-/turf/closed/shuttle/attu{
-	icon_state = "81"
-	},
-/area/shuttle/attu)
 "tr" = (
 /turf/closed/shuttle/attu/transparent{
 	icon_state = "23"
@@ -214,22 +275,20 @@
 	},
 /area/shuttle/attu)
 "uj" = (
-/obj/structure/machinery/computer/overwatch/almayer{
-	dir = 8;
-	pixel_x = -17;
-	pixel_y = 20
-	},
 /obj/structure/machinery/computer/groundside_operations{
 	dir = 4;
 	pixel_x = -17;
-	pixel_y = 6
+	pixel_y = 10
 	},
 /obj/structure/machinery/computer/overwatch/almayer{
 	dir = 8;
 	pixel_x = -17;
-	pixel_y = -10
+	pixel_y = -6
 	},
-/obj/structure/bed/chair/dropship/passenger{
+/obj/structure/barricade/handrail{
+	dir = 4
+	},
+/obj/structure/bed/chair/vehicle{
 	dir = 8
 	},
 /turf/open/shuttle/dropship{
@@ -266,33 +325,6 @@
 	icon_state = "94"
 	},
 /area/shuttle/attu)
-"ww" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "E";
-	pixel_x = 1
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin3"
-	},
-/area/shuttle/attu)
-"wS" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "SE-out";
-	pixel_x = 1
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin15"
-	},
-/area/shuttle/attu)
-"xf" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "SW-out";
-	pixel_x = -1
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin3"
-	},
-/area/shuttle/attu)
 "xp" = (
 /turf/template_noop,
 /area/template_noop)
@@ -300,15 +332,6 @@
 /obj/docking_port/mobile/marine_dropship/attu,
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
-	},
-/area/shuttle/attu)
-"yc" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "SE-out";
-	pixel_x = 1
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin3"
 	},
 /area/shuttle/attu)
 "ye" = (
@@ -321,10 +344,6 @@
 	},
 /area/shuttle/attu)
 "AZ" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "E";
-	pixel_x = 1
-	},
 /obj/structure/platform{
 	dir = 8
 	},
@@ -341,37 +360,12 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "CU" = (
-/obj/structure/machinery/door/airlock/multi_tile/almayer/dropshiprear/ds2{
-	id = "aft_door";
-	name = "\improper Attu cargo door"
+/obj/structure/machinery/door/airlock/multi_tile/almayer/dropshiprear/attu{
+	id = "aft_door"
 	},
 /obj/effect/decal/warning_stripes{
 	icon_state = "E";
 	pixel_x = 1
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin15"
-	},
-/area/shuttle/attu)
-"DP" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "W"
-	},
-/obj/structure/platform{
-	dir = 4
-	},
-/obj/structure/machinery/camera/autoname/almayer/attu{
-	dir = 8;
-	pixel_x = 23
-	},
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin3"
-	},
-/area/shuttle/attu)
-"Eo" = (
-/obj/structure/machinery/cm_vending/sorted/cargo_guns/squad_prep{
-	req_access = null;
-	req_one_access = null
 	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
@@ -383,9 +377,6 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "FF" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "W"
-	},
 /obj/structure/platform{
 	dir = 4
 	},
@@ -395,27 +386,11 @@
 /area/shuttle/attu)
 "FW" = (
 /obj/structure/shuttle/part/attu/lower_left_wall,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/shuttle/attu)
 "Gg" = (
 /obj/structure/blocker/invisible_wall,
 /obj/structure/machinery/computer/shuttle/dropship/flight,
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin15"
-	},
-/area/shuttle/attu)
-"Gl" = (
-/obj/structure/bed/chair/vehicle{
-	dir = 1;
-	pixel_x = -8
-	},
-/obj/structure/bed/chair/vehicle{
-	dir = 1;
-	pixel_x = 8
-	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "S"
-	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
 	},
@@ -431,19 +406,6 @@
 	icon_state = "86"
 	},
 /area/shuttle/attu)
-"IN" = (
-/obj/structure/machinery/door/airlock/dropship_hatch/two{
-	dir = 8;
-	id = "starboard_door"
-	},
-/obj/structure/stairs{
-	dir = 4
-	},
-/obj/structure/blocker/forcefield/multitile_vehicles,
-/turf/open/shuttle/dropship{
-	icon_state = "rasputin15"
-	},
-/area/shuttle/attu)
 "IS" = (
 /obj/structure/shuttle/part/attu/transparent/left_outer_inner_wing,
 /turf/template_noop,
@@ -453,9 +415,7 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "JC" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "W"
-	},
+/obj/structure/platform_decoration/metal/almayer/north,
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin3"
 	},
@@ -480,7 +440,6 @@
 	},
 /area/shuttle/attu)
 "MJ" = (
-/obj/effect/decal/warning_stripes,
 /obj/effect/attach_point/crew_weapon/attu,
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
@@ -499,10 +458,10 @@
 /turf/template_noop,
 /area/shuttle/attu)
 "OC" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "W"
-	},
 /obj/structure/blocker/forcefield/multitile_vehicles,
+/obj/structure/platform{
+	dir = 8
+	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin4"
 	},
@@ -521,7 +480,7 @@
 /area/shuttle/attu)
 "Qe" = (
 /obj/structure/shuttle/part/attu/left_inner_wing_connector,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/shuttle/attu)
 "Qf" = (
 /turf/closed/shuttle/attu/transparent{
@@ -531,6 +490,9 @@
 "Qt" = (
 /obj/structure/blocker/invisible_wall,
 /obj/structure/machinery/computer/cameras/dropship/attu,
+/obj/structure/machinery/camera/autoname/almayer/attu{
+	dir = 4
+	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
 	},
@@ -551,10 +513,6 @@
 	},
 /area/shuttle/attu)
 "Ra" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "E";
-	pixel_x = 1
-	},
 /obj/structure/blocker/forcefield/multitile_vehicles,
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin8"
@@ -577,7 +535,7 @@
 /area/shuttle/attu)
 "TO" = (
 /obj/structure/shuttle/part/attu/right_inner_wing_connector,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/shuttle/attu)
 "TY" = (
 /turf/closed/shuttle/attu/transparent{
@@ -599,14 +557,7 @@
 	},
 /area/shuttle/attu)
 "Ut" = (
-/obj/structure/stairs{
-	dir = 8;
-	icon_state = "ramptop"
-	},
 /obj/structure/blocker/forcefield/multitile_vehicles,
-/obj/structure/machinery/door/airlock/dropship_hatch/two{
-	id = "port_door"
-	},
 /turf/open/shuttle/dropship{
 	icon_state = "rasputin15"
 	},
@@ -641,21 +592,14 @@
 	},
 /area/shuttle/attu)
 "Xm" = (
-/obj/structure/machinery/door_control{
-	id = "dropship_attu";
-	name = "Dropship Lockdown";
-	normaldoorcontrol = 3;
-	pixel_y = -10;
-	req_one_access_txt = "3;22";
-	throw_range = 15
-	},
 /turf/closed/shuttle/attu{
-	icon_state = "81"
+	icon_state = "82"
 	},
 /area/shuttle/attu)
 "XD" = (
 /obj/effect/attach_point/fuel/attu{
-	pixel_x = -33
+	pixel_x = -32;
+	dir = 1
 	},
 /turf/closed/shuttle/attu/transparent{
 	icon_state = "33"
@@ -685,10 +629,12 @@
 /area/shuttle/attu)
 "YD" = (
 /obj/structure/shuttle/part/attu/lower_right_wall,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/shuttle/attu)
 "YS" = (
-/obj/effect/attach_point/fuel/attu,
+/obj/effect/attach_point/fuel/attu{
+	dir = 1
+	},
 /turf/closed/shuttle/attu/transparent{
 	icon_state = "28"
 	},
@@ -756,7 +702,7 @@ hc
 it
 ok
 Ut
-Vm
+ac
 Vm
 Vm
 FW
@@ -775,11 +721,11 @@ CD
 vh
 IK
 gJ
-QV
+ae
 kp
 QV
 JV
-wS
+JV
 Gz
 uj
 mL
@@ -787,7 +733,7 @@ Vm
 Uk
 Si
 Vm
-uu
+aa
 Qe
 vB
 "}
@@ -802,7 +748,7 @@ hG
 vV
 vV
 vV
-xf
+vV
 JC
 OC
 XN
@@ -822,7 +768,7 @@ Gg
 JV
 ky
 hH
-MJ
+QV
 JV
 MJ
 xX
@@ -843,16 +789,16 @@ Yr
 Sh
 cM
 NZ
-rh
+Xm
 hS
 vV
 vV
 vV
-yc
-ww
+vV
+vV
 Ra
 cF
-DP
+FF
 FF
 FF
 FF
@@ -867,19 +813,19 @@ hx
 wk
 MH
 fj
-QV
+af
 kp
 QV
 JV
-Gl
+JV
 jM
-Eo
+kp
 fL
 Mx
 UX
 co
 Mx
-gV
+ab
 TO
 tX
 "}
@@ -893,8 +839,8 @@ gV
 dk
 dU
 oF
-IN
-Mx
+Ut
+ad
 Mx
 Mx
 YD

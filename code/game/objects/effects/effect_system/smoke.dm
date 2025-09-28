@@ -14,9 +14,10 @@
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	layer = ABOVE_MOB_LAYER + 0.1 //above mobs and barricades
+	flags_atom = NO_ZFALL
 	var/amount = 2
 	var/spread_speed = 1 //time in decisecond for a smoke to spread one tile.
-	var/time_to_live = 15
+	var/time_to_live = 100
 	var/smokeranking = SMOKE_RANK_HARMLESS //Override priority. A higher ranked smoke cloud will displace lower and equal ones on spreading.
 	var/datum/cause_data/cause_data = null
 
@@ -87,6 +88,7 @@
 		return
 
 	var/turf/start_turf = get_turf(src)
+	var/list/turfs_to_spread = list()
 	if(!start_turf)
 		return
 	for(var/i in GLOB.cardinals)
@@ -101,7 +103,33 @@
 				qdel(foundsmoke)
 			else
 				continue
-		var/obj/effect/particle_effect/smoke/smoke = new type(cur_turf, amount, cause_data)
+		turfs_to_spread += cur_turf
+
+
+
+	var/turf/below = SSmapping.get_turf_below(loc)
+	var/turf/above = SSmapping.get_turf_above(loc)
+	if(below && istype(loc,/turf/open_space))
+		var/obj/effect/particle_effect/smoke/foundsmoke = locate() in below
+		if(foundsmoke)
+			if(foundsmoke.smokeranking <= src.smokeranking)
+				qdel(foundsmoke)
+				turfs_to_spread += below
+		else
+			turfs_to_spread += below
+
+
+	if(above && istype(above,/turf/open_space))
+		var/obj/effect/particle_effect/smoke/foundsmoke = locate() in above
+		if(foundsmoke)
+			if(foundsmoke.smokeranking <= src.smokeranking)
+				qdel(foundsmoke)
+				turfs_to_spread += above
+		else
+			turfs_to_spread += above
+
+	for(var/turf/spread in turfs_to_spread)
+		var/obj/effect/particle_effect/smoke/smoke = new type(spread, amount, cause_data)
 		smoke.setDir(pick(GLOB.cardinals))
 		smoke.time_to_live = time_to_live
 		if(smoke.amount > 0)
@@ -132,7 +160,7 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/bad
-	time_to_live = 15
+	time_to_live = 100
 	smokeranking = SMOKE_RANK_LOW
 
 /obj/effect/particle_effect/smoke/bad/Move()
@@ -245,7 +273,7 @@
 /obj/effect/particle_effect/smoke/weedkiller
 	name = "C10-W Weedkiller"
 	amount = 1
-	time_to_live = 15
+	time_to_live = 50
 	smokeranking = SMOKE_RANK_HARMLESS
 	opacity = FALSE
 	color = "#c2aac7"
@@ -294,7 +322,7 @@
 	name = "mustard gas"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mustard"
-	time_to_live = 100
+	time_to_live = 300
 	opacity = FALSE
 	smokeranking = SMOKE_RANK_HIGH
 
@@ -334,7 +362,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mustard"
 	color = "#ADFF2F"
-	time_to_live = 100
+	time_to_live = 300
 	opacity = FALSE
 	smokeranking = SMOKE_RANK_HIGH
 
@@ -371,7 +399,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mustard"
 	color = "#ff2f2f"
-	time_to_live = 50
+	time_to_live = 300
 	opacity = FALSE
 	smokeranking = SMOKE_RANK_HIGH
 
@@ -410,6 +438,7 @@
 	var/burn_damage = 40
 	var/applied_fire_stacks = 5
 	var/xeno_yautja_reduction = 0.75
+	var/reagent = new /datum/reagent/napalm/ut()
 
 /obj/effect/particle_effect/smoke/phosphorus/Initialize(mapload, oldamount, datum/cause_data/new_cause_data, intensity, max_intensity)
 	burn_damage = min(burn_damage, max_intensity - intensity) // Applies reaction limits
@@ -421,6 +450,9 @@
 	smokeranking = SMOKE_RANK_MED
 	burn_damage = 30
 	xeno_yautja_reduction = 0.5
+
+/obj/effect/particle_effect/smoke/phosphorus/sharp
+	reagent = new /datum/reagent/napalm/blue()
 
 /obj/effect/particle_effect/smoke/phosphorus/Move()
 	. = ..()
@@ -470,7 +502,7 @@
 	color = "#80c7e4"
 	var/xeno_affecting = FALSE
 	opacity = FALSE
-	time_to_live = 30
+	time_to_live = 300
 	alpha = 75
 
 /obj/effect/particle_effect/smoke/cn20/xeno
@@ -919,6 +951,9 @@
 
 /datum/effect_system/smoke_spread/xeno_extinguish_fire
 	smoke_type = /obj/effect/particle_effect/smoke/xeno_weak_fire
+
+/datum/effect_system/smoke_spread/phosphorus/sharp
+	smoke_type = /obj/effect/particle_effect/smoke/phosphorus/sharp
 
 /datum/effect_system/smoke_spread/xeno_extinguish_fire/start()
 	if(holder)

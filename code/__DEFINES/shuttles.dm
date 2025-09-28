@@ -121,10 +121,12 @@
 
 #define MOBILE_SMALL_ELEVATOR "elevator_small"
 #define MOBILE_SMALL_ELEVATOR_NORTH "elevator_small_north"
+#define MOBILE_SMALL_ELEVATOR_LIAISON "elevator_small_liaison"
 #define STAT_SMALL_EMPTY "elevator_small_empty"
 #define STAT_SMALL_OCCUPIED "elevator_small_occupied"
 #define STAT_SMALL_A "north"
 #define STAT_SMALL_B "south"
+#define STAT_SMALL_C "liaison"
 
 #define MOBILE_SHUTTLE_LIFEBOAT_PORT "lifeboat-port"
 #define MOBILE_SHUTTLE_LIFEBOAT_STARBOARD "lifeboat-starboard"

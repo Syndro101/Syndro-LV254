@@ -99,7 +99,7 @@
 	supervisors = "the Commanding Officer, and adjunct"
 	selection_class = "job_co"
 	flags_startup_parameters = ROLE_ADD_TO_DEFAULT
-	gear_preset = /datum/equipment_preset/uscm_mudskippers/ccommander/ground
+	gear_preset = /datum/equipment_preset/uscm_mudskippers/ccommander
 	entry_message_intro = "" // Shown on roundstart and latejoin. Top paragraph. Replaced with a generic "You are a [role name]" if not included
 	entry_message_body = "You are a Company commander of the  502nd Engineering Corps' 4th Division 3rd brigade 15th Bat. aka. The 'Mudskippers.' You are resposible for the platoons under your command and making sure they operate at peak performance.  Ensure that you read SOP <a href='https://neroid-sector.com/wiki/index.php?title=Mudskippers_SOP'>" //Middle paragraph. This one is typically written per role and declared here.
 /obj/effect/landmark/start/mudskipper/msgc
@@ -256,7 +256,7 @@
 	entry_message_intro = "" // Shown on roundstart and latejoin. Top paragraph. Replaced with a generic "You are a [role name]" if not included
 	entry_message_body = "Read https://neroid-sector.com/wiki/index.php?title=Squad_roles for more info.  Ensure that you read SOP <a href='https://neroid-sector.com/wiki/index.php?title=Mudskippers_SOP'>"//Middle paragraph. This one is typically written per role and declared here.
 
-	job_options = list(RFM_E1 = "Pfc", RFM_E2 = "Pfc", RFM_E3 = "Lcpl", RFM_E4 = "Cpl")
+	job_options = list(RFM_E1 = "Pvt", RFM_E2 = "Pfc", RFM_E3 = "Lcpl", RFM_E4 = "Cpl")
 
 /datum/job/uscm/mudskipper/msrfm/handle_job_options(option)
 	if(option == RFM_E1)

@@ -11,6 +11,7 @@
 	penetration = 0
 	accuracy = HIT_ACCURACY_TIER_1
 	shell_speed = AMMO_SPEED_TIER_6
+	vehicle_pen = VEHICLE_PEN_LIGHT_ARMOR
 	accurate_range = 14
 	effective_range_max = 7
 	handful_state = "lever_action_bullet"

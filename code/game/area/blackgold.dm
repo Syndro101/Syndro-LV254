@@ -262,15 +262,8 @@
 	icon_state = "req"
 
 /area/blackgold/lower/rooms/range
-	name = "\improper Lower Deck Port Firing Range"
+	name = "\improper Lower Deck Firing Range"
 	icon_state = "firingrange"
-
-/area/blackgold/lower/rooms/range/star
-	name = "\improper Lower Deck Starboard Firing Range"
-
-/area/blackgold/lower/rooms/chapel
-	name = "\improper Lower Deck Chapel"
-	icon_state = "officerrnr"
 
 /area/blackgold/lower/rooms/gym
 	name = "\improper Lower Deck Gym"
@@ -279,6 +272,10 @@
 /area/blackgold/lower/rooms/conference
 	name = "\improper Lower Deck Squad Conference Office"
 	icon_state = "shared"
+
+/area/blackgold/lower/rooms/liaison
+	name = "\improper Lower Deck Corporate Liaison Office"
+	icon_state = "corporatespace"
 
 //-----------------------------------------Brig------------------------------------------//
 
@@ -486,10 +483,6 @@
 /area/blackgold/middle/rooms/pumps/starboard
 	name = "Starboard Lifeboat Fuel Pumps"
 
-/area/blackgold/middle/rooms/liaison
-	name = "\improper Middle Deck Corporate Liaison Office"
-	icon_state = "corporatespace"
-
 /area/blackgold/middle/rooms/reporter
 	name = "\improper Middle Deck Combat Correspondent Office"
 	icon_state = "selfdestruct"
@@ -497,6 +490,10 @@
 /area/blackgold/middle/rooms/workshop
 	name = "\improper Middle Deck Vehicle Workshop"
 	icon_state = "dropshiprepair"
+
+/area/blackgold/middle/rooms/chapel
+	name = "\improper Middle Deck Chapel"
+	icon_state = "officerrnr"
 
 //-------------------------------------Engineering---------------------------------------//
 

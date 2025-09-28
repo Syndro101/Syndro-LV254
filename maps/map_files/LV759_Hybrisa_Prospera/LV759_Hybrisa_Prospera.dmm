@@ -23875,7 +23875,7 @@
 /area/lv759/indoors/colonial_marshals/prisoners_recreation_area)
 "cQs" = (
 /obj/structure/surface/rack,
-/obj/item/hardpoint/locomotion/van_wheels{
+/obj/item/hardpoint/support/locomotion{
 	unacidable = 1
 	},
 /turf/open/floor/prison,
@@ -53452,7 +53452,7 @@
 /turf/open/floor/plating/plating_catwalk/aicore/white,
 /area/lv759/indoors/colonial_marshals/prisoners_recreation_area)
 "hnu" = (
-/obj/item/storage/backpack/commando{
+/obj/item/storage/backpack/marine/satchel/scout_cloak/wy_invis_droid{
 	layer = 5
 	},
 /obj/structure/closet/crate/secure/weyland{
@@ -59232,7 +59232,7 @@
 	icon_state = "road_edge_decal3"
 	},
 /obj/effect/decal/hybrisa/road/lines2,
-/obj/item/hardpoint/locomotion/van_wheels{
+/obj/item/hardpoint/support/locomotion{
 	unacidable = 1
 	},
 /obj/structure/roof/hybrisa/billboardsandsigns/billboardsmedium/billboard1{
@@ -111354,7 +111354,7 @@
 /area/lv759/indoors/mining_outpost/vehicledeployment)
 "pOD" = (
 /obj/structure/surface/rack,
-/obj/item/hardpoint/locomotion/van_wheels,
+/obj/item/hardpoint/support/locomotion,
 /obj/structure/prop/invuln/lattice_prop{
 	icon_state = "lattice12";
 	pixel_y = 16
@@ -116472,7 +116472,7 @@
 /turf/open/floor/corsat/officetiles,
 /area/lv759/indoors/colonial_marshals/press_room)
 "qDE" = (
-/obj/item/hardpoint/locomotion/van_wheels{
+/obj/item/hardpoint/support/locomotion{
 	unacidable = 1
 	},
 /obj/structure/machinery/light/double/blue{

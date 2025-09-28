@@ -47,9 +47,16 @@
 
 /// Vehicle Classes (for future)
 #define VEHICLE_CLASS_WEAK (1<<1) //light unarmored vehicles like colony vehicles/trucks/vans
-#define VEHICLE_CLASS_LIGHT (1<<2) //light class armor (APC, tank)
-#define VEHICLE_CLASS_MEDIUM (1<<3) //medium class armor (tank)
+#define VEHICLE_CLASS_LIGHT (1<<2) //light class armor (Jeep)
+#define VEHICLE_CLASS_MEDIUM (1<<3) //medium class armor (APC and LAV)
 #define VEHICLE_CLASS_HEAVY (1<<4) //heavy class armor (tank)
 // Other vehicle flags
 /// Vehicle can bypass vehicle blockers, typically going further into maps than intended
 #define VEHICLE_BYPASS_BLOCKERS (1<<5)
+
+#define VEHICLE_ARMOR_SOFT 1 // Cars
+#define VEHICLE_ARMOR_HEAVY 2 //tough industrial unarmored vehicles like cranes
+#define VEHICLE_ARMOR_LIGHT_ARMOR 3 // Armored Jeeps
+#define VEHICLE_ARMOR_MEDIUM_ARMOR 4 // APC, LAV, Longstreet
+#define VEHICLE_ARMOR_HEAVY_ARMOR 5 // Jackson
+#define VEHICLE_ARMOR_VERY_HEAVY_ARMOR 6 // Ridgeway

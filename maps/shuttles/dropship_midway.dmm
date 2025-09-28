@@ -535,9 +535,9 @@
 /area/shuttle/drop_solano/midway)
 "QU" = (
 /obj/structure/transmitter/rotary{
-	name = "Attu Telephone";
+	name = "Midway Telephone";
 	phone_category = "Dropship";
-	phone_id = "Attu";
+	phone_id = "Midway";
 	pixel_x = 11;
 	pixel_y = 16
 	},

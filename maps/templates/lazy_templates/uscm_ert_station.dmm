@@ -201,10 +201,6 @@
 "cy" = (
 /turf/open/floor/almayer/orange/west,
 /area/adminlevel/ert_station/uscm_station)
-"cz" = (
-/obj/item/hardpoint/support/artillery_module,
-/turf/open/floor/almayer/plating/northeast,
-/area/adminlevel/ert_station/uscm_station)
 "cG" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /obj/structure/pipes/standard/simple/hidden/cyan{
@@ -8882,7 +8878,7 @@ kZ
 kZ
 kZ
 zK
-cz
+Bc
 na
 hn
 JI

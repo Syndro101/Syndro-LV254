@@ -27,6 +27,7 @@
 	)
 
 	vehicle_flags = VEHICLE_CLASS_WEAK
+	vehicle_pen_armor = VEHICLE_ARMOR_SOFT
 
 	passengers_slots = 4
 	xenos_slots = 2
@@ -45,7 +46,7 @@
 	move_max_momentum = 3
 
 	hardpoints_allowed = list(
-		/obj/item/hardpoint/locomotion/van_wheels,
+		/obj/item/hardpoint/support/locomotion,
 	)
 
 	move_turn_momentum_loss_factor = 1
@@ -239,10 +240,10 @@
 		return ..()
 
 	if(istype(A, /turf/closed/wall) || \
-	   istype(A, /obj/structure/barricade/sandbags) || \
-	   istype(A, /obj/structure/barricade/metal) || \
-	   istype(A, /obj/structure/barricade/deployable) || \
-	   istype(A, /obj/structure/machinery/cryopod)) //Can no longer runover cryopods
+		istype(A, /obj/structure/barricade/sandbags) || \
+		istype(A, /obj/structure/barricade/metal) || \
+		istype(A, /obj/structure/barricade/deployable) || \
+		istype(A, /obj/structure/machinery/cryopod)) //Can no longer runover cryopods
 
 		return FALSE
 
@@ -281,7 +282,7 @@
 	VAN.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/decrepit/load_hardpoints(obj/vehicle/multitile/box_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: wheels installed
 /obj/effect/vehicle_spawner/box_van/fixed/spawn_vehicle()
@@ -293,7 +294,7 @@
 	VAN.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/fixed/load_hardpoints(obj/vehicle/multitile/box_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //ambulance
 
@@ -330,7 +331,7 @@
 	AMBULANCE.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/ambulance/decrepit/load_hardpoints(obj/vehicle/multitile/box_van/ambulance/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: wheels installed
 /obj/effect/vehicle_spawner/box_van/ambulance/fixed/spawn_vehicle()
@@ -342,7 +343,7 @@
 	AMBULANCE.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/ambulance/fixed/load_hardpoints(obj/vehicle/multitile/box_van/ambulance/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //police car
 
@@ -383,7 +384,7 @@
 	COP_CAR.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/cop_car/decrepit/load_hardpoints(obj/vehicle/multitile/box_van/cop_car/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: wheels installed
 /obj/effect/vehicle_spawner/box_van/cop_car/fixed/spawn_vehicle()
@@ -395,4 +396,4 @@
 	COP_CAR.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/cop_car/fixed/load_hardpoints(obj/vehicle/multitile/box_van/cop_car/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)

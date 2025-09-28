@@ -128,7 +128,6 @@ Class Procs:
 		power_change()
 		message_admins("[key_name(src, TRUE)] has toggled needs_power to [needs_power] on [src] in [get_area(src)] ([x],[y],[z]).", x, y, z)
 
-
 /obj/structure/machinery/Initialize(mapload, ...)
 	. = ..()
 	GLOB.machines += src
@@ -337,10 +336,22 @@ Class Procs:
 	set_is_on(!is_on)
 	return is_on
 
-// UI related procs \\
+// UI related procs
 
 /obj/structure/machinery/ui_state(mob/user)
 	return GLOB.not_incapacitated_and_adjacent_state
+
+
+
+// Fabricator related stuff
+
+/datum/build_queue_entry
+	var/item
+	var/cost
+
+/datum/build_queue_entry/New(item, cost)
+	src.item = item
+	src.cost = cost
 
 //made into "prop" from an old destilery project abandon 9 year ago.
 

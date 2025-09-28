@@ -74,7 +74,7 @@
 	new /obj/item/weapon/gun/smartgun/dirty(src)
 	new /obj/item/smartgun_battery(src)
 	new /obj/item/clothing/suit/storage/marine/smartgunner/veteran/pmc(src)
-	new /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner(src)
+	new /obj/item/clothing/head/helmet/marine/veteran/pmc/enclosed(src)
 	new /obj/item/storage/belt/gun/smartgunner/pmc/full(src)
 	update_icon()
 
@@ -115,3 +115,25 @@
 		overlays += image(icon, "smartgun")
 	else
 		icon_state = "kit_case_e"
+
+/obj/item/storage/box/hpr_system
+	name = "\improper M41AE2 heavy pulse rifle system case"
+	desc = "A large case containing an M41AE2 heavy pulse rifle, M56 combat harness, head mounted sight and ammunition.\nDrag this sprite into you to open it up! NOTE: You cannot put items back inside this case."
+	icon = 'icons/obj/items/storage/kits.dmi'
+	icon_state = "kit_case"
+	w_class = SIZE_HUGE
+	storage_slots = 7
+	slowdown = 1
+	can_hold = list() //Nada. Once you take the stuff out it doesn't fit back in.
+	foldable = null
+
+/obj/item/storage/box/hpr_system/Initialize()
+	. = ..()
+	new /obj/item/clothing/suit/storage/marine/smartgunner(src)
+	new /obj/item/weapon/gun/rifle/lmg/braced(src)
+	new /obj/item/attachable/scope/mini_iff(src)
+	new /obj/item/clothing/glasses/night/medhud/plasma(src)
+	new/obj/item/ammo_magazine/rifle/lmg/holo_target(src)
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_magazine/rifle/lmg/ap(src)
+	update_icon()

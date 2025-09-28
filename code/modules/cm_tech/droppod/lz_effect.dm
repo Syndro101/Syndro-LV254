@@ -38,3 +38,10 @@
 /obj/effect/warning/explosive/gas
 	name = "gas warning"
 	color = "#42acd6"
+
+/obj/effect/warning/explosive/target_lock
+	name = "target lock"
+	icon_state = "target_lock"
+	color = null
+	alpha = 75
+	layer = ABOVE_MOB_LAYER

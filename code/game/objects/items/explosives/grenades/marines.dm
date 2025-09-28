@@ -609,6 +609,8 @@
 			shocked_human.make_dizzy(damage_applied)
 			mob.apply_stamina_damage(damage_applied*human_stam_dam_factor) // Stamina damage
 			shocked_human.emote("pain")
+			if(iswydroid(mob))
+				mob.emote("pain")
 		else //nonhuman damage + slow
 			mob.apply_damage(damage_applied, BURN)
 			if((mob_dist < (range-3))) // 2 tiles around small superslow

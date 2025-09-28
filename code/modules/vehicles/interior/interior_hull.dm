@@ -7,7 +7,7 @@
 /obj/structure/interior_wall
 	name = "interior wall"
 	desc = "An interior wall."
-	icon = 'icons/obj/vehicles/interiors/tank.dmi'
+	icon = 'icons/obj/vehicles/interiors/longstreet.dmi'
 	density = TRUE
 	opacity = TRUE
 	anchored = TRUE
@@ -29,7 +29,7 @@
 /obj/effect/vehicle_roof
 	name = "interior roof"
 	desc = "An interior roof."
-	icon = 'icons/obj/vehicles/interiors/tank.dmi'
+	icon = 'icons/obj/vehicles/interiors/longstreet.dmi'
 	density = FALSE
 	opacity = FALSE
 	anchored = TRUE

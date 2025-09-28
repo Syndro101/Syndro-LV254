@@ -1254,14 +1254,94 @@
 	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/clf/command)
 
 //WY Headsets
-/obj/item/device/radio/headset/distress/commando
-	name = "Commando headset"
-	desc = "A special headset used by unidentified operatives. Channels are as follows: :g - public, :v - marine command, :a - alpha squad, :b - bravo squad, :c - charlie squad, :d - delta squad, :n - engineering, :m - medbay, :u - requisitions, :j - JTAC, :t - intel."
+/obj/item/device/radio/headset/distress/wy_android
+	name = "W-Y android headset"
+	desc = "A special headset used by unidentified androids. Channels are as follows: :o - colony :y - Corporate #pmc - PMC"
 	frequency = WY_WO_FREQ
-	icon_state = "pmc_headset"
-	initial_keys = list(/obj/item/device/encryptionkey/public, /obj/item/device/encryptionkey/mcom)
+	icon_state = "ms_headset"
+	initial_keys = list(/obj/item/device/encryptionkey/public, /obj/item/device/encryptionkey/WY, /obj/item/device/encryptionkey/pmc/command)
 	has_hud = TRUE
 	hud_type = MOB_HUD_FACTION_WO
+	additional_hud_types = list(MOB_HUD_FACTION_WY, MOB_HUD_FACTION_PMC)
+
+/obj/item/device/radio/headset/distress/pmc
+	name = "PMC headset"
+	desc = "A special headset used by corporate personnel. Channels are as follows: :g - public, :v - marine command, :a - alpha squad, :b - bravo squad, :c - charlie squad, :d - delta squad, :n - engineering, :m - medbay, :u - requisitions, :j - JTAC, :t - intel, :y - Corporate."
+	frequency = PMC_FREQ
+	icon_state = "pmc_headset"
+	initial_keys = list(/obj/item/device/encryptionkey/public, /obj/item/device/encryptionkey/mcom/cl)
+	has_hud = TRUE
+	hud_type = MOB_HUD_FACTION_PMC
+
+	misc_tracking = TRUE
+	locate_setting = TRACKER_CL
+	inbuilt_tracking_options = list(
+		"Corporate Liaison" = TRACKER_CL
+	)
+	additional_hud_types = list(MOB_HUD_FACTION_WY)
+
+/obj/item/device/radio/headset/distress/pmc/commando
+	name = "W-Y commando headset"
+	desc = "A special headset used by unidentified operatives. Channels are as follows: :g - public, :v - marine command, :a - alpha squad, :b - bravo squad, :c - charlie squad, :d - delta squad, :n - engineering, :m - medbay, :u - requisitions, :j - JTAC, :t - intel, :y - Corporate."
+	icon_state = "pmc_headset"
+	initial_keys = list(/obj/item/device/encryptionkey/public, /obj/item/device/encryptionkey/mcom/cl, /obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/WY, /obj/item/device/encryptionkey/pmc)
+	maximum_keys = 5
+
+/obj/item/device/radio/headset/distress/pmc/commando/hvh
+	name = "W-Y commando headset"
+	desc = "A special headset used by unidentified operatives. Channels are as follows: :o - colony :y - Corporate #pmc - PMC."
+	icon_state = "pmc_headset"
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/WY, /obj/item/device/encryptionkey/pmc)
+
+/obj/item/device/radio/headset/distress/pmc/commando/leader
+	name = "W-Y commando leader headset"
+	initial_keys = list(/obj/item/device/encryptionkey/public, /obj/item/device/encryptionkey/mcom/cl, /obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/WY, /obj/item/device/encryptionkey/pmc/command)
+
+/obj/item/device/radio/headset/distress/pmc/hvh
+	desc = "A special headset used by corporate personnel. Channels are as follows: :o - colony."
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/WY)
+	misc_tracking = FALSE
+
+/obj/item/device/radio/headset/distress/pmc/cct
+	name = "PMC-CCT headset"
+	desc = "A special headset used by corporate personnel. Channels are as follows: :o - colony, #e - engineering, #o - JTAC, #p - general"
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/engi, /obj/item/device/encryptionkey/mcom/cl)
+
+/obj/item/device/radio/headset/distress/pmc/cct/hvh
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/engi)
+	misc_tracking = FALSE
+
+/obj/item/device/radio/headset/distress/pmc/medic
+	name = "PMC-MED headset"
+	desc = "A special headset used by corporate personnel. Channels are as follows: :o - colony, #f - medical, #p - general"
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/medic, /obj/item/device/encryptionkey/mcom/cl)
+
+/obj/item/device/radio/headset/distress/pmc/medic/hvh
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/medic)
+	misc_tracking = FALSE
+
+/obj/item/device/radio/headset/distress/pmc/command
+	name = "PMC-CMD headset"
+	desc = "A special headset used by corporate personnel. Channels are as follows: :o - colony, #z - command, #f - medical, #e - engineering, #o - JTAC, #p - general"
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/command, /obj/item/device/encryptionkey/mcom/cl)
+	additional_hud_types = list(MOB_HUD_FACTION_MARINE, MOB_HUD_FACTION_WY)
+
+/obj/item/device/radio/headset/distress/pmc/command/hvh
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/command)
+	misc_tracking = FALSE
+	additional_hud_types = list(MOB_HUD_FACTION_WY)
+
+/obj/item/device/radio/headset/distress/pmc/command/director
+	name = "WY director headset"
+	desc = "A special headset used by corporate directors. Channels are as follows: :o - colony, #z - command, #f - medical, #e - engineering, #o - JTAC, #p - general"
+	maximum_keys = 4
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/command, /obj/item/device/encryptionkey/commando, /obj/item/device/encryptionkey/mcom/cl)
+	additional_hud_types = list(MOB_HUD_FACTION_WY, MOB_HUD_FACTION_WO, MOB_HUD_FACTION_TWE, MOB_HUD_FACTION_MARINE)
+
+/obj/item/device/radio/headset/distress/pmc/command/director/hvh
+	maximum_keys = 3
+	initial_keys = list(/obj/item/device/encryptionkey/colony, /obj/item/device/encryptionkey/pmc/command, /obj/item/device/encryptionkey/commando)
+	misc_tracking = FALSE
 
 /obj/item/device/radio/headset/distress/contractor
 	name = "VAI Headset"

@@ -1,0 +1,235 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"b" = (
+/obj/effect/landmark/interior/spawn/entrance{
+	dir = 8;
+	exit_type = /obj/structure/interior_exit/vehicle/tank;
+	name = "back entrance marker";
+	tag = "back"
+	},
+/turf/open/shuttle/vehicle/floor_1_10,
+/area/interior/vehicle/tank)
+"c" = (
+/obj/effect/landmark/interior/spawn/weapons_loader{
+	layer = 2;
+	pixel_x = 8
+	},
+/turf/open/shuttle/vehicle/floor_1_9,
+/area/interior/vehicle/tank)
+"e" = (
+/obj/effect/landmark/interior/spawn/interior_camera{
+	dir = 9;
+	layer = 3.2;
+	pixel_x = -12;
+	pixel_y = -10
+	},
+/turf/open/shuttle/vehicle/floor_3_13,
+/area/interior/vehicle/tank)
+"f" = (
+/obj/effect/landmark/interior/spawn/vehicle_gunner_seat/armor{
+	dir = 4
+	},
+/turf/open/shuttle/vehicle/floor_3_5,
+/area/interior/vehicle/tank)
+"g" = (
+/obj/structure/interior_wall/tank{
+	alpha = 50;
+	icon_state = "exterior_1";
+	layer = 5.2;
+	pixel_y = 32
+	},
+/turf/open/void/vehicle,
+/area/space)
+"i" = (
+/turf/open/void/vehicle,
+/area/space)
+"j" = (
+/obj/structure/interior_wall/tank{
+	icon_state = "back_3"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"l" = (
+/obj/structure/interior_wall/tank{
+	alpha = 50;
+	icon_state = "exterior_2";
+	layer = 5.2;
+	pixel_y = 32
+	},
+/turf/open/void/vehicle,
+/area/space)
+"r" = (
+/obj/structure/interior_wall/apc{
+	icon_state = "front_7";
+	name = "\improper tank interior wall"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"u" = (
+/obj/effect/landmark/interior/spawn/vehicle_driver_seat/armor{
+	dir = 4;
+	layer = 3.1
+	},
+/obj/structure/prop/tank{
+	density = 0;
+	icon_state = "prop6";
+	pixel_y = 32
+	},
+/obj/structure/prop/tank{
+	density = 0;
+	icon_state = "prop8_extra";
+	layer = 4.12
+	},
+/obj/structure/prop/tank{
+	density = 0;
+	icon_state = "prop4"
+	},
+/turf/open/shuttle/vehicle/floor_3_7,
+/area/interior/vehicle/tank)
+"v" = (
+/obj/structure/interior_wall/tank{
+	layer = 2
+	},
+/turf/open/void/vehicle,
+/area/space)
+"w" = (
+/obj/structure/interior_wall/apc{
+	icon_state = "front_1";
+	name = "\improper tank interior wall"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"y" = (
+/obj/structure/interior_wall/tank{
+	icon_state = "back_2"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"B" = (
+/obj/structure/prop/tank{
+	icon_state = "prop3"
+	},
+/turf/open/shuttle/vehicle/floor_3_4,
+/area/space)
+"C" = (
+/obj/structure/prop/tank{
+	icon_state = "prop1"
+	},
+/turf/open/shuttle/vehicle/floor_3_9,
+/area/space)
+"D" = (
+/obj/structure/interior_wall/tank{
+	icon_state = "back_1"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"G" = (
+/obj/effect/landmark/interior/spawn/telephone{
+	pixel_x = 8;
+	pixel_y = 30
+	},
+/turf/open/shuttle/vehicle/floor_1_8,
+/area/interior/vehicle/tank)
+"H" = (
+/obj/structure/interior_wall/tank{
+	icon_state = "exterior_3";
+	layer = 5.2;
+	pixel_y = 32
+	},
+/turf/open/void/vehicle,
+/area/space)
+"J" = (
+/obj/structure/prop/tank{
+	icon_state = "prop2"
+	},
+/turf/open/shuttle/vehicle/floor_3_3,
+/area/space)
+"O" = (
+/obj/structure/interior_wall/apc{
+	icon_state = "front_6";
+	name = "\improper tank interior wall"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"P" = (
+/obj/structure/prop/tank{
+	icon_state = "prop5"
+	},
+/obj/structure/prop/tank{
+	icon_state = "prop7";
+	pixel_y = 32
+	},
+/turf/open/shuttle/vehicle/floor_3_8,
+/area/space)
+"R" = (
+/obj/structure/interior_wall/tank{
+	alpha = 50;
+	icon_state = "tank_left_2";
+	layer = 5.2;
+	pixel_y = 32
+	},
+/turf/open/void/vehicle,
+/area/space)
+"T" = (
+/obj/structure/prop/tank,
+/turf/open/shuttle/vehicle/floor_3_1_1,
+/area/space)
+"Z" = (
+/obj/structure/machinery/cm_vending/sorted/medical/wall_med/lifeboat{
+	name = "Vehicle NanoMed";
+	pixel_x = -6;
+	pixel_y = 28
+	},
+/obj/structure/vehicle_locker{
+	layer = 5.21;
+	pixel_y = 27;
+	pixel_x = 25
+	},
+/obj/structure/extinguisher_cabinet/lifeboat{
+	pixel_x = 8;
+	pixel_y = 28
+	},
+/turf/open/shuttle/vehicle/floor_1_7,
+/area/interior/vehicle/tank)
+
+(1,1,1) = {"
+j
+y
+y
+D
+i
+"}
+(2,1,1) = {"
+v
+Z
+b
+e
+g
+"}
+(3,1,1) = {"
+v
+G
+c
+f
+l
+"}
+(4,1,1) = {"
+v
+u
+J
+T
+R
+"}
+(5,1,1) = {"
+v
+P
+B
+C
+H
+"}
+(6,1,1) = {"
+O
+r
+r
+w
+i
+"}

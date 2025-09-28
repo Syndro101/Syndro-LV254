@@ -5,6 +5,7 @@
 	layer = ABOVE_XENO_LAYER
 	vehicle_flags = VEHICLE_CLASS_WEAK
 	flatbed = TRUE
+	vehicle_pen_armor = VEHICLE_ARMOR_HEAVY
 
 	icon = 'icons/obj/vehicles/civtruck.dmi'
 	icon_state = "civtruck_1"
@@ -30,7 +31,7 @@
 	move_turn_momentum_loss_factor = 1
 
 	hardpoints_allowed = list(
-		/obj/item/hardpoint/locomotion/truck/wheels/civtruck
+		/obj/item/hardpoint/support/locomotion/truck
 	)
 
 /obj/vehicle/multitile/civtruck/civtruck_2

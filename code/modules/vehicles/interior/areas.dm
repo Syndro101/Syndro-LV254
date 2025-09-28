@@ -31,6 +31,10 @@
 	name = "\improper ARC interior"
 	icon_state = "arc"
 
+/area/interior/vehicle/lav
+	name = "\improper LAV interior"
+	icon_state = "apc"
+
 //insurgent
 
 /area/interior/vehicle/clf_van

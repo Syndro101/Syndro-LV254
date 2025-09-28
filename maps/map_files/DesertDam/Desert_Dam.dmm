@@ -50669,7 +50669,7 @@
 	},
 /obj/structure/surface/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/hardpoint/locomotion/van_wheels{
+/obj/item/hardpoint/support/locomotion{
 	unacidable = 1
 	},
 /turf/open/floor/prison/darkyellow2/east,

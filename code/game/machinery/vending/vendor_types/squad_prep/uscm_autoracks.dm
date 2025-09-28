@@ -5,7 +5,7 @@
 /obj/structure/machinery/auto_rack/uscm
 	budget_card = /obj/item/reqcard/uscm
 	req_access = list()
-	req_one_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_CARGO, ACCESS_MARINE_ARMORY)
+	req_one_access = list(ACCESS_MARINE_CARGO)
 
 //-----------------WEAPONS-----------------\\
 

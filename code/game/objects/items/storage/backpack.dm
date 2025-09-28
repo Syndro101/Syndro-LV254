@@ -447,17 +447,22 @@
 			item_icons[WEAR_BACK] = 'icons/mob/humans/onmob/clothing/back/backpacks_by_map/urban.dmi'
 
 /obj/item/storage/backpack/marine/ammo_rack
-	name = "\improper IMP ammo rack"
-	desc = "A bare IMP frame with buckles designed to hold multiple ammo cans, but can fit any cumbersome box thanks to Marine ingenuity. Helps you lug around extra rounds or supplies."
+	name = "\improper IMP Ammo Bearer Pack"
+	desc = "A heavy duty, bare IMP frame with buckles designed to hold multiple ammo cans, HMG magazines, or other crew served munitions, but can be made to fit any cumbersome box thanks to Marine ingenuity. Your back pain will not be service related."
 	flags_atom = FPRINT|NO_GAMEMODE_SKIN // same sprite for all gamemodes
-	storage_slots = 3
+	w_class = SIZE_MASSIVE
+	storage_slots = 4
 	icon_state = "ammo_pack_0"
 	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/UA.dmi'
 	item_icons = list(
 		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/UA.dmi'
 	)
-	can_hold = list(/obj/item/ammo_box, /obj/item/stack/folding_barricade)
+	can_hold = list(/obj/item/ammo_box, /obj/item/ammo_magazine/smartgun, /obj/item/ammo_magazine/rifle/lmg, /obj/item/ammo_magazine/m60, /obj/item/ammo_magazine/pkp, /obj/item/ammo_magazine/m56d, /obj/item/ammo_magazine/m2c, /obj/item/stack/folding_barricade, /obj/item/mortar_shell, /obj/item/storage/box,)
 	max_w_class = SIZE_MASSIVE
+	bypass_w_limit = list(
+		/obj/item/storage/box/wood,
+		/obj/item/storage/box/nade_box,
+	)
 	throw_range = 0
 	xeno_types = null
 	var/base_icon_state = "ammo_pack"
@@ -859,9 +864,15 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	mouse_opacity = initial(mouse_opacity)
 	..()
 
+#define FULL_CAMO_ALPHA 15
+#define VISIBLE_CAMO_ALPHA 60
+
+#define FULL_PVE_CAMO_ALPHA 30
+#define VISIBLE_PVE_CAMO_ALPHA 75
+
 // Scout Cloak
 /obj/item/storage/backpack/marine/satchel/scout_cloak
-	name = "\improper M68 Thermal Cloak"
+	name = "\improper M68 Optical Camo Cloak"
 	desc = "The lightweight thermal dampeners and optical camouflage provided by this cloak are weaker than those found in standard USCM ghillie suits. In exchange, the cloak can be worn over combat armor and offers the wearer high maneuverability and adaptability to many environments."
 	icon_state = "scout_cloak"
 	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/UA.dmi'
@@ -872,15 +883,25 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	explo_proof = TRUE
 	uniform_restricted = list(/obj/item/clothing/suit/storage/marine)
 	flags_atom = FPRINT|NO_GAMEMODE_SKIN // same sprite for all gamemodes
+	flags_item = MOB_LOCK_ON_EQUIP
 	var/camo_active = FALSE
-	var/camo_alpha = 10
-	var/allow_gun_usage = FALSE
+	var/full_camo_alpha = FULL_PVE_CAMO_ALPHA
+	var/incremental_shooting_camo_penalty = 75
+	var/current_camo = FULL_PVE_CAMO_ALPHA
+	var/visible_camo_alpha = VISIBLE_PVE_CAMO_ALPHA
+	var/camouflage_break = 8 SECONDS
 	var/cloak_cooldown
+	var/camo_message_delay = 2 SECONDS
+	var/allowed_stealth_shooting = FALSE
+	var/camo_on_sound = 'sound/effects/cloak_scout_on.ogg'
+	var/camo_off_sound = 'sound/effects/pred_cloakoff.ogg'
 
 	actions_types = list(/datum/action/item_action/specialist/toggle_cloak)
 
 /obj/item/storage/backpack/marine/satchel/scout_cloak/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
 	. = ..()
+	if(!(flags_atom & NO_GAMEMODE_SKIN))
+		return
 	switch(SSmapping.configs[GROUND_MAP].camouflage_type)
 		if("urban")
 			icon_state = "u_scout_cloak"
@@ -924,19 +945,18 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 		to_chat(H, SPAN_WARNING("Your cloak is malfunctioning and can't be enabled right now!"))
 		return
 
-	RegisterSignal(H, COMSIG_GRENADE_PRE_PRIME, PROC_REF(cloak_grenade_callback))
+	RegisterSignal(H,  list(COMSIG_MOB_FIRED_GUN, COMSIG_MOB_FIRED_GUN_ATTACHMENT), PROC_REF(fade_in))
 	RegisterSignal(H, COMSIG_HUMAN_EXTINGUISH, PROC_REF(wrapper_fizzle_camouflage))
-	RegisterSignal(H, COMSIG_MOB_EFFECT_CLOAK_CANCEL, PROC_REF(deactivate_camouflage))
+	RegisterSignal(H, list(COMSIG_MOB_DEATH, COMSIG_MOB_EFFECT_CLOAK_CANCEL), PROC_REF(deactivate_camouflage))
 
 	camo_active = TRUE
 	ADD_TRAIT(H, TRAIT_CLOAKED, TRAIT_SOURCE_EQUIPMENT(WEAR_BACK))
 	H.visible_message(SPAN_DANGER("[H] vanishes into thin air!"), SPAN_NOTICE("You activate your cloak's camouflage."), max_distance = 4)
-	playsound(H.loc, 'sound/effects/cloak_scout_on.ogg', 15, TRUE)
+	playsound(H.loc, camo_on_sound, 15, TRUE)
 	H.unset_interaction()
 
-	H.alpha = camo_alpha
+	H.alpha = full_camo_alpha
 	H.FF_hit_evade = 1000
-	H.allow_gun_usage = allow_gun_usage
 
 	var/datum/mob_hud/security/advanced/SA = GLOB.huds[MOB_HUD_SECURITY_ADVANCED]
 	SA.remove_from_hud(H)
@@ -945,6 +965,28 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 
 	anim(H.loc, H, 'icons/mob/mob.dmi', null, "cloak", null, H.dir)
 	return TRUE
+
+
+/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/fade_in(mob/user)
+	SIGNAL_HANDLER
+	var/mob/living/carbon/human/H = user
+	if(camo_active)
+		if(current_camo < full_camo_alpha)
+			current_camo = full_camo_alpha
+		current_camo = clamp(current_camo + incremental_shooting_camo_penalty, full_camo_alpha, 255)
+		H.alpha = current_camo
+		if(current_camo > visible_camo_alpha)
+			REMOVE_TRAIT(H, TRAIT_CLOAKED, TRAIT_SOURCE_EQUIPMENT(WEAR_BACK))
+			to_chat(H, SPAN_BOLDNOTICE("Your cloak can't keep you perfectly hidden anymore!"))
+		addtimer(CALLBACK(src, PROC_REF(fade_out_finish), H), camouflage_break, TIMER_OVERRIDE|TIMER_UNIQUE)
+		animate(H, alpha = full_camo_alpha + 5, time = camouflage_break, easing = LINEAR_EASING, flags = ANIMATION_END_NOW)
+
+/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/fade_out_finish(mob/living/carbon/human/H)
+	if(camo_active && H.back == src)
+		ADD_TRAIT(H, TRAIT_CLOAKED, TRAIT_SOURCE_EQUIPMENT(WEAR_BACK))
+		to_chat(H, SPAN_BOLDNOTICE("Your cloak shimmers, returning to it's perfectly camouflaged state!"))
+		animate(H, alpha = full_camo_alpha)
+		current_camo = full_camo_alpha
 
 /obj/item/storage/backpack/marine/satchel/scout_cloak/proc/wrapper_fizzle_camouflage()
 	SIGNAL_HANDLER
@@ -961,8 +1003,9 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 		return FALSE
 
 	UnregisterSignal(H, list(
-	COMSIG_GRENADE_PRE_PRIME,
+	COMSIG_MOB_FIRED_GUN_ATTACHMENT,
 	COMSIG_HUMAN_EXTINGUISH,
+	COMSIG_MOB_DEATH,
 	COMSIG_MOB_EFFECT_CLOAK_CANCEL,
 	))
 
@@ -972,7 +1015,7 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	camo_active = FALSE
 	REMOVE_TRAIT(H, TRAIT_CLOAKED, TRAIT_SOURCE_EQUIPMENT(WEAR_BACK))
 	H.visible_message(SPAN_DANGER("[H] shimmers into existence!"), SPAN_WARNING("Your cloak's camouflage has deactivated!"), max_distance = 4)
-	playsound(H.loc, 'sound/effects/cloak_scout_off.ogg', 15, TRUE)
+	playsound(H.loc, camo_off_sound, 15, TRUE)
 
 	H.alpha = initial(H.alpha)
 	H.FF_hit_evade = initial(H.FF_hit_evade)
@@ -984,21 +1027,6 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 
 	if(anim)
 		anim(H.loc, H,'icons/mob/mob.dmi', null, "uncloak", null, H.dir)
-
-	addtimer(CALLBACK(src, PROC_REF(allow_shooting), H), 1.5 SECONDS)
-
-// This proc is to cancel priming grenades in /obj/item/explosive/grenade/attack_self()
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/cloak_grenade_callback(mob/user)
-	SIGNAL_HANDLER
-
-	to_chat(user, SPAN_WARNING("Your cloak prevents you from priming the grenade!"))
-
-	return COMPONENT_GRENADE_PRIME_CANCEL
-
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/allow_shooting(mob/living/carbon/human/H)
-	if(camo_active && !allow_gun_usage)
-		return
-	H.allow_gun_usage = TRUE
 
 /datum/action/item_action/specialist/toggle_cloak
 	ability_primacy = SPEC_PRIMARY_ACTION_1
@@ -1020,6 +1048,24 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	. = ..()
 	var/obj/item/storage/backpack/marine/satchel/scout_cloak/SC = holder_item
 	SC.camouflage()
+
+/obj/item/storage/backpack/marine/satchel/scout_cloak/invis
+	full_camo_alpha = FULL_CAMO_ALPHA
+	current_camo = FULL_CAMO_ALPHA
+	visible_camo_alpha = VISIBLE_CAMO_ALPHA
+
+/obj/item/storage/backpack/marine/satchel/scout_cloak/wy_invis_droid
+	name = "M7X Mark II optical camouflage powerpack"
+	desc = "A heavy-duty powerpack carried by Weyland-Yutani combat androids. Powers the reverse-engineered optical camouflage system utilized by M7X Mark II Apesuit."
+	icon_state = "invis_android_powerpack"
+	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/WY.dmi'
+	item_icons = list(
+		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/WY.dmi'
+	)
+	uniform_restricted = list(/obj/item/clothing/suit/storage/marine/veteran/pmc/wy_droid/dark)
+	allowed_stealth_shooting = TRUE
+	camo_on_sound = 'sound/effects/pred_cloakon.ogg'
+	camo_off_sound = 'sound/effects/pred_cloakoff.ogg'
 
 // Welder Backpacks //
 
@@ -1250,15 +1296,66 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 /obj/item/storage/backpack/molle/backpack/surv
 	worn_accessible = FALSE
 
-/obj/item/storage/backpack/commando
-	name = "commando bag"
-	desc = "A heavy-duty bag carried by Weyland-Yutani commandos."
-	icon_state = "commandopack"
+//----------WY----------
+
+/obj/item/storage/backpack/pmc
+	name = "\improper PMC combat pack"
+	desc = "A small, lightweight pack for expeditions and short-range operations, designed for Weyland-Yutani PMCs."
 	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/WY.dmi'
+	icon_state = "pmc_satchel"
 	item_icons = list(
 		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/WY.dmi'
 	)
 	worn_accessible = TRUE
+	max_storage_space = 15
+
+/obj/item/storage/backpack/pmc/medic
+	name = "\improper PMC medic combat pack"
+	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/WY.dmi'
+	icon_state = "pmc_medic_satchel"
+
+/obj/item/storage/backpack/pmc/medic/guard
+	icon_state = "pmc_guard_medic_satchel"
+
+/obj/item/storage/backpack/pmc/backpack
+	name = "\improper PMC combat backpack"
+	desc = "Ergonomic, protected, high capacity backpack, designed for Weyland-Yutani PMCs."
+	icon_state = "pmc_backpack"
+	max_storage_space = 21
+
+/obj/item/storage/backpack/pmc/backpack/commando
+	name = "\improper W-Y Commando combat backpack"
+	desc = "Ergonomic, protected, high capacity backpack, designed for Weyland-Yutani Commandos."
+	icon_state = "commando_backpack"
+
+/obj/item/storage/backpack/pmc/backpack/commando/leader
+	icon_state = "commando_leader_backpack"
+
+/obj/item/storage/backpack/marine/engineerpack/ert/pmc
+	name = "\improper PMC technician welderpack"
+	desc = "Ergonomic, protected, high capacity backpack, designed for Weyland-Yutani PMCs. Features a small fueltank for quick blowtorch refueling."
+	icon_state = "pmc_welderpack"
+	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/WY.dmi'
+	item_icons = list(
+		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/WY.dmi'
+	)
+	flags_atom = FPRINT|NO_GAMEMODE_SKIN // same sprite for all gamemodes
+	worn_accessible = TRUE
+	max_fuel = 180
+
+/obj/item/storage/backpack/pmc/backpack/commando/apesuit
+	name = "Dog Catcher bag"
+	desc = "A heavy-duty bag carried by Weyland-Yutani Dog Catchers."
+	icon_state = "apesuit_pack"
+
+/obj/item/storage/backpack/combat_droid
+	name = "combat android powerpack"
+	desc = "A heavy-duty powerpack carried by Weyland-Yutani combat androids."
+	icon_state = "combat_android_powerpack"
+	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/WY.dmi'
+	item_icons = list(
+		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/WY.dmi'
+	)
 
 /obj/item/storage/backpack/mcommander
 	name = "marine commanding officer backpack"
@@ -1347,11 +1444,16 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 	uniform_restricted = list(/obj/item/clothing/suit/storage/marine/faction/UPP/commando) //Need to wear UPP commando armor to equip this.
 
 	max_storage_space = 21
-	camo_alpha = 10
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/upp/weak
-	desc = "A thermo-optic camouflage cloak commonly used by UPP commando units. This one is less effective than normal."
-	actions_types = null
+/obj/item/storage/backpack/marine/satchel/scout_cloak/upp/invis
+	full_camo_alpha = FULL_CAMO_ALPHA
+	current_camo = FULL_CAMO_ALPHA
+	visible_camo_alpha = VISIBLE_CAMO_ALPHA
+
+#undef FULL_CAMO_ALPHA
+#undef VISIBLE_CAMO_ALPHA
+#undef FULL_PVE_CAMO_ALPHA
+#undef VISIBLE_PVE_CAMO_ALPHA
 
 //----------TWE SECTION----------
 /obj/item/storage/backpack/rmc

@@ -24,7 +24,7 @@
 		to_chat(user, SPAN_WARNING("[vehicle]'s hull is too damaged to operate!"))
 		return
 
-	var/obj/item/hardpoint/support/arc_antenna/antenna = locate() in vehicle.hardpoints
+	var/obj/item/hardpoint/support/arc/antenna/antenna = locate() in vehicle.hardpoints
 	if(!antenna)
 		to_chat(user, SPAN_WARNING("[vehicle] has no antenna mounted!"))
 		return
@@ -59,7 +59,7 @@
 		addtimer(CALLBACK(vehicle, PROC_REF(finish_antenna_deploy), user), antenna.deploy_animation_time)
 
 /obj/vehicle/multitile/arc/proc/finish_antenna_retract(mob/user)
-	var/obj/item/hardpoint/support/arc_antenna/antenna = locate() in hardpoints
+	var/obj/item/hardpoint/support/arc/antenna/antenna = locate() in hardpoints
 	if(!antenna)
 		antenna.deploying = FALSE
 		return
@@ -73,7 +73,7 @@
 	SEND_SIGNAL(src, COMSIG_ARC_ANTENNA_TOGGLED)
 
 /obj/vehicle/multitile/arc/proc/finish_antenna_deploy(mob/user)
-	var/obj/item/hardpoint/support/arc_antenna/antenna = locate() in hardpoints
+	var/obj/item/hardpoint/support/arc/antenna/antenna = locate() in hardpoints
 	if(!antenna)
 		antenna.deploying = FALSE
 		return

@@ -63,7 +63,7 @@
 	for(var/obj/item/hardpoint/H in hps)
 		H.health = initial(H.health)
 		H.apply_buff(src)
-		if(istype(H, /obj/item/hardpoint/locomotion))
+		if(istype(H, /obj/item/hardpoint/support))
 			H.on_install(src)
 	healthcheck()
 	update_icon()

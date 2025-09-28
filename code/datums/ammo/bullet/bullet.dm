@@ -22,6 +22,14 @@
 	shrapnel_type = /obj/item/shard/shrapnel
 	shell_speed = AMMO_SPEED_TIER_4
 
+	var/vehicle_pen = VEHICLE_PEN_SOFT
+	var/sniper_shell = FALSE
+	var/he_shell = FALSE // Boom
+	var/at_shell = FALSE // Only causes spalling
+	var/heat_shell = FALSE // Boom (anti-tank edition)
+	var/plasma_shell = FALSE // Creates fire inside
+	var/plasma_he_shell = FALSE //  Plasma but boom (not inside)
+
 /datum/ammo/bullet/proc/handle_battlefield_execution(datum/ammo/firing_ammo, mob/living/hit_mob, obj/projectile/firing_projectile, mob/living/user, obj/item/weapon/gun/fired_from)
 	SIGNAL_HANDLER
 
@@ -81,68 +89,56 @@
 		execution_target.gib()
 
 /datum/ammo/bullet/on_hit_obj(obj/O, obj/projectile/P, mob/user)
-	if(!istype(O, /obj/vehicle/multitile))
-		if(prob(5))
-			user.visible_message(SPAN_BOLDWARNING("[src] bounces off of the [O]!"))
-			create_shrapnel(get_turf(O), 1, , ,/datum/ammo/bullet/shrapnel, P.weapon_cause_data)
-			var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-			s.set_up(3, 1, src)
-			s.start()
-			return
-	if(istype(O, /obj/vehicle/multitile/civvan))
+
+	if(he_shell)
+		cell_explosion(get_turf(O), 80, 40, EXPLOSION_FALLOFF_SHAPE_LINEAR, P.dir, P.weapon_cause_data)
+	if(plasma_he_shell)
+		cell_explosion(get_turf(O), 25, 10, EXPLOSION_FALLOFF_SHAPE_LINEAR, P.dir, P.weapon_cause_data)
+
+	if(istype(O))
 		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/civtruck))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/van))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/atruck))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/miltruck))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/van/miljeep))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/crane))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/box_van))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
-	if(istype(O, /obj/vehicle/multitile/clf_van))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/Glassbr3.ogg', 50)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		return
+		if(vehicle_pen >= M.vehicle_pen_armor)
+			if(sniper_shell)//sniper rifles
+				playsound(M, 'sound/effects/bang.ogg', 100)
+				M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
+				M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+				to_chat(P.firer, SPAN_WARNING("Bullseye!"))
+
+			if(at_shell)//anti materiel weapons (vulture)
+				if(M.vehicle_pen_armor < vehicle_pen)
+					playsound(M, 'sound/effects/bang.ogg', 100)
+					M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
+					M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+					to_chat(P.firer, SPAN_WARNING("Bullseye!"))
+
+				else
+					playsound(M, 'sound/effects/bang.ogg', 100)
+					M.munition_interior_bullet_effect(cause_data = create_cause_data("Anti-Tank Rifle"))
+					M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+					to_chat(P.firer, SPAN_WARNING("Bullseye!"))
+
+			if(heat_shell)//heat shells
+				playsound(M, 'sound/effects/bang.ogg', 100)
+				M.at_munition_interior_explosion_effect_bullet(cause_data = create_cause_data("HEAT shell"))
+				M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+				to_chat(P.firer, SPAN_WARNING("Bullseye!"))
+
+			if(plasma_shell)
+				playsound(M, 'sound/effects/bang.ogg', 100)
+				M.plasma_munition_interior_bullet_effect(cause_data = create_cause_data("Plasma Rifle"))
+				M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+				to_chat(P.firer, SPAN_WARNING("Bullseye!"))
+
+			else//normal bullet effect
+				playsound(M, 'sound/effects/Glassbr3.ogg', 50)
+				M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
+				M.ex_act(25, P.dir, P.weapon_cause_data, 10)
+				return
+
+		else if(vehicle_pen < M.vehicle_pen_armor)
+			playsound(M, 'sound/bullets/bullet_ricochet8.ogg', 100)
+			user.visible_message(SPAN_BOLDWARNING("The [src] deflects off of [O]'s armor!"))
+
 	return ..()
 
 /datum/ammo/bullet/on_hit_mob(mob/M, obj/projectile/P, mob/user)

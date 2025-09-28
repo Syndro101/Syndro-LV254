@@ -40795,7 +40795,7 @@
 /area/lv522/indoors/a_block/bridges/op_centre)
 "vfN" = (
 /obj/structure/surface/rack,
-/obj/item/hardpoint/locomotion/van_wheels,
+/obj/item/hardpoint/support/locomotion,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/prison/darkbrownfull2,
@@ -42125,7 +42125,7 @@
 /area/lv522/indoors/b_block/bridge)
 "vLO" = (
 /obj/structure/surface/table/reinforced/prison,
-/obj/item/hardpoint/locomotion/van_wheels,
+/obj/item/hardpoint/support/locomotion,
 /turf/open/floor/prison/darkbrownfull2,
 /area/lv522/indoors/c_block/garage)
 "vLQ" = (
@@ -44319,7 +44319,7 @@
 /turf/open/floor/prison/greenfull/east,
 /area/lv522/indoors/b_block/hydro)
 "wRJ" = (
-/obj/item/hardpoint/locomotion/van_wheels{
+/obj/item/hardpoint/support/locomotion{
 	desc = "Integral to getting shreaded";
 	name = "Lifting weights"
 	},

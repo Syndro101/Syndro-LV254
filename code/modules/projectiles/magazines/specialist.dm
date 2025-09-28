@@ -127,6 +127,18 @@
 	default_ammo = /datum/ammo/bullet/smartgun/holo_target
 	gun_type = /obj/item/weapon/gun/smartgun/rmc
 	flags_magazine = AMMUNITION_REFILLABLE|AMMUNITION_SLAP_TRANSFER
+
+/obj/item/ammo_magazine/smartgun/rusty
+	name = "rusty M56 smartgun drum"
+	icon = 'icons/obj/items/weapons/guns/ammo_by_faction/WY/machineguns.dmi'
+	icon_state = "m56_drum_dirty"
+	desc = "A sligtly worn 10x28mm 500-round drum magazine for use in the M56 Smartgun, or pretty much, whatever the hell you have on your hands, model names barely apply at this point."
+	flags_magazine = AMMUNITION_REFILLABLE|AMMUNITION_SLAP_TRANSFER
+
+/obj/item/ammo_magazine/smartgun/rusty/Initialize(mapload, spawn_empty)
+	. = ..()
+	current_rounds = rand(280, 500) //Scavenged surplus, so there is more suprise factors
+
 //-------------------------------------------------------
 //Flare gun. Close enough?
 /obj/item/ammo_magazine/internal/flare

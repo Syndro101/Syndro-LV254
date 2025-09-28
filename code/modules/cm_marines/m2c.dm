@@ -13,9 +13,9 @@
 /*M2C HEAVY MACHINEGUN AND ITS COMPONENTS */
 // AMMO
 /obj/item/ammo_magazine/m2c
-	name = "M2C Ammunition Box (10x28mm tungsten rounds)"
-	desc = "A box of 125, 10x28mm tungsten rounds for the M2 Heavy Machinegun System. Click the heavy machinegun while there's no ammo box loaded to reload the M2C."
-	caliber = "10x28mm"
+	name = "M2C Ammunition Box (12x40mm tungsten rounds)"
+	desc = "A box of 125, 12x40mm tungsten rounds for the M2 Heavy Machinegun System. Click the heavy machinegun while there's no ammo box loaded to reload the M2C."
+	caliber = "12x40mm"
 	w_class = SIZE_LARGE
 	icon = 'icons/obj/items/weapons/guns/ammo_by_faction/USCM/machineguns.dmi'
 	icon_state = "m2c"
@@ -57,7 +57,7 @@
 	desc = "The disassembled M2C HMG, with its telescopic tripods folded up and unable to fire."
 	w_class = SIZE_HUGE
 	flags_equip_slot = SLOT_BACK
-	icon = 'icons/obj/items/weapons/guns/guns_by_faction/USCM/machineguns.dmi'
+	icon = 'icons/obj/items/weapons/guns/guns_by_faction/USCM/hmg.dmi'
 	item_icons = list(
 		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/guns_by_type/machineguns.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/weapons/guns/machineguns_lefthand.dmi',
@@ -203,7 +203,7 @@
 /obj/structure/machinery/m56d_hmg/auto
 	name = "\improper M2C Heavy Machinegun"
 	desc = "A deployable, heavy machine gun. The M2C 'Chimp' HB is a modified M2 HB reconfigured to fire 10x28 Caseless Tungsten rounds for USCM use. It is capable of recoilless fire and fast-rotating. However it has a debilitating overheating issue due to the poor quality of metals used in the parts, forcing it to be used in decisive, crushing engagements as a squad support weapon. <B> Click its sprite while behind it without holding anything to man it. Click-drag on NON-GRAB intent to disassemble the gun, GRAB INTENT to remove ammo magazines."
-	icon = 'icons/obj/items/weapons/guns/guns_by_faction/USCM/machineguns.dmi'
+	icon = 'icons/obj/items/weapons/guns/guns_by_faction/USCM/hmg.dmi'
 	icon_state = "M2C"
 	icon_full = "M2C"
 	icon_empty = "M2C_e"
@@ -259,7 +259,7 @@
 		cadeblockers.Add(CB)
 
 	if(!barrel_overheat_image)
-		barrel_overheat_image = image('icons/obj/items/weapons/guns/guns_by_faction/USCM/machineguns.dmi', "+M2C_overheat")
+		barrel_overheat_image = image('icons/obj/items/weapons/guns/guns_by_faction/USCM/hmg.dmi', "+M2C_overheat")
 
 /obj/structure/machinery/m56d_hmg/auto/Destroy()
 	QDEL_NULL_LIST(cadeblockers)

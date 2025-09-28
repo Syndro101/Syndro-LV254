@@ -53,11 +53,11 @@
 			return
 		vehicle.set_seated_mob(seat, M)
 		if(M && M.client)
-			M.client.change_view(8, vehicle)
+			M.client.change_view(10, vehicle)
 
 /obj/structure/bed/chair/comfy/vehicle/clicked(mob/user, list/mods) // If you're buckled, you can shift-click on the seat in order to return to camera-view
 	if(user == buckled_mob && mods["shift"] && !user.is_mob_incapacitated())
-		user.client.change_view(8, vehicle)
+		user.client.change_view(10, vehicle)
 		vehicle.set_seated_mob(seat, user)
 		return TRUE
 	else
@@ -197,7 +197,7 @@
 				var/obj/vehicle/multitile/apc/APC = vehicle
 				M.client.change_view(APC.gunner_view_buff, vehicle)
 			else
-				M.client.change_view(8, vehicle)
+				M.client.change_view(16, vehicle)
 
 /obj/structure/bed/chair/comfy/vehicle/gunner/armor/update_icon()
 	overlays.Cut()
@@ -207,95 +207,7 @@
 	if(buckled_mob)
 		overlays += over_image
 
-
 //armored vehicles support gunner seat
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner
-	name = "left support gunner's seat"
-	desc = "Military-grade seat for a support gunner with some controls, switches and indicators."
-	seat = VEHICLE_SUPPORT_GUNNER_ONE
-
-	required_skill = SKILL_VEHICLE_DEFAULT
-
-	var/image/over_image = null
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/Destroy()
-	var/obj/structure/prop/vehicle/firing_port_weapon/FPW = locate() in get_turf(src)
-	if(FPW)
-		FPW.SG_seat = null
-	. = ..()
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/Initialize(mapload)
-	over_image = image('icons/obj/vehicles/interiors/general.dmi', "armor_chair_buckled")
-	over_image.layer = ABOVE_MOB_LAYER
-
-	return ..()
-
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/do_buckle(mob/target, mob/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(!H.allow_gun_usage)
-			if(issynth(user))
-				to_chat(user, SPAN_WARNING("Your programming does not allow you to use firearms."))
-			else
-				to_chat(user, SPAN_WARNING("You are unable to use firearms."))
-			return
-	. = ..()
-
-	update_icon()
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/update_icon()
-	overlays.Cut()
-
-	..()
-
-	if(buckled_mob)
-		overlays += over_image
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/handle_afterbuckle(mob/M)
-
-	if(!vehicle)
-		return
-
-	if(QDELETED(buckled_mob))
-		M.unset_interaction()
-		vehicle.set_seated_mob(seat, null)
-		if(M.client)
-			M.client.change_view(GLOB.world_view_size, vehicle)
-			M.client.pixel_x = 0
-			M.client.pixel_y = 0
-			M.reset_view()
-	else
-		if(M.stat == DEAD)
-			unbuckle()
-			return
-		vehicle.set_seated_mob(seat, M)
-		if(M && M.client)
-			M.client.change_view(8, vehicle)
-
-		if(vehicle.health < initial(vehicle.health) / 2)
-			to_chat(M, SPAN_WARNING("\The [vehicle] is too damaged to operate the Firing Port Weapon!"))
-			return
-
-		for(var/obj/item/hardpoint/special/firing_port_weapon/FPW in vehicle.hardpoints)
-			if(FPW.allowed_seat == seat)
-				vehicle.active_hp[seat] = FPW
-				var/msg = SPAN_NOTICE("You take the control of the M56 Firing Port Weapon.")
-				if(FPW.reloading)
-					msg += SPAN_WARNING("The M56 FPW is currently reloading. Wait [SPAN_HELPFUL((FPW.reload_time_started + FPW.reload_time - world.time) / 10)] seconds.")
-				else if(FPW.ammo)
-					msg += SPAN_NOTICE("Ammo: <b>[SPAN_HELPFUL(FPW.ammo.current_rounds)]/[SPAN_HELPFUL(FPW.ammo.max_rounds)]</b>")
-				else
-					msg += SPAN_DANGER("<b>ERROR. AMMO NOT FOUND, TELL A DEV!</b>")
-				msg = SPAN_INFO("Use 'Reload Firing Port Weapon' verb in 'Vehicle' tab to activate automated reload.")
-				to_chat(M, msg)
-				return
-		to_chat(M, SPAN_WARNING("ERROR. NO FPW FOUND, TELL A DEV!"))
-
-/obj/structure/bed/chair/comfy/vehicle/support_gunner/second
-	name = "right support gunner's seat"
-	seat = VEHICLE_SUPPORT_GUNNER_TWO
 
 //ARMORED VEHICLES PASSENGER SEATS
 //Unique feature - you can put two seats on same tile with different pixel_offsets, humans will be buckled with respective offsets

@@ -35,6 +35,8 @@
 				marine_rk = "xo"
 			if(JOB_CO)
 				marine_rk = "co"
+			if(JOB_MS_PC)
+				marine_rk = "wo_xo"
 			if(JOB_GENERAL)
 				marine_rk = "general"
 			if(JOB_CAS_PILOT)

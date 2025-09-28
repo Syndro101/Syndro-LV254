@@ -23,7 +23,7 @@
 
 /datum/ammo/flamethrower
 	name = "flame"
-	icon_state = "pulse0"
+	icon_state = "fireball"
 	damage_type = BURN
 	flags_ammo_behavior = AMMO_IGNORE_ARMOR|AMMO_HITS_TARGET_TURF
 
@@ -251,6 +251,27 @@
 /datum/ammo/souto/proc/randomize_projectile(obj/projectile/P)
 	shrapnel_type = pick(typesof(/obj/item/reagent_container/food/drinks/cans/souto)-/obj/item/reagent_container/food/drinks/cans/souto)
 
+// GL
+
+/datum/ammo/grenade_container/proc/drop_nade(obj/projectile/P)
+	var/turf/T = get_turf(P)
+	var/obj/item/explosive/grenade/G
+
+	G = new nade_type(T)
+	var/det_time = 10
+
+	if (nade_type == /obj/item/explosive/grenade/custom/teargas)
+		det_time = 2
+	else if (nade_type == /obj/item/explosive/grenade/slug/baton)
+		det_time = 0
+
+	G.visible_message(SPAN_WARNING("\A [G] lands on [T]!"))
+	G.det_time = det_time
+	G.cause_data = P.weapon_cause_data
+	G.activate()
+
+// Normal
+
 /datum/ammo/grenade_container
 	name = "grenade shell"
 	ping = null
@@ -261,7 +282,7 @@
 
 	damage = 15
 	accuracy = HIT_ACCURACY_TIER_3
-	max_range = 6
+	max_range = 12
 
 /datum/ammo/grenade_container/on_hit_mob(mob/M,obj/projectile/P)
 	drop_nade(P)
@@ -275,13 +296,33 @@
 /datum/ammo/grenade_container/do_at_max_range(obj/projectile/P)
 	drop_nade(P)
 
-/datum/ammo/grenade_container/proc/drop_nade(obj/projectile/P)
-	var/turf/T = get_turf(P)
-	var/obj/item/explosive/grenade/G = new nade_type(T)
-	G.visible_message(SPAN_WARNING("\A [G] lands on [T]!"))
-	G.det_time = 10
-	G.cause_data = P.weapon_cause_data
-	G.activate()
+// Teargas
+
+/datum/ammo/grenade_container/teargas
+	name = "grenade shell"
+	ping = null
+	damage_type = BRUTE
+	nade_type = /obj/item/explosive/grenade/custom/teargas
+	icon_state = "smoke_shell"
+	flags_ammo_behavior = AMMO_IGNORE_COVER|AMMO_SKIPS_ALIENS
+
+	damage = 3
+	accuracy = HIT_ACCURACY_TIER_3
+	max_range = 12
+
+/datum/ammo/grenade_container/teargas/on_hit_mob(mob/M,obj/projectile/P)
+	drop_nade(P)
+
+/datum/ammo/grenade_container/teargas/on_hit_obj(obj/O,obj/projectile/P)
+	drop_nade(P)
+
+/datum/ammo/grenade_container/teargas/on_hit_turf(turf/T,obj/projectile/P)
+	drop_nade(P)
+
+/datum/ammo/grenade_container/teargas/do_at_max_range(obj/projectile/P)
+	drop_nade(P)
+
+//
 
 /datum/ammo/grenade_container/rifle
 	flags_ammo_behavior = NO_FLAGS
@@ -291,8 +332,8 @@
 	nade_type = /obj/item/explosive/grenade/smokebomb
 	icon_state = "smoke_shell"
 
-/datum/ammo/grenade_container/tank_glauncher
-	max_range = 8
+/datum/ammo/grenade_container/grenade
+	max_range = 14
 
 /datum/ammo/hugger_container
 	name = "hugger shell"
@@ -321,3 +362,36 @@
 	var/obj/item/clothing/mask/facehugger/child = new(T)
 	child.hivenumber = hugger_hive
 	INVOKE_ASYNC(child, TYPE_PROC_REF(/obj/item/clothing/mask/facehugger, leap_at_nearest_target))
+
+/datum/ammo/pill
+	name = "syringe"
+	icon_state = "syringe"
+	flags_ammo_behavior = AMMO_IGNORE_ARMOR|AMMO_ALWAYS_FF
+
+	damage = 0
+
+/datum/ammo/pill
+	name = "syringe"
+	icon_state = "syringe"
+	flags_ammo_behavior = AMMO_IGNORE_ARMOR|AMMO_ALWAYS_FF
+
+	damage = 0
+
+/datum/ammo/pill/on_hit_mob(mob/M, obj/projectile/P)
+	. = ..()
+
+	if(!ishuman(M))
+		return
+
+	if(!istype(P, /obj/projectile/pill))
+		return
+
+	var/obj/projectile/pill/pill_projectile = P
+
+	if(QDELETED(pill_projectile.source_pill))
+		pill_projectile.source_pill = null
+		return
+
+	var/datum/reagents/pill_reagents = pill_projectile.source_pill.reagents
+
+	pill_reagents.trans_to(M, pill_reagents.total_volume)

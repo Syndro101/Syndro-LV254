@@ -9,7 +9,6 @@
 /datum/entity/initial_spec_picks/New()
 	. = ..()
 	round_id = GLOB.round_id || -1
-	specs_picked = GLOB.primary_specialists_picked
 	if(SSticker.mode.round_finished == MODE_INFESTATION_M_MAJOR || SSticker.mode.round_finished == MODE_INFESTATION_M_MINOR)
 		marines_won = TRUE
 

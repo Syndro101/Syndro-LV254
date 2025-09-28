@@ -76,11 +76,3 @@
 	name = "Reload weapon"
 	full_name = "Reload Weapon"
 	keybind_signal = COMSIG_KB_VEHICLE_RELOAD_WEAPON
-
-/datum/keybinding/vehicles/reload_weapon/down(client/user)
-	. = ..()
-	if(.)
-		return
-	var/obj/vehicle/multitile/vehicle_user = user.mob.interactee
-	vehicle_user.reload_firing_port_weapon()
-	return TRUE

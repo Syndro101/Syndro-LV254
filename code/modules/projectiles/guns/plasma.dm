@@ -162,6 +162,13 @@
 	muzzle_flash = "muzzle_flash_blue"
 	muzzle_flash_color = COLOR_MUZZLE_BLUE
 	auto_retrieval_slot = WEAR_J_STORE
+	var/armbrace = FALSE
+	COOLDOWN_DECLARE(knockdown_halt_sound_cooldown)
+
+#define LYING_DOWN_SG_ROF_DEBUFF 0.5
+#define KNOCKDOWN_SG_FAILSOUND_COOLDOWN 0.5
+
+	actions_types = list(/datum/action/item_action/xm99a/toggle_armbrace,)
 
 	attachable_allowed = list(
 		/obj/item/attachable/scope/mini,
@@ -216,6 +223,28 @@
 		if(drain_battery())
 			return ..()
 
+	if(user.IsKnockDown())
+		if(COOLDOWN_FINISHED(src, knockdown_halt_sound_cooldown))
+			COOLDOWN_START(src, knockdown_halt_sound_cooldown, KNOCKDOWN_SG_FAILSOUND_COOLDOWN)
+			if(flags_item & WIELDED)
+				playsound(loc,"smartgun_knockdown", 25, 0)
+				if((locate(/datum/effects/crit) in user.effects_list))
+					unwield(user)
+			return
+	if(user.body_position == LYING_DOWN)
+		set_gun_config_values()
+		modify_fire_delay(LYING_DOWN_SG_ROF_DEBUFF)
+		modify_burst_delay(LYING_DOWN_SG_ROF_DEBUFF, user)
+		set_burst_amount(burst_amount, user)
+		scatter += 1
+	else
+		set_gun_config_values()
+		set_fire_delay(fire_delay)
+		set_burst_delay(burst_delay)
+	return ..()
+#undef LYING_DOWN_SG_ROF_DEBUFF
+#undef KNOCKDOWN_SG_FAILSOUND_COOLDOWN
+
 /obj/item/weapon/gun/plasma/xm99a/proc/drain_battery(override_drain)
 
 	var/actual_drain = (rand(drain / 2, drain) / 25)
@@ -246,6 +275,82 @@
 
 	if(battery && get_dist(user, src) <= 1)
 		. += "A small gauge on [battery] reads: Power: [battery.power_cell.charge] / [battery.power_cell.maxcharge]."
+	if(armbrace)
+		. += SPAN_HELPFUL("The articulation arm is locked to your side, allowing it to be fired while lying down.")
+	else
+		. += SPAN_ORANGE("The articulation arm is not locked to your side, it can be knocked out of your hands.")
+
+
+/datum/action/item_action/xm99a/toggle_armbrace/New(Target, obj/item/holder)
+	. = ..()
+	name = "Toggle Servo arm"
+	action_icon_state = "armbrace"
+	button.icon_state = "template"
+	button.name = name
+	button.overlays.Cut()
+	button.overlays += image('icons/mob/hud/actions.dmi', button, action_icon_state)
+
+/datum/action/item_action/xm99a/toggle_armbrace/action_activate()
+	. = ..()
+	var/obj/item/weapon/gun/plasma/xm99a/G = holder_item
+	G.toggle_armbrace(usr)
+	if(G.armbrace)
+		action_icon_state = "armbrace_on"
+	else
+		action_icon_state = "armbrace"
+	button.overlays.Cut()
+	button.overlays += image('icons/mob/hud/actions.dmi', button, action_icon_state)
+
+/obj/item/weapon/gun/plasma/xm99a/proc/toggle_armbrace(mob/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/human = user
+	if(!human.wear_suit || !(human.wear_suit.flags_inventory & SMARTGUN_HARNESS))
+		to_chat(user, "[icon2html(src, usr)] You can't engage the servo arm without a harness.")
+		return
+
+	to_chat(user, "[icon2html(src, usr)] You [armbrace ? "<B>disengage</b>" : "<B>engage</b>"] \the [src]'s servo arm.")
+	armbrace = !armbrace
+	if(armbrace)
+		flags_item |= NODROP|FORCEDROP_CONDITIONAL
+		playsound(loc,'sound/weapons/smartgun_move.mp3', 25, 1)
+	else
+		flags_item &= ~(NODROP|FORCEDROP_CONDITIONAL)
+		playsound(loc,'sound/weapons/smartgun_move2.mp3', 25, 1)
+
+/obj/item/weapon/gun/plasma/xm99a/proc/force_off_armbrace(mob/user)
+	if(armbrace)
+		to_chat(user, "[icon2html(src, usr)] You <B>disengage</b> \the [src]'s armbrace.")
+		playsound(loc,'sound/weapons/smartgun_move2.mp3',, 25, 1)
+		armbrace = FALSE
+		flags_item &= ~(NODROP|FORCEDROP_CONDITIONAL)
+		var/datum/action/item_action/armbrace_action = locate(/datum/action/item_action/xm99a/toggle_armbrace) in actions
+		armbrace_action.button.icon_state = "template"
+
+/obj/item/weapon/gun/plasma/xm99a/proc/force_on_armbrace(mob/user)
+	if(!armbrace)
+		to_chat(user, "[icon2html(src, usr)] You <B>engage</b> \the [src]'s armbrace.")
+		playsound(loc,'sound/weapons/smartgun_move.mp3',, 25, 1)
+		armbrace = TRUE
+		flags_item |= NODROP|FORCEDROP_CONDITIONAL
+		var/datum/action/item_action/armbrace_action = locate(/datum/action/item_action/xm99a/toggle_armbrace) in actions
+		armbrace_action.button.icon_state = "template_on"
+
+/obj/item/weapon/gun/plasma/xm99a/unequipped(mob/user, slot)
+	. = ..()
+	if(!gc_destroyed)
+		INVOKE_NEXT_TICK(src, TYPE_PROC_REF(/obj/item/weapon/gun/plasma/xm99a, emergency_snap_back), user) //yeah
+
+/obj/item/weapon/gun/plasma/xm99a/proc/emergency_snap_back(mob/user)
+	if(ishuman(user))
+		if(!ishuman(loc))
+			var/mob/living/carbon/human/armbrace_human = user
+			if(isitem(armbrace_human.get_item_by_slot(auto_retrieval_slot)))
+				if(istype(armbrace_human.wear_suit, /obj/item/clothing/suit/storage/marine/smartgunner))
+					force_on_armbrace()
+					armbrace_human.put_in_hands(src, drop_on_fail = TRUE)
+					return
+		force_off_armbrace(user)
 
 /obj/item/weapon/gun/plasma/xm99a/attackby(obj/item/attacking_object, mob/user)
 	if(istype(attacking_object, /obj/item/smartgun_battery))

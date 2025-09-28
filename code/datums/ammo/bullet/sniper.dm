@@ -17,8 +17,10 @@
 	scatter = 0
 	damage = 70
 	penetration= ARMOR_PENETRATION_TIER_10
+	vehicle_pen = VEHICLE_ARMOR_MEDIUM_ARMOR
 	shell_speed = AMMO_SPEED_TIER_6
 	damage_falloff = 0
+	sniper_shell = TRUE
 
 /datum/ammo/bullet/sniper/on_hit_mob(mob/M,obj/projectile/P)
 	if((P.projectile_flags & PROJECTILE_BULLSEYE) && M == P.original)
@@ -80,15 +82,6 @@
 		burst(get_turf(M),P,damage_type, 2 , 2)
 		burst(get_turf(M),P,damage_type, 1 , 2 , 0)
 
-/datum/ammo/bullet/sniper/on_hit_obj(obj/O, obj/projectile/P)
-	if(istype(O, /obj/vehicle/multitile))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/bang.ogg', 100)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Vehicle Spalling"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		to_chat(P.firer, SPAN_WARNING("Bullseye!"))
-		return
-
 /datum/ammo/bullet/sniper/flak/on_near_target(turf/T, obj/projectile/P)
 	burst(T,P,damage_type, 2 , 2)
 	burst(T,P,damage_type, 1 , 2, 0)
@@ -116,6 +109,8 @@
 	damage = 125
 	shell_speed = AMMO_SPEED_TIER_6
 	penetration = ARMOR_PENETRATION_TIER_10 + ARMOR_PENETRATION_TIER_5
+	vehicle_pen = VEHICLE_ARMOR_HEAVY_ARMOR
+	at_shell = TRUE
 
 /datum/ammo/bullet/sniper/anti_materiel/proc/stopping_power_knockback(mob/living/living_mob, obj/projectile/fired_projectile)
 	var/stopping_power = min(CEILING((fired_projectile.damage/30), 1), 5) // This is from bullet damage, and does not take Aimed Shot into account.
@@ -347,20 +342,3 @@
 			L.apply_armoured_damage(damage, ARMOR_BULLET, BRUTE, null, penetration)
 		// 150% damage to runners (225), 300% against Big xenos (450), and 200% against all others (300). -Kaga
 		to_chat(P.firer, SPAN_WARNING("Bullseye!"))
-
-/datum/ammo/bullet/sniper/anti_materiel/on_hit_obj(obj/O, obj/projectile/P)
-	if(istype(O, /obj/vehicle/multitile))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/bang.ogg', 100)
-		M.at_munition_interior_explosion_effect_bullet(cause_data = create_cause_data("Anti-Tank Rifle"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		to_chat(P.firer, SPAN_WARNING("Bullseye!"))
-		return
-	if(istype(O, /obj/vehicle/multitile/tank))
-		var/obj/vehicle/multitile/M = O
-		playsound(M, 'sound/effects/bang.ogg', 100)
-		M.munition_interior_bullet_effect(cause_data = create_cause_data("Anti-Tank Rifle"))
-		M.ex_act(25, P.dir, P.weapon_cause_data, 10)
-		to_chat(P.firer, SPAN_WARNING("Bullseye!"))
-		return
-	return ..()

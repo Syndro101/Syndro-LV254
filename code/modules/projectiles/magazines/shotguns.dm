@@ -196,6 +196,28 @@ also doesn't really matter. You can only reload them with handfuls.
 	caliber = "20g"
 	default_ammo = /datum/ammo/bullet/shotgun/beanbag
 
+/obj/item/ammo_magazine/shotgun/beanbag/es7
+	name = "box of X21 shock slugs"
+	desc = "A box filled with X21 shells used for non-lethal crowd control. Riot Control use only."
+	icon = 'icons/obj/items/weapons/guns/ammo_by_faction/WY/shotguns.dmi'
+	icon_state = "electric"
+	item_state = "incendiary"
+	default_ammo = /datum/ammo/bullet/shotgun/beanbag/es7
+	handful_state = "elec_slug"
+	caliber = "20g"
+
+/obj/item/ammo_magazine/shotgun/beanbag/es7/slug
+	name = "box of X21 lethal slugs"
+	desc = "A box filled with X21 combat electrostatic lethal shotgun shells designed for ES-7 Supernova."
+	icon_state = "slug"
+	default_ammo = /datum/ammo/bullet/shotgun/slug/es7
+	handful_state = "es7_slug"
+
+/obj/item/ammo_magazine/internal/shotgun/combat/es7
+	caliber = "20g"
+	default_ammo = /datum/ammo/bullet/shotgun/beanbag/es7
+	max_rounds = 7
+
 /obj/item/ammo_magazine/internal/shotgun/merc
 	max_rounds = 5
 

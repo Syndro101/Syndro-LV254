@@ -282,6 +282,10 @@
 	scatter_unwielded = SCATTER_AMOUNT_TIER_4
 	damage_mult = BASE_BULLET_DAMAGE_MULT + BULLET_DAMAGE_MULT_TIER_5
 
+/obj/item/weapon/gun/rifle/m41a/elite/commando //special version for commandos, has preset attachments.
+
+	starting_attachment_types = list(/obj/item/attachable/stock/rifle, /obj/item/attachable/magnetic_harness, /obj/item/attachable/angledgrip, /obj/item/attachable/heavy_barrel)
+
 /obj/item/weapon/gun/rifle/m41a/elite/whiteout //special version for whiteout, has preset attachments and HEAP mag loaded.
 	current_mag = /obj/item/ammo_magazine/rifle/heap
 	starting_attachment_types = list(/obj/item/attachable/stock/rifle/collapsible, /obj/item/attachable/magnetic_harness, /obj/item/attachable/angledgrip, /obj/item/attachable/suppressor)
@@ -1482,7 +1486,6 @@
 
 	aim_slowdown = SLOWDOWN_ADS_LMG
 	current_mag = /obj/item/ammo_magazine/rifle/lmg
-	starting_attachment_types = list(/obj/item/attachable/bipod)
 	attachable_allowed = list(
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/reflex,
@@ -1535,6 +1538,145 @@
 	..()
 	damage_mult = BASE_BULLET_DAMAGE_MULT + BULLET_DAMAGE_MULT_TIER_2//equal to m41a dmg
 //-------------------------------------------------------
+
+/obj/item/weapon/gun/rifle/lmg/braced
+	name = "\improper M41AE2 heavy pulse rifle"
+	desc = "A large squad support weapon capable of laying down sustained suppressing fire from a mounted position. While unstable and less accurate, it can be lugged and shot with two hands. Like it's smaller brothers, the M41A MK2 and M4RA, the M41AE2 is chambered in 10mm."
+	icon = 'icons/obj/items/weapons/guns/guns_by_faction/USCM/machineguns.dmi'
+	current_mag = /obj/item/ammo_magazine/rifle/lmg/ap
+	var/armbrace = FALSE
+	COOLDOWN_DECLARE(knockdown_halt_sound_cooldown)
+	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY
+	auto_retrieval_slot = WEAR_J_STORE
+	start_automatic = TRUE
+	attachable_allowed = list(
+		/obj/item/attachable/reddot,
+		/obj/item/attachable/reflex,
+		/obj/item/attachable/angledgrip,
+		/obj/item/attachable/scope/mini_iff,
+		/obj/item/attachable/extended_barrel,
+		/obj/item/attachable/magnetic_harness,
+	)
+
+	actions_types = list(/datum/action/item_action/hpr/toggle_armbrace,)
+#define LYING_DOWN_SG_ROF_DEBUFF 0.5
+#define KNOCKDOWN_SG_FAILSOUND_COOLDOWN 0.5
+
+/obj/item/weapon/gun/rifle/lmg/braced/handle_starting_attachment()
+	..()
+	var/obj/item/attachable/extended_barrel/hpr_lmg_barrel = new(src)
+	var/obj/item/attachable/angledgrip/hpr_lmg_bipod= new(src)
+	hpr_lmg_barrel.flags_attach_features &= ~ATTACH_REMOVABLE
+	hpr_lmg_bipod.flags_attach_features &= ~ATTACH_REMOVABLE
+	hpr_lmg_barrel.hidden = FALSE
+	hpr_lmg_bipod.hidden = FALSE
+	hpr_lmg_barrel.Attach(src)
+	hpr_lmg_bipod.Attach(src)
+	update_attachable(hpr_lmg_barrel.slot)
+	update_attachable(hpr_lmg_bipod.slot)
+
+/obj/item/weapon/gun/rifle/lmg/braced/Fire(atom/target, mob/living/user, params, reflex = 0, dual_wield)
+	if(user.IsKnockDown())
+		if(COOLDOWN_FINISHED(src, knockdown_halt_sound_cooldown))
+			COOLDOWN_START(src, knockdown_halt_sound_cooldown, KNOCKDOWN_SG_FAILSOUND_COOLDOWN)
+			if(flags_item & WIELDED)
+				playsound(loc,"smartgun_knockdown", 25, 0)
+				if((locate(/datum/effects/crit) in user.effects_list))
+					unwield(user)
+			return
+	if(user.body_position == LYING_DOWN)
+		set_gun_config_values()
+		modify_fire_delay(LYING_DOWN_SG_ROF_DEBUFF)
+		modify_burst_delay(LYING_DOWN_SG_ROF_DEBUFF, user)
+		set_burst_amount(burst_amount, user)
+		scatter += 1
+	else
+		set_gun_config_values()
+		set_fire_delay(fire_delay)
+		set_burst_delay(burst_delay)
+	return ..()
+#undef LYING_DOWN_SG_ROF_DEBUFF
+#undef KNOCKDOWN_SG_FAILSOUND_COOLDOWN
+
+
+/obj/item/weapon/gun/rifle/lmg/braced/get_examine_text(mob/user)
+	. = ..()
+	if(armbrace)
+		. += SPAN_HELPFUL("The articulation arm is locked to your side, allowing it to be fired while lying down.")
+	else
+		. += SPAN_ORANGE("The articulation arm is not locked to your side, it can be knocked out of your hands.")
+
+
+/datum/action/item_action/hpr/toggle_armbrace/New(Target, obj/item/holder)
+	. = ..()
+	name = "Toggle Servo arm"
+	action_icon_state = "armbrace"
+	button.icon_state = "template"
+	button.name = name
+	button.overlays.Cut()
+	button.overlays += image('icons/mob/hud/actions.dmi', button, action_icon_state)
+
+/datum/action/item_action/hpr/toggle_armbrace/action_activate()
+	. = ..()
+	var/obj/item/weapon/gun/rifle/lmg/braced/G = holder_item
+	G.toggle_armbrace(usr)
+	if(G.armbrace)
+		action_icon_state = "armbrace_on"
+	else
+		action_icon_state = "armbrace"
+	button.overlays.Cut()
+	button.overlays += image('icons/mob/hud/actions.dmi', button, action_icon_state)
+
+/obj/item/weapon/gun/rifle/lmg/braced/proc/toggle_armbrace(mob/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/human = user
+	if(!human.wear_suit || !(human.wear_suit.flags_inventory & SMARTGUN_HARNESS))
+		to_chat(user, "[icon2html(src, usr)] You can't engage the servo arm without a harness.")
+		return
+
+	to_chat(user, "[icon2html(src, usr)] You [armbrace ? "<B>disengage</b>" : "<B>engage</b>"] \the [src]'s servo arm.")
+	armbrace = !armbrace
+	if(armbrace)
+		flags_item |= NODROP|FORCEDROP_CONDITIONAL
+		playsound(loc,'sound/weapons/smartgun_move.mp3', 25, 1)
+	else
+		flags_item &= ~(NODROP|FORCEDROP_CONDITIONAL)
+		playsound(loc,'sound/weapons/smartgun_move2.mp3', 25, 1)
+
+/obj/item/weapon/gun/rifle/lmg/braced/proc/force_off_armbrace(mob/user)
+	if(armbrace)
+		to_chat(user, "[icon2html(src, usr)] You <B>disengage</b> \the [src]'s armbrace.")
+		playsound(loc,'sound/weapons/smartgun_move2.mp3',, 25, 1)
+		armbrace = FALSE
+		flags_item &= ~(NODROP|FORCEDROP_CONDITIONAL)
+		var/datum/action/item_action/armbrace_action = locate(/datum/action/item_action/hpr/toggle_armbrace) in actions
+		armbrace_action.button.icon_state = "template"
+
+/obj/item/weapon/gun/rifle/lmg/braced/proc/force_on_armbrace(mob/user)
+	if(!armbrace)
+		to_chat(user, "[icon2html(src, usr)] You <B>engage</b> \the [src]'s armbrace.")
+		playsound(loc,'sound/weapons/smartgun_move.mp3',, 25, 1)
+		armbrace = TRUE
+		flags_item |= NODROP|FORCEDROP_CONDITIONAL
+		var/datum/action/item_action/armbrace_action = locate(/datum/action/item_action/hpr/toggle_armbrace) in actions
+		armbrace_action.button.icon_state = "template_on"
+
+/obj/item/weapon/gun/rifle/lmg/braced/unequipped(mob/user, slot)
+	. = ..()
+	if(!gc_destroyed)
+		INVOKE_NEXT_TICK(src, TYPE_PROC_REF(/obj/item/weapon/gun/rifle/lmg/braced, emergency_snap_back), user) //yeah
+
+/obj/item/weapon/gun/rifle/lmg/braced/proc/emergency_snap_back(mob/user)
+	if(ishuman(user))
+		if(!ishuman(loc))
+			var/mob/living/carbon/human/armbrace_human = user
+			if(isitem(armbrace_human.get_item_by_slot(auto_retrieval_slot)))
+				if(istype(armbrace_human.wear_suit, /obj/item/clothing/suit/storage/marine/smartgunner))
+					force_on_armbrace()
+					armbrace_human.put_in_hands(src, drop_on_fail = TRUE)
+					return
+		force_off_armbrace(user)
 
 
 //-------------------------------------------------------

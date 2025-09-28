@@ -735,7 +735,7 @@
 
 		damage_percentage -= floor((armor_deflection*(armor_integrity/100)) / VEHICLE_TRAMPLE_DAMAGE_REDUCTION_ARMOR_MULT) // Ravager reduces percentage by ~50% by virtue of having very high armor.
 
-		if(locate(/obj/item/hardpoint/support/overdrive_enhancer) in V)
+		if(locate(/obj/item/hardpoint/support/longstreet/overdrive) in V)
 			damage_percentage += VEHICLE_TRAMPLE_DAMAGE_OVERDRIVE_BUFF
 
 		damage_percentage = max(VEHICLE_TRAMPLE_DAMAGE_OVERDRIVE_BUFF, max(0, damage_percentage))
@@ -810,7 +810,7 @@
 		if(health > 0)
 			take_damage_type(100, "blunt", C)
 			visible_message(SPAN_DANGER("\The [A] ramms \the [src]!"))
-			for(var/obj/item/hardpoint/locomotion/Loco in hardpoints)
+			for(var/obj/item/hardpoint/support/Loco in hardpoints)
 				if(Loco.health > 0)
 					do_move = FALSE
 					break

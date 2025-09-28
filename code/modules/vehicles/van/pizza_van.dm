@@ -33,7 +33,7 @@
 	PIZZA.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/pizza_van/decrepit/load_hardpoints(obj/vehicle/multitile/box_van/pizza_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: wheels installed
 /obj/effect/vehicle_spawner/box_van/pizza_van/fixed/spawn_vehicle()
@@ -45,4 +45,4 @@
 	PIZZA.update_icon()
 
 /obj/effect/vehicle_spawner/box_van/pizza_van/fixed/load_hardpoints(obj/vehicle/multitile/box_van/pizza_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)

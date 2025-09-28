@@ -102,7 +102,7 @@
 	gear_preset = /datum/equipment_preset/pmc/doctor
 
 /datum/job/special/wey_yu/pmc/handler
-	title = JOB_PMC_XENO_HANDLER
+	title = JOB_WY_COMMANDO_DOGCATHER
 	gear_preset = /datum/equipment_preset/pmc/xeno_handler
 
 /datum/job/special/wey_yu/pmc/synth

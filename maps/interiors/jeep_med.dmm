@@ -1,0 +1,253 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/void/vehicle,
+/area/space)
+"c" = (
+/obj/structure/interior_wall/van{
+	icon_state = "jeep_7"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"f" = (
+/obj/structure/machinery/iv_drip{
+	anchored = 1;
+	pixel_x = -8;
+	pixel_y = 16;
+	layer = 3.5
+	},
+/obj/effect/decal/medical_decals/permanent{
+	icon_state = "triagedecalbottomright";
+	pixel_x = -19
+	},
+/turf/open/shuttle/vehicle/dark_sterile_green_12,
+/area/interior/vehicle/van)
+"h" = (
+/obj/effect/landmark/interior/spawn/vehicle_driver_seat{
+	dir = 4
+	},
+/obj/effect/vehicle_roof/van{
+	icon_state = "front_roof_2";
+	alpha = 50
+	},
+/obj/effect/landmark/interior/spawn/entrance{
+	dir = 1;
+	exit_type = /obj/structure/interior_exit/vehicle/jeep/left;
+	name = "left entrance marker";
+	pixel_y = 32;
+	tag = "left"
+	},
+/turf/open/shuttle/vehicle/floor_3_5,
+/area/interior/vehicle/van)
+"j" = (
+/obj/effect/vehicle_roof/van{
+	icon_state = "front_roof_2";
+	alpha = 50
+	},
+/turf/open/shuttle/vehicle/floor_1_14,
+/area/interior/vehicle/van)
+"o" = (
+/obj/structure/interior_wall/van{
+	icon_state = "jeep_6"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"p" = (
+/obj/structure/interior_wall/van{
+	icon_state = "back_2"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"r" = (
+/turf/open/shuttle/vehicle/dark_sterile_green_8,
+/area/interior/vehicle/van)
+"t" = (
+/obj/structure/bed/chair/comfy{
+	dir = 4
+	},
+/obj/effect/landmark/interior/spawn/entrance{
+	alpha = 50;
+	exit_type = /obj/structure/interior_exit/vehicle/jeep/right;
+	name = "right entrance marker";
+	tag = "right"
+	},
+/turf/open/shuttle/vehicle/floor_3_5,
+/area/interior/vehicle/van)
+"v" = (
+/obj/structure/interior_wall/van{
+	icon_state = "front_1"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"x" = (
+/obj/structure/extinguisher_cabinet/lifeboat{
+	icon = 'icons/obj/vehicles/interiors/general.dmi';
+	layer = 3.5;
+	pixel_y = 31;
+	pixel_x = -9
+	},
+/obj/effect/landmark/interior/spawn/telephone{
+	pixel_x = 3;
+	pixel_y = 33;
+	layer = 3.5
+	},
+/turf/open/shuttle/vehicle/floor_3_5,
+/area/interior/vehicle/van)
+"y" = (
+/turf/open/shuttle/vehicle/floor_3_5,
+/area/interior/vehicle/van)
+"B" = (
+/obj/structure/machinery/cm_vending/sorted/medical/blood/vehicle{
+	pixel_x = -20;
+	pixel_y = 23;
+	layer = 3.5
+	},
+/obj/structure/machinery/cm_vending/sorted/medical/vehicle{
+	pixel_x = 2;
+	pixel_y = 23;
+	layer = 3.5
+	},
+/turf/open/shuttle/vehicle/dark_sterile_green_13,
+/area/interior/vehicle/van)
+"E" = (
+/turf/open/shuttle/vehicle/floor_1_5,
+/area/interior/vehicle/van)
+"F" = (
+/obj/structure/bed/portable_surgery,
+/obj/structure/closet/bodybag/cryobag,
+/turf/open/shuttle/vehicle/dark_sterile_green_14,
+/area/interior/vehicle/van)
+"G" = (
+/obj/structure/interior_wall/van{
+	alpha = 35;
+	icon_state = "exterior_door";
+	layer = 5.2;
+	pixel_y = 32
+	},
+/turf/open/void/vehicle,
+/area/space)
+"I" = (
+/obj/structure/interior_wall/van{
+	icon_state = "front_2"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"J" = (
+/obj/structure/interior_wall/van{
+	icon_state = "front_3"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"L" = (
+/obj/structure/interior_wall/van{
+	icon_state = "back_3"
+	},
+/turf/open/void/vehicle,
+/area/space)
+"M" = (
+/obj/effect/decal/medical_decals/permanent{
+	dir = 8;
+	icon_state = "triagedecaldir"
+	},
+/obj/effect/landmark/interior/spawn/entrance{
+	alpha = 50;
+	exit_type = /obj/structure/interior_exit/vehicle/jeep/rear;
+	name = "rear entrance marker";
+	tag = "rear";
+	dir = 8;
+	pixel_x = -32
+	},
+/turf/open/shuttle/vehicle/dark_sterile_green_6,
+/area/interior/vehicle/van)
+"N" = (
+/obj/effect/decal/medical_decals/permanent{
+	icon_state = "triagedecalbottomright";
+	pixel_x = -19;
+	pixel_y = 19
+	},
+/obj/structure/surface/table/reinforced/prison,
+/obj/item/tool/portadialysis,
+/obj/item/device/defibrillator,
+/obj/structure/machinery/recharger,
+/turf/open/shuttle/vehicle/dark_sterile_green_11,
+/area/interior/vehicle/van)
+"O" = (
+/obj/structure/interior_wall/van{
+	icon_state = "interior_door"
+	},
+/obj/effect/vehicle_roof/van{
+	icon_state = "front_roof_1";
+	alpha = 50
+	},
+/turf/open/void/vehicle,
+/area/space)
+"S" = (
+/obj/structure/interior_wall/van{
+	icon_state = "jeep_4";
+	pixel_y = 32;
+	alpha = 35
+	},
+/turf/open/void/vehicle,
+/area/space)
+"W" = (
+/obj/structure/interior_wall/van{
+	icon_state = "jeep_5";
+	pixel_y = 32;
+	alpha = 35
+	},
+/turf/open/void/vehicle,
+/area/space)
+"X" = (
+/obj/structure/interior_wall/van{
+	icon_state = "back_1"
+	},
+/turf/open/void/vehicle,
+/area/space)
+
+(1,1,1) = {"
+a
+L
+p
+p
+X
+a
+"}
+(2,1,1) = {"
+a
+o
+f
+M
+N
+W
+"}
+(3,1,1) = {"
+a
+c
+B
+r
+F
+S
+"}
+(4,1,1) = {"
+a
+c
+x
+E
+y
+S
+"}
+(5,1,1) = {"
+a
+O
+h
+j
+t
+G
+"}
+(6,1,1) = {"
+a
+J
+I
+I
+v
+a
+"}

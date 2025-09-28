@@ -4,6 +4,7 @@
 
 	layer = ABOVE_XENO_LAYER
 	vehicle_flags = VEHICLE_CLASS_WEAK
+	vehicle_pen_armor = VEHICLE_ARMOR_SOFT
 
 	icon = 'icons/obj/vehicles/civtruck.dmi'
 	icon_state = "civtruck_1"
@@ -33,7 +34,7 @@
 	move_turn_momentum_loss_factor = 1
 
 	hardpoints_allowed = list(
-		/obj/item/hardpoint/locomotion/truck/wheels/civtruck
+		/obj/item/hardpoint/support/locomotion/civtruck
 	)
 
 /obj/vehicle/multitile/civtruck/civtruck_2
@@ -89,4 +90,4 @@
 	civtruck.update_icon()
 
 /obj/effect/vehicle_spawner/civtruck/fixed/load_hardpoints(obj/vehicle/multitile/civtruck/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/truck/wheels/civtruck)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion/civtruck)

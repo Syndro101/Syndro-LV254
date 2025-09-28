@@ -24,13 +24,13 @@
 	name = "Med APC"
 	interior_id = "apc_med"
 
-/datum/map_template/interior/apc_no_fpw
-	name = "APC - No FPW"
-	interior_id = "apc_no_fpw"
+/datum/map_template/interior/lav
+	name = "LAV"
+	interior_id = "lav"
 
-/datum/map_template/interior/tank
-	name = "Tank"
-	interior_id = "tank"
+/datum/map_template/interior/longstreet
+	name = "Longstreet Tank"
+	interior_id = "longstreet"
 
 /datum/map_template/interior/aev
 	name = "AEV"
@@ -44,13 +44,21 @@
 	name = "jeep"
 	interior_id = "jeep"
 
+/datum/map_template/interior/jeep_bed
+	name = "jeep_bed"
+	interior_id = "jeep_bed"
+
+/datum/map_template/interior/jeep_med
+	name = "jeep_med"
+	interior_id = "jeep_med"
+
 /datum/map_template/interior/jeep_cmd
 	name = "jeep_cmd"
 	interior_id = "jeep_cmd"
 
-/datum/map_template/interior/jeep_pass
-	name = "jeep_pass"
-	interior_id = "jeep_pass"
+/datum/map_template/interior/jeep_mp
+	name = "jeep_mp"
+	interior_id = "jeep_mp"
 
 // Civilian Interiors
 

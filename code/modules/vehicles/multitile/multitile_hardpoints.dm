@@ -1,7 +1,7 @@
 // Returns all hardpoints that are attached to the vehicle, including ones held by holder hardpoints (e.g. turrets)
 /obj/vehicle/multitile/proc/get_hardpoints_copy()
 	var/list/all_hardpoints = hardpoints.Copy()
-	for(var/obj/item/hardpoint/holder/H in all_hardpoints)
+	for(var/obj/item/hardpoint/support/H in all_hardpoints)
 		if(!H.hardpoints)
 			continue
 		all_hardpoints += H.hardpoints.Copy()
@@ -12,8 +12,8 @@
 /obj/vehicle/multitile/proc/get_activatable_hardpoints(seat)
 	var/list/hps = list()
 	for(var/obj/item/hardpoint/H in hardpoints)
-		if(istype(H, /obj/item/hardpoint/holder))
-			var/obj/item/hardpoint/holder/HP = H
+		if(istype(H, /obj/item/hardpoint/support))
+			var/obj/item/hardpoint/support/HP = H
 			if(HP.hardpoints)
 				hps += HP.get_activatable_hardpoints(seat)
 		if(!H.is_activatable() || seat && seat != H.allowed_seat)
@@ -25,8 +25,8 @@
 /obj/vehicle/multitile/proc/get_hardpoints_with_ammo(seat)
 	var/list/hps = list()
 	for(var/obj/item/hardpoint/H in hardpoints)
-		if(istype(H, /obj/item/hardpoint/holder))
-			var/obj/item/hardpoint/holder/HP = H
+		if(istype(H, /obj/item/hardpoint/support))
+			var/obj/item/hardpoint/support/HP = H
 			if(HP.hardpoints)
 				hps += HP.get_hardpoints_with_ammo(seat)
 		if(!H.ammo || seat && seat != H.allowed_seat)
@@ -37,8 +37,8 @@
 // Returns a hardpoint by its name
 /obj/vehicle/multitile/proc/find_hardpoint(name)
 	for(var/obj/item/hardpoint/H in hardpoints)
-		if(istype(H, /obj/item/hardpoint/holder))
-			var/obj/item/hardpoint/holder/HP = H
+		if(istype(H, /obj/item/hardpoint/support))
+			var/obj/item/hardpoint/support/HP = H
 
 			var/obj/item/hardpoint/nested_hp = HP.find_hardpoint(name)
 			if(nested_hp)
@@ -95,7 +95,7 @@
 		var/obj/item/powerloader_clamp/PC = O
 		HP = PC.loaded
 
-	for(var/obj/item/hardpoint/holder/H in hardpoints)
+	for(var/obj/item/hardpoint/support/H in hardpoints)
 		// Attempt to install on holder hardpoints first
 		if(H.can_install(HP))
 			H.install(HP, user)
@@ -190,7 +190,7 @@
 		return
 	// It's in a holder
 	if(!(old in hardpoints))
-		for(var/obj/item/hardpoint/holder/H in hardpoints)
+		for(var/obj/item/hardpoint/support/H in hardpoints)
 			if(old in H.hardpoints)
 				H.uninstall(old, user)
 				update_icon()

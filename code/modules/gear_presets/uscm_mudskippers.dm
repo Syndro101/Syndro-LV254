@@ -45,7 +45,6 @@
 	if(!ert_squad && !auto_squad.active)
 		auto_squad.engage_squad(FALSE)
 
-	new_human.marine_buyable_categories[MARINE_CAN_BUY_EAR] = 0
 	new_human.sec_hud_set_ID()
 	new_human.hud_set_squad()
 
@@ -517,34 +516,50 @@
 	new_human.equip_to_slot_or_del(new /obj/item/roller/bedroll(new_human), WEAR_IN_JACKET)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/mask/gas(new_human), WEAR_IN_JACKET)
 //weapons
-	if(prob(25))
-		new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/xm99/full(new_human), WEAR_WAIST)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/plasma/xm99a/scoped(new_human), WEAR_J_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/large_holster/machete/smartgunner/full(new_human), WEAR_BACK)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(new_human), WEAR_R_STORE)
-	if(prob(25))
-		new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/xm99/full(new_human), WEAR_WAIST)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/plasma/xm99a/scoped(new_human), WEAR_J_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/auto/underextinguisher(new_human), WEAR_BACK)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/flamertank(new_human), WEAR_R_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
-	if(prob(25))
-		new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/full(new_human), WEAR_WAIST)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun(new_human), WEAR_J_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/m56_goggles(new_human), WEAR_EYES)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/large_holster/machete/smartgunner/full(new_human), WEAR_BACK)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full(new_human), WEAR_R_STORE)
-	else
-		new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/full(new_human), WEAR_WAIST)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun(new_human), WEAR_J_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/m56_goggles(new_human), WEAR_EYES)
-		new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/auto/underextinguisher(new_human), WEAR_BACK)
-		new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/flamertank(new_human), WEAR_R_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
-		new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+	var/sg_rdm = rand(1,6)
+	switch(sg_rdm)
+		if(1)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/xm99/full(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/plasma/xm99a/scoped(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/large_holster/machete/smartgunner/full(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full/alternate(new_human), WEAR_R_STORE)
+		if(2)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/xm99/full(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/plasma/xm99a/scoped(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/auto/underextinguisher(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/flamertank(new_human), WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+		if(3)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/full(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/m56_goggles(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/large_holster/machete/smartgunner/full(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full/alternate(new_human), WEAR_R_STORE)
+		if(4)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/hpr(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/lmg/braced(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/large_holster/machete/smartgunner/full(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/firstaid/full/alternate(new_human), WEAR_R_STORE)
+		if(5)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/hpr(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/lmg/braced(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/medhud/plasma(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/auto/underextinguisher(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/flamertank(new_human), WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+		if(6)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/gun/smartgunner/full(new_human), WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smartgun(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/clothing/glasses/night/m56_goggles(new_human), WEAR_EYES)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/auto/underextinguisher(new_human), WEAR_BACK)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/flamertank(new_human), WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank(new_human), WEAR_IN_R_STORE)
 
 /datum/equipment_preset/uscm_mudskippers/sg/e2
 	paygrades = list(PAY_SHORT_ME2)
@@ -752,7 +767,7 @@
 		ACCESS_MARINE_BRIG,
 	)
 	assignment = JOB_MS_RFM
-	rank = JOB_MS_RFM
+	rank = JOB_SQUAD_MARINE
 	paygrades = list(PAY_SHORT_ME2)
 	role_comm_title = "Rfm"
 	skills = /datum/skills/ms/rifleman
@@ -811,21 +826,6 @@
 
 /datum/equipment_preset/uscm_mudskippers/rfm/e4
 	paygrades = list(PAY_SHORT_ME4)
-
-
-/datum/equipment_preset/proc/pick_rfm_kit(mob/living/carbon/human/new_human)
-	if(!istype(new_human)) return
-	var/rfm_kit = pick(
-		/obj/item/storage/box/spec/pyro,
-		/obj/item/storage/box/spec/heavy_grenadier,
-		/obj/item/storage/box/spec/scout,
-		/obj/item/storage/box/spec/demolitionist,
-		/obj/item/storage/box/spec/sniper,
-		/obj/item/storage/box/kit/heavy_support,
-		/obj/item/storage/box/kit/pursuit,
-		/obj/item/storage/box/kit/mini_jtac,
-		)
-	new_human.equip_to_slot_or_del(new rfm_kit, WEAR_L_HAND)
 
 //---K9---//
 /datum/equipment_preset/uscm_mudskippers/k9
@@ -960,10 +960,7 @@
 	access = list(
 		ACCESS_MARINE_PREP,
 		ACCESS_MARINE_CREWMAN,
-		ACCESS_MARINE_ALPHA,
-		ACCESS_MARINE_BRAVO,
-		ACCESS_MARINE_CHARLIE,
-		ACCESS_MARINE_DELTA,
+		ACCESS_MARINE_COMMAND,
 	)
 	assignment = JOB_MS_CREWMAN
 	rank = JOB_MS_CREWMAN

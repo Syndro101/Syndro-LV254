@@ -96,6 +96,10 @@
 	//variable for various flags
 	var/vehicle_flags = VEHICLE_CLASS_WEAK
 
+//handles bullets being able to injure occupants
+	var/vehicle_pen_armor = VEHICLE_ARMOR_SOFT
+	var/era_armor = FALSE
+
 	// References to the active/chosen hardpoint for each seat
 	var/active_hp = list(
 		VEHICLE_DRIVER = null
@@ -463,7 +467,7 @@
 
 //handling dangerous acidic environment, like acidic spray or toxic waters, maybe toxic vapor in future
 /obj/vehicle/multitile/proc/handle_acidic_environment(atom/A)
-	for(var/obj/item/hardpoint/locomotion/Loco in hardpoints)
+	for(var/obj/item/hardpoint/support/Loco in hardpoints)
 		Loco.handle_acid_damage(A)
 
 /atom/movable/vehicle_light_holder

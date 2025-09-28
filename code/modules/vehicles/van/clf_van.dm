@@ -24,6 +24,7 @@
 	)
 
 	vehicle_flags = VEHICLE_CLASS_WEAK
+	vehicle_pen_armor = VEHICLE_ARMOR_LIGHT_ARMOR
 
 	passengers_slots = 8
 	xenos_slots = 2
@@ -52,7 +53,7 @@
 	move_max_momentum = 3
 
 	hardpoints_allowed = list(
-		/obj/item/hardpoint/locomotion/van_wheels,
+		/obj/item/hardpoint/support/locomotion,
 		/obj/item/hardpoint/primary/m56,
 	)
 
@@ -332,7 +333,7 @@
 	VAN.update_icon()
 
 /obj/effect/vehicle_spawner/clf_van/decrepit/load_hardpoints(obj/vehicle/multitile/clf_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: wheels installed
 /obj/effect/vehicle_spawner/clf_van/fixed/spawn_vehicle()
@@ -344,9 +345,9 @@
 	VAN.update_icon()
 
 /obj/effect/vehicle_spawner/clf_van/fixed/load_hardpoints(obj/vehicle/multitile/clf_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 
 //PRESET: MG
 /obj/effect/vehicle_spawner/clf_van/fixed/m56/load_hardpoints(obj/vehicle/multitile/clf_van/V)
-	V.add_hardpoint(new /obj/item/hardpoint/locomotion/van_wheels)
+	V.add_hardpoint(new /obj/item/hardpoint/support/locomotion)
 	V.add_hardpoint(new /obj/item/hardpoint/primary/m56)

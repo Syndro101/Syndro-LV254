@@ -1615,3 +1615,18 @@
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
 	hood_type = /obj/item/clothing/head/helmet/marine/cbrn_hood/advanced
 
+/obj/item/clothing/under/marine/cbrn/volcano
+	name = "M3 Hazardous Enviroments Uniform"
+	desc = "A thick rubbery suit, treated to protect the wearer in various dangerously hot and toxic climates where a full spacesuit is too much. Using a liquid cooling internal lining running throughout the suit, it reduces the wearer's body temprature and protects them, while also sealing out any toxic fumes of the environment. As per USCM doctrine, the uniform is designed to be lightweight enough to be worn with standard combat armor, unfortunately, the suits only come in two sizes: too big and too small."
+	icon_state = "volcano"
+	worn_state = "volcano"
+	item_state = "volcano"
+	armor_melee = CLOTHING_ARMOR_LOW
+	armor_bullet = CLOTHING_ARMOR_LOW
+	armor_laser = CLOTHING_ARMOR_NONE
+	armor_energy = CLOTHING_ARMOR_NONE
+	armor_bomb = CLOTHING_ARMOR_NONE
+	armor_bio = CLOTHING_ARMOR_HARDCORE
+	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
+	hood_type = /obj/item/clothing/head/helmet/marine/cbrn_hood/volcano

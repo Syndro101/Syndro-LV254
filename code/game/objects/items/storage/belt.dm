@@ -2362,20 +2362,20 @@
 	)
 
 /obj/item/storage/belt/gun/smartgunner/full/fill_preset_inventory()
-	handle_item_insertion(new /obj/item/weapon/gun/pistol/m4a3())
-	new /obj/item/ammo_magazine/pistol/hp(src)
+	handle_item_insertion(new /obj/item/weapon/gun/pistol/mod88())
+	new /obj/item/ammo_magazine/pistol/mod88(src)
 	new /obj/item/ammo_magazine/smartgun(src)
 	new /obj/item/ammo_magazine/smartgun(src)
 
 /obj/item/storage/belt/gun/smartgunner/xm99/full/fill_preset_inventory()
-	handle_item_insertion(new /obj/item/weapon/gun/pistol/m4a3())
-	new /obj/item/ammo_magazine/pistol/hp(src)
+	handle_item_insertion(new /obj/item/weapon/gun/pistol/mod88())
+	new /obj/item/ammo_magazine/pistol/mod88(src)
 	new /obj/item/ammo_magazine/rifle/xm99a(src)
 	new /obj/item/ammo_magazine/rifle/xm99a(src)
 
 /obj/item/storage/belt/gun/smartgunner/hpr/fill_preset_inventory()
-	handle_item_insertion(new /obj/item/weapon/gun/pistol/m4a3())
-	new /obj/item/ammo_magazine/pistol/hp(src)
+	handle_item_insertion(new /obj/item/weapon/gun/pistol/mod88())
+	new /obj/item/ammo_magazine/pistol/mod88(src)
 	new /obj/item/ammo_magazine/rifle/lmg/ap(src)
 	new /obj/item/ammo_magazine/rifle/lmg/holo_target(src)
 

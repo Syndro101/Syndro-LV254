@@ -481,6 +481,295 @@
 /turf/open/gm/dirt/desert_dug
 	icon_state = "desert_dug"
 
+
+//Basalt
+/turf/open/gm/basalt
+	name = "Volcanic Stone"
+	desc = "An ashy stone thats warm to the touch."
+	icon = 'icons/turf/floors/floors.dmi'
+	icon_state = "basalt"
+	minimap_color = MINIMAP_DIRT
+	var/recently_lit = FALSE
+
+
+/turf/open/gm/basalt/auto_rdm
+
+/turf/open/gm/basalt/auto_rdm/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "basalt[rand(0,12)]"
+
+/turf/open/gm/basalt/dug
+	icon_state = "basalt_dug"
+
+/turf/open/gm/basalt/alt
+	icon_state = "basalt0"
+
+/turf/open/gm/basalt/alt_1
+	icon_state = "basalt1"
+
+/turf/open/gm/basalt/alt_2
+	icon_state = "basalt2"
+
+/turf/open/gm/basalt/alt_3
+	icon_state = "basalt3"
+
+/turf/open/gm/basalt/alt_4
+	icon_state = "basalt4"
+
+/turf/open/gm/basalt/alt_5
+	icon_state = "basalt5"
+
+/turf/open/gm/basalt/alt_6
+	icon_state = "basalt6"
+
+/turf/open/gm/basalt/alt_7
+	icon_state = "basalt7"
+
+/turf/open/gm/basalt/alt_8
+	icon_state = "basalt8"
+
+/turf/open/gm/basalt/alt_9
+	icon_state = "basalt9"
+
+/turf/open/gm/basalt/alt_10
+	icon_state = "basalt10"
+
+/turf/open/gm/basalt/alt_11
+	icon_state = "basalt11"
+
+/turf/open/gm/basalt/alt_12
+	icon_state = "basalt12"
+
+
+//burning
+
+/turf/open/gm/basalt/burning/Initialize(mapload, ...)
+	. = ..()
+	addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/open/gm/basalt/burning,timer_proc), 60))
+
+/turf/open/gm/basalt/burning/proc/timer_proc()
+	addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/open/gm/basalt/burning,ignite_proc), 60))
+
+/turf/open/gm/basalt/burning/proc/wait_proc()
+	recently_lit = TRUE
+	sleep(rand(60, 10000))
+	recently_lit = FALSE
+
+/turf/open/gm/basalt/burning/proc/ignite_proc()
+	var/ignite_rdm = rand(1,3)
+	switch(ignite_rdm)
+		if(2)
+			var/flames_present = 0
+			for(var/obj/flamer_fire/flames in src)
+				if(flames)
+					flames_present = 1
+			if(flames_present == 0 && !recently_lit)
+				new /obj/flamer_fire(src)
+				INVOKE_ASYNC(src,TYPE_PROC_REF(/turf/open/gm/basalt/burning, wait_proc))
+				addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/open/gm/basalt/burning, timer_proc), 60))
+	addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/open/gm/basalt/burning, timer_proc), 60))
+
+/turf/open/gm/basalt/burning/auto_rdm
+
+/turf/open/gm/basalt/burning/auto_rdm/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "basalt[rand(0,12)]"
+
+/turf/open/gm/basalt/burning/dug
+	icon_state = "basalt_dug"
+
+/turf/open/gm/basalt/burning/alt
+	icon_state = "basalt0"
+
+/turf/open/gm/basalt/burning/alt_1
+	icon_state = "basalt1"
+
+/turf/open/gm/basalt/burning/alt_2
+	icon_state = "basalt2"
+
+/turf/open/gm/basalt/burning/alt_3
+	icon_state = "basalt3"
+
+/turf/open/gm/basalt/burning/alt_4
+	icon_state = "basalt4"
+
+/turf/open/gm/basalt/burning/alt_5
+	icon_state = "basalt5"
+
+/turf/open/gm/basalt/burning/alt_6
+	icon_state = "basalt6"
+
+/turf/open/gm/basalt/burning/alt_7
+	icon_state = "basalt7"
+
+/turf/open/gm/basalt/burning/alt_8
+	icon_state = "basalt8"
+
+/turf/open/gm/basalt/burning/alt_9
+	icon_state = "basalt9"
+
+/turf/open/gm/basalt/burning/alt_10
+	icon_state = "basalt10"
+
+/turf/open/gm/basalt/burning/alt_11
+	icon_state = "basalt11"
+
+/turf/open/gm/basalt/burning/alt_12
+	icon_state = "basalt12"
+
+//Lunar
+/turf/open/gm/lunar
+	name = "Moonstone"
+	desc = "Grey dusty moonstone."
+	icon = 'icons/turf/floors/floors.dmi'
+	icon_state = "moon"
+	minimap_color = MINIMAP_ICE
+
+/turf/open/gm/lunar/auto_rdm
+
+/turf/open/gm/lunar/auto_rdm/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "moon[rand(0,12)]"
+
+/turf/open/gm/lunar/dug
+	icon_state = "moon_dug"
+
+/turf/open/gm/lunar/alt
+	icon_state = "moon0"
+
+/turf/open/gm/lunar/alt_1
+	icon_state = "moon1"
+
+/turf/open/gm/lunar/alt_2
+	icon_state = "moon2"
+
+/turf/open/gm/lunar/alt_3
+	icon_state = "moon3"
+
+/turf/open/gm/lunar/alt_4
+	icon_state = "moon4"
+
+/turf/open/gm/lunar/alt_5
+	icon_state = "moon5"
+
+/turf/open/gm/lunar/alt_6
+	icon_state = "moon6"
+
+/turf/open/gm/lunar/alt_7
+	icon_state = "moon7"
+
+/turf/open/gm/lunar/alt_8
+	icon_state = "moon8"
+
+/turf/open/gm/lunar/alt_9
+	icon_state = "moon9"
+
+/turf/open/gm/lunar/alt_10
+	icon_state = "moon10"
+
+/turf/open/gm/lunar/alt_11
+	icon_state = "moon11"
+
+/turf/open/gm/lunar/alt_12
+	icon_state = "moon12"
+
+//Wasteland
+/turf/open/gm/wasteland
+	name = "Scorched Earth"
+	desc = "A desolate wasteland."
+	icon = 'icons/turf/floors/floors.dmi'
+	icon_state = "wasteland"
+	minimap_color = MINIMAP_DIRT
+
+/turf/open/gm/wasteland/auto_rdm
+
+/turf/open/gm/wasteland/auto_rdm/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "wasteland[rand(0,12)]"
+
+/turf/open/gm/wasteland/dug
+	icon_state = "wasteland_dug"
+
+/turf/open/gm/wasteland/alt
+	icon_state = "wasteland0"
+
+/turf/open/gm/wasteland/alt_1
+	icon_state = "wasteland1"
+
+/turf/open/gm/wasteland/alt_2
+	icon_state = "wasteland2"
+
+/turf/open/gm/wasteland/alt_3
+	icon_state = "wasteland3"
+
+/turf/open/gm/wasteland/alt_4
+	icon_state = "wasteland4"
+
+/turf/open/gm/wasteland/alt_5
+	icon_state = "wasteland5"
+
+/turf/open/gm/wasteland/alt_6
+	icon_state = "wasteland6"
+
+/turf/open/gm/wasteland/alt_7
+	icon_state = "wasteland7"
+
+/turf/open/gm/wasteland/alt_8
+	icon_state = "wasteland8"
+
+/turf/open/gm/wasteland/alt_9
+	icon_state = "wasteland9"
+
+/turf/open/gm/wasteland/alt_10
+	icon_state = "wasteland10"
+
+/turf/open/gm/wasteland/alt_11
+	icon_state = "wasteland11"
+
+/turf/open/gm/wasteland/alt_12
+	icon_state = "wasteland12"
+
+
+//Marsand
+
+/turf/open/gm/marssand
+	name = "Iron Sand"
+	desc = "Martian Sand that is absolutely toxic with chlorine and iron dust."
+	icon = 'icons/turf/floors/floors.dmi'
+	minimap_color = MINIMAP_MARS_DIRT
+	icon_state = "ironsand1"
+
+/turf/open/gm/marssand/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "ironsand[rand(1,15)]"
+
+
+//Lightgrass
+
+/turf/open/gm/lightgrass
+	name = "Grass"
+	desc = "It's green, soft, and rustles when you step on it."
+	icon = 'icons/turf/floors/floors.dmi'
+	scorchable = "grass_alt_scorched"
+
+/turf/open/gm/lightgrass/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "grass_alt[rand(0,3)]"
+
+//Alien Grass
+
+/turf/open/gm/aliengrass
+	name = "Grass"
+	desc = "It's blue, soft, and rustles when you step on it."
+	icon = 'icons/turf/floors/floors.dmi'
+	scorchable = "grass_alt_scorched"
+
+/turf/open/gm/aliengrass/Initialize(mapload, ...)
+	. = ..()
+	icon_state = "fairygrass[rand(0,3)]"
+
+//Grass
+
 /turf/open/gm/grass
 	name = "grass"
 	icon_state = "grass1"
@@ -1193,9 +1482,60 @@
 	icon_state = "water2"
 	icon_spawn_state = "water2"
 
+/turf/open/jungle/water/river
+	icon = 'icons/turf/floors/floors.dmi'
+	plants_spawn = 0
+	icon_state = "riverwater"
+	icon_spawn_state = "riverwater"
+
+/turf/open/jungle/water/river_deep
+	icon = 'icons/turf/floors/floors.dmi'
+	plants_spawn = 0
+	icon_state = "riverwater_deep"
+	icon_spawn_state = "riverwater_deep"
+
+/turf/open/jungle/water/river/flow
+	icon = 'icons/turf/floors/floors.dmi'
+	plants_spawn = 0
+	icon_state = "riverwater_motion"
+	icon_spawn_state = "riverwater_motion"
+
+/turf/open/jungle/water/river/flow_fast
+	icon = 'icons/turf/floors/floors.dmi'
+	plants_spawn = 0
+	icon_state = "riverwater_motion_deep"
+	icon_spawn_state = "deep_riverwater_motion"
+
+//Lava
+
+/turf/open/lava
+	name = "Lava"
+	desc = "Burning hot molten stone."
+	icon = 'icons/turf/floors/floors.dmi'
+	icon_state = "lava"
+	can_bloody = FALSE
+	supports_surgery = FALSE
+
+/turf/open/lava/Initialize(mapload, ...)
+	. = ..()
+
+	set_light(5, , "#FF5C00")
+	update_icon()
 
 
+/turf/open/lava/Entered(atom/movable/O)
+	..()
+	if(istype(O, /mob/living/))
+		var/mob/living/M = O
+		to_chat(M, pick(SPAN_DANGER("YOU BURST INTO FLAMES!!")))
+		M.apply_effect(2, AGONY)
+		M.apply_effect(1, SUPERSLOW)
+		M.apply_damage(rand(20,40), BURN)
+		M.fire_act()
+		new /obj/flamer_fire(src)
 
+/turf/open/lava/flowing
+	icon_state = "lava_flowing"
 
 //SHUTTLE 'FLOORS'
 //not a child of turf/open/floor because shuttle floors are magic and don't behave like real floors.

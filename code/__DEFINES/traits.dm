@@ -247,6 +247,8 @@
 #define TRAIT_SPEC(spec_type) "t_spec_[spec_type]"
 /// If the mob won't drop items held in face slot when downed
 #define TRAIT_IRON_TEETH "t_iron_teeth"
+/// If the mob won't care about horrible acts
+#define TRAIT_HEARTLESS "t_heartless"
 
 // -- ability traits --
 /// Xenos with this trait cannot have plasma transfered to them

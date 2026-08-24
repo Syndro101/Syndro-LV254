@@ -1215,6 +1215,13 @@
 	icon = 'icons/obj/structures/props/gallows.dmi'
 	icon_state = "head_stakes"
 
+/obj/structure/prop/random_props/corpse_sign
+	name = "Disemboweled Corpse"
+	desc = "A grizzly display of capital punishment. Staring at it makes you uncomfortable."
+	icon = 'icons/obj/structures/props/gallows.dmi'
+	icon_state = "corpse_sign"
+	layer = 6
+
 // Church stuff
 
 /obj/structure/prop/church/mary

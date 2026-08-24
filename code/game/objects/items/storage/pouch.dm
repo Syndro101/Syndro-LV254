@@ -796,7 +796,7 @@
 	name = "first responder pouch"
 	desc = "A pouch designed for carrying supplies to assist medical personnel and quickly respond to injuries on the battlefield without immediately treating them. Can hold supplies such as roller beds, stasis bags, and health analysers."
 	icon_state = "frt_med"
-	storage_slots = 4
+	storage_slots = 5
 
 	can_hold = list(
 		/obj/item/device/healthanalyzer,
@@ -807,12 +807,14 @@
 		/obj/item/reagent_container/hypospray,
 		/obj/item/tool/extinguisher/mini,
 		/obj/item/roller,
+		/obj/item/crutches,
 		/obj/item/bodybag,
 	)
 
 /obj/item/storage/pouch/first_responder/full/fill_preset_inventory()
 	new /obj/item/device/healthanalyzer(src)
 	new /obj/item/roller(src)
+	new /obj/item/crutches(src)
 	new /obj/item/tool/extinguisher/mini(src)
 	new /obj/item/bodybag/cryobag(src)
 
@@ -903,11 +905,11 @@
 
 
 /obj/item/storage/pouch/medkit
-	name = "medical kit pouch"
+	name = "M-FAK"
 	storage_flags = STORAGE_FLAGS_POUCH
 	icon_state = "medkit"
-	desc = "It's specifically made to hold medical items. Requires medical skills to use effectively."
-	storage_slots = 7
+	desc = "Multiple Injury First Aid Kit(MFAK), a larger medical kit designed to treat multiple people in high-risk scenarios or mass-casualty events."
+	storage_slots = 14
 	can_hold = list(
 		/obj/item/device/healthanalyzer,
 		/obj/item/reagent_container/dropper,
@@ -921,8 +923,6 @@
 		/obj/item/storage/surgical_case,
 		/obj/item/tool/surgery/surgical_line,
 		/obj/item/tool/surgery/synthgraft,
-		/obj/item/roller,
-		/obj/item/bodybag,
 		/obj/item/reagent_container/blood,
 		/obj/item/tool/surgery/FixOVein,
 	)
@@ -930,20 +930,33 @@
 
 /obj/item/storage/pouch/medkit/full/fill_preset_inventory()
 	new /obj/item/device/healthanalyzer(src)
-	new /obj/item/reagent_container/hypospray/autoinjector/skillless(src)
-	new /obj/item/reagent_container/hypospray/autoinjector/skillless/tramadol(src)
+	new /obj/item/reagent_container/hypospray/autoinjector/tricord/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/bicaridine/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/kelotane/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/tramadol/skillless( src )
 	new /obj/item/reagent_container/hypospray/autoinjector/inaprovaline(src)
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/stack/medical/splint(src)
 
 /obj/item/storage/pouch/medkit/full_advanced/fill_preset_inventory()
-	new /obj/item/reagent_container/hypospray/autoinjector/tricord(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/device/healthanalyzer(src)
+	new /obj/item/reagent_container/blood/OMinus(src)
+	new /obj/item/reagent_container/blood/OMinus(src)
+	new /obj/item/reagent_container/hypospray/autoinjector/tricord/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/bicaridine/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/kelotane/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/tramadol/skillless( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/inaprovaline( src )
+	new /obj/item/reagent_container/hypospray/autoinjector/emergency( src )
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/stack/medical/splint(src)
 
 /obj/item/storage/pouch/medkit/full_rmc/fill_preset_inventory()
@@ -977,7 +990,6 @@
 	new /obj/item/device/healthanalyzer(src)
 	new /obj/item/storage/pill_bottle/antitox(src)
 	new /obj/item/storage/pill_bottle/antitox(src)
-	new /obj/item/roller(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/ointment(src)

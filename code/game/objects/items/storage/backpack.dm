@@ -555,6 +555,20 @@
 	icon_state = "marinebigsatch"
 	max_storage_space = 15
 
+/obj/item/storage/backpack/marine/satchel/oxygen_pack
+	name = "\improper USCM Hazardous environs pack"
+	desc = "A heavy-duty IMP based backpack with an attached airsupply."
+	icon_state = "oxygen_backpack"
+	icon = 'icons/obj/items/clothing/backpack/backpacks_by_faction/UA.dmi'
+	item_icons = list(
+		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/clothing/backpacks_lefthand.dmi',
+		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/clothing/backpacks_righthand.dmi',
+		WEAR_BACK = 'icons/mob/humans/onmob/clothing/back/backpacks_by_faction/UA.dmi'
+	)
+	flags_atom = FPRINT|NO_GAMEMODE_SKIN
+	max_storage_space = 15
+
+
 /obj/item/storage/backpack/marine/satchel/big //wacky squad marine loadout item, its the IO backpack.
 	name = "\improper USCM logistics IMP backpack"
 	desc = "A standard-issue backpack worn by logistics personnel. It is occasionally issued to combat personnel for longer term expeditions and deep space incursions."

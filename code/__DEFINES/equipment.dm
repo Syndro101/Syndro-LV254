@@ -219,8 +219,8 @@
 
 //===========================================================================================
 //Marine armor styles, use for flags_marine_armor.
-#define STYLE_CARRIER (1<<0)
-#define STYLE_SKULL (1<<1)
+#define STYLE_PADDED (1<<0)
+#define STYLE_PADLESS (1<<1)
 #define STYLE_SYNTH (1<<2)
 //===========================================================================================
 

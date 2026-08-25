@@ -161,8 +161,7 @@
 	if (armor_variation > 0)
 		var/style_state
 		switch(armor_variation)
-			if (1) style_state = "carrier"
-			if (2) style_state = "skull"
+			if (1) style_state = "padless"
 			// more styles later
 
 		if (style_state)
@@ -305,7 +304,7 @@
 /obj/item/clothing/suit/storage/marine/officer/commander
 	name = "\improper M3 pattern commanding officer armor"
 	desc = "A robust, well-polished suit of armor for Commanders. Custom-made to fit its owner with special straps to operate a smartgun. Show those Marines who's really in charge."
-	icon_state = "H2"
+	icon_state = "M3"
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	storage_slots = 6
 	flags_atom = NO_NAME_OVERRIDE
@@ -349,16 +348,6 @@
 
 // M3 pattern marine armor
 
-/obj/item/clothing/suit/storage/marine/carrier
-	name = "M3 pattern carrier marine armor"
-	specialty = "M3 pattern carrier marine"
-	armor_variation = 1
-
-/obj/item/clothing/suit/storage/marine/skull
-	name = "M3 pattern skull marine armor"
-	specialty = "M3 pattern skull marine"
-	armor_variation = 2
-
 // M3-L pattern light armor
 /obj/item/clothing/suit/storage/marine/light
 	name = "\improper M3-L pattern light armor"
@@ -372,16 +361,6 @@
 	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
 	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
 	armor_internaldamage = CLOTHING_ARMOR_LOW
-
-/obj/item/clothing/suit/storage/marine/light/carrier
-	name = "M3-L pattern carrier marine armor"
-	specialty = "M3-L pattern carrier marine"
-	armor_variation = 1
-
-/obj/item/clothing/suit/storage/marine/light/skull
-	name = "M3-L pattern skull marine armor"
-	specialty = "M3-L pattern skull marine"
-	armor_variation = 2
 
 /obj/item/clothing/suit/storage/marine/light/synth
 	name = "\improper M3-LS pattern light armor"
@@ -419,12 +398,12 @@
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
 
-// M3-EOD pattern heavy armor
+// M3-H pattern heavy armor
 /obj/item/clothing/suit/storage/marine/heavy
-	name = "\improper M3-EOD pattern heavy armor"
+	name = "\improper M3-H pattern heavy armor"
 	desc = "A heavier version of the standard M3 pattern armor, the armor is primarily designed to withstand ballistic, explosive, and internal damage, with the drawback of increased bulk and thus reduced movement speed, alongside little additional protection from standard blunt force impacts and biological threats."
 	desc_lore = "This configuration of the iconic armor was developed during the Canton War in 2160 between the UPP and USCM - Designed in response to a need for higher protection for ComTechs assigned as EODs during the conflict, this is the pinnacle of protection for your average marine. The shoulders and kneepads have both been expanded upon heavily, covering up the arteries on each limb. A special spall liner was developed for this suit, with the same technology being used in the M70 Flak Jacket being developed at the same time."
-	specialty = "\improper M3-EOD pattern"
+	specialty = "\improper M3-H pattern"
 	icon_state = "H1"
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_VERYHIGH
@@ -434,16 +413,6 @@
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
-
-/obj/item/clothing/suit/storage/marine/heavy/carrier
-	name = "M3-H pattern carrier marine armor"
-	specialty = "M3-H pattern carrier marine"
-	armor_variation = 1
-
-/obj/item/clothing/suit/storage/marine/heavy/skull
-	name = "M3-H pattern skull marine armor"
-	specialty = "M3-H pattern skull marine"
-	armor_variation = 2
 
 //===========================//SPECIALIST\\================================\\
 //=======================================================================\\
@@ -514,7 +483,7 @@
 /obj/item/clothing/suit/storage/marine/M3T
 	name = "\improper M3-T light armor"
 	desc = "A custom set of M3 armor designed for users of long-ranged explosive weaponry."
-	icon_state = "demolitionist"
+	icon_state = "demo"
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	specialty = "M3-T light"
@@ -523,7 +492,7 @@
 /obj/item/clothing/suit/storage/marine/M3S
 	name = "\improper M3-S light armor"
 	desc = "A custom set of M3 armor designed for USCM Scouts."
-	icon_state = "scout_armor"
+	icon_state = "scout"
 	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	specialty = "M3-S light"

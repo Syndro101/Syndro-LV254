@@ -35,11 +35,9 @@
 		list("Shoulder Holster", floor(scale * 1), /obj/item/clothing/accessory/storage/holster, VENDOR_ITEM_REGULAR),
 
 		list("ARMOR", -1, null, null),
+		list("M3-L Pattern Light Marine Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/light, VENDOR_ITEM_REGULAR),
 		list("M3 Pattern Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/medium, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Carrier Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/carrier, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Skull Marine Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/skull, VENDOR_ITEM_REGULAR),
-		list("M3-H Pattern Heavy Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/heavy, VENDOR_ITEM_REGULAR),
-		list("M3-L Pattern Light Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/light, VENDOR_ITEM_REGULAR),
+		list("M3-H Pattern Heavy Marine Armor", floor(scale * 5), /obj/item/clothing/suit/storage/marine/heavy, VENDOR_ITEM_REGULAR),
 
 		list("BACKPACK", -1, null, null, null),
 		list("IMP Backpack", floor(scale * 15), /obj/item/storage/backpack/marine, VENDOR_ITEM_REGULAR),

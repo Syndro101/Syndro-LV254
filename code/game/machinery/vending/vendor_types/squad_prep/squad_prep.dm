@@ -174,8 +174,7 @@
 
 		list("ARMOR", -1, null, null),
 		list("M3 Pattern Marine Armor", floor(scale * 15), /obj/item/clothing/suit/storage/marine, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Carrier Marine Armor", floor(scale * 15), /obj/item/clothing/suit/storage/marine/carrier, VENDOR_ITEM_REGULAR),
-		list("M3 Pattern Skull Marine Armor", floor(scale * 15), /obj/item/clothing/suit/storage/marine/skull, VENDOR_ITEM_REGULAR),
+		list("M3-L Pattern Marine Armor", floor(scale * 15), /obj/item/clothing/suit/storage/marine/light, VENDOR_ITEM_REGULAR),
 		list("M3-H Pattern Heavy Armor", floor(scale * 10), /obj/item/clothing/suit/storage/marine/heavy, VENDOR_ITEM_REGULAR),
 
 		list("BACKPACK", -1, null, null, null),
@@ -468,15 +467,11 @@
 /obj/effect/essentials_set/random/uscm_light_armor
 	spawned_gear_list = list(
 		/obj/item/clothing/suit/storage/marine/light,
-		/obj/item/clothing/suit/storage/marine/light/carrier,
-		/obj/item/clothing/suit/storage/marine/light/skull,
 	)
 
 /obj/effect/essentials_set/random/uscm_heavy_armor
 	spawned_gear_list = list(
 		/obj/item/clothing/suit/storage/marine/heavy,
-		/obj/item/clothing/suit/storage/marine/heavy/carrier,
-		/obj/item/clothing/suit/storage/marine/heavy/skull,
 	)
 
 //------------MARINE CIVILIAN CLOTHING---------------

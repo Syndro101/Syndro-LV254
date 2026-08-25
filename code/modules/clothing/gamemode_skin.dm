@@ -18,11 +18,7 @@
 	if(!camo_type)
 		return null
 
-	// Normalize once
 	var/key = lowertext("[camo_type]")
-
-	// Static lookup map; built once
-	// Note: "classic" or unknown -> returns null to clear tint
 	var/static/list/_camo_map = list(
 		"jungle" = CAMO_JUNGLE,
 		"desert" = CAMO_DESERT,

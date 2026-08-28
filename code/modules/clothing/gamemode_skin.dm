@@ -2,25 +2,13 @@
 // CAMO COLOR DEFINES
 // =========================
 
-// USCM
+// CAMO
 #define CAMO_JUNGLE "#9ca779"
 #define CAMO_DESERT "#d3b893"
 #define CAMO_SNOW   "#e4e4e4"
-#define CAMO_URBAN  "#999e95"
+#define CAMO_URBAN  "#999e95d5"
 
-// MARSOC
-#define JUNGLE_MARSOC "#9ca779a1"
-#define DESERT_MARSOC "#d3b893a1"
-#define SNOW_MARSOC   "#e4e4e4a1"
-#define URBAN_MARSOC  "#999e95a1"
-
-// UPP
-#define JUNGLE_UPP "#9ca779d5"
-#define DESERT_UPP "#d3b893d5"
-#define SNOW_UPP   "#e4e4e4d5"
-#define URBAN_UPP  "#999e95d5"
-
-// COLORS
+// COLOR
 #define CAMO_BLACK  "#505050"
 #define CAMO_BROWN  "#968265"
 #define CAMO_RED    "#7C2F2F"

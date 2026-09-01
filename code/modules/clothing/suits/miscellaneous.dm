@@ -64,7 +64,7 @@
 	item_state = "hgpirate"
 	flags_inv_hide = HIDEJUMPSUIT
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
@@ -529,10 +529,10 @@
 
 	storage_slots = 3
 
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
-	armor_energy = CLOTHING_ARMOR_HARDCORE // Immune to tasers
+	armor_energy = CLOTHING_ARMOR_PERFECT // Immune to tasers
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
@@ -552,8 +552,8 @@
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_VERYLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_BAD
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	storage_slots = 4
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE

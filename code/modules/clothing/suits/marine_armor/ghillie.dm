@@ -8,7 +8,7 @@
 	name = "\improper M45 pattern ghillie armor"
 	desc = "A lightweight ghillie camouflage suit, used by USCM scout-snipers on recon missions. Very lightweight, but doesn't protect much."
 	icon_state = "ghillie_armor"
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT
 	flags_marine_armor = ARMOR_LAMP_OVERLAY
 	specialty = "M45 pattern ghillie"

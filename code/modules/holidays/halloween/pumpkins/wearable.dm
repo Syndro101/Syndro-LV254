@@ -16,7 +16,7 @@
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROT
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM

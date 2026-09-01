@@ -9,14 +9,14 @@
 		WEAR_JACKET = 'icons/mob/humans/onmob/hunter/thrall_gear.dmi'
 	)
 	thrall = TRUE
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 
 	allowed = list(
 		/obj/item/weapon/gun/launcher/spike,

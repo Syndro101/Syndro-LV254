@@ -39,14 +39,14 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	allowed = list(
 		/obj/item/weapon/gun/,
 		/obj/item/tank/emergency_oxygen,
@@ -69,7 +69,7 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_NONE
@@ -133,7 +133,7 @@
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_LOW
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/dutch)
 
 /obj/item/clothing/suit/armor/vest/security
@@ -142,7 +142,7 @@
 	icon_state = "armorsec"
 	item_state = "armor"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_NONE
@@ -172,7 +172,7 @@
 	blood_overlay_type = "armor"
 	armor_melee = CLOTHING_ARMOR_LOW
 	armor_bullet = CLOTHING_ARMOR_LOW
-	armor_laser = CLOTHING_ARMOR_VERYHIGH
+	armor_laser = CLOTHING_ARMOR_SUPER
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_NONE
@@ -187,7 +187,7 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
@@ -212,7 +212,7 @@
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
@@ -226,13 +226,13 @@
 	item_state = "cmb_qrf_sg"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	armor_melee = CLOTHING_ARMOR_LOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	flags_inventory = SMARTGUN_HARNESS
 
@@ -243,13 +243,13 @@
 	item_state = "cmb_qrf_corp"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_ARMS
 	armor_melee = CLOTHING_ARMOR_LOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_NONE
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 
 /obj/item/clothing/suit/armor/bulletproof/badge
@@ -331,11 +331,11 @@
 	icon_state = "riot"
 	item_state = "swat_suit"
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPERPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPER
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
@@ -396,14 +396,14 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	valid_accessory_slots = list(ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L, ACCESSORY_SLOT_ARMOR_S, ACCESSORY_SLOT_ARMOR_M)
 
 /obj/item/clothing/suit/armor/hos
@@ -415,12 +415,12 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_LOWPLUS
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_inventory = NO_FLAGS
 	flags_inv_hide = HIDEJUMPSUIT
 	siemens_coefficient = 0.6

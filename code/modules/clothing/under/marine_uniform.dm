@@ -196,8 +196,8 @@
 /obj/item/clothing/under/marine/officer/ce
 	name = "chief engineer uniform"
 	desc = "A uniform for a military engineer. It has shards of light Venlar to help protect against stabbing weapons and bullets."
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_LOWPLUS
 	icon_state = "EC_jumpsuit"
 	worn_state = "EC_jumpsuit"
 	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_department/engineering.dmi'
@@ -418,14 +418,14 @@
 	worn_state = "tis_fatigues"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	suit_restricted = list(/obj/item/clothing/suit/storage/marine/uaac/tis)
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_LOW
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_LOW
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/under/uaac/tis/agent
 	name = "\improper UAAC-TIS Special Agent Uniform"
@@ -452,9 +452,9 @@
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_VERYLOW
-	armor_rad = CLOTHING_ARMOR_VERYLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_BAD
+	armor_rad = CLOTHING_ARMOR_BAD
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 
 //=========================//USCM Survivors\\================================\\
 //=======================================================================\\
@@ -662,7 +662,7 @@
 	icon = 'icons/obj/items/clothing/uniforms/uniforms_by_faction/UPP.dmi'
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	has_sensor = UNIFORM_HAS_SENSORS
-	suit_restricted = list(/obj/item/clothing/suit/storage/marine/faction/UPP, /obj/item/clothing/suit/gimmick/jason, /obj/item/clothing/suit/storage/snow_suit/soviet, /obj/item/clothing/suit/storage/snow_suit/survivor, /obj/item/clothing/suit/storage/webbing)
+	suit_restricted = list(/obj/item/clothing/suit/storage/marine/upp, /obj/item/clothing/suit/gimmick/jason, /obj/item/clothing/suit/storage/snow_suit/soviet, /obj/item/clothing/suit/storage/snow_suit/survivor, /obj/item/clothing/suit/storage/webbing)
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
 
 	item_icons = list(
@@ -818,7 +818,7 @@
 	hood_state = /obj/item/clothing/head/owlf_hood
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM
@@ -1404,11 +1404,11 @@
 	worn_state = "working_joe_engi"
 	flags_inventory = CANTSTRIP
 	armor_melee = CLOTHING_ARMOR_LOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_HIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_jumpsuit = UNIFORM_SLEEVE_ROLLABLE
 
 /obj/item/clothing/under/rank/synthetic/joe/engi/overalls
@@ -1416,7 +1416,7 @@
 	desc = "A reinforced uniform used for Synthetic labor in hazardous areas. Comes with an additional layer for liquid hazards. Tomorrow, Together."
 	icon_state = "working_joe_overalls"
 	worn_state = "working_joe_overalls"
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	unacidable = TRUE
 
 //=ROYAL MARINES=\\
@@ -1468,9 +1468,9 @@
 	armor_melee = CLOTHING_ARMOR_LOW
 	armor_bullet = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_VERYLOW
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGHPLUS
+	armor_internaldamage = CLOTHING_ARMOR_BAD
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_ULTRAPLUS
 	fire_intensity_resistance = BURN_LEVEL_TIER_1
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROT
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
@@ -1608,10 +1608,10 @@
 
 /obj/item/clothing/under/marine/cbrn/advanced
 	armor_melee = CLOTHING_ARMOR_MEDIUM
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
 	hood_type = /obj/item/clothing/head/helmet/marine/cbrn_hood/advanced
 
@@ -1626,7 +1626,7 @@
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_NONE
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
 	hood_type = /obj/item/clothing/head/helmet/marine/cbrn_hood/volcano

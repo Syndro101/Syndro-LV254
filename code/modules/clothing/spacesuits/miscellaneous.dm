@@ -36,14 +36,14 @@
 	desc = "A heavy space helmet, designed to be coupled with the MK.50 compression suit, though it is less resilient than the suit. Feels like you could hotbox in here."
 	item_state = "compression"
 	icon_state = "compression"
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_ULTRAHIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_ULTRA
+	armor_rad = CLOTHING_ARMOR_ULTRA
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/suit/space/compression
 	name = "\improper MK.50 compression suit"
@@ -51,14 +51,14 @@
 	item_state = "compression"
 	icon_state = "compression"
 	icon = 'icons/obj/items/clothing/suits/hazard.dmi'
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_ULTRAHIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_ULTRA
+	armor_rad = CLOTHING_ARMOR_ULTRA
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	item_icons = list(
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/hazard.dmi',
 	)
@@ -83,14 +83,14 @@
 	item_icons = list(
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/misc_ert.dmi',
 	)
-	armor_melee = CLOTHING_ARMOR_HARDCORE
-	armor_bullet = CLOTHING_ARMOR_HARDCORE
-	armor_laser = CLOTHING_ARMOR_HARDCORE
-	armor_energy = CLOTHING_ARMOR_HARDCORE
-	armor_bomb = CLOTHING_ARMOR_HARDCORE
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_HARDCORE
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_melee = CLOTHING_ARMOR_PERFECT
+	armor_bullet = CLOTHING_ARMOR_PERFECT
+	armor_laser = CLOTHING_ARMOR_PERFECT
+	armor_energy = CLOTHING_ARMOR_PERFECT
+	armor_bomb = CLOTHING_ARMOR_PERFECT
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_PERFECT
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 	flags_inventory = CANTSTRIP|BLOCKSHARPOBJ
 	unacidable = TRUE
 	flags_inv_hide = null
@@ -105,14 +105,14 @@
 	item_icons = list(
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats.dmi'
 	)
-	armor_melee = CLOTHING_ARMOR_HARDCORE
-	armor_bullet = CLOTHING_ARMOR_HARDCORE
-	armor_laser = CLOTHING_ARMOR_HARDCORE
-	armor_energy = CLOTHING_ARMOR_HARDCORE
-	armor_bomb = CLOTHING_ARMOR_HARDCORE
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_HARDCORE
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_melee = CLOTHING_ARMOR_PERFECT
+	armor_bullet = CLOTHING_ARMOR_PERFECT
+	armor_laser = CLOTHING_ARMOR_PERFECT
+	armor_energy = CLOTHING_ARMOR_PERFECT
+	armor_bomb = CLOTHING_ARMOR_PERFECT
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_PERFECT
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 	flags_inventory = CANTSTRIP|COVEREYES|COVERMOUTH|ALLOWINTERNALS|ALLOWREBREATH|BLOCKGASEFFECT|ALLOWCPR|BLOCKSHARPOBJ
 	unacidable = TRUE
 	flags_inv_hide = null

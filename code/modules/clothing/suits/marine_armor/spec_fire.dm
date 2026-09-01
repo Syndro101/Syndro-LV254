@@ -5,8 +5,8 @@
 	desc = "A custom set of M35 armor designed for use by USCM Pyrotechnicians."
 	icon_state = "pyro_armor"
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	light_range = 5
 	fire_intensity_resistance = BURN_LEVEL_TIER_1
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROT

@@ -9,11 +9,11 @@
 	item_state = "combat_android_helmet"
 	unacidable = TRUE
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_ULTRA
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_ULTRA
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_HIGH
 	armor_internaldamage = CLOTHING_ARMOR_HIGH

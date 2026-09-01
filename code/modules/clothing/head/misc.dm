@@ -122,8 +122,8 @@
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/formal_hats.dmi'
 	)
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
@@ -141,7 +141,7 @@
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/formal_hats.dmi'
 	)
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_LOW
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW

@@ -522,7 +522,7 @@ This function restores all limbs.
 
 	var/armor = getarmor(def_zone, armor_type)
 
-	var/damage_to_deal = damage * max(1 - (armor / CLOTHING_ARMOR_ULTRAHIGH), 0.1) // stamina damage. Has to deal 10% or less stamina damage, can't be any lower
+	var/damage_to_deal = damage * max(1 - (armor / CLOTHING_ARMOR_ULTRA), 0.1) // stamina damage. Has to deal 10% or less stamina damage, can't be any lower
 
 	if(reagents && reagents.has_reagent("antag_stimulant"))
 		damage_to_deal *= 0.25 // Massively reduced effectiveness

@@ -60,11 +60,11 @@
 
 	armor_bio = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_HARDCORE
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_PERFECT
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 
 	slowdown = SLOWDOWN_ARMOR_LIGHT
@@ -105,7 +105,7 @@
 	icon_state = "som_spook"
 	item_state = "som_spook"
 	flags_inventory = CANTSTRIP
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
+	armor_bullet = CLOTHING_ARMOR_ULTRA
 
 //Chaplain
 /obj/item/clothing/suit/nun
@@ -258,10 +258,10 @@
 		/obj/item/storage/large_holster/katana,
 		/obj/item/device/motiondetector,
 	)
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_NONE
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE

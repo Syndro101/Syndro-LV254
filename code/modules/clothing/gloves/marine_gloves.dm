@@ -17,7 +17,7 @@
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_NONE
 	armor_internaldamage = CLOTHING_ARMOR_LOW
@@ -112,12 +112,12 @@
 	desc = "A pair of heavily armored gloves."
 	icon_state = "black"
 	item_state = "bgloves"
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
-	armor_internaldamage = CLOTHING_ARMOR_ULTRAHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_ULTRA
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_ULTRA
+	armor_rad = CLOTHING_ARMOR_ULTRA
+	armor_internaldamage = CLOTHING_ARMOR_ULTRA
 	unacidable = TRUE
 
 /obj/item/clothing/gloves/marine/M3G
@@ -125,12 +125,12 @@
 	desc = "A pair of plated, but nimble, gloves."
 	icon_state = "grenadier"
 	item_state = "grenadier"
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
-	armor_rad = CLOTHING_ARMOR_VERYHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPER
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_ULTRA
+	armor_rad = CLOTHING_ARMOR_SUPER
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 	unacidable = TRUE
 	adopts_squad_color = FALSE
 
@@ -172,7 +172,7 @@
 	item_state = "pmc_elite"
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_rad = CLOTHING_ARMOR_HIGH
 	armor_internaldamage = CLOTHING_ARMOR_HIGH
 
@@ -185,10 +185,10 @@
 	icon_state = "gauntlets"
 	item_state = "bgloves"
 	siemens_coefficient = 0
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_SUPER
 	unacidable = TRUE
 
 /obj/item/clothing/gloves/marine/veteran/pmc/combat_droid
@@ -198,10 +198,10 @@
 	item_state = "bgloves"
 	item_state_slots = list(WEAR_HANDS = "marine_grey")
 	siemens_coefficient = 0
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_ULTRA
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 
 /obj/item/clothing/gloves/marine/dress
 	name = "dress gloves"
@@ -216,14 +216,14 @@
 	icon_state = "souto_man"
 	item_state = "souto_man"
 	flags_inventory = CANTSTRIP
-	armor_melee = CLOTHING_ARMOR_HARDCORE
-	armor_bullet = CLOTHING_ARMOR_HARDCORE
-	armor_laser = CLOTHING_ARMOR_HARDCORE
-	armor_energy = CLOTHING_ARMOR_HARDCORE
-	armor_bomb = CLOTHING_ARMOR_HARDCORE
-	armor_bio = CLOTHING_ARMOR_HARDCORE
-	armor_rad = CLOTHING_ARMOR_HARDCORE
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_melee = CLOTHING_ARMOR_PERFECT
+	armor_bullet = CLOTHING_ARMOR_PERFECT
+	armor_laser = CLOTHING_ARMOR_PERFECT
+	armor_energy = CLOTHING_ARMOR_PERFECT
+	armor_bomb = CLOTHING_ARMOR_PERFECT
+	armor_bio = CLOTHING_ARMOR_PERFECT
+	armor_rad = CLOTHING_ARMOR_PERFECT
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 	unacidable = TRUE
 	adopts_squad_color = FALSE
 
@@ -240,8 +240,8 @@
 	armor_melee = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_VERYHIGH
-	armor_rad = CLOTHING_ARMOR_VERYHIGH
+	armor_bio = CLOTHING_ARMOR_SUPER
+	armor_rad = CLOTHING_ARMOR_SUPER
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	unacidable = TRUE
 	adopts_squad_color = FALSE
@@ -267,21 +267,21 @@
 	desc = "M3 MOPP gloves are made of treated venlar designed to protect the user’s hands against contamination whilst working in CBRN environments. Special care has been taken to give the user’s hands enough dexterity to fully service a rifle or utilize most handheld tools, while circular adhesive patterns on the fingers provide the user with enhanced grips. Standard CBRN protocol dictates that the gloves are expected to have a lifespan of maximum effectiveness of around twenty-four hours once exposed to moderate levels of contamination and that users are recommended to discard and replace them afterwards."
 	icon_state = "cbrn"
 	item_state = "cbrn"
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 
 /obj/item/clothing/gloves/marine/veteran/biomerc
 	name = "\improper Type-15 Haz-tech gloves"
 	desc = "M3 MOPP gloves are made of treated venlar designed to protect the user’s hands against contamination whilst working in CBRN environments. Special care has been taken to give the user’s hands enough dexterity to fully service a rifle or utilize most handheld tools, while circular adhesive patterns on the fingers provide the user with enhanced grips. Standard CBRN protocol dictates that the gloves are expected to have a lifespan of maximum effectiveness of around twenty-four hours once exposed to moderate levels of contamination and that users are recommended to discard and replace them afterwards."
 	icon_state = "bio_merc"
 	item_state = "bio_merc"
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 
 /obj/item/clothing/gloves/marine/veteran/trauma
 	name = "\improper Decadencia Roja Pattern Surgical gloves"
 	desc = "A pair of red rubber comnbat surgical gloves designed to allow tactile feel for delicate operation of surgical tools and triggers alike, perfect for all your tactical extraction needs."
 	icon_state = "trauma"
 	item_state = "trauma"
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS

@@ -1,6 +1,6 @@
 
 /obj/item/clothing/under/gimmick
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
@@ -132,13 +132,13 @@
 	desc = "The perfect size to stomp on the scum of Detroit."
 	icon_state = "robocop_shoes"
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_HIGH
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 	flags_inventory = FPRINT|CONDUCT|NOSLIPPING
 
 /obj/item/clothing/gloves/gimmick/robocop
@@ -147,13 +147,13 @@
 	icon_state = "robocop_gloves"
 	flags_atom = FPRINT|CONDUCT
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_HIGH
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 
 /obj/item/clothing/head/helmet/gimmick/robocop
 	name = "polished metal helm"
@@ -165,13 +165,13 @@
 		WEAR_HEAD = 'icons/obj/items/clothing/halloween_clothes.dmi',
 	)
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_HIGH
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 	flags_inventory = COVEREYES|BLOCKSHARPOBJ
 	flags_inv_hide = HIDEEARS|HIDEEYES|HIDETOPHAIR
 	anti_hug = 100
@@ -195,13 +195,13 @@
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	allowed = list(/obj/item/weapon/gun/pistol/auto9)
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_HIGH
-	armor_internaldamage = CLOTHING_ARMOR_HARDCORE
+	armor_internaldamage = CLOTHING_ARMOR_PERFECT
 
 //LUKE
 /obj/item/clothing/under/gimmick/skywalker

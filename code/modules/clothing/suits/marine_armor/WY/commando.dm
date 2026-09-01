@@ -3,9 +3,9 @@
 	desc = "A modification of the W-Y PMC armor patterns. Designed for elite corporate mercenaries in mind."
 	icon_state = "commando_armor"
 	item_state_slots = list(WEAR_JACKET = "commando_armor")
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_energy = CLOTHING_ARMOR_HIGHPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
@@ -32,9 +32,9 @@
 	desc = "A modification of the standard Armat Systems M3 armor. Hooked up with harnesses and straps allowing the user to carry an M56 Smartgun."
 	icon_state = "commando_armor_sg"
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN|SMARTGUN_HARNESS
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_energy = CLOTHING_ARMOR_HIGHPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
@@ -47,13 +47,13 @@
 	icon_state = "ape_suit"
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	movement_compensation = SLOWDOWN_ARMOR_VERY_HEAVY
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bio = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bio = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
 	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/pmc)
 	item_state_slots = list(WEAR_JACKET = "ape_suit")

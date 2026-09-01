@@ -190,7 +190,7 @@
 		if(locate(/datum/disease/black_goo) in human.viruses)
 			to_chat(user, SPAN_XENOWARNING("<b>You sense your target is infected.</b>"))
 		else
-			var/bio_protected = max(CLOTHING_ARMOR_HARDCORE - human.getarmor(user.zone_selected, ARMOR_BIO), 0)
+			var/bio_protected = max(CLOTHING_ARMOR_PERFECT - human.getarmor(user.zone_selected, ARMOR_BIO), 0)
 			if(prob(bio_protected))
 				target.AddDisease(new /datum/disease/black_goo)
 				to_chat(user, SPAN_XENOWARNING("<b>You sense your target is now infected.</b>"))

@@ -37,7 +37,7 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_MEDIUM
 	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
@@ -102,14 +102,14 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	name = "clan armor"
 	desc = "A suit of armor with light padding. It looks old, yet functional."
 
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 
 
 /obj/item/clothing/suit/armor/yautja/hunter/full
@@ -224,11 +224,11 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	)
 
 
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_laser = CLOTHING_ARMOR_MEDIUM
 	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
@@ -251,14 +251,14 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	name = "clan greaves"
 	desc = "A pair of armored, perfectly balanced boots. Perfect for running through the jungle."
 
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 
 /obj/item/clothing/shoes/yautja/hunter/knife
 	spawn_item_type = /obj/item/weapon/yautja/knife
@@ -282,10 +282,10 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 
 	armor_melee = CLOTHING_ARMOR_LOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_MEDIUM
 	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
@@ -297,12 +297,12 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 
 	armor_melee = CLOTHING_ARMOR_LOW
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	black_market_value = 50
 
 //=================//\\=================\\
@@ -1098,12 +1098,12 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_HEAD|BODY_FLAG_LEGS
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_VERY_HEAVY
 	siemens_coefficient = 0.1
 	allowed = list(
@@ -1130,12 +1130,12 @@ GLOBAL_VAR_INIT(hunt_timer_yautja, 0)
 	flags_armor_protection = BODY_FLAG_FEET|BODY_FLAG_LEGS|BODY_FLAG_GROIN
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 
 /obj/item/card/id/bracer_chip
 	name = "bracer ID chip"

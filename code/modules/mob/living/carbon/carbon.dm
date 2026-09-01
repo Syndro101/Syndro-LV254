@@ -196,7 +196,7 @@
 	for(var/obj/item/clothing/worn_item in worn_clothes)
 		total_prot += worn_item.armor_bio
 		mult++
-		if(worn_item.armor_bio == CLOTHING_ARMOR_HARDCORE)
+		if(worn_item.armor_bio == CLOTHING_ARMOR_PERFECT)
 			bio_hardcore++
 
 	if(!mult)

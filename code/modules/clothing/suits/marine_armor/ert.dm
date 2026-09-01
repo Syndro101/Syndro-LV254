@@ -11,10 +11,10 @@
 	)
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_SUPER
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	unacidable = TRUE
 	flags_atom = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE|NO_GAMEMODE_SKIN
@@ -40,7 +40,7 @@
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/misc_ert.dmi',
 	)
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 2
@@ -58,7 +58,7 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS //Makes no sense but they need leg/arm armor too.
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 2
@@ -116,12 +116,12 @@
 	blood_overlay_type = "armor"
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
 
@@ -134,12 +134,12 @@
 	item_icons = list(
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 	)
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPERPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPERPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 	storage_slots = 1
 	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/UPP, /obj/item/clothing/under/marine/veteran/UPP/medic, /obj/item/clothing/under/marine/veteran/UPP/engi)
 
@@ -148,12 +148,12 @@
 	desc = "Standard body armor of the UPP military, the UL6 (Union Light MK6) is a light body armor, slightly weaker than the M3 pattern body armor in service with the USCM, specialized towards ballistics protection. This set of personal armor lacks the iconic neck piece and some of the armor in favor of user mobility."
 	storage_slots = 3
 	icon_state = "upp_armor_support"
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPERPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPERPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 
 /obj/item/clothing/suit/storage/marine/faction/UPP/support/synth
 	name = "\improper UL6 Synthetic personal armor"
@@ -186,12 +186,12 @@
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
 	flags_armor_protection = BODY_FLAG_ALL_BUT_HEAD
-	armor_melee = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGHPLUS
+	armor_melee = CLOTHING_ARMOR_SUPERPLUS
+	armor_bullet = CLOTHING_ARMOR_ULTRAPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPERPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_SUPERPLUS
 
 /obj/item/clothing/suit/storage/marine/faction/UPP/heavy/Initialize()
 	. = ..()
@@ -256,7 +256,7 @@
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_LEGS|BODY_FLAG_ARMS|BODY_FLAG_HANDS|BODY_FLAG_FEET
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
@@ -277,9 +277,9 @@
 	)
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_LEGS
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	storage_slots = 2
 	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/freelancer)
 
@@ -297,11 +297,11 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_LEGS|BODY_FLAG_ARMS
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
 	armor_melee = CLOTHING_ARMOR_MEDIUM
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 2
@@ -374,13 +374,13 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bomb = CLOTHING_ARMOR_SUPER
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_rad = CLOTHING_ARMOR_VERYLOW
+	armor_rad = CLOTHING_ARMOR_BAD
 	armor_internaldamage = CLOTHING_ARMOR_HIGH
 	storage_slots = 0
 
@@ -389,13 +389,13 @@
 	desc = "Constructed from salvaged longstreet tank plating. This armor covers the wearer and provides impressive protection from anything but anti-tank weapons.The primary downside is due to crude construction, and the large size of the plates it is incredibly cumbersome to move in. This one features a nice all weather trenchcoat like is commonly found on the frontier."
 	icon_state = "mlu_ranger_leader"
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPERPLUS
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bomb = CLOTHING_ARMOR_SUPER
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_rad = CLOTHING_ARMOR_VERYLOW
+	armor_rad = CLOTHING_ARMOR_BAD
 	armor_internaldamage = CLOTHING_ARMOR_HIGH
 	storage_slots = 2
 
@@ -467,7 +467,7 @@
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_HIGH
 	valid_accessory_slots = list(ACCESSORY_SLOT_PONCHO)
 
@@ -486,8 +486,8 @@
 	blood_overlay_type = "coat"
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_LOW
@@ -543,13 +543,13 @@
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/CMB.dmi'
 	)
 	icon_state = "cmb_heavy_armor"
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_energy = CLOTHING_ARMOR_HIGH
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	storage_slots = 3
 
 
@@ -626,9 +626,9 @@
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPER
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_HIGHPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
@@ -657,12 +657,12 @@
 /obj/item/clothing/suit/storage/marine/veteran/mercenary/heavy
 	name = "\improper Modified K12 ceramic plated armor"
 	desc = "A set of grey, heavy ceramic armor with dark blue highlights. It has been modified with extra ceramic plates placed in its storage pouch, and seems intended to support an extremely heavy weapon."
-	armor_melee = CLOTHING_ARMOR_ULTRAHIGH
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGHPLUS
+	armor_melee = CLOTHING_ARMOR_ULTRA
+	armor_bullet = CLOTHING_ARMOR_ULTRAPLUS
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
 	armor_bio = CLOTHING_ARMOR_HIGHPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGHPLUS
+	armor_internaldamage = CLOTHING_ARMOR_SUPERPLUS
 	storage_slots = 1
 
 /obj/item/clothing/suit/storage/marine/veteran/mercenary/miner
@@ -706,9 +706,9 @@
 	flags_atom = NO_NAME_OVERRIDE|NO_GAMEMODE_SKIN
 	flags_item = NO_CRYO_STORE
 	flags_marine_armor = ARMOR_LAMP_OVERLAY
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bomb = CLOTHING_ARMOR_GIGAHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bomb = CLOTHING_ARMOR_MEGA
 
 
 //=========================//PROVOST\\================================\\
@@ -725,9 +725,9 @@
 	)
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
 	storage_slots = 3
@@ -775,11 +775,11 @@
 	desc = "A carefully converted set of Provost Team leader to match the UAAC-TIS color scheme. Usually worn by TIS Escort Officers, minor modifications have been made to the armor, increasing protection in some areas while cutting back in others."
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	uniform_restricted = list(/obj/item/clothing/under/uaac/tis)
 
 /obj/item/clothing/suit/storage/marine/uaac/tis/sa
@@ -787,12 +787,12 @@
 	desc = "A modified luxury armor, originally meant for a USCM Provost Marshal, modified to use the colors and insignia of the TIS. The Three Eyes is technically able to requisition any equipment or personnel to fulfill its mission and often uses this privilege to outfit their agents with high-quality gear from other UA military forces."
 	icon_state = "tis_agent"
 	item_state_slots = list(WEAR_JACKET = "tis_agent")
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	storage_slots = 2
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
@@ -828,7 +828,7 @@
 	armor_laser = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_HIGH
 	armor_bio = CLOTHING_ARMOR_HIGH
-	armor_bomb = CLOTHING_ARMOR_VERYHIGHPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPERPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGH
 	specialty = "M3-O Medium"
 	flags_item = MOB_LOCK_ON_EQUIP|NO_CRYO_STORE
@@ -849,12 +849,12 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT  // it's lighter
 	uniform_restricted = list(/obj/item/clothing/under/marine/ua_riot)
 	flags_atom = NO_GAMEMODE_SKIN
@@ -908,8 +908,8 @@
 /obj/item/clothing/suit/storage/marine/veteran/royal_marine/light //RMC Rifleman Armor
 	icon_state = "rmc_light"
 	item_state = "rmc_light"
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	slowdown = SLOWDOWN_ARMOR_LIGHT
@@ -936,7 +936,7 @@
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	storage_slots = 7
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
@@ -951,7 +951,7 @@
 	armor_bomb = CLOTHING_ARMOR_HIGHPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	storage_slots = 7
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
@@ -974,7 +974,7 @@
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_rad =CLOTHING_ARMOR_MEDIUMLOW
+	armor_rad =CLOTHING_ARMOR_LOWPLUS
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	flags_marine_armor = NO_FLAGS
 	flags_atom = NO_NAME_OVERRIDE|NO_GAMEMODE_SKIN
@@ -987,10 +987,10 @@
 /obj/item/clothing/suit/storage/marine/cbrn/advanced
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_ULTRA
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
 
 //===========================//TRAUMA TEAM - MERCENARY\\================================\\
@@ -1050,12 +1050,12 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	flags_heat_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT  // it's lighter
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
 	uniform_restricted = list(/obj/item/clothing/under)
@@ -1074,9 +1074,9 @@
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_ULTRA
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE

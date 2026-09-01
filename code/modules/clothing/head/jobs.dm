@@ -23,11 +23,11 @@
 
 	armor_bio = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_HARDCORE
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_PERFECT
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 
 /obj/item/clothing/head/cultist_hood/som
@@ -160,12 +160,12 @@
 	icon_state = "fedora_tan"
 	item_state = "fedora_tan"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = BLOCKSHARPOBJ

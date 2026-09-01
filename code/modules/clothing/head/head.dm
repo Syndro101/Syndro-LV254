@@ -576,7 +576,7 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	siemens_coefficient = 0.9
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
 	armor_bio = CLOTHING_ARMOR_MEDIUM
@@ -723,14 +723,14 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	desc = "Perfect for winter in Siberia, da?"
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = BLOCKSHARPOBJ
@@ -755,14 +755,14 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	icon_state = "bearpelt"
 	siemens_coefficient = 2
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_CHEST|BODY_FLAG_ARMS
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD|BODY_FLAG_CHEST|BODY_FLAG_ARMS
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = BLOCKSHARPOBJ
@@ -779,14 +779,14 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	item_state = "ivan_beret"
 	siemens_coefficient = 2
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
@@ -801,12 +801,12 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	)
 	icon_state = "cmbcap"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = BLOCKSHARPOBJ
@@ -831,8 +831,8 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	icon_state = "freelancer_cap"
 	siemens_coefficient = 2
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
@@ -858,8 +858,8 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	icon_state = "rebel_hood"
 	siemens_coefficient = 2
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_CHEST
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
@@ -881,38 +881,38 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	desc = "A sturdy helmet made from a mining helmet and reinforced with the reclaimed plating of an armored vehicle. The front features a small plate to protect the wearer's face from shrapnel or debris in combat."
 	icon_state = "mlu_ranger"
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_FACE
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPER
 
 /obj/item/clothing/head/militia/ranger/noface
 	name = "Insurgent Ranger helmet"
 	desc = "A sturdy helmet made from a mining helmet and reinforced with the reclaimed plating of an armored vehicle."
 	icon_state = "mlu_ranger2"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPER
 
 /obj/item/clothing/head/militia/ranger/lamp
 	name = "Insurgent Ranger helmet"
 	desc = "A sturdy helmet made from a mining helmet and reinforced with the reclaimed plating of an armored vehicle."
 	icon_state = "mlu_ranger3"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPER
 
 /obj/item/clothing/head/militia/riot
 	name = "Insurgent helmet"
 	desc = "A sturdy UA Riot officer's helmet stolen by an insurgent. Its paint has been stripped and replaced with a dull brown and grey to better blend in."
 	icon_state = "clf_riot"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/head/militia/mining
 	name = "Insurgent Work helmet"
 	desc = "Hey if it protects your head from rocks, it should protect from the boot of authority too. Featuring some aftermarket sheetmetal to make it a bit thinker, it might even stop bullets. Its bright safety yellow paint has been stripped and replaced with a dull brown and grey to better blend in."
 	icon_state = "clf_miner"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/head/general
 	name = "\improper armored General cap"
@@ -1001,14 +1001,14 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	desc = "This hood is attached to a high-tech suit with built-in thermal cloaking technology."
 	icon = 'icons/obj/items/clothing/hats/misc_ert_colony.dmi'
 	icon_state = "owlf_hood"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_laser = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	flags_inv_hide = HIDEALLHAIR
 	item_icons = list(
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/misc_ert_colony.dmi'
@@ -1058,12 +1058,12 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	icon_state = "cmb_cap"
 	item_state = "cmb_cap"
 	flags_armor_protection = BODY_FLAG_HEAD
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_LOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	flags_inventory = BLOCKSHARPOBJ

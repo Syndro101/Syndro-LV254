@@ -1366,7 +1366,7 @@ Wrist Accessories
 	flags_armor_protection = BODY_FLAG_CHEST
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 
 /obj/item/clothing/accessory/flak/get_examine_text(mob/user)
 	. = ..()

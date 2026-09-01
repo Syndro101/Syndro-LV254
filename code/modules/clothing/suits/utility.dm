@@ -78,7 +78,7 @@
 	armor_bullet = CLOTHING_ARMOR_NONE
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
+	armor_bomb = CLOTHING_ARMOR_ULTRA
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE
 	armor_internaldamage = CLOTHING_ARMOR_LOW
@@ -105,7 +105,7 @@
 	armor_bullet = CLOTHING_ARMOR_NONE
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_ULTRAHIGH
+	armor_bomb = CLOTHING_ARMOR_ULTRA
 	armor_bio = CLOTHING_ARMOR_NONE
 	armor_rad = CLOTHING_ARMOR_NONE
 	armor_internaldamage = CLOTHING_ARMOR_LOW
@@ -157,7 +157,7 @@
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_NONE
 	armor_bio = CLOTHING_ARMOR_HIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
+	armor_rad = CLOTHING_ARMOR_ULTRA
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 
 
@@ -194,6 +194,6 @@
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_NONE
 	armor_bio = CLOTHING_ARMOR_HIGH
-	armor_rad = CLOTHING_ARMOR_ULTRAHIGH
+	armor_rad = CLOTHING_ARMOR_ULTRA
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	flags_inv_hide = HIDEJUMPSUIT|HIDETAIL

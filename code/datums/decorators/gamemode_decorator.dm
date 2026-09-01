@@ -58,8 +58,8 @@ GAMEMODE_DECORATOR(/obj/item/clothing/suit/storage/marine/medium, /datum/game_mo
 //**** Light Armor ****//
 GAMEMODE_DECORATOR(/obj/item/clothing/suit/storage/marine/light, /datum/game_mode/extended/faction_clash, list(
 	ARMOR_EDIT(armor_bullet, CLOTHING_ARMOR_MEDIUM),
-	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_MEDIUMLOW),
-	ARMOR_EDIT(armor_internaldamage, CLOTHING_ARMOR_MEDIUMHIGH)
+	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_LOWPLUS),
+	ARMOR_EDIT(armor_internaldamage, CLOTHING_ARMOR_MEDIUMPLUS)
 ))
 
 //**** Heavy Armor ****//
@@ -76,7 +76,7 @@ GAMEMODE_DECORATOR(/obj/item/clothing/suit/storage/marine/smartgunner, /datum/ga
 //**** Military Police and Command ****//
 GAMEMODE_DECORATOR(/obj/item/clothing/suit/storage/marine/MP, /datum/game_mode/extended/faction_clash, list(
 	ARMOR_EDIT(armor_bullet, CLOTHING_ARMOR_HIGH),
-	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_MEDIUMHIGH),
+	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_MEDIUMPLUS),
 	ARMOR_EDIT(armor_internaldamage, CLOTHING_ARMOR_HIGH)
 ))
 
@@ -128,7 +128,7 @@ GAMEMODE_DECORATOR(/obj/item/clothing/head/helmet/marine, /datum/game_mode/exten
 ))
 
 GAMEMODE_DECORATOR(/obj/item/clothing/head/helmet/marine/specialist, /datum/game_mode/extended/faction_clash, list(
-	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_ULTRAHIGH),
+	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_ULTRA),
 ))
 
 //************ Shoe Values ************//
@@ -136,7 +136,7 @@ GAMEMODE_DECORATOR(/obj/item/clothing/head/helmet/marine/specialist, /datum/game
 GAMEMODE_DECORATOR(/obj/item/clothing/shoes/marine, /datum/game_mode/extended/faction_clash, list(
 	ARMOR_EDIT(armor_bullet, CLOTHING_ARMOR_HIGHPLUS),
 	ARMOR_EDIT(armor_bomb, CLOTHING_ARMOR_MEDIUM),
-	ARMOR_EDIT(armor_internaldamage, CLOTHING_ARMOR_MEDIUMHIGH)
+	ARMOR_EDIT(armor_internaldamage, CLOTHING_ARMOR_MEDIUMPLUS)
 ))
 
 //************ Glove Values ************//

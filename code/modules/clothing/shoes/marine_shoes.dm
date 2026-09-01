@@ -9,10 +9,10 @@
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_cold_protection = BODY_FLAG_FEET
 	flags_heat_protection = BODY_FLAG_FEET
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROT
@@ -84,10 +84,10 @@
 /obj/item/clothing/shoes/marine/upp
 	name = "military combat boots"
 	icon_state = "marine_brown"
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 
 /obj/item/clothing/shoes/marine/upp/knife
 	spawn_item_type = /obj/item/attachable/bayonet/upp
@@ -96,10 +96,10 @@
 	name = "biohazard boots"
 	desc = "A pair of somewhat cheaply made biohazard boots. Tomorrow, Together."
 	armor_bullet = CLOTHING_ARMOR_LOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	spawn_item_type = /obj/item/attachable/bayonet
 
 /obj/item/clothing/shoes/dress
@@ -116,10 +116,10 @@
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/shoes/stompers
 	name = "Reebok Stompers"
@@ -132,14 +132,14 @@
 	desc = "The height of fashion, but these look to be woven with protective fiber."
 	icon_state = "jackboots"
 	item_state = "jackboots"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROT
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROT
 	flags_cold_protection = BODY_FLAG_FEET
@@ -200,8 +200,8 @@
 	desc = "M3 MOPP boots have been designed to protect the wearer from contact with any possible infection vectors or hazardous substances that may have contaminated the area of operations. This includes further enhancements in conjunction with the standard durability of M3 boots, reducing the probability of punctures or cuts as well as the effects of radiation."
 	icon_state = "cbrn"
 	item_state = "cbrn"
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
 	spawn_item_type = /obj/item/attachable/bayonet
 
 /obj/item/clothing/shoes/veteran/pmc/commando/cbrn/biomerc
@@ -209,8 +209,8 @@
 	desc = "Type-15 Haz-tech boots have been designed to protect the wearer from contact with any possible infection vectors or hazardous substances that may have contaminated the area of operations."
 	icon_state = "bio_merc"
 	icon_state = "bio_merc"
-	armor_rad = CLOTHING_ARMOR_GIGAHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_GIGAHIGHPLUS
+	armor_rad = CLOTHING_ARMOR_MEGAPLUS
+	armor_bio = CLOTHING_ARMOR_MEGAPLUS
 	spawn_item_type = /obj/item/attachable/bayonet
 
 
@@ -232,14 +232,14 @@
 	desc = "These rugged shoes are caked with mud and dirt. Designed for high-altitude hiking expeditions, they're sure to be helpful in any climate or environment."
 	icon_state = "jackboots"
 	item_state = "jackboots"
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_LOW
 	armor_laser = CLOTHING_ARMOR_NONE
 	armor_energy = CLOTHING_ARMOR_NONE
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROT
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROT
 	flags_cold_protection = BODY_FLAG_FEET
@@ -277,14 +277,14 @@
 	desc = "Standard issue combat boots for combat scenarios or combat situations. Used by the three world empires royal marines commando units."
 	icon_state = "rmc_boots"
 	item_state = "rmc_boots"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_NONE
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROT
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROT
 	flags_cold_protection = BODY_FLAG_FEET

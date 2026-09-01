@@ -6,8 +6,8 @@
 	item_icons = list(
 		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/WY.dmi'
 	)
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 2
@@ -52,18 +52,18 @@
 	name = "\improper M4 pattern PMC riot guard armor"
 	icon_state = "guard_armor_spec"
 	item_state_slots = list(WEAR_JACKET = "guard_armor_spec")
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 /obj/item/clothing/suit/storage/marine/veteran/pmc/guard/vest
 	name = "\improper M4 pattern PMC guard bulletproof armor"
 	icon_state = "guard_vest"
 	item_state_slots = list(WEAR_JACKET = "guard_vest")
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGH
-	armor_bomb = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 /obj/item/clothing/suit/storage/marine/veteran/pmc/engineer
@@ -71,8 +71,8 @@
 	desc = "A modification of the standard Armat Systems M3 armor. Designed for high elemental protection, like shock, fire and fragments, lacks in terms of kevlar for bullet protection."
 	icon_state = "pmc_engineer_armor"
 	item_state_slots = list(WEAR_JACKET = "pmc_engineer_armor")
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROT
@@ -85,12 +85,12 @@
 	name = "\improper M4 pattern light PMC armor"
 	desc = "A modification of the standard Armat Systems M3 armor. Designed for high-profile security operators and corporate mercenaries in mind. Has some armor plating removed for extra mobility."
 	icon_state = "pmc_armor_light"
-	armor_melee = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_LOWPLUS
 	armor_bullet = CLOTHING_ARMOR_MEDIUM
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT
 	item_state_slots = list(WEAR_JACKET = "pmc_armor_light")
 
@@ -156,9 +156,9 @@
 	)
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN|SMARTGUN_HARNESS
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	item_state_slots = list(WEAR_JACKET = "heavy_armor")

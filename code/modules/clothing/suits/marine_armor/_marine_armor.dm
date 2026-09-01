@@ -48,12 +48,12 @@
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROT
 	blood_overlay_type = "armor"
 	armor_melee = CLOTHING_ARMOR_MEDIUM
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_LOW
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYLOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bomb = CLOTHING_ARMOR_BAD
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
@@ -282,7 +282,7 @@
 	armor_variation = 0
 	name = "\improper M4 pattern marine armor"
 	desc = "A well tinkered and crafted hybrid of Smart-Gunner mesh and M3 pattern plates. Robust, yet nimble, with room for all your pouches."
-	armor_bio = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_rad = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 4
 	light_range = 5 //slightly higher
@@ -292,7 +292,7 @@
 	name = "\improper M4 pattern officer armor"
 	desc = "A well-crafted suit of M4 Pattern Armor with a gold shine. It looks very expensive, but shockingly fairly easy to carry and wear."
 	icon_state = "M2"
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
 	specialty = "M4 pattern officer"
@@ -358,8 +358,8 @@
 	armor_melee = CLOTHING_ARMOR_HIGH
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 
 /obj/item/clothing/suit/storage/marine/light/synth
@@ -372,7 +372,7 @@
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_laser = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_LOW
-	armor_bio = CLOTHING_ARMOR_VERYLOW
+	armor_bio = CLOTHING_ARMOR_BAD
 	armor_rad = CLOTHING_ARMOR_NONE
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	storage_slots = 4
@@ -381,8 +381,8 @@
 /obj/item/clothing/suit/storage/marine/light/vest/forecon_scuba
 	name = "\improper MK50. wetsuit armored vest"
 	desc = "The MK50. wetsuit armored vest designed to protect FORECON Operatives from light small arms, and blades during stealthy raids, while allowing flexibility and freedom of movement, and lack of excessive weight during swimming."
-	armor_melee = CLOTHING_ARMOR_ULTRAHIGHPLUS
-	armor_bullet = CLOTHING_ARMOR_ULTRAHIGH
+	armor_melee = CLOTHING_ARMOR_ULTRAPLUS
+	armor_bullet = CLOTHING_ARMOR_ULTRA
 
 
 /obj/item/clothing/suit/storage/marine/light/recon
@@ -390,11 +390,11 @@
 	desc = "Special issue light armor for forward econnaissance Marines. Offers similar protection as M3 armor but none of the slowdown."
 	armor_melee = CLOTHING_ARMOR_MEDIUM
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
-	armor_laser = CLOTHING_ARMOR_MEDIUMLOW
+	armor_laser = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_NONE
-	armor_bomb = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bomb = CLOTHING_ARMOR_LOWPLUS
 	armor_bio = CLOTHING_ARMOR_MEDIUM
-	armor_rad = CLOTHING_ARMOR_MEDIUMLOW
+	armor_rad = CLOTHING_ARMOR_LOWPLUS
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
 
@@ -406,11 +406,11 @@
 	specialty = "\improper M3-H pattern"
 	icon_state = "H1"
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_LOWHEAVY
 	movement_compensation = SLOWDOWN_ARMOR_MEDIUM
 
@@ -421,12 +421,12 @@
 	name = "\improper B18 defensive armor"
 	desc = "A heavy, rugged set of armor plates for when you really, really need to not die horribly. Slows you down though.\nComes with two tricord injectors in each arm guard."
 	icon_state = "xarmor"
-	armor_melee = CLOTHING_ARMOR_VERYHIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGHPLUS
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_rad = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_SUPERPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPERPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_rad = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	storage_slots = 4
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
@@ -465,12 +465,12 @@
 	name = "\improper M3-G4 grenadier armor"
 	desc = "A custom set of M3 armor packed to the brim with padding, plating, and every form of ballistic protection under the sun. Used exclusively by USCM Grenadiers."
 	icon_state = "grenadier"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bomb = CLOTHING_ARMOR_SUPER
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_internaldamage = CLOTHING_ARMOR_MEDIUMPLUS
 	flags_inventory = BLOCKSHARPOBJ|BLOCK_KNOCKDOWN
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
 	flags_cold_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS|BODY_FLAG_FEET
@@ -493,7 +493,7 @@
 	name = "\improper M3-S light armor"
 	desc = "A custom set of M3 armor designed for USCM Scouts."
 	icon_state = "scout"
-	armor_melee = CLOTHING_ARMOR_MEDIUMHIGH
+	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	specialty = "M3-S light"
 	unacidable = TRUE

@@ -162,7 +162,7 @@
 		AdjustEarDeafness(severity * 0.5)
 
 	/// Reduces effects by armor value.
-	var/bomb_armor_mult = ((CLOTHING_ARMOR_HARDCORE - bomb_armor) * 0.01)
+	var/bomb_armor_mult = ((CLOTHING_ARMOR_PERFECT - bomb_armor) * 0.01)
 
 	if(severity >= 30)
 		flash_eyes(flash_timer = 4 SECONDS * bomb_armor_mult)

@@ -9,7 +9,7 @@
 	item_icons = list(
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/WY.dmi',
 	)
-	armor_energy = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
 	armor_bio = CLOTHING_ARMOR_LOW
 	armor_internaldamage = CLOTHING_ARMOR_LOW
@@ -31,9 +31,9 @@
 	name = "\improper PMC field officer beret"
 	desc = "The pinnacle of fashion for any aspiring mercenary leader. Designed to protect the head from light impacts."
 	icon_state = "field_officer_hat"
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/sec
 	name = "\improper W-Y armored cap"
@@ -44,9 +44,9 @@
 	desc = "A helmet worn by PMC Marksmen."
 	icon_state = "pmc_sniper_hat"
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_FACE|BODY_FLAG_EYES
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_inventory = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	flags_marine_helmet = HELMET_DAMAGE_OVERLAY
 
@@ -55,9 +55,9 @@
 	desc = "A standard enclosed helmet utilized by Weyland-Yutani PMC."
 	icon_state = "pmc_helmet"
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_FACE|BODY_FLAG_EYES
-	armor_bullet = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
-	armor_internaldamage = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bullet = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_internaldamage = CLOTHING_ARMOR_LOWPLUS
 	flags_inventory = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	flags_inv_hide = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 	flags_marine_helmet = ARMOR_LAMP_OVERLAY
@@ -146,10 +146,10 @@
 	name = "\improper PMC engineer helmet"
 	desc = "An advanced technician helmet with a black finish, including advanced welding protection and resistance to industrial hazards, though it offers less kevlar against potential firefights."
 	icon_state = "pmc_engineer_helmet"
-	armor_energy = CLOTHING_ARMOR_MEDIUMHIGH
-	armor_bullet = CLOTHING_ARMOR_MEDIUMLOW
+	armor_energy = CLOTHING_ARMOR_MEDIUMPLUS
+	armor_bullet = CLOTHING_ARMOR_LOWPLUS
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_MEDIUMLOW
+	armor_bio = CLOTHING_ARMOR_LOWPLUS
 	armor_internaldamage = CLOTHING_ARMOR_MEDIUM
 	eye_protection = EYE_PROTECTION_WELDING
 	flags_armor_protection = BODY_FLAG_HEAD|BODY_FLAG_FACE|BODY_FLAG_EYES

@@ -17,7 +17,7 @@
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROT
 	blood_overlay_type = "armor"
 	armor_melee = CLOTHING_ARMOR_HIGH
-	armor_bullet = CLOTHING_ARMOR_VERYHIGH
+	armor_bullet = CLOTHING_ARMOR_SUPER
 	armor_laser = CLOTHING_ARMOR_MEDIUM
 	armor_energy = CLOTHING_ARMOR_LOW
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
@@ -105,10 +105,10 @@
 	flags_armor_protection = BODY_FLAG_ALL_BUT_HEAD
 	flags_cold_protection = BODY_FLAG_ALL_BUT_HEAD
 	flags_heat_protection = BODY_FLAG_ALL_BUT_HEAD
-	armor_melee = CLOTHING_ARMOR_ULTRAHIGH
-	armor_bullet = CLOTHING_ARMOR_GIGAHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGHPLUS
-	slowdown = SLOWDOWN_ARMOR_HEAVY
+	armor_melee = CLOTHING_ARMOR_ULTRA
+	armor_bullet = CLOTHING_ARMOR_MEGA
+	armor_internaldamage = CLOTHING_ARMOR_MEGA
+	slowdown = SLOWDOWN_ARMOR_VERY_HEAVY
 
 // Pyro
 /obj/item/clothing/suit/storage/marine/upp/pyro
@@ -130,8 +130,8 @@
 	flags_armor_protection = BODY_FLAG_ALL_BUT_HEAD
 	flags_cold_protection = BODY_FLAG_ALL_BUT_HEAD
 	flags_heat_protection = BODY_FLAG_ALL_BUT_HEAD
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
-	armor_internaldamage = CLOTHING_ARMOR_VERYHIGH
+	armor_bomb = CLOTHING_ARMOR_SUPER
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 
 // Demo
 /obj/item/clothing/suit/storage/marine/upp/demo

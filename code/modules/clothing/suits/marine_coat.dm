@@ -325,7 +325,7 @@
 	storage_slots = 4
 	armor_melee = CLOTHING_ARMOR_HIGHPLUS
 	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
-	armor_bomb = CLOTHING_ARMOR_VERYHIGH
+	armor_bomb = CLOTHING_ARMOR_SUPER
 	flags_armor_protection = BODY_FLAG_CHEST|BODY_FLAG_GROIN|BODY_FLAG_ARMS
 	w_class = SIZE_MEDIUM
 

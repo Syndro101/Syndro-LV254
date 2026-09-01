@@ -456,12 +456,27 @@ GLOBAL_LIST_INIT(job_command_roles, JOB_COMMAND_ROLES_LIST)
 #define JOB_FORECON_LIST list(JOB_FORECON_CO, JOB_FORECON_SL, JOB_FORECON_SYN, JOB_FORECON_SNIPER, JOB_FORECON_MARKSMAN, JOB_FORECON_SUPPORT, JOB_FORECON_RIFLEMAN, JOB_FORECON_MEDIC, JOB_FORECON_SMARTGUNNER, JOB_FORECON_IO)
 
 //-------- UPP --------//
+// Squads
+#define SQUAD_UPP_1 "Akula"
+#define SQUAD_UPP_2 "Bizon"
+#define SQUAD_UPP_3 "Chayka"
+#define SQUAD_UPP_4 "Delfin"
+#define SQUAD_UPP_5 "Ekan"
+#define SQUAD_UPP_CRYO "Feniks"
+#define SQUAD_UPP_INTEL "Intel"
+#define SQUAD_UPP_SOF "SOF"
+#define SQUAD_UPP_CBRN "CBRN"
+#define SQUAD_UPP_FORECON "FORECON"
+
+// Squad Roles
 #define JOB_UPP	"UPP Ryadovoy"
 #define JOB_UPP_CONSCRIPT "UPP Conscript"
 #define JOB_UPP_ENGI "UPP MSzht Engineer"
 #define JOB_UPP_MEDIC "UPP MSzht Medic"
 #define JOB_UPP_SPECIALIST "UPP Serzhant"
 #define JOB_UPP_LEADER "UPP Starshiy Serzhant"
+
+// Shipside
 #define JOB_UPP_POLICE "UPP Politsiya"
 #define JOB_UPP_LT_OFFICER "UPP Mladshiy Leytenant"
 #define JOB_UPP_SUPPLY "UPP Logistics Technician"
@@ -473,34 +488,29 @@ GLOBAL_LIST_INIT(job_command_roles, JOB_COMMAND_ROLES_LIST)
 #define JOB_UPP_MAY_OFFICER "UPP Mayjor"
 #define JOB_UPP_LTKOL_OFFICER "UPP Podpolkovnik"
 #define JOB_UPP_KOL_OFFICER "UPP Polkovnik"
-#define JOB_UPP_BRIG_GENERAL "UPP General Mayjor"
-#define JOB_UPP_MAY_GENERAL "UPP General Leytenant"
-#define JOB_UPP_LT_GENERAL "UPP General Polkovnik"
-#define JOB_UPP_GENERAL "UPP General Armii"
-#define SQUAD_UPP_1 "Akula"
-#define SQUAD_UPP_2 "Bizon"
-#define SQUAD_UPP_3 "Chayka"
-#define SQUAD_UPP_4 "Delfin"
-#define SQUAD_UPP_5 "UPPKdo"
+#define JOB_UPP_CREWMAN "UPP Tank Crewman"
+#define JOB_UPP_REPRESENTATIVE "UPP Representative"
+#define JOB_UPP_COMMISSAR "UPP Political Commissar"
 
+// Synth
 #define JOB_UPP_COMBAT_SYNTH "UPP Combat Synthetic"
 #define JOB_UPP_SUPPORT_SYNTH "UPP Support Synthetic"
 #define JOB_UPP_JOE "Dzho Automaton"
 
-#define UPP_JOB_LIST list(JOB_UPP, JOB_UPP_ENGI, JOB_UPP_MEDIC, JOB_UPP_SPECIALIST, JOB_UPP_LEADER, JOB_UPP_POLICE, JOB_UPP_LT_OFFICER, JOB_UPP_LT_DOKTOR, JOB_UPP_PILOT, JOB_UPP_SUPPLY, JOB_UPP_SRLT_OFFICER, JOB_UPP_KPT_OFFICER, JOB_UPP_CO_OFFICER, JOB_UPP_SUPPORT_SYNTH, JOB_UPP_JOE, JOB_UPP_COMMISSAR)
-#define UPP_JOB_GRUNT_LIST list(JOB_UPP, JOB_UPP_ENGI, JOB_UPP_MEDIC, JOB_UPP_SPECIALIST, JOB_UPP_LEADER, JOB_UPP_POLICE, JOB_UPP_CREWMAN)
-
+// Commando
 #define JOB_UPP_COMMANDO "UPP Junior Kommando"
 #define JOB_UPP_COMMANDO_MEDIC "UPP 2nd Kommando"
 #define JOB_UPP_COMMANDO_LEADER "UPP 1st Kommando"
 
+// General
+#define JOB_UPP_BRIG_GENERAL "UPP General Mayjor"
+#define JOB_UPP_MAY_GENERAL "UPP General Leytenant"
+#define JOB_UPP_LT_GENERAL "UPP General Polkovnik"
+#define JOB_UPP_GENERAL "UPP General Armii"
+
+#define UPP_JOB_LIST list(JOB_UPP, JOB_UPP_ENGI, JOB_UPP_MEDIC, JOB_UPP_SPECIALIST, JOB_UPP_LEADER, JOB_UPP_POLICE, JOB_UPP_LT_OFFICER, JOB_UPP_LT_DOKTOR, JOB_UPP_PILOT, JOB_UPP_SUPPLY, JOB_UPP_SRLT_OFFICER, JOB_UPP_KPT_OFFICER, JOB_UPP_CO_OFFICER, JOB_UPP_SUPPORT_SYNTH, JOB_UPP_JOE, JOB_UPP_COMMISSAR)
+#define UPP_JOB_GRUNT_LIST list(JOB_UPP, JOB_UPP_ENGI, JOB_UPP_MEDIC, JOB_UPP_SPECIALIST, JOB_UPP_LEADER, JOB_UPP_POLICE, JOB_UPP_CREWMAN)
 #define UPP_COMMANDO_JOB_LIST list(JOB_UPP_COMMANDO, JOB_UPP_COMMANDO_MEDIC, JOB_UPP_COMMANDO_LEADER)
-
-#define JOB_UPP_REPRESENTATIVE "UPP Representative"
-
-#define JOB_UPP_CREWMAN "UPP Tank Crewman"
-
-#define JOB_UPP_COMMISSAR "UPP Political Commissar"
 
 //-------- CLF --------//
 #define JOB_CLF "Insurgent Guerilla"

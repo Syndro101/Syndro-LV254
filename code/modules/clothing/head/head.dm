@@ -771,9 +771,9 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 /obj/item/clothing/head/ivanberet
 	name = "\improper Black Beret"
 	desc = "Worn by officers of special units."
-	icon = 'icons/obj/items/clothing/hats/hats_by_faction/UPP.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/upp_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/UPP.dmi'
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/upp_grayscale.dmi'
 	)
 	icon_state = "ivan_beret"
 	item_state = "ivan_beret"

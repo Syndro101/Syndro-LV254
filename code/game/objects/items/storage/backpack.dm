@@ -755,6 +755,9 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 			name = "\improper M60 Sniper Cloak"
 			desc = "A specially-designed cloak with thermal dampering waterproof coating, designed for urban environments. Doesn't have the optical camouflage electronics that more advanced M68 cloak has."
 
+/obj/item/storage/backpack/marine/smock/upp
+	name = "\improper V77 sniper's smock"
+
 /obj/item/storage/backpack/marine/marsoc
 	name = "\improper USCM SOF IMP tactical rucksack"
 	desc = "With a backpack like this, you'll forget you're on a hell march designed to kill you."
@@ -1455,7 +1458,7 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 /obj/item/storage/backpack/marine/satchel/scout_cloak/upp
 	name = "\improper V86 Thermal Cloak"
 	desc = "A thermo-optic camouflage cloak commonly used by UPP commando units."
-	uniform_restricted = list(/obj/item/clothing/suit/storage/marine/faction/upp/scout) //Need to wear UPP commando armor to equip this.
+	uniform_restricted = list(/obj/item/clothing/suit/storage/marine/upp/scout) //Need to wear UPP commando armor to equip this.
 
 	max_storage_space = 21
 

@@ -1230,9 +1230,9 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 	name = "\improper UM4 helmet"
 	desc = "Using highly skilled manufacturing techniques this UM4 helmet manages to be very resistant to ballistics damage, at the cost of its huge weight causing an extreme stress on the occupant's head that will most likely cause neck problems."
 	icon_state = "upp_helmet"
-	icon = 'icons/obj/items/clothing/hats/hats_by_faction/UPP.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/upp_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/UPP.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/upp_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
 	)
@@ -1272,10 +1272,10 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 /obj/item/clothing/head/uppcap
 	name = "\improper UL2 UPP cap"
 	desc = "UPP headgear issued to soldiers when they're not expected to face combat, and may be requested by officers and above."
-	icon = 'icons/obj/items/clothing/hats/hats_by_faction/UPP.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/upp_grayscale.dmi'
 	icon_state = "upp_cap"
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/UPP.dmi'
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/upp_grayscale.dmi'
 	)
 	siemens_coefficient = 2
 	flags_armor_protection = BODY_FLAG_HEAD

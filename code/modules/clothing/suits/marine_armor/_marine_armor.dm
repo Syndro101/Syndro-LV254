@@ -35,9 +35,9 @@
 	desc = "A standard Colonial Marines M3 Pattern Chestplate. Protects the chest from ballistic rounds, bladed objects and accidents."
 	icon_state = "M1"
 	item_state = "M1" //Make unique states for Officer & Intel armors.
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/suits_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/suits/suits_by_map/uscm_grayscale.dmi'
 	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/suits_grayscale.dmi'
+		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/uscm_grayscale.dmi'
 	)
 	flags_atom = FPRINT|CONDUCT
 	flags_inventory = BLOCKSHARPOBJ
@@ -166,7 +166,7 @@
 
 		if (style_state)
 			var/image/style_overlay = image(
-				'icons/mob/humans/onmob/clothing/suits/suits_by_map/suits_grayscale.dmi',
+				'icons/mob/humans/onmob/clothing/suits/suits_by_map/uscm_grayscale.dmi',
 				src,
 				style_state
 			)
@@ -182,10 +182,10 @@
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/suits/suits_by_map/suits_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/suits/suits_by_map/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/suits_grayscale.dmi'
+	item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/uscm_grayscale.dmi'
 
 /obj/item/clothing/suit/storage/marine/post_vendor_spawn_hook(mob/living/carbon/human/user) //used for randomizing/selecting a variant for armors.
 	if(!armor_variation)

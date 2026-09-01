@@ -1712,6 +1712,7 @@
 #include "code\modules\clothing\suits\marine_armor\intel.dm"
 #include "code\modules\clothing\suits\marine_armor\smartgunner.dm"
 #include "code\modules\clothing\suits\marine_armor\spec_fire.dm"
+#include "code\modules\clothing\suits\marine_armor\upp.dm"
 #include "code\modules\clothing\suits\marine_armor\WY\commando.dm"
 #include "code\modules\clothing\suits\marine_armor\WY\goon.dm"
 #include "code\modules\clothing\suits\marine_armor\WY\pmc.dm"

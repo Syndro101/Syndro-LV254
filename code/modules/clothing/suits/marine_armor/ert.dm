@@ -132,7 +132,7 @@
 	icon_state = "upp_armor"
 	icon = 'icons/obj/items/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/upp_grayscale.dmi'
+		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 	)
 	armor_melee = CLOTHING_ARMOR_VERYHIGH
 	armor_bullet = CLOTHING_ARMOR_VERYHIGHPLUS

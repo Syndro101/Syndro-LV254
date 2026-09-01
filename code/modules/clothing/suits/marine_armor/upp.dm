@@ -6,7 +6,7 @@
 	desc = "Standard body armor of the UPP military, the U5-M (Union MK5 - Medium) is a medium body armor, roughly on par with the M3 pattern body armor in service with the USCM, specialized towards ballistics protection. Unlike the M3, however, the plate has a heavier neckplate. This has earned many UA members to refer to UPP soldiers as 'tin men'."
 	icon = 'icons/obj/items/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 	item_icons = list(
-		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_map/upp_grayscale.dmi'
+		WEAR_JACKET = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 	)
 	icon_state = "M1"
 	flags_atom = NO_NAME_OVERRIDE
@@ -27,6 +27,15 @@
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	movement_compensation = SLOWDOWN_ARMOR_LIGHT
 	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/UPP)
+
+/obj/item/clothing/suit/storage/marine/upp/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
+	. = ..()
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/suits/suits_by_faction/upp_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_JACKET] = 'icons/mob/humans/onmob/clothing/suits/suits_by_faction/upp_grayscale.dmi'
 
 // Light
 /obj/item/clothing/suit/storage/marine/upp/light

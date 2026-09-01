@@ -76,10 +76,10 @@
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 
 /obj/item/clothing/head/beret/cm/squadberet
 	icon_state = "beret_squad"
@@ -131,10 +131,10 @@
 	name = "headband"
 	desc = "A rag typically worn by the less-orthodox weapons operators. While it offers no protection, it is certainly comfortable to wear compared to the standard helmet. Comes in two stylish colors."
 	icon_state = "headband"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	flags_obj = OBJ_NO_HELMET_BAND|OBJ_IS_HELMET_GARB
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi',
 		WEAR_AS_GARB = 'icons/mob/humans/onmob/clothing/helmet_garb/headbands.dmi',
 	)
 	item_state_slots = list(WEAR_AS_GARB = "headband")
@@ -148,10 +148,10 @@
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 
 /obj/item/clothing/head/headband/red
 	icon_state = "headbandred"
@@ -310,9 +310,9 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "patrol cap"
 	desc = "A casual cap issued as part of the non-combat uniform. While it only protects from the sun, it's much more comfortable than a helmet."
 	icon_state = "cap"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
 	)
@@ -348,10 +348,10 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 
 /obj/item/clothing/head/cmcap/Destroy()
 	QDEL_NULL(pockets)
@@ -600,9 +600,9 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "marine commanding officer beret"
 	desc = "A beret with the commanding officer's insignia emblazoned on it. Wearer may suffer the heavy weight of responsibility upon their head and shoulders."
 	icon_state = "coberet"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 	)
 	black_market_value = 30
 
@@ -615,10 +615,10 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 
 /obj/item/clothing/head/beret/marine/commander/dress
 	name = "marine major white beret"
@@ -941,10 +941,10 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	name = "durag"
 	desc = "An improvised head wrap made out of a standard issue neckerchief. Great for keeping the sweat out of your eyes and protecting your hair."
 	icon_state = "durag"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	flags_inv_hide = HIDETOPHAIR
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi',
 		WEAR_L_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_lefthand.dmi',
 		WEAR_R_HAND = 'icons/mob/humans/onmob/inhands/items_by_map/jungle_righthand.dmi'
 	)
@@ -953,10 +953,10 @@ GLOBAL_LIST_INIT(allowed_hat_items, list(
 	. = ..()
 	if(flags_atom & MAP_COLOR_INDEX)
 		return
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	if(!item_icons)
 		item_icons = list()
-	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi'
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi'
 
 
 /obj/item/clothing/head/durag/Initialize(mapload, ...)

@@ -39,9 +39,9 @@
 /obj/item/clothing/head/cultist_hood/headscarf
 	desc = "A head wrap desgined to protect the wearer from dust and dirt. This one had leaves and brambles afixed to it. Looks eerie and weird, almost as if it belongs to a cult."
 	name = "cultist head scarf"
-	icon = 'icons/obj/items/clothing/hats/hats_by_map/hats_grayscale.dmi'
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/uscm_grayscale.dmi'
 	item_icons = list(
-		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_map/hats_grayscale.dmi',
+		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/uscm_grayscale.dmi',
 	)
 	icon_state = "ghillie_coif"
 	item_state = "ghillie_coif"

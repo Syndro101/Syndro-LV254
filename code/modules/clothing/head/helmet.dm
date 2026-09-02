@@ -1141,7 +1141,6 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 		WEAR_L_HAND = "helmet",
 		WEAR_R_HAND = "helmet"
 	)
-	armor_energy = CLOTHING_ARMOR_LOWPLUS
 	specialty = "RC6"
 	flags_atom = NO_GAMEMODE_SKIN|NO_NAME_OVERRIDE
 
@@ -1227,9 +1226,9 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 
 // UPP Are very powerful against bullets (marines) but middling against melee (xenos)
 /obj/item/clothing/head/helmet/marine/veteran/UPP
-	name = "\improper UM4 helmet"
-	desc = "Using highly skilled manufacturing techniques this UM4 helmet manages to be very resistant to ballistics damage, at the cost of its huge weight causing an extreme stress on the occupant's head that will most likely cause neck problems."
-	icon_state = "upp_helmet"
+	name = "\improper U3-M helmet"
+	desc = "The U3-M (Union MK3 - Medium) helmet manages to be very resistant to ballistics damage, at the cost of its huge weight causing an extreme stress on the occupant's head that will most likely cause neck problems."
+	icon_state = "helmet"
 	icon = 'icons/obj/items/clothing/hats/hats_by_faction/upp_grayscale.dmi'
 	item_icons = list(
 		WEAR_HEAD = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/upp_grayscale.dmi',
@@ -1240,34 +1239,62 @@ GLOBAL_LIST_INIT(allowed_helmet_items, list(
 		WEAR_L_HAND = "helmet",
 		WEAR_R_HAND = "helmet"
 	)
+	flags_atom = NO_NAME_OVERRIDE
 	armor_bullet = CLOTHING_ARMOR_HIGH
 	armor_energy = CLOTHING_ARMOR_MEDIUM
 	armor_bomb = CLOTHING_ARMOR_MEDIUM
-	armor_bio = CLOTHING_ARMOR_LOWPLUS
+	armor_bio = CLOTHING_ARMOR_LOW
 	armor_rad = CLOTHING_ARMOR_LOWPLUS
 	armor_internaldamage = CLOTHING_ARMOR_HIGH
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROT
 	clothing_traits = list(TRAIT_EAR_PROTECTION) //the sprites clearly fully cover the ears and most of the head
 
-/obj/item/clothing/head/helmet/marine/veteran/UPP/engi
-	name = "\improper UM4-V helmet"
-	desc = "This version of the UM4 helmet has a ballistic-glass visor, allowing for the UPP Engineers to safely weld, but by some reports hindering sight in the process."
-	icon_state = "upp_helmet_engi"
-	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
-	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_HIGH
-	var/protection_on = TRUE
+/obj/item/clothing/head/helmet/marine/veteran/UPP/select_gamemode_skin(expected_type, list/override_icon_state, list/override_protection)
+	. = ..()
+	if(flags_atom & MAP_COLOR_INDEX)
+		return
+	icon = 'icons/obj/items/clothing/hats/hats_by_faction/upp_grayscale.dmi'
+	if(!item_icons)
+		item_icons = list()
+	item_icons[WEAR_HEAD] = 'icons/mob/humans/onmob/clothing/head/hats_by_faction/upp_grayscale.dmi'
 
-/obj/item/clothing/head/helmet/marine/veteran/UPP/heavy
-	name = "\improper UH7 helmet"
-	desc = "Like the UM4, this helmet is very resistant to ballistic damage, but both its flaws and benefits have been doubled. The few UPP Zhergeants that have lived past age 30 have all needed to retire from terminal neck problems caused from the stress of wearing this helmet."
-	icon_state = "upp_helmet_heavy"
-	armor_melee = CLOTHING_ARMOR_MEDIUMPLUS
-	armor_bullet = CLOTHING_ARMOR_HIGHPLUS
-	armor_energy = CLOTHING_ARMOR_MEDIUM
-	armor_bomb = CLOTHING_ARMOR_HIGH
-	armor_bio = CLOTHING_ARMOR_MEDIUM
-	armor_internaldamage = CLOTHING_ARMOR_HIGHPLUS
+// UPP Leader + Officer
+/obj/item/clothing/head/helmet/marine/veteran/UPP/leader
+	name = "\improper U4-L helmet"
+	desc = "The U4-L (Union MK4 - Leader) is the standard helmet for UPP Leadership and less expendable troops."
+	icon_state = "leader"
+
+// UPP Scout + Sniper
+/obj/item/clothing/head/helmet/marine/veteran/UPP/scout
+	name = "\improper U4-S helmet"
+	desc = "The U4-S (Union MK4 - Scout) is the standard helmet for UPP Scouts and Snipers."
+	icon_state = "scout"
+
+// UPP Pyro
+/obj/item/clothing/head/helmet/marine/veteran/UPP/pyro
+	name = "\improper U4-P helmet"
+	desc = "The U4-P (Union MK4 - Pyro) is the standard helmet for UPP Pyro technicians, features a wider mouth to better accomodate gasmasks."
+	icon_state = "pyro"
+	armor_bio = CLOTHING_ARMOR_HIGH
+	fire_intensity_resistance = BURN_LEVEL_TIER_1
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROT
+
+// UPP Demo
+/obj/item/clothing/head/helmet/marine/veteran/UPP/grenadier
+	name = "\improper U4-G helmet"
+	desc = "The U4-G (Union MK4 - Grenadier) is the standard helmet for UPP Grenadiers, has a sturdy visor and extra padding to dampen explosive impacts."
+	icon_state = "gunner"
+	armor_bomb = CLOTHING_ARMOR_SUPER
+	armor_internaldamage = CLOTHING_ARMOR_HIGH
+
+// UPP Gunner
+/obj/item/clothing/head/helmet/marine/veteran/UPP/gunner
+	name = "\improper U3-H helmet"
+	desc = "The U3-H (Union MK3 - Heavy) is the standard helmet for UPP Gunners and demolitionists, featuring heavier plating and a sturdy visor."
+	icon_state = "gunner"
+	armor_melee = CLOTHING_ARMOR_SUPER
+	armor_bullet = CLOTHING_ARMOR_ULTRA
+	armor_internaldamage = CLOTHING_ARMOR_SUPER
 
 /obj/item/clothing/head/uppcap
 	name = "\improper UL2 UPP cap"

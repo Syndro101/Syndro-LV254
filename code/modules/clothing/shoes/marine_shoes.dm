@@ -204,6 +204,12 @@
 	armor_bio = CLOTHING_ARMOR_MEGAPLUS
 	spawn_item_type = /obj/item/attachable/bayonet
 
+/obj/item/clothing/shoes/veteran/pmc/commando/cbrn/upp
+	name = "\improper V6 HEV boots"
+	desc = "V6 HEV boots are designed to protect the wearer from environmental hazards, namely fire."
+	armor_rad = CLOTHING_ARMOR_MEDIUM
+	spawn_item_type = /obj/item/attachable/bayonet/upp
+
 /obj/item/clothing/shoes/veteran/pmc/commando/cbrn/biomerc
 	name = "\improper Type-15 Haz-tech boots"
 	desc = "Type-15 Haz-tech boots have been designed to protect the wearer from contact with any possible infection vectors or hazardous substances that may have contaminated the area of operations."
